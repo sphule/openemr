@@ -414,5 +414,10 @@ if (version_compare(phpversion(), "5.2.1", ">=")) {
 // turn off PHP compatibility warnings
 ini_set("session.bug_compat_warn","off");
 
+/*****************************URL's to be obtained by contacting H2H at drxcustomersupport@h2hsolutions.com **************/
+$GLOBALS['TOKEN_URL']="<url>";
+$GLOBALS['SEND_ERX_URL'] ="<url>";
+$GLOBALS['WSDL_URL']="<url>";
+
 //////////////////////////////////////////////////////////////////
 ?>

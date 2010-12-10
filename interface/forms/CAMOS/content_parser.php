@@ -87,6 +87,22 @@ function remove_comments($string_to_process) {
 //process commands embedded in C style comments where function name is first
 //followed by args separated by :: delimiter and nothing else
 
+function pre_view_process ($encounter,$pid,$string_to_process) {
+  if (preg_match("/\|\s*date_add\s*\(\s*(.*?)\s*\)\s*\|/",$string_to_process, $matches)) {
+    $to_replace = $matches[0];
+    $days = $matches[1];
+    $query = "select date_format(date_add(date, interval $days day),'%W, %m-%d-%Y') as date from form_encounter where pid = $pid and encounter = $encounter";
+    $statement = sqlStatement($query);
+    if ($result = sqlFetchArray($statement)){ 
+        $string_to_process = str_replace($to_replace,$result['date'],$string_to_process);
+    }
+  }
+  return $string_to_process;
+}
+
+//process commands embedded in C style comments where function name is first
+//followed by args separated by :: delimiter and nothing else
+
 function process_commands(&$string_to_process, &$camos_return_data) {
 
   //First, handle replace function as special case.  full depth of inserts should be evaluated prior

@@ -146,6 +146,7 @@ class Prescription extends ORDataObject {
     var $refills;
     var $per_refill;
     var $medication;
+	var $sig;
 
     var $drug_id;
     var $active;
@@ -169,10 +170,13 @@ class Prescription extends ORDataObject {
     
         $this->medication_array = array(0 => xl('No'), 1 => xl('Yes'));
     
+        $this->unit_array = array(" ",xl("mg"), xl("mg/1cc"), "", "", "",
+            xl("mg/5cc"), xl ("mcg"));
+    
         if (is_numeric($id)) { $this->id = $id; }
         else { $id = "";}
 
-        //$this->unit = UNIT_MG;
+//			$this->unit = UNIT_MG;
         //$this->route = ROUTE_PER_ORIS;
         //$this->quantity = 1;
         //$this->size = 1;
@@ -200,7 +204,7 @@ class Prescription extends ORDataObject {
 
         if ($id != "") { $this->populate(); }
     }
-    
+
     function persist() {
         $this->date_modified = date("Y-m-d");
         if ($this->id == "") { $this->date_added = date("Y-m-d"); }
@@ -228,12 +232,15 @@ class Prescription extends ORDataObject {
         	."Provider ID: " . $this->provider->id. "\n"
         	."Note: " . $this->note. "\n"
         	."Drug: " . $this->drug. "\n"
-        	."Form: " . $this->form_array[$this->form]. "\n"
+//        	."Form: " . $this->form_array[$this->form]. "\n"
+	    	."Form: " . $this->form. "\n"
         	."Dosage: " . $this->dosage. "\n"
         	."Qty: " . $this->quantity. "\n"
         	."Size: " . $this->size. "\n"
-        	."Unit: " . $this->unit_array[$this->unit] . "\n"
-        	."Route: " . $this->route_array[$this->route] . "\n"
+//        	."Unit: " . $this->unit_array[$this->unit] . "\n"
+            ."Unit: " . $this->unit . "\n"
+//        	."Route: " . $this->route_array[$this->route] . "\n"
+        	."Route: " . $this->route. "\n"
         	."Interval: " .$this->interval_array[$this->interval]. "\n"
         	."Substitute: " . $this->substitute_array[$this->substitute]. "\n"
         	."Refills: " . $this->refills. "\n"
@@ -253,7 +260,7 @@ class Prescription extends ORDataObject {
         return $this->unit;
     }
     function set_unit($unit) {
-        if (is_numeric($unit)) { $this->unit = $unit; }
+    $this->unit = $unit; 
     }
 
     function set_id($id) {
@@ -268,7 +275,7 @@ class Prescription extends ORDataObject {
             return( $this->dosage );
         }
         else {
-            return ($this->dosage . " " . xl('in') . " " . $this->form_array[$this->form] . " " . $this->interval_array[$this->interval]);
+            return ($this->dosage . " " . xl('in') . " " . $this->form . " " . $this->interval_array[$this->interval]);
         } 
     }
 
@@ -279,8 +286,17 @@ class Prescription extends ORDataObject {
         return $this->dosage;
     }
 
+  function set_sig($sig) {
+    	$this->sig = $sig;
+    }
+    function get_sig() {
+        return $this->sig;
+    }
+
+
     function set_form($form) {
-        if (is_numeric($form)) { $this->form = $form; }
+//        if (is_numeric($form)) { $this->form = $form; }
+$this->form = $form;
     }
     function get_form() {
         return $this->form;
@@ -294,7 +310,8 @@ class Prescription extends ORDataObject {
     }
 
     function set_size($size) {
-        if (is_numeric($size)) { $this->size = $size; }
+//        if (is_numeric($size)) { $this->size = $size; }
+$this->size = $size; 
     }
     function get_size() {
         return $this->size;
@@ -310,7 +327,8 @@ class Prescription extends ORDataObject {
     }
     
     function set_route($route) {
-        if (is_numeric($route)) { $this->route = $route; }
+//        if (is_numeric($route)) { $this->route = $route; }
+$this->route = $route; 
     }
     function get_route() {
         return $this->route;
@@ -532,9 +550,11 @@ class Prescription extends ORDataObject {
                 ."Provider: " . "\t\t" . $this->provider->get_name_display(). "\n"
                 ."Provider DEA No.: " . "\t\t" . $this->provider->federal_drug_id. "\n"
                 ."Drug: " . "\t\t\t" . $this->drug. "\n"
-                ."Dosage: " . "\t\t" . $this->dosage . " in ". $this->form_array[$this->form]. " form " . $this->interval_array[$this->interval]. "\n"
+//                ."Dosage: " . "\t\t" . $this->dosage . " in ". $this->form_array[$this->form]. " form " . $this->interval_array[$this->interval]. "\n"
+                ."Dosage: " . "\t\t" . $this->dosage . " in ". $this->form. " form " . $this->interval_array[$this->interval]. "\n"
                 ."Qty: " . "\t\t\t" . $this->quantity. "\n"
-                ."Medication Unit: " . "\t" . $this->size  . " ". $this->unit_array[$this->unit] . "\n"
+//                ."Medication Unit: " . "\t" . $this->size  . " ". $this->unit_array[$this->unit] . "\n"
+                ."Medication Unit: " . "\t" . $this->size  . " ". $this->unit . "\n"
                 ."Substitute: " . "\t\t" . $this->substitute_array[$this->substitute]. "\n";
         if ($this->refills > 0) {
             $string .= "Refills: " . "\t\t" . $this->refills. ", of quantity: " . $this->per_refill ."\n";
@@ -578,7 +598,8 @@ class Prescription extends ORDataObject {
         $string .= "\n";
         $string .= date("F j, Y", strtotime($this->start_date)) . "\n";
         $string .= "\n";
-        $string .= strtoupper($this->drug) . " " . $this->size  . " ". $this->unit_array[$this->unit] . "\n";
+//        $string .= strtoupper($this->drug) . " " . $this->size  . " ". $this->unit_array[$this->unit] . "\n";
+        $string .= strtoupper($this->drug) . " " . $this->size  . " ". $this->unit . "\n";
         if (strlen($this->note) > 0) {
             $string .= "Notes: \n" . $this->note . "\n";	
         }
@@ -591,7 +612,7 @@ class Prescription extends ORDataObject {
                 $string .= " " . $this->interval_array[$this->interval];
             }
             if (!empty($this->route)) {
-                $string .= " " . $this->route_array[$this->route] . "\n";
+			    $string .= " " . $this->route . "\n";
             }
         }
         if (!empty($this->quantity)) {
@@ -604,22 +625,356 @@ class Prescription extends ORDataObject {
         
         return $string;
     }
-    
-    function prescriptions_factory($patient_id,
-                            $order_by = "active DESC, date_modified DESC, date_added DESC")
+	function prescriptions_factory($patient_id,$order_by = "active DESC, date_modified DESC, date_added DESC")
     {
         $prescriptions = array();
         require_once (dirname(__FILE__) . "/../translation.inc.php");
         $p = new Prescription();
-        $sql = "SELECT id FROM  " . $p->_table . " WHERE patient_id = " .
-                mysql_real_escape_string($patient_id) .
-                " ORDER BY " . mysql_real_escape_string($order_by);
-        $results = sqlQ($sql);
-        while ($row = mysql_fetch_array($results) ) {
-            $prescriptions[] = new Prescription($row['id']);
-        }
+        
+		if($order_by != '')
+		{
+		 $qry_order = " Order by ".mysql_real_escape_string($order_by);
+		}
+      $sql = "SELECT id,date_format(date_added,'%D %M, %Y') as dateadd,drug,drug_id,sig,dosage,route,form FROM  " . $p->_table . " WHERE patient_id = " .
+                mysql_real_escape_string($patient_id) ."$qry_order";                
+	
+
+        $results = sqlStatement($sql);
+		$num_rows = sqlNumRows($results);
+
+         if($num_rows >0)  
+		{
+			while ($row = mysql_fetch_array($results) ) 
+			{
+				$prescriptions[] = new Prescription($row['id']);
+			}	
+		}
+		/*else
+		{
+			$prescriptions ="No record(s) found";
+		}*/
         return $prescriptions;
     }
+   
+/*=====================Eprescription history from digital Rx would be called and shown in list prescription==========*/
+   //Displaying the records in front end
+   //Getting the Medication History Through Webservices
+	function eprescribe_factory($patient_id,$order_by = "erx_active DESC, date_modified DESC, date_added DESC")
+	{
+	  $prescriptions = array();
+    
+            $query = "select ev.vendor_erx_id,ev.vendor_erx_password,epv.vendor_erx_practice_id from erx_vendor ev left join
+                 erx_practice_vendor epv on ev.vendor_id = epv.vendor_id where epv.id ='1'";
+               
+               
+                    $res = sqlStatement($query);
+                   
+                    while($row = mysql_fetch_array($res))
+                    {
+                        $vendorcredential['vendorid']        = $row['vendor_erx_id'];
+                        $vendorcredential['vendorpassword']  = $row['vendor_erx_password'];
+                        $vendorcredential['practice_id']  = $row['vendor_erx_practice_id'];
+                       
+                    }
+                     
+                    $vendor_id = $vendorcredential['vendorid'] ;
+                    $vendor_password = $vendorcredential['vendorpassword'] ;
+                    $vendor_practiceid =$vendorcredential['practice_id'] ;
+                                                               
+                    $physician_user_id = $_SESSION['authUserID'];
+  
+                    $phy_cred_query = "select * from erx_physician where user_id = '".$physician_user_id."'";
+                    $phy_cred_res = sqlStatement($phy_cred_query);
+
+
+                      
+                    while($phy_cred_row = mysql_fetch_array($phy_cred_res))
+                    {
+                        $phy_cred_arr['physician_username']      = $phy_cred_row['physician_username'];
+                        $phy_cred_arr['physician_password']        = $phy_cred_row['physician_password'];   
+						
+
+                    }
+					
+					
+                     $phyuname   = $phy_cred_arr['physician_username'];  //Physician Username
+                     $phypwd      = $phy_cred_arr['physician_password'];   //Physician Password
+                    /*****************************************************************************************/
+                 
+					/***************************Data variable created by practiceid,venodrid,vendorpwd********/
+					 
+                     /******************************CONTACT H2H at drxcustomersupport@h2hsolutions.com *****************/
+ 
+					//$data = $GLOBALS['TOKEN_URL']."?function=getToken&vendorId=".$vendor_id."&vendorPwd=".$vendor_password."&practiceId=".$vendor_practiceid."";
+					$cURL = new cURL();
+					$ch = $cURL->get($data);
+					
+					$code = $ch['code'];
+					$token = substr($ch['cr'],strpos($ch['cr'],'=')+1,strlen($ch['cr'])-1);
+
+					/*****************************************************************************************/
+					/*******************************WSDL file TO access API***********************************/
+					$wsdl =$GLOBALS['WSDL_URL'];
+					/*****************************************************************************************/
+
+                    /*********************Creating object by nusoap class*************************************/
+                    $client=new nusoap_client($wsdl,'wsdl');
+                    $err = $client->getError();
+                    if ($err) {
+                        // Display the error
+                        echo '<p><b>Constructor error: ' . $err . '</b></p>';
+                        exit;
+                        // At this point, you know the call that follows will fail
+                    }
+                    /*****************************************************************************************/
+
+                    
+                    /********************Parameters being transfered  in WSDL API ****************************/
+										
+					      $query_patient_count = "Select * from prescriptions where patient_id='".$_SESSION['pid']."' ";
+						  $query_patient_res   = sqlStatement($query_patient_count);                						  
+     					  $query_patient_row = sqlNumRows($query_patient_res);				
+						  
+                          //If records fetched are more than 0
+			  if($query_patient_row > 0)
+				  {
+					
+					$patientretrieve_data_query = "select pd.id,pd.lname,pd.mname,pd.fname,pd.city,pd.street,pd.address2,pd.postal_code,pd.suffix,pd.state,pd.country_code,
+DATE_FORMAT(DOB,'%m/%d/%Y') as DOB,DATE_FORMAT(max(pr.date_added) - INTERVAL 1 DAY,'%m') as stdate_m,
+DATE_FORMAT(max(pr.date_added) - INTERVAL 1 DAY,'%d') as stdate_d,DATE_FORMAT(max(pr.date_added)- INTERVAL 1 DAY,'%Y') as stdate_Y,
+DATE_FORMAT(now(),'%d') as endate_d,DATE_FORMAT(now(),'%m') as endate_m,DATE_FORMAT(now(),'%Y') as endate_Y,
+if(sex = 'Male','M','F') as sex,phone_home from patient_data pd right join
+ prescriptions pr on pd.pid = pr.patient_id where pd.pid =".$_SESSION['pid']." and pr.erx_active = '1' group by pr.patient_id";
+                  }
+			 if($query_patient_row == 0)
+				  {
+					  $patientretrieve_data_query = "select id,lname,mname,fname,city,street,address2,postal_code,suffix,state,country_code,DATE_FORMAT(DOB,'%m/%d/%Y') as DOB,DATE_FORMAT(date,'%m') as stdate_m,DATE_FORMAT(date,'%d') as stdate_d,DATE_FORMAT(date,'%Y') as stdate_Y,DATE_FORMAT(now(),'%d') as endate_d,DATE_FORMAT(now(),'%m') as endate_m,DATE_FORMAT(now(),'%Y') as endate_Y,if(sex = 'Male','M','F') as sex,phone_home from patient_data where pid =".$_SESSION['pid']."";
+				  }
+					
+					$patientretrieve_data_result = sqlStatement($patientretrieve_data_query);
+					$patientretrieve_data_fetch = mysql_fetch_array($patientretrieve_data_result);
+
+					//Vendor Credentials
+
+					 
+                    $vendor_param1=array('vendorId' => $vendor_id,
+                    'vendorUniqueIdentifierExt' => "1",
+                    'vendorPassword' => $vendor_password,
+                    'vendorDescription' => "1",
+                    'practiceId' => $vendor_practiceid,
+                    'practiceUniqueIdentifierExt' => "1",
+                    'practiceDescription' => "Practice Desc",
+                    'drxProviderId' =>  $phyuname,
+                    'drxProviderPwd' =>  $phypwd
+                    );
+
+					//DigitalRx Status
+
+                    $vendor_param2=array('code' => "1",
+                    'digitalRxCode'    => 200,
+                    'digitalRxCodeDesc' => "",
+                    'digitalRxMessage' => "",
+                    'pbmCode' => "",
+                    'pbmCodeDesc' => "",
+                    'pbmMessage' => "",
+                    'pbmDetailsCode' => "",
+                    'pbmDetailsCodeDesc' => "");
+
+                    $vendor_param3= "More Information";
+                    //MIDADTTT002  x0XD53qvbByTMyQyU30zdkp0pI0=
+
+
+                    $param2=array("patientUniqueIdentifier" => $_SESSION['pid']);
+
+					//Start Date
+
+                                    $param2_st['year']=$patientretrieve_data_fetch['stdate_Y'];
+				                	$param2_st['month']=$patientretrieve_data_fetch['stdate_m'];
+                    				$param2_st['day']=$patientretrieve_data_fetch['stdate_d'];
+
+					//End Date
+
+                        			$param2_en['year']=$patientretrieve_data_fetch['endate_Y'];
+                        			$param2_en['month']=$patientretrieve_data_fetch['endate_m'];
+									$param2_en['day']=$patientretrieve_data_fetch['endate_d'];
+									
+								if($param2_en['day'] == $param2_st['day'] && $param2_en['month'] == $param2_st['month'] && $param2_en['year'] == $param2_st['year'])
+								{
+								     $param2_st['day'] = $param2_st['day'] -1;
+								    	
+								}
+
+
+
+
+					/***************************************Getting UserID Password****************************/
+					//Get Medication History
+
+					//$result_medical_history=$client->call('getDigitalRxMedicationHistory',array('SenderInformation' => $vendor_param1,'DigitalRxStatus' => $vendor_param2,'PatientInformation' => $param2,'greaterThanEqualto' => $param2_st,'lessThanEqualto' => $param2_en,'detail' => 'true'));
+
+					/******************************************************************************************/
+	
+	 
+					$result_medicalhistory = $result_medical_history;
+
+					$mainarray = $result_medicalhistory['return']['item'];
+					
+			
+				
+					if($mainarray['activeFlag'] == 'false')
+					{
+					$mainarray = array();
+					}
+					if($mainarray['activeFlag'] == 'true')
+					{
+					$mainarray = $mainarray;
+					}
+				    //Pulling the Records For Prescription of particular patient in case the records are coming from webservices
+					if(!empty($mainarray))
+					{		
+						 					  
+                          //If records fetched are more than 0
+						  if($query_patient_row > 0)
+							  {
+									
+
+											  for($x = 0;$x<sizeof($mainarray);$x++)
+												{				  
+
+													 $drug_erx_array['drugId'][$x]  = $mainarray[$x]['drugId'] ;
+											
+													
+													if($mainarray[$x]['activeFlag'] == 'true')
+													 {	
+													   $drug_erx_array['activeFlag'][$x]  = '1';
+													}
+													else
+													{
+													   $drug_erx_array['activeFlag'][$x]  = '0';
+													}
+					
+													
+													$drug_erx_array['createdDate'][$x]  = $mainarray[$x]['createdDate'] ;
+
+													$drug_erx_array['sig'][$x]  = strtoupper($mainarray[$x]['sig']);
+													if($drug_erx_array['sig'][$x] == '')
+													 {	
+													   $drug_erx_array['sig'][$x] = 'none';
+													}
+													else
+													{
+													   $drug_erx_array['sig'][$x] = $drug_erx_array['sig'][$x];
+													}
+													$drug_erx_array['drugType'][$x]  = $mainarray[$x]['drugType'];
+													$drug_erx_array['drugName'][$x]  = $mainarray[$x]['drugName'] ;
+													$drug_erx_array['strength'][$x]  = $mainarray[$x]['strength'];
+													$drug_erx_array['strengthUnit'][$x]  = $mainarray[$x]['strengthUnit'] ;
+													$drug_erx_array['route'][$x]  = $mainarray[$x]['route'];
+													$drug_erx_array['dosageForm'][$x]  = $mainarray[$x]['dosageForm'];
+													$drug_erx_array['form'][$x]= ucfirst(ereg_replace("[^A-Za-z]", "",$mainarray[$x]['sig']));							
+													$drug_erx_array['quantity'][$x]  = $mainarray[$x]['quantity'] ;
+													$drug_erx_array['instructions'][$x]  = $mainarray[$x]['instructions'];
+											  
+													$date_c[$x] = date_create($drug_erx_array['createdDate'][$x]);  
+																			  
+								  $query_drugid_date = "Select * from prescriptions where patient_id='".$_SESSION['pid']."' and drug_id ='".$drug_erx_array['drugId'][$x]."' and  date(date_added)='".date_format($date_c[$x],'Y-m-d')."' and drug !=''";
+
+													
+						                              $res_drugid_date     = sqlStatement($query_drugid_date);         
+                                                      $count_drugid_date = sqlNumRows($res_drugid_date);
+                                                         
+														   
+                                                      if($count_drugid_date > 0)  //If records are present in Database
+											           {
+						  
+															$sql_erx_arr[$x] ="UPDATE prescriptions set patient_id='".$_SESSION['pid']."',date_added='".$drug_erx_array['createdDate'][$x]."',date_modified='".$drug_erx_array['createdDate'][$x]."',provider_id='".$_SESSION['authUserID']."',start_date='".$drug_erx_array['createdDate'][$x]."',drug='".$drug_erx_array['drugName'][$x]."',drug_id='".$drug_erx_array['drugId'][$x]."',form='".$drug_erx_array['form'][$x]."',dosage='".$drug_erx_array['dosage'][$x]."',quantity='".$drug_erx_array['quantity'][$x]."',size='".$drug_erx_array['strength'][$x]."',unit='".$drug_erx_array['strengthUnit'][$x]."',sig='".$drug_erx_array['sig'][$x]."',route='".$drug_erx_array['route'][$x]."',note='1',refills='1',active = '1',erx_active='".$drug_erx_array['activeFlag'][$x]."' where patient_id='".$_SESSION['pid']."' and  provider_id='".$_SESSION['authUserID']."' and date_added='".$drug_erx_array['createdDate'][$x]."' and drug_id='".$drug_erx_array['drugId'][$x]."'";
+
+															
+															   sqlStatement($sql_erx_arr[$x]);
+													   }
+													   else if($count_drugid_date == 0)  //If records are not present in Database
+											          {
+														  if($drug_erx_array['drugName'][$x]!='')
+														  {
+
+																$sql_erx_arr[$x] ="insert into  prescriptions(patient_id,date_added,date_modified,provider_id,start_date,drug,drug_id,form,sig,dosage,quantity,size,unit,route,note,refills,active,erx_active) values('".$_SESSION['pid']."','".$drug_erx_array['createdDate'][$x]."','".$drug_erx_array['createdDate'][$x]."','".$_SESSION['authUserID']."','".$drug_erx_array['createdDate'][$x]."','". $drug_erx_array['drugName'][$x]."','".$drug_erx_array['drugId'][$x]."','".$drug_erx_array['form'][$x]."','".$drug_erx_array['sig'][$x]."','".$drug_erx_array['dosage'][$x]."','".$drug_erx_array['quantity'][$x]."','".$drug_erx_array['strength'][$x]  ."','".$drug_erx_array['strengthUnit'][$x]."','".$drug_erx_array['route'][$x]."','1','1','1','".$drug_erx_array['activeFlag'][$x]."')" ;
+
+
+																sqlStatement($sql_erx_arr[$x]);
+														  }
+													  }
+
+										   }	
+									
+															  
+								  }
+								  else   
+									{
+									
+										for($x = 0;$x<sizeof($mainarray);$x++)
+										{		
+											if(sizeof($mainarray) == '22')
+											{
+											  $mainarray = array($mainarray);
+											}
+											else
+											{
+											 $mainarray = $mainarray;
+											}
+											
+															 $drug_erx_array['drugId'][$x]  = $mainarray[$x]['drugId'] ;
+															if($mainarray[$x]['activeFlag'] == 'true')
+															 {	
+															   $drug_erx_array['activeFlag'][$x]  = '1';
+															}
+															else
+															{
+															   $drug_erx_array['activeFlag'][$x]  = '0';
+															}
+							
+															
+															$drug_erx_array['createdDate'][$x]  = $mainarray[$x]['createdDate'] ;
+															$drug_erx_array['sig'][$x]  = $mainarray[$x]['sig'] ;
+															$drug_erx_array['drugType'][$x]  = $mainarray[$x]['drugType'];
+															$drug_erx_array['drugName'][$x]  = $mainarray[$x]['drugName'] ;
+															$drug_erx_array['strength'][$x]  = $mainarray[$x]['strength'];
+															$drug_erx_array['strengthUnit'][$x]  = $mainarray[$x]['strengthUnit'] ;
+															$drug_erx_array['route'][$x]  = $mainarray[$x]['route'];
+															$drug_erx_array['dosageForm'][$x]  = ucfirst($mainarray[$x]['dosageForm']);
+															$drug_erx_array['form'][$x]= ereg_replace("[^A-Za-z]", "",$mainarray[$x]['sig']);							
+															$drug_erx_array['quantity'][$x]  = $mainarray[$x]['quantity'] ;
+															$drug_erx_array['instructions'][$x]  = $mainarray[$x]['instructions'];
+
+
+
+                                                             if($drug_erx_array['drugName'][$x]!='')
+											              {
+												          	  //If records are not present in Database
+																$sql_erx_arr[$x] ="insert into  prescriptions(patient_id,date_added,date_modified,provider_id,start_date,drug,drug_id,form,dosage,quantity,sig,size,unit,route,note,refills,active,erx_active) values('".$_SESSION['pid']."','".$drug_erx_array['createdDate'][$x]."','".$drug_erx_array['createdDate'][$x]."','".$_SESSION['authUserID']."','".$drug_erx_array['createdDate'][$x]."','". $drug_erx_array['drugName'][$x]."','".$drug_erx_array['drugId'][$x]."','".$drug_erx_array['form'][$x]."','".$drug_erx_array['dosage'][$x]."','".$drug_erx_array['quantity'][$x]."','".$drug_erx_array['sig'][$x]."','".$drug_erx_array['strength'][$x]  ."','".$drug_erx_array['strengthUnit'][$x]."','".$drug_erx_array['route'][$x]."','1','1','1','".$drug_erx_array['activeFlag'][$x]."')" ;
+							                                
+
+														     sqlStatement($sql_erx_arr[$x]);
+														  }
+								        		}		   
+		
+									}	
+                     }						  
+					
+		
+					 $p = new Prescription();
+					$sql = "SELECT id FROM  " . $p->_table . " WHERE patient_id = " .
+					mysql_real_escape_string($patient_id) ." ORDER BY " . mysql_real_escape_string($order_by);
+					$results = sqlQ($sql);
+					while ($row = mysql_fetch_array($results) ) 
+					{
+					$prescriptions[] = new Prescription($row['id']);
+					}
+					return $prescriptions;
+				
+
+                   
+                   
+	}
     
     function get_dispensation_count() {
         if (empty($this->id)) return 0;

@@ -524,6 +524,13 @@ $GLOBALS_METADATA = array(
       '0',                              // default = false
       xl('This will force the Billing Widget in the Patient Summary screen to always be open.')
     ),
+    // Set this value to 1 for enable java script and 0 to disabled java script for eprescription
+    'JAVA_SCRIPT_STATUS' =>array(
+      xl('Java Script Status'),
+      'bool',
+      '0',
+       xl('Enables java script for eprescription')
+    ),
 
     'activate_ccr_ccd_report' => array(
       xl('Activate CCR/CCD Reporting'),

@@ -2,6 +2,7 @@
 include_once ('../../globals.php'); 
 include_once ('../../../library/sql.inc'); 
 include_once ('../../../library/classes/Prescription.class.php');
+include_once("../../../interface/forms/CAMOS/content_parser.php");
 include_once("../../../library/formdata.inc.php");
 //practice data
 $physician_name = ''; 
@@ -61,7 +62,7 @@ if ($_POST['update']) { // OPTION update practice inf
     "zip = '" . formData('practice_zip') . "', " .  
     "phone = '" . formData('practice_phone') . "', " .  
     "fax = '" . formData('practice_fax') . "', " .  
-    "federaldrugid = '" . formData('practice_dea') . "' " .  
+    "dea = '" . formData('practice_dea') . "' " .
     "where id =" . $_SESSION['authUserID'];
   sqlInsert($query);
 }
@@ -78,42 +79,46 @@ if ($result = mysql_fetch_array($query, MYSQL_ASSOC)) {
   $practice_zip  = $result['zip'];
   $practice_phone = $result['phone'];
   $practice_fax = $result['fax'];
-  $practice_dea = $result['federaldrugid'];
+  $practice_dea = $result['dea'];
 }
-if ($_POST['print_pdf'] || $_POST['print_html']) { 
+if ($_REQUEST['print']  )
+{ 
   $camos_content = array();
-  foreach ($_POST as $key => $val) {
+  foreach ($_REQUEST as $key => $val) {
     if (substr($key,0,3) == 'ch_') {
       $query = sqlStatement("select content from form_CAMOS where id =" . 
         substr($key,3));
       if ($result = mysql_fetch_array($query, MYSQL_ASSOC)) {
-  	if ($_POST['print_html']) { //do this change to formatting only for html output
-        	$content = preg_replace('|\n|','<br/>', $result['content']);
-	        $content = preg_replace('|<br/><br/>|','<br/>', $content);
-	} else {
-		$content = $result['content'];
-	}
-        array_push($camos_content,$content); 
-      }
+  	if (!$_GET['letterhead']) { //do this change to formatting only for web output (rx output)
+						$content = preg_replace('|\n+|','<br/>', $result['content']);
+						$content = preg_replace('|<br/>\s*<br/>|ms','<br/>', $content);
+						}
+						else 
+						{
+							$content = $result['content'];
+						}
+					 array_push($camos_content,$content); 
+				  }
+               }
+    /*======================Some changes done for prescription details addon=========*/
+	  if (substr($key,0,5) == 'chrx_') 
+	  {
+    
+			$rx = new Prescription(substr($key,5));
+			//$content = $rx->drug.' '.$rx->form.' '.$rx->dosage;
+		   $content = '' . $rx->drug . ' ' . $rx->size . '' . $rx->unit_array[$rx->unit] . '<br/>'     . $rx->quantity. ' '  . $rx->form_array[$rx->form]. '<br/>'
+		   . $rx->get_sig(). '<br/>'
+		  . $rx->dosage . ' '
+		  . $rx->form_array[$rx->form]. ' '
+		  . $rx->route_array[$rx->route] . ' '
+		  . $rx->interval_array[$rx->interval] . '<br/>'
+		  . 'refills:' . $rx->refills . '';
+	//      . $rx->substitute_array[$rx->substitute]. ''
+	//      . $rx->per_refill . '';
+		  array_push($camos_content,$content);
+		  //print_R($rx); 
     }
-    if (substr($key,0,5) == 'chrx_') {
-      $rx = new Prescription(substr($key,5));
-      //$content = $rx->drug.' '.$rx->form.' '.$rx->dosage;
-      $content = '' 
-      . $rx->drug . ' '
-      . $rx->size . ''
-      . $rx->unit_array[$rx->unit] . '<br/>' 
-      . $rx->quantity. ' '
-      . $rx->form_array[$rx->form]. '<br/>'
-      . $rx->dosage . ' '
-      . $rx->form_array[$rx->form]. ' '
-      . $rx->route_array[$rx->route] . ' '
-      . $rx->interval_array[$rx->interval] . '<br/>'
-      . 'refills:' . $rx->refills . '';
-//      . $rx->substitute_array[$rx->substitute]. ''
-//      . $rx->per_refill . '';
-      array_push($camos_content,$content); 
-    }
+   /*======================End addon==================================================*/ 
   }
   if (!$_GET['letterhead']) { //OPTION print a prescription with css formatting
 ?>
@@ -121,7 +126,7 @@ if ($_POST['print_pdf'] || $_POST['print_html']) {
 <head>
 <?php html_header_show();?>
 <title>
-<?php xl('CAMOS','e'); ?>
+<?php xl('Four Pane Prescription Printer','e'); ?>
 </title>
 <link rel="stylesheet" type="text/css" href="./rx.css" />
 </head>
@@ -131,23 +136,25 @@ if ($_POST['print_pdf'] || $_POST['print_html']) {
 <?php
 if ($camos_content[0]) { //decide if we are printing this rx
 ?>
-<?php
-function topHeaderRx() {
-    global $physician_name,$practice_address,$practice_city,$practice_state,$practice_zip,$practice_phone,$practice_fax,$practice_dea;
+<div id='rx1'  class='rx'  >
+  <div class='topheader'>
+  <?
     print $physician_name . "<br/>\n";
     print $practice_address . "<br/>\n";
     print $practice_city . ", ";
     print $practice_state . " ";
     print $practice_zip . "<br/>\n";
-    print xl('Voice') . ': ' . $practice_phone . ' / ' . xl('Fax') . ': ' . $practice_fax . "<br/>\n";
-    print xl('DEA') . ': ' . $practice_dea;   
-}
-function bottomHeaderRx() {
-    global $patient_name,$patient_address,$patient_city,$patient_state,$patient_zip,$patient_phone,$patient_dob;
+    print 'voice: ' . $practice_phone . ' / fax: ' . $practice_fax . "<br/>\n";
+    print 'DEA: ' . $practice_dea;
+  ?>
+    </div>
+    <hr/>
+  <div class='bottomheader'>
+  <?
     print "<span class='mytagname'> " . xl('Name') . ":</span>\n";
     print "<span class='mydata'> $patient_name </span>\n";
-    print "<span class='mytagname'> " . xl('Address') . ": </span>\n";
-    print "<span class='mydata'> $patient_address, $patient_city, " .
+    print "<span class='mytagname'>" . xl('Address') . ":</span>\n";
+    print "<span class='mydata'> $patient_address, $patient_city, " . 
       "$patient_state $patient_zip </span><br/>\n";
     print "<span class='mytagname'>" . xl('Phone') . ":</span>\n";
     print "<span class='mydata'>$patient_phone</span>\n";
@@ -156,23 +163,12 @@ function bottomHeaderRx() {
     print "<span class='mytagname'>" . xl('Date') . ":</span>\n";
     print "<span class='mydata'>" . date("F d, Y") . "</span><br/><br/>\n";
     print "<div class='symbol'>" . xl('Rx') . "</div><br/>\n";
-}
-?>
-<div id='rx1'  class='rx' >
-  <div class='topheader'>
-  <?php
-    topHeaderRx();
-  ?>
-    </div>
-    <hr/>
-  <div class='bottomheader'>
-  <?php
-    bottomHeaderRx();
   ?>
   </div>
   <div class='content'>
     <?php
-        print $camos_content[0]; 
+//        print $camos_content[0]; 
+	print pre_view_process($_SESSION['encounter'],$_SESSION['pid'],$camos_content[0]);
     ?>
   </div>
   <?php print $sigline[$_GET[sigline]] ?>
@@ -190,21 +186,37 @@ if ($camos_content[1]) { //decide if we are printing this rx
 <div id='rx2'  class='rx' >
   <div class='topheader'>
   <?php
-
-    topHeaderRx();
+    print $physician_name . "<br/>\n";
+    print $practice_address . "<br/>\n";
+    print $practice_city . ", ";
+    print $practice_state . " ";
+    print $practice_zip . "<br/>\n";
+    //print $practice_phone . "<br/>\n";
+    print 'voice: ' . $practice_phone . ' / fax: ' . $practice_fax  . "<br/>\n";
+    print 'DEA: ' . $practice_dea;
   ?>
   </div>
     <hr/>
   <div class='bottomheader'>
   <?php
-
-    bottomHeaderRx();  
+    print "<span class='mytagname'> Name:</span>\n";
+    print "<span class='mydata'> $patient_name </span>\n";
+    print "<span class='mytagname'> Address: </span>\n";
+    print "<span class='mydata'> $patient_address, $patient_city, " . 
+      "$patient_state $patient_zip </span><br/>\n";
+    print "<span class='mytagname'>Phone:</span>\n";
+    print "<span class='mydata'>$patient_phone</span>\n";
+    print "<span class='mytagname'>DOB:</span>\n";
+    print "<span class='mydata'> $patient_dob </span>\n";
+    print "<span class='mytagname'>Date:</span>\n";
+    print "<span class='mydata'>" . date("F d, Y") . "</span><br/><br/>\n";
+    print "<div class='symbol'>Rx</div><br/>\n";
   ?>
   </div>
   <div class='content'>
     <?php
-
-        print $camos_content[1]; 
+//        print $camos_content[1]; 
+	print pre_view_process($_SESSION['encounter'],$_SESSION['pid'],$camos_content[1]);
     ?>
   </div>
   <?php print $sigline[$_GET[sigline]] ?>
@@ -223,21 +235,37 @@ if ($camos_content[2]) { //decide if we are printing this rx
 <div id='rx3'  class='rx' >
   <div class='topheader'>
   <?php
-
-    topHeaderRx();  
+    print $physician_name . "<br/>\n";
+    print $practice_address . "<br/>\n";
+    print $practice_city . ", ";
+    print $practice_state . " ";
+    print $practice_zip . "<br/>\n";
+    //print $practice_phone . "<br/>\n";
+    print 'voice: ' . $practice_phone . ' / fax: ' . $practice_fax . "<br/>\n";
+    print 'DEA: ' . $practice_dea;
   ?>
   </div>
     <hr/>
   <div class='bottomheader'>
   <?php
-
-    bottomHeaderRx();
+    print "<span class='mytagname'> Name:</span>\n";
+    print "<span class='mydata'> $patient_name </span>\n";
+    print "<span class='mytagname'> Address: </span>\n";
+    print "<span class='mydata'> $patient_address, $patient_city, " . 
+      "$patient_state $patient_zip </span><br/>\n";
+    print "<span class='mytagname'>Phone:</span>\n";
+    print "<span class='mydata'>$patient_phone</span>\n";
+    print "<span class='mytagname'>DOB:</span>\n";
+    print "<span class='mydata'> $patient_dob </span>\n";
+    print "<span class='mytagname'>Date:</span>\n";
+    print "<span class='mydata'>" . date("F d, Y") . "</span><br/><br/>\n";
+    print "<div class='symbol'>Rx</div><br/>\n";
   ?>
   </div>
   <div class='content'>
     <?php
-
-        print $camos_content[2]; 
+//        print $camos_content[2]; 
+	print pre_view_process($_SESSION['encounter'],$_SESSION['pid'],$camos_content[2]);
     ?>
   </div>
   <?php print $sigline[$_GET[sigline]] ?>
@@ -256,21 +284,37 @@ if ($camos_content[3]) { //decide if we are printing this rx
 <div id='rx4'  class='rx' >
   <div class='topheader'>
   <?php
-
-    topHeaderRx();
+    print $physician_name . "<br/>\n";
+    print $practice_address . "<br/>\n";
+    print $practice_city . ", ";
+    print $practice_state . " ";
+    print $practice_zip . "<br/>\n";
+    //print $practice_phone . "<br/>\n";
+    print 'voice: ' . $practice_phone . ' / fax: ' . $practice_fax . "<br/>\n";
+    print 'DEA: ' . $practice_dea;
   ?>
   </div>
     <hr/>
   <div class='bottomheader'>
   <?php
-
-    bottomHeaderRx();
+    print "<span class='mytagname'> Name:</span>\n";
+    print "<span class='mydata'> $patient_name </span>\n";
+    print "<span class='mytagname'> Address: </span>\n";
+    print "<span class='mydata'> $patient_address, $patient_city, " . 
+      "$patient_state $patient_zip </span><br/>\n";
+    print "<span class='mytagname'>Phone:</span>\n";
+    print "<span class='mydata'>$patient_phone</span>\n";
+    print "<span class='mytagname'>DOB:</span>\n";
+    print "<span class='mydata'> $patient_dob </span>\n";
+    print "<span class='mytagname'>Date:</span>\n";
+    print "<span class='mydata'>" . date("F d, Y") . "</span><br/><br/>\n";
+    print "<div class='symbol'>Rx</div><br/>\n";
   ?>
   </div>
   <div class='content'>
     <?php
-
-        print $camos_content[3]; 
+//        print $camos_content[3]; 
+	print pre_view_process($_SESSION['encounter'],$_SESSION['pid'],$camos_content[3]);
     ?>
   </div>
   <?php print $sigline[$_GET[sigline]] ?>
@@ -286,80 +330,8 @@ else {
 </html>
 <?php
   }//end of printing to rx not letterhead
-  elseif ($_GET['letterhead']) { //OPTION print to letterhead
-    $content = preg_replace('/PATIENTNAME/i',$patient_name,$camos_content[0]);
-    if($_POST['print_html']) { //print letterhead to html
-?>
-        <html>
-        <head>
-        <style>
-        body {
-	 font-family: sans-serif;
-	 font-weight: normal;
-	 font-size: 12pt;
-	 background: white;
-	 color: black;
-	}	
-	.paddingdiv {
-	 width: 524pt;
-	 padding: 0pt;
-	 margin-top: 50pt;
-	}
-	.navigate {
-	 margin-top: 2.5em;
-	}	
-	@media print {
-	 .navigate {
-	  display: none;
-	 }	
-	}	
-	</style>	
-	<title><?php xl('Letter','e'); ?></title>
-	</head>
-        <body>
-	<div class='paddingdiv'>
-<?php
-	//bold
-        print "<div style='font-weight:bold;'>";
-        print $physician_name . "<br/>\n";
-        print $practice_address . "<br/>\n";
-        print $practice_city.', '.$practice_state.' '.$practice_zip . "<br/>\n";
-        print $practice_phone . ' (' . xl('Voice') . ')' . "<br/>\n";
-        print $practice_phone . ' ('. xl('Fax') . ')' . "<br/>\n";
-        print "<br/>\n";
-        print date("l, F jS, Y") . "<br/>\n";
-        print "<br/>\n";
-	print "</div>";
-        //not bold
-	print "<div style='font-size:90%;'>";
-        print $content;
-	print "</div>";
-        //bold
-	print "<div style='font-weight:bold;'>";
-        print "<br/>\n";
-        print "<br/>\n";
-        if ($_GET['signer'] == 'patient') {
-                print "__________________________________________________________________________________" . "<br/>\n";
-                print xl("Print name, sign and date.") . "<br/>\n";
-        }
-        elseif ($_GET['signer'] == 'doctor') {
-                print xl('Sincerely,') . "<br/>\n";
-                print "<br/>\n";
-                print "<br/>\n";
-                print $physician_name . "<br/>\n";
-        }
-	print "</div>";
-?>
-        <script language='JavaScript'>
-        window.print();
-        </script>
-	</div>
-        </body>
-        </html>
-<?php
-        exit;
-    }
-    else { //print letterhead to pdf
+  elseif ($_GET['letterhead']) { //OPTION print to pdf letterhead
+	$content = preg_replace('/PATIENTNAME/i',$patient_name,$camos_content[0]);
 	include_once('../../../library/classes/class.ezpdf.php');
   	$pdf =& new Cezpdf();
 	$pdf->selectFont('../../../library/fonts/Times-Bold');
@@ -373,7 +345,8 @@ else {
 	$pdf->ezText(date("l, F jS, Y"),12);
 	$pdf->ezText('',12);
 	$pdf->selectFont('../../../library/fonts/Helvetica');
-	$pdf->ezText($content,10);
+//	$pdf->ezText($content,10);
+        $pdf->ezText(pre_view_process($_SESSION['encounter'],$_SESSION['pid'],$content),10);
 	$pdf->selectFont('../../../library/fonts/Times-Bold');
 	$pdf->ezText('',12);
 	$pdf->ezText('',12);
@@ -388,16 +361,15 @@ else {
 		$pdf->ezText($physician_name,12);
 	}
 	$pdf->ezStream();
-    } //end of html vs pdf print
   }
 } //end of if print
   else { //OPTION selection of what to print
 ?>
 <html>
 <head>
-<?php html_header_show();?>
+<? html_header_show();?>
 <title>
-<?php xl('CAMOS','e'); ?>
+<?php xl('Four Pane Prescription Printer','e'); ?>
 </title>
 <script type="text/javascript">
 //below init function just to demonstrate how to do it.
@@ -457,33 +429,24 @@ function cycle_engine(cb,seed) {
 </head>
 <h1><?php xl('Select CAMOS Entries for Printing','e'); ?></h1>
 <form method=POST name='pick_items' target=_new>
-<input type=button name=cyclerx value='<?php xl('Cycle','e'); ?>' onClick='cycle()'><br/>
-<input type='button' value='<?php xl('Select All','e'); ?>' onClick='checkall()'>
-<input type='button' value='<?php xl('Unselect All','e'); ?>' onClick='uncheckall()'>
+<input type=button name=cyclerx value='cycle' onClick='cycle()'><br/>
+<input type='button' value='check all' onClick='checkall()'>
+<input type='button' value='uncheck all' onClick='uncheckall()'>
+<input type=submit name=print id='print' value=print>
+<?
+$sqlStat =  "select x.id as id, x.category, x.subcategory, x.item from " . 
+ "form_CAMOS  as x join forms as y on (x.id = y.form_id) " . 
+ "where y.pid = " . $_SESSION['pid'] ;
 
-<?php if ($_GET['letterhead']) { ?>
-<input type=submit name='print_pdf' value='<?php xl('Print (PDF)','e'); ?>'>
-<?php } ?>
-	
-<input type=submit name='print_html' value='<?php xl('Print (HTML)','e'); ?>'>
-<?php
+if(!empty($_SESSION['encounter']))
+ $sqlStat .= " and y.encounter = " .  $_SESSION['encounter'] ;
+    
+ $sqlStat .= " and y.form_name like 'CAMOS%'" .
+ " and x.activity = 1";
 
-//check if an encounter is set
-if ($_SESSION['encounter'] == NULL) { 
-  $query = sqlStatement("select x.id as id, x.category, x.subcategory, x.item from " . 
-  "form_CAMOS as x join forms as y on (x.id = y.form_id) " . 
-  "where y.pid = " . $_SESSION['pid'] . 
-  " and y.form_name like 'CAMOS%'" . 
-  " and x.activity = 1"); 
-} 
-else { 
-  $query = sqlStatement("select x.id as id, x.category, x.subcategory, x.item from " . 
-  "form_CAMOS  as x join forms as y on (x.id = y.form_id) " . 
-  "where y.encounter = " .  $_SESSION['encounter'] . 
-  " and y.pid = " . $_SESSION['pid'] .  
-  " and y.form_name like 'CAMOS%'" .
-  " and x.activity = 1");
-}
+//echo "sql = ".$sqlStat; 
+ 
+$query = sqlStatement($sqlStat);
 $results = array();
 echo "<div id='checkboxes'>\n";
 $count = 0;
@@ -510,54 +473,49 @@ foreach($rxarray as $val) {
     $val->drug . ':' . $val->start_date . "<br/>\n";
 }
 ?>
-	
-<?php if ($_GET['letterhead']) { ?>
-<input type=submit name='print_pdf' value='<?php xl('Print (PDF)','e'); ?>'>
-<?php } ?>
-	
-<input type=submit name='print_html' value='<?php xl('Print (HTML)','e'); ?>'>
+<input type=submit name=print value='<?php xl('Print ','e'); ?>'>
 </form>
 <h1><?php xl('Update User Information','e'); ?></h1>
 <form method=POST name='pick_items'>
 <table>
 <tr>
-  <td> <?php xl('First Name','e'); ?>: </td> 
+  <td><?php xl('First Name','e'); ?>: </td> 
   <td> <input type=text name=practice_fname value ='<?php echo htmlspecialchars($practice_fname,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Last Name','e'); ?>: </td> 
+  <td><?php xl('Last Name','e'); ?>: </td> 
   <td> <input type=text name=practice_lname value ='<?php echo htmlspecialchars($practice_lname,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Title','e'); ?>: </td> 
+  <td><?php xl('Title','e'); ?>: </td> 
   <td> <input type=text name=practice_title value ='<?php echo htmlspecialchars($practice_title,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Street Address','e'); ?>: </td> 
+  <td><?php xl('Street Address','e'); ?>: </td> 
   <td> <input type=text name=practice_address value ='<?php echo htmlspecialchars($practice_address,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('City','e'); ?>: </td> 
+  <td><?php xl('City','e'); ?>: </td> 
   <td> <input type=text name=practice_city value ='<?php echo htmlspecialchars($practice_city,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('State','e'); ?>: </td> 
+  <td><?php xl('State','e'); ?>: </td> 
   <td> <input type=text name=practice_state value ='<?php echo htmlspecialchars($practice_state,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Zip','e'); ?>: </td> 
+  <td><?php xl('Zip','e'); ?>: </td> 
   <td> <input type=text name=practice_zip value ='<?php echo htmlspecialchars($practice_zip,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Phone','e'); ?>: </td> 
+  <td><?php xl('Phone','e'); ?>: </td> 
   <td> <input type=text name=practice_phone value ='<?php echo htmlspecialchars($practice_phone,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('Fax','e'); ?>: </td> 
+  <td><?php xl(' Fax','e'); ?>: </td> 
   <td> <input type=text name=practice_fax value ='<?php echo htmlspecialchars($practice_fax,ENT_QUOTES); ?>'> </td>
 </tr>
 <tr>
-  <td> <?php xl('DEA','e'); ?>: </td> 
+  <td><?php xl('DEA','e'); ?>: </td> 
   <td> <input type=text name=practice_dea value ='<?php echo htmlspecialchars($practice_dea,ENT_QUOTES); ?>'> </td>
 </tr>
 </table>

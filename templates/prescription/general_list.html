@@ -12,29 +12,85 @@
 </style>
 
 <script language="javascript">
+function checkvalue(chk)
+{
+ var len=chk.length;
+ count = 0;
 
+for (pr = 0; pr < chk.length; pr++){
+	if (chk[pr].checked == true) {
+		count++;
+		if(count > '4')
+		{
+		  alert("Please select only 4 checkboxes");		  
+		  return false;
+		 }
+	}
+}  
+}
 function changeLinkHref(id,addValue,value) {
-    var myRegExp = new RegExp(":" + value + ":");
-    if (addValue){ //add value to href
-        document.getElementById(id).href += ':' + value + ':';
+	if(id == 'four_panel_rx')
+	{
+     
+				var myRegExp = new RegExp('chrx_'+value + "=on&");
+				if (addValue){ //add value to href
+                        var stringss =  'chrx_'+value + '=on&';
+					 document.getElementById(id).href += stringss;
+
+				}
+				else { //remove value from href
+					document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
+					
+					  }
+		  
+
     }
-    else { //remove value from href
-       document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
+	else
+	{
+			var myRegExp = new RegExp(":" + value + ":");
+
+			if (addValue){ //add value to href
+				 document.getElementById(id).href += ':' + value + ':';
+			}
+			else { //remove value from href
+				document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
+                  }
     }
 }
 
 function changeLinkHref_All(id,addValue,value) {
-    var myRegExp = new RegExp(":" + value + ":");
-    if (addValue){ //add value to href
-        document.getElementById(id).href += ':' + value + ':';
-    }
-    else { //remove value from href
-        document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
-		document.getElementById(id).target = '';
-    }
+	 if(id == 'four_panel_rx')
+		{
+	        
+
+					var myRegExp = new RegExp('chrx_'+value + "=on&");
+					if (addValue){ //add value to href
+	                        var stringss =  'chrx_'+value + '=on&';
+						 document.getElementById(id).href += stringss;
+
+					}
+					else { //remove value from href
+						document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
+						
+						  }
+			  
+
+	    }
+		else
+		{
+				var myRegExp = new RegExp(":" + value + ":");
+
+				if (addValue){ //add value to href
+					 document.getElementById(id).href += ':' + value + ':';
+				}
+				else { //remove value from href
+					document.getElementById(id).href = document.getElementById(id).href.replace(myRegExp,'');
+	                  }
+	    }
+
 }
 
-function Check(chk) {
+function Check(chk,flagchk) {
     var len=chk.length;
     if (len==undefined) {chk.checked=true;}
     else {
@@ -45,12 +101,15 @@ function Check(chk) {
                     changeLinkHref_All('multiprint',true,chk[pr].value);
                     changeLinkHref_All('multiprintcss',true, chk[pr].value);
                     changeLinkHref_All('multiprintToFax',true, chk[pr].value);
+                    if(flagchk==true) {
+                        changeLinkHref_All('four_panel_rx',true, chk[pr].value);
+                    }
                 }
         }
     }
 }
 
-function Uncheck(chk) {
+function Uncheck(chk,flagchk) {
     var len=chk.length;
     if (len==undefined) {chk.checked=false;}
     else {
@@ -59,6 +118,9 @@ function Uncheck(chk) {
             changeLinkHref_All('multiprint',false,chk[pr].value);
             changeLinkHref_All('multiprintcss',false, chk[pr].value);
             changeLinkHref_All('multiprintToFax',false, chk[pr].value);
+            if(flagchk==true) {
+                changeLinkHref_All('four_panel_rx',true, chk[pr].value);
+             }
         }
     }
 }
@@ -123,7 +185,7 @@ function Checking(chk) {
                         </td>
                         {if $CAMOS_FORM == true}
                         <td>
-                            <a id="four_panel_rx" href="{$WEBROOT}/interface/forms/CAMOS/rx_print.php?sigline=plain" onclick="top.restoreSession()" class="css_button"><span>{xl t='Print Four Panel'}</span></a>
+                            <a id="four_panel_rx" href="{$WEBROOT}/interface/forms/CAMOS/rx_print.php?sigline=plain&id={$printm}&print=print&{$printm}" onClick="javascript:return checkvalue(document.presc.check_list)" class="css_button"><span>{xl t='Print Four Panel'}</span></a>
                         </td>
                         {/if}
                     </tr>
@@ -133,8 +195,14 @@ function Checking(chk) {
                 <table>
                 <tr>
                     <td>
-                        <a href="#" class="small" onClick="Check(document.presc.check_list);"><span>{xl t='Check All'}</span></a> |
-                        <a href="#" class="small" onClick="Uncheck(document.presc.check_list);"><span>{xl t='Clear All'}</span></a>
+                    {if $CAMOS_FORM == true}
+                        <a href="#" class="small" onClick="Check(document.presc.check_list,true);"><span>{xl t='Check All'}</span></a> |
+                        <a href="#" class="small" onClick="Uncheck(document.presc.check_list,true);"><span>{xl t='Clear All'}</span></a>
+                        
+                     {else} 
+                        <a href="#" class="small" onClick="Check(document.presc.check_list,false);"><span>{xl t='Check All'}</span></a> |
+                        <a href="#" class="small" onClick="Uncheck(document.presc.check_list,false);"><span>{xl t='Clear All'}</span></a>
+                     {/if}   
                     </td>
                 </tr>
                 </table>
@@ -156,9 +224,43 @@ function Checking(chk) {
     </tr>
 
 	{foreach from=$prescriptions item=prescription}
-  <tr id="{$prescription->id}" class="showborder onescript {if $prescription->active <= 0} inactive{/if}" title="{xl t='Click to view/edit'}">
+	 {if $countPracticeID gt '0'}
+  <tr id="{$prescription->id}" class="showborder onescript " >
 	 <td align="center">
-      <input id="check_list" type="checkbox" value="{$prescription->id}" onclick="changeLinkHref('multiprint',this.checked, this.value);changeLinkHref('multiprintcss',this.checked, this.value);changeLinkHref('multiprintToFax',this.checked, this.value)" title="{xl t='Select for printing'}">
+	 {if $CAMOS_FORM == true}
+      <input id="check_list" type="checkbox" value="{$prescription->id}" onclick="changeLinkHref('multiprint',this.checked, this.value);changeLinkHref('multiprintcss',this.checked, this.value);changeLinkHref('multiprintToFax',this.checked, this.value);changeLinkHref('four_panel_rx',this.checked, this.value);" title="{xl t='Select for printing'}">
+      {else}
+      <input id="check_list" type="checkbox" value="{$prescription->id}" onclick="changeLinkHref('multiprint',this.checked, this.value);changeLinkHref('multiprintcss',this.checked, this.value);changeLinkHref('multiprintToFax',this.checked, this.value);" title="{xl t='Select for printing'}">
+      {/if}
+    </td>
+    <td  id="{$prescription->id}">
+        {if $prescription->active > 0}<b>{/if}{$prescription->drug}{if $prescription->active > 0}</b>{/if}&nbsp;
+    </td>
+    <td id="{$prescription->id}">
+      {$prescription->date_added}<br />
+      {$prescription->date_modified}&nbsp;
+    </td>
+    <td id="{$prescription->id}">
+      {$prescription->get_dosage_display()} &nbsp;
+    </td>
+    <td id="{$prescription->id}">
+      {$prescription->quantity} &nbsp;
+    </td>
+    <td id="{$prescription->id}">
+       {$prescription->get_size()} {$prescription->get_unit_display()}&nbsp;
+    </td>
+    <td id="{$prescription->id}">
+      {$prescription->provider->get_name_display()}&nbsp;
+    </td>
+  </tr>
+  {else}
+   <tr id="{$prescription->id}" class="showborder onescript {if $prescription->active <= 0} inactive{/if}" title="{xl t='Click to view/edit'}">
+	 <td align="center">
+	 {if $CAMOS_FORM == true}
+      <input id="check_list" type="checkbox" value="{$prescription->id}" onclick="changeLinkHref('multiprint',this.checked, this.value);changeLinkHref('multiprintcss',this.checked, this.value);changeLinkHref('multiprintToFax',this.checked, this.value);changeLinkHref('four_panel_rx',this.checked, this.value);" title="{xl t='Select for printing'}">
+      {else}
+      <input id="check_list" type="checkbox" value="{$prescription->id}" onclick="changeLinkHref('multiprint',this.checked, this.value);changeLinkHref('multiprintcss',this.checked, this.value);changeLinkHref('multiprintToFax',this.checked, this.value);" title="{xl t='Select for printing'}">
+      {/if}
     </td>
     <td class="editscript"  id="{$prescription->id}">
         <a class='editscript css_button_small' id='{$prescription->id}' href="controller.php?prescription&edit&id={$prescription->id}" style="margin-top:-2px"><span>{xl t='Edit'}</span></a>
@@ -181,6 +283,7 @@ function Checking(chk) {
       {$prescription->provider->get_name_display()}&nbsp;
     </td>
   </tr>
+    {/if}
 	{/foreach}
 </table>
 

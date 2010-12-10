@@ -6,9 +6,68 @@
 {literal}
 		function my_process () {
 			// Pass the variable
+			
+			// Pass the variable
+var strengthvalue_send='';
+var drug_send='';
+var strengthunit_send='';
+var routedesc_send='';
+var dosageformcodedesc_send='';
+var drugid_send ="";
+      	var mixedval = document.lookup.drug.value;
+      	
+      	    var arrayval = mixedval.split("<=====>");
+		    var strengthvalue_send  = arrayval[0];	
+			var drug_send = arrayval[1];
+			var strengthunit_send  = arrayval[2];	
+			var routedesc_send = arrayval[3];
+			var dosageformcodedesc_send  = arrayval[4];	
+     		var drugid_send  = arrayval[5];	
+
+			if(strengthvalue_send == "")
+			{
+			  var strengthvalue_send = "none";
+			}
+			if(drug_send == "")
+			{
+			  var drug_send = "none";
+			}
+			if(strengthunit_send == "")
+			{
+			  var strengthunit_send = "none";
+			}
+			if(strengthvalue_send == "")
+			{
+			  var strengthvalue_send = "none";
+			}
+			if(routedesc_send == "")
+			{
+			  var routedesc_send = "none";
+			}
+			if(drugid_send == "")
+			{
+			  var drugid_send = "0";
+			}
+
+			
+			//alert(strengthvalue_send);
+			//alert(drug_send);
+			//alert(strengthunit_send);
+			//alert(routedesc_send);
+			//alert(dosageformcodedesc_send);
+			//opener.document.prescribe.drug.value = drug_send;
+			//opener.document.prescribe.size.value = stengthvalue_send;
+			
+			
+			
 {/literal}
-			parent.iframetopardiv(document.lookup.drug.value);
-			parent.opener.document.prescribe.drug.value = document.lookup.drug.value;
+			//parent.document.prescribe.drug.value = drug_send;
+            parent.document.prescribe.size.value = strengthvalue_send;
+			parent.document.prescribe.unit.value = strengthunit_send;
+			parent.document.prescribe.route.value = routedesc_send;
+			parent.document.prescribe.form.value = dosageformcodedesc_send;
+			parent.iframetopardiv(drug_send);
+
 			// Close the window
 			window.self.close();
 {literal}
@@ -48,7 +107,8 @@ textarea {
 
 	{if $drug_options}
         <div>
-        {html_options name="drug" values=$drug_values options=$drug_options}<br/>
+        {html_options name="drug" values=$concatvalue options=$concatvalue}
+        <br/>
         </div>
         <div>
             <a href="javascript:;" onClick="my_process(); return true;">Select</a> |

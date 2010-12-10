@@ -57,8 +57,92 @@ if ($_GET["privatemode"]=="user_admin") {
         $tqvar = formData('upin','G');
         sqlStatement("update users set upin='$tqvar' where id={$_GET["id"]}");
       }
-      if ($_GET["npi"]) {
-        $tqvar = formData('npi','G');
+      if ($_GET["phy_suffix"]) {
+  		  $tqvar = formData('phy_suffix','G');
+	      sqlStatement("update users set suffix='$tqvar' where id='".$_GET["id"]."'");
+	  }
+	
+	  if ($_GET["phy_licenseNo"]) {
+	    $tqvar = formData('phy_licenseNo','G');
+	    sqlStatement("update users set licenseNo='$tqvar' where id='".$_GET["id"]."'");
+	  }
+	
+	
+	   if ($_GET["phy_city"]) {
+	    $tqvar = formData('phy_city','G');
+	    sqlStatement("update users set city='$tqvar' where id='".$_GET["id"]."'");
+	  }
+	
+	    if ($_GET["phy_homephone"]) {
+	    $tqvar = formData('phy_homephone','G');
+	    sqlStatement("update users set phonecell='$tqvar' where id='".$_GET["id"]."'");
+	  }
+	  if ($_GET["phy_sex"])
+{
+
+   $tqvar = $_GET["phy_sex"];
+
+    if($tqvar == 'Male')
+	  {
+		  $sexvar = '1';
+	  }
+    if($tqvar == 'Female')
+	  {
+		  $sexvar = '0';
+	  }
+
+    sqlStatement("update users set sex='".$sexvar."' where id='".$_GET["id"]."'");
+  }  
+	   if ($_GET["phy_email"]) {
+	    $tqvar = formData('phy_email','G');
+	    sqlStatement("update users set email='$tqvar' where id='".$_GET["id"]."'");
+	  }
+	  if ($_GET["phy_email"]) {
+    $tqvar = formData('phy_email','G');
+    sqlStatement("update users set email='$tqvar' where id='".$_GET["id"]."'");
+  }
+  if ($_GET["phy_street"]) {
+    $tqvar = formData('phy_street','G');
+    sqlStatement("update users set street='$tqvar' where id='".$_GET["id"]."'");
+	 }
+	 if ($_GET["phy_street2"]) {
+    $tqvar = formData('phy_street2','G');
+    sqlStatement("update users set street2='$tqvar' where id='".$_GET["id"]."'");
+  }
+
+  if ($_GET["phy_state"]) {
+    $tqvar = formData('phy_state','G');
+    sqlStatement("update users set state='$tqvar' where id='".$_GET["id"]."'");
+  }
+  if ($_GET["phy_zip"]) {
+    $tqvar = formData('phy_zip','G');
+    sqlStatement("update users set zip='$tqvar' where id='".$_GET["id"]."'");
+  }
+
+  if ($_GET["phy_phone"]) {
+    $tqvar = formData('phy_phone','G');
+    sqlStatement("update users set phone='$tqvar' where id='".$_GET["id"]."'");
+  }
+  if ($_GET["phy_fax"]) {
+    $tqvar = formData('phy_fax','G');
+    sqlStatement("update users set fax='$tqvar' where id='".$_GET["id"]."'");
+  }
+    if ($_GET["phy_workphone1"]) {
+    $tqvar = formData('phy_workphone1','G');
+    sqlStatement("update users set phonew1='$tqvar' where id='".$_GET["id"]."'");
+  }
+  if ($_GET["phy_workphone2"]) {
+    $tqvar = formData('phy_workphone2','G');
+    sqlStatement("update users set phonew2='$tqvar' where id='".$_GET["id"]."'");
+  }
+
+    if ($_GET["deanumber"]) {
+    $tqvar = formData('deanumber','G');
+    sqlStatement("update users set dea='$tqvar' where id='".$_GET["id"]."'");
+  }
+	  
+      if ($_GET["phy_npi"]) {
+        $tqvar = formData('phy_npi','G');
         sqlStatement("update users set npi='$tqvar' where id={$_GET["id"]}");
       }
       if ($_GET["taxonomy"]) {
@@ -205,7 +289,17 @@ if (isset($_POST["mode"])) {
     }
 
     if ($doit == true) {
-      //if password expiration option is enabled,  calculate the expiration date of the password
+
+	if($_POST["phy_sex"] == 'Male')
+	  {
+			$sex  = '1';
+	  }
+	if($_POST["phy_sex"] == 'Female')
+	  {
+  			$sex  = '0';
+	  }
+    	
+    //if password expiration option is enabled,  calculate the expiration date of the password
       if($GLOBALS['password_expiration_days'] != 0){
       $exp_days = $GLOBALS['password_expiration_days'];
       $exp_date = date('Y-m-d', strtotime("+$exp_days days"));
@@ -216,21 +310,37 @@ if (isset($_POST["mode"])) {
         "', fname = '"         . trim(formData('fname'        )) .
         "', mname = '"         . trim(formData('mname'        )) .
         "', lname = '"         . trim(formData('lname'        )) .
+     	"', suffix = '"         .trim(formData('phy_suffix')).
         "', federaltaxid = '"  . trim(formData('federaltaxid' )) .
         "', authorized = '"    . trim(formData('authorized'   )) .
         "', info = '"          . trim(formData('info'         )) .
         "', federaldrugid = '" . trim(formData('federaldrugid')) .
         "', upin = '"          . trim(formData('upin'         )) .
-        "', npi  = '"          . trim(formData('npi'          )).
+        "', npi  = '"          . trim(formData('phy_npi'          )).
         "', taxonomy = '"      . trim(formData('taxonomy'     )) .
         "', facility_id = '"   . trim(formData('facility_id'  )) .
         "', specialty = '"     . trim(formData('specialty'    )) .
         "', see_auth = '"      . trim(formData('see_auth'     )) .
+      	"', street = '"      .trim(formData('phy_street'     )) .
+		"', street2 = '"      .trim(formData('phy_street2'     )) .
         "', cal_ui = '"        . trim(formData('cal_ui'       )) .
         "', default_warehouse = '" . trim(formData('default_warehouse')) .
         "', irnpool = '"       . trim(formData('irnpool'      )) .
+	      "', city = '"      .trim(formData('phy_city'     )) .
+		"', zip = '"      .trim(formData('phy_zip'     )) .
+		"', state = '"      .trim(formData('phy_state'     )) .
+		"', phone = '"      .trim(formData('phy_phone'     )) .
+		"', fax = '"      .trim(formData('phy_fax'     )) .
+		"', phonew1 = '".trim(formData('phy_workphone1'     )) .
+		"', phonew2 = '".trim(formData('phy_workphone2'     )) .
+		"', phonecell = '" .trim(formData('phy_homephone'     )) .
+		"', email = '"      .trim(formData('phy_email'     )) .
+		"', licenseNo = '"      .trim(formData('phy_licenseNo'     )) .
+		"', licenseStateCode = '"      .trim(formData('phy_licenseStateCode'       )) .
+		"', sex = '".$sex.
         "', calendar = '"      . $calvar                         .
         "', pwd_expiration_date = '" . trim("$exp_date") .
+      	"',dea = '"      . trim(formData('deanumber'       )) .
         "'");
       //set the facility name from the selected facility_id
       sqlStatement("UPDATE users, facility SET users.facility = facility.name WHERE facility.id = '" . trim(formData('facility_id')) . "' AND users.username = '" . trim(formData('rumple')) . "'");
@@ -389,7 +499,7 @@ function authorized_clicked() {
     <input type='checkbox' name='form_inactive' value='1' onclick='submit()' <?php if ($form_inactive) echo 'checked '; ?>/>
     <span class='text' style = "margin-left:-3px"> <?php xl('Include inactive users','e'); ?> </span>
 </form>
-<?php
+<?
 if($set_active_msg == 1){
 echo "<font class='alert'>".xl('Emergency Login ACL is chosen. The user is still in active state, please de-activate the user and activate the same when required during emergency situations. Visit Administration->Users for activation or de-activation.')."</font><br>";
 }

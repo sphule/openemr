@@ -51,21 +51,72 @@ class RxList {
 			return $buffer;
 		} // end checking for successful open
 	} // end function RxList::getPage
+/*=================Eprescription drug lookup selection while adding prescripton=======*/
+	function get_list($query) { 
+       $drug_db_sel_drug  = "select * from erx_practice_vendor epv where epv.id = 1";
+         $drug_db_res         = mysql_query($drug_db_sel_drug);
+		 $drug_num_row    = mysql_num_rows($drug_db_res);
 
-	function get_list ( $query ) {
-		$page = RxList::getPage($query);
-		$tokens = RxList::parse2tokens($page);
-		$hash = RxList::tokens2hash($tokens);
-		foreach ($hash AS $index => $data) {
+		 if($drug_num_row > 0)
+		{			
+	     $drug_db_sel    = "select ev.vendor_drug_database from erx_vendor ev left join erx_practice_vendor epv on ev.vendor_id = epv.vendor_id where epv.id = 1" ;
+         $drug_db_res    = mysql_query($drug_db_sel);
+         $drug_db_fetch = mysql_fetch_row($drug_db_res);
+		}
+		if($drug_num_row == 0)
+		{
+			 //$drug_db_sel    = "select ev.vendor_drug_database from erx_vendor ev left join erx_practice_vendor epv on ev.vendor_id = epv.vendor_id where epv.id = 1" ;
+			 $drug_db_sel    = "select ev.vendor_drug_database from erx_vendor ev where ev.vendor_id = 1" ;
+			 $drug_db_res    = mysql_query($drug_db_sel);
+			 $drug_db_fetch = mysql_fetch_row($drug_db_res);
+		}
+		if(isset($drug_db_fetch[0])) {
+			$sql="SELECT TradeDrugName,StrengthValue,StrengthUnit,RouteDesc,DosageFormCodeDesc,DispensableDrugID FROM ".$drug_db_fetch[0]."";
+		}
+		else {
+			$sql="SELECT TradeDrugName,StrengthValue,StrengthUnit,RouteDesc,DosageFormCodeDesc,DispensableDrugID FROM erx_medispan_db";
+		}
+	    
+		//$sql="SELECT TradeDrugName,StrengthValue,StrengthUnit,RouteDesc,DosageFormCodeDesc,DispensableDrugID FROM ".$drug_db_fetch[0]."";
+	    if($query != "")
+		$query=mysql_real_escape_string($query);
+	    	$sql.=" WHERE TradeDrugName LIKE '$query%'";
+	     	$sql.=" ORDER BY DispensableDrugID";
+	    
+
+	    $res=sqlStatement($sql);
+	    $list=array();
+		$i =0;
+	    while($row=sqlFetchArray($res)) {
+	          
+			  $drug                        =$row['TradeDrugName'];
+  	          $strengthvalue           =$row['StrengthValue'];
+  	          $strengthunit             =$row['StrengthUnit'];
+  	          $routedesc                =$row['RouteDesc'];
+  	          $dosageformcodedesc =$row['DosageFormCodeDesc'];
+			  $drugidsend =$row['DispensableDrugID'];
+
+	          $list['drug'][$drug]                        =$drug;
+  	          $list['strengthvalue'][$drug]           =$strengthvalue."<=====>".$drug."<=====>".$strengthunit."<=====>".$routedesc."<=====>".$dosageformcodedesc."<=====>".$drugidsend;
+  	          //$list['strengthunit'][$i]             =$strengthunit;
+  	          //$list['routedesc'][$i]                =$routedesc;
+  	          //$list['dosageformcodedesc'][$i] =$dosageformcodedesc;
+               
+			   // $list['concatvalue'][$drug] = $drug."====".$strengthvalue."====".strengthunit."====".$routedesc ;
+              $i++;
+	        foreach ($hash AS $index => $data) {
 			unset($my_data);
 			foreach ($data AS $k => $v) {
 				$my_data[$k] = $v;
 			}
-			$list[trim($my_data[brand_name])." (".trim($my_data[generic_name]).")"] =
-				trim($my_data[brand_name]);
-		}
-		return $list;
-	} // end function RxList::get_list
+			$list[trim($my_data[brand_name])." (".trim($my_data[generic_name]).")"] =trim($my_data[brand_name]);
+	    }
+ 
+	   	}
+	   	//print_r($list['strengthvalue'][$drug]);
+	 return  $list;
+
+}// end function RxList::get_list
 
         /* break the web page into a collection of TAGS 
          * such as <input ..> or <img ... >

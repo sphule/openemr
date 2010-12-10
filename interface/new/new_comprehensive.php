@@ -10,6 +10,7 @@ require_once("../globals.php");
 require_once("$srcdir/acl.inc");
 require_once("$srcdir/options.inc.php");
 require_once("$srcdir/patient.inc");
+require_once("../../library/textformat.js.php");
 
 // Check authorization.
 $thisauth = acl_check('patients', 'demo');
@@ -86,13 +87,13 @@ div.section {
 <style type="text/css">@import url(../../library/dynarch_calendar.css);</style>
 
 <script type="text/javascript" src="../../library/dialog.js"></script>
-<script type="text/javascript" src="../../library/textformat.js"></script>
 <script type="text/javascript" src="../../library/dynarch_calendar.js"></script>
 <?php include_once("{$GLOBALS['srcdir']}/dynarch_calendar_en.inc.php"); ?>
 <script type="text/javascript" src="../../library/dynarch_calendar_setup.js"></script>
 <script type="text/javascript" src="<?php echo $GLOBALS['webroot']; ?>/library/js/jquery.js"></script>
 
 <SCRIPT LANGUAGE="JavaScript"><!--
+var mypcc = '<?php echo $GLOBALS['phone_country_code'] ?>';
 //Visolve - sync the radio buttons - Start
 if((top.window.parent) && (parent.window)){
         var wname = top.window.parent.left_nav;
@@ -101,7 +102,7 @@ if((top.window.parent) && (parent.window)){
         wname.setRadio(fname, "new");
 }//Visolve - sync the radio buttons - End
 
-var mypcc = '<?php echo $GLOBALS['phone_country_code'] ?>';
+
 
 // This may be changed to true by the AJAX search script.
 var force_submit = false;
@@ -229,7 +230,33 @@ function trimlen(s) {
 }
 
 function validate(f) {
+var errCount = 0;
+ var errMsgs = new Array();	
 <?php generate_layout_validation('DEM'); ?>
+	 var re5digit=/^\d{5}$/ //regular expression defining a 5 digit number
+	 var re10digit=/^\d{10}$/ //regular expression defining a 10 digit number
+
+	 var restreetvalidation = /^([0-9])+\s([A-Za-z])+([\sA-Za-z])+$/;
+
+
+
+	if (trimlen(f.form_street.value) != "0") {
+		if(f.form_street.value.search(restreetvalidation)==-1)
+		{
+	                alert("Invalid Input: Address should contain numbers and alphabets with space.\nFor example 304 Sterling Ave");
+			f.form_street.focus();
+			return false;
+	    }
+	 }
+
+	if (trimlen(f.form_postal_code.value) != 0) {
+	  	if(f.form_postal_code.value.search(re5digit)==-1)
+		{
+	     alert("Required field missing:Please enter a valid 5 digit number inside the postalcode");
+	         f.form_postal_code.focus();
+			return false;
+	    }
+	 }
  return true;
 }
 
@@ -377,6 +404,8 @@ while ($frow = sqlFetchArray($fres)) {
       $group_seq++;    // ID for DIV tags
       $group_name = substr($this_group, 1);
       if (strlen($last_group) > 0) echo "<br />";
+         // to open the contact div
+     if($group_seq == '2') $display_style  =  'block';
       echo "<span class='bold'><input type='checkbox' name='form_cb_$group_seq' id='form_cb_$group_seq' value='1' " .
         "onclick='return divclick(this,\"div_$group_seq\");'";
       if ($display_style == 'block') echo " checked";
@@ -406,7 +435,13 @@ while ($frow = sqlFetchArray($fres)) {
   if ($titlecols > 0) {
     end_cell();
     echo "<td colspan='$titlecols'";
-    echo ($frow['uor'] == 2) ? " class='required'" : " class='bold'";
+	if($GLOBALS['JAVA_SCRIPT_STATUS'] == 1) {    
+    	echo ($frow['uor'] == 2   && $field_id!='address2') ? " class='required'" : " class='bold'";
+	}
+	else {
+	  	echo ($frow['uor'] == 2  && ($field_id=='DOB' || $field_id=='sex')  && $field_id!='address2') ? " class='required'" : " class='bold'";
+	}
+
     if ($cell_count == 2) echo " style='padding-left:10pt'";
     echo ">";
     $cell_count += $titlecols;
@@ -680,9 +715,27 @@ if (! $GLOBALS['simplified_demographics']) {
 </body>
 
 <script language="JavaScript">
-
+//Onkeyup handler for phone numbers. Helps to ensure a consistent
+//format and to reduce typing errors. defcc is the default telephone
+//country code as a string.
+//
+function postalcodekeyup(e)
+{
+	if(e.value.length !=0)
+		{
+			var re5digit= /^\d{5}$/ ;
+       var variable = e.value;					
+					
+			if(variable.search(re5digit)==-1) 
+			{
+				alert("Required field missing:Please enter a valid 5 digit number inside the postal_code");
+				return ;
+			 }
+		}
+}
 // fix inconsistently formatted phone numbers from the database
 var f = document.forms[0];
+if (f.form_postal_code) postalcodekeyup(f.form_postal_code);
 if (f.form_phone_contact) phonekeyup(f.form_phone_contact,mypcc);
 if (f.form_phone_home   ) phonekeyup(f.form_phone_home   ,mypcc);
 if (f.form_phone_biz    ) phonekeyup(f.form_phone_biz    ,mypcc);

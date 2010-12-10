@@ -90,6 +90,7 @@ function checkAll(check) {
    <input type='checkbox' name='include_insurance' id='include_insurance' value="insurance"><?php xl('Insurance','e'); ?><br>
    <input type='checkbox' name='include_billing' id='include_billing' value="billing"
     <?php if (!$GLOBALS['simplified_demographics']) echo 'checked'; ?>><?php xl('Billing','e'); ?><br>
+       <input type='checkbox' name='include_prescriptions' id='include_prescriptions' value="prescriptions"><?php xl('Prescriptions','e'); ?><br>
   </td>
   <td class='text'>
    <!--

@@ -159,7 +159,12 @@ function generate_form_field($frow, $currvalue) {
       echo " onchange='capitalizeMe(this)'";
     else if (strpos($frow['edit_options'], 'U') !== FALSE)
       echo " onchange='this.value = this.value.toUpperCase()'";
-    $tmp = htmlspecialchars( $GLOBALS['gbl_mask_patient_id'], ENT_QUOTES);
+    else if(strpos($frow['edit_options'], 'P') !== FALSE)
+      echo " onkeyup='chkLength(this)' maxlength='10'";
+    else if(strpos($frow['edit_options'], 'S') !== FALSE)
+      echo " onblur='validateSSN(this)' maxlength='9'";
+     $tmp = htmlspecialchars( $GLOBALS['gbl_mask_patient_id'], ENT_QUOTES);
+    
     if ($field_id == 'pubpid' && strlen($tmp) > 0) {
       echo " onkeyup='maskkeyup(this,\"$tmp\")'";
       echo " onblur='maskblur(this,\"$tmp\")'";
@@ -1828,7 +1833,13 @@ function display_layout_tabs_data_editable($formtype, $result1, $result2='') {
 					if ($titlecols > 0) {
 					  disp_end_cell();
 					  $titlecols_esc = htmlspecialchars( $titlecols, ENT_QUOTES);
-					  echo "<td class='label' colspan='$titlecols_esc' ";
+					  echo "<td  colspan='$titlecols_esc' ";
+					if($GLOBALS['JAVA_SCRIPT_STATUS'] == 1) {
+					  echo ($group_fields['uor'] == 2 && $field_id!='address2') ? " class='required'" : " class='bold'";
+					}
+					else {
+					  echo ($group_fields['uor'] == 2 && ($field_id=='DOB' || $field_id=='sex')  && $field_id!='address2') ? " class='required'" : " class='bold'";
+					}
 					  echo ">";
 					  $cell_count += $titlecols;
 					}
@@ -1964,6 +1975,7 @@ function generate_layout_validation($form_id) {
     $fldtitle  = $frow['title'];
     if (!$fldtitle) $fldtitle  = $frow['description'];
     $fldname   = htmlspecialchars( "form_$field_id", ENT_QUOTES);
+    if($GLOBALS['JAVA_SCRIPT_STATUS'] == 1) {
     switch($data_type) {
       case  1:
       case 11:
@@ -1976,6 +1988,11 @@ function generate_layout_validation($form_id) {
         " if (f.$fldname.selectedIndex <= 0) {\n" .
         "  if (f.$fldname.focus) f.$fldname.focus();\n" .
         "  		errMsgs[errMsgs.length] = '" . htmlspecialchars( (xl_layout_label($fldtitle)), ENT_QUOTES) . "'; \n" .
+                "  alert('" . addslashes(xl('Please choose a value for','','',' ') .
+        xl_layout_label($fldtitle)) . "');\n" .
+        "  if (f.$fldname.focus) f.$fldname.focus();\n" .
+        "  return false;\n" .
+  
         " }\n";
         break;
       case 27: // radio buttons
@@ -1984,23 +2001,55 @@ function generate_layout_validation($form_id) {
         " for (; i < f.$fldname.length; ++i) if (f.$fldname[i].checked) break;\n" .
         " if (i >= f.$fldname.length) {\n" .
         "  		errMsgs[errMsgs.length] = '" . htmlspecialchars( (xl_layout_label($fldtitle)), ENT_QUOTES) . "'; \n" .
+        "  alert('" . addslashes(xl('Please choose a value for','','',' ') .
+        xl_layout_label($fldtitle)) . "');\n" .
+        "  return false;\n" .
         " }\n";
         break;
       case  2:
       case  3:
       case  4:
       case 15:
-        echo
-        " if (trimlen(f.$fldname.value) == 0) {\n" .
+       echo
+        " if (trimlen(f.$fldname.value) == 0 && $fldname!=form_address2) {\n" .
         "  		if (f.$fldname.focus) f.$fldname.focus();\n" .
 		"  		$('#" . $fldname . "').parents('div.tab').each( function(){ var tabHeader = $('#header_' + $(this).attr('id') ); tabHeader.css('color','red'); } ); " .
 		"  		$('#" . $fldname . "').attr('style','background:red'); \n" .
         "  		errMsgs[errMsgs.length] = '" . htmlspecialchars( (xl_layout_label($fldtitle)), ENT_QUOTES) . "'; \n" .
+       "	    alert('" . addslashes(xl('Please choose a value for','','',' ') .xl_layout_label($fldtitle)) . "');\n" .       
+       "  return false;\n" .
         " } else { " .
 		" 		$('#" . $fldname . "').attr('style',''); " .
 		"  		$('#" . $fldname . "').parents('div.tab').each( function(){ var tabHeader = $('#header_' + $(this).attr('id') ); tabHeader.css('color','');  } ); " .
 		" } \n";
         break;
+     }}
+  else {
+   	switch($field_id) {
+
+   	 case title:
+   	 case sex:
+        echo
+        " if (f.$fldname.selectedIndex <= 0) {\n" .
+        "  alert('" . addslashes(xl('Please choose a value for','','',' ') .
+        xl_layout_label($fldtitle)) . "');\n" .
+        "  if (f.$fldname.focus) f.$fldname.focus();\n" .
+        "  return false;\n" .
+        " }\n";
+        break;
+        	
+     case  fname:
+     case  lname:
+     case  DOB:
+        echo
+        " if (trimlen(f.$fldname.value) == 0) {\n" .
+        "  alert('" . addslashes(xl('Please choose a value for','','',' ') .
+        xl_layout_label($fldtitle)) . "');\n" .
+        "  if (f.$fldname.focus) f.$fldname.focus();\n" .
+        "  return false;\n". 
+       " }\n";
+     break;      
+   }
     }
   }
 }

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
@@ -8,6 +9,9 @@ require_once($GLOBALS['fileroot'] . "/library/classes/Controller.class.php");
 require_once($GLOBALS['fileroot'] . "/library/classes/Prescription.class.php");
 require_once($GLOBALS['fileroot'] . "/library/classes/Provider.class.php");
 require_once($GLOBALS['fileroot'] . "/library/classes/RXList.class.php");
+require_once($GLOBALS['fileroot'] . "/library/classes/CheckPrescribe.class.php");
+require_once($GLOBALS['fileroot'] . "/library/classes/nusoap.class.php");
+require_once($GLOBALS['fileroot'] . "/library/classes/curl.class.php");
 require_once($GLOBALS['fileroot'] . "/library/registry.inc");
 
 class C_Prescription extends Controller {
@@ -104,17 +108,50 @@ class C_Prescription extends Controller {
 		 	$this->function_argument_error();
 			exit;
 		}
-		if (!empty($sort)) {
-			$this->assign("prescriptions", Prescription::prescriptions_factory($id,$sort));
-		}
-		else {
-			$this->assign("prescriptions", Prescription::prescriptions_factory($id));
-		}
+		$obj        =  new CheckPrescribe();
+        $countPracticeID = $obj->checkCount();
 
-                // flag to indicate the CAMOS form is regsitered and active
-                $this->assign("CAMOS_FORM", isRegistered("CAMOS"));
+        if($countPracticeID > 0 )
+		{
+		
+        
+	         if (!empty($sort)) {
+				$this->assign("prescriptions", Prescription::eprescribe_factory($id,$sort));
+			}
+			else {
+				$this->assign("prescriptions", Prescription::eprescribe_factory($id));
+			}
+		
 
-                $this->display($GLOBALS['template_dir'] . "prescription/" . $this->template_mod . "_list.html");
+			$noedit =$_REQUEST['noedit'] ;
+
+			$this->assign("countPracticeID",$countPracticeID);
+			$this->assign("CAMOS_FORM", isRegistered("CAMOS"));
+			$this->assign("showanchor",	$noedit);
+			$this->assign("patient_id",	$patient_id);
+
+			$this->display($GLOBALS['template_dir'] . "prescription/" . $this->template_mod . "_list.html");
+		}
+		else
+		{		
+			if (!empty($sort)) {
+				$this->assign("prescriptions", Prescription::prescriptions_factory($id,$sort));
+			}
+			else {
+				$this->assign("prescriptions", Prescription::prescriptions_factory($id));
+			}
+
+         
+
+			$noedit =$_REQUEST['noedit'] ;
+			$countPracticeID = '0';
+			
+			$this->assign("countPracticeID",$countPracticeID);
+			$this->assign("showanchor",	$noedit);
+			$this->assign("CAMOS_FORM", isRegistered("CAMOS"));
+			$this->assign("patient_id",	$patient_id);
+			$this->display($GLOBALS['template_dir'] . "prescription/" . $this->template_mod . "_list.html");
+		}
 	}
 
 	function block_action($id,$sort = "") {
@@ -132,6 +169,38 @@ class C_Prescription extends Controller {
 		$this->display($GLOBALS['template_dir'] . "prescription/" . $this->template_mod . "_block.html");
 	}
 
+	function display_pres_rep_action($id,$sort = "") {
+		if (empty($id)) {
+		 	$this->function_argument_error();
+			exit;
+		}
+	
+
+
+		if (!empty($sort)) {
+			$this->assign("prescriptions", Prescription::prescriptions_factory($id,$sort));
+		}
+		else {
+			$this->assign("prescriptions", Prescription::prescriptions_factory($id));
+		}
+
+		$jqueryjs = $GLOBALS['webroot']."/library/js/jquery.js";
+		$jquerynewjs = $GLOBALS['webroot']."/library/js/jquery_new.js";
+
+		$closeimg = $GLOBALS['webroot']."/images/close.gif";
+        $nryModalcss = $GLOBALS['webroot']."/css/nyroModal.css";
+	    $jsmodalpath = $GLOBALS['webroot']."/library/js/jquery.nyroModal-1.6.2.js";
+
+           $this->assign("jqueryjs",$jqueryjs); 		  
+         $this->assign("jsdivpath",$jsdivpath); 
+      //   $this->assign("jsmodalpath",$jsmodalpath);		
+            $this->assign("nryModalcss",$nryModalcss);
+           $this->assign("jquerynewjs",$jquerynewjs); 		
+			
+
+		$this->display($GLOBALS['template_dir'] . "prescription/" . $this->template_mod . "_prescription_report.html");
+	}
+	
 	function fragment_action($id,$sort = "") {
 		if (empty($id)) {
 		 	$this->function_argument_error();
@@ -185,6 +254,221 @@ class C_Prescription extends Controller {
     $this->list_action($this->prescriptions[0]->get_patient_id());
     exit;
 	}
+	
+function editprescribe_action($id = "",$patient_id="",$p_obj = null) 
+	{
+    	$query = "select ev.vendor_erx_id,ev.vendor_erx_password,epv.vendor_erx_practice_id from erx_vendor ev left join
+				 erx_practice_vendor epv on ev.vendor_id = epv.vendor_id where epv.id ='1'";
+		
+    	$res = sqlStatement($query);
+
+		while($row = sqlFetchArray($res))
+		{
+			$vendorcredential['vendorid']        = $row['vendor_erx_id'];
+			$vendorcredential['vendorpassword']  = $row['vendor_erx_password'];
+			$vendorcredential['practice_id']  = $row['vendor_erx_practice_id'];
+			
+		}
+			  
+		$vendor_id = $vendorcredential['vendorid'] ; 
+		$vendor_password = $vendorcredential['vendorpassword'] ;
+		$vendor_practiceid =$vendorcredential['practice_id'] ;
+													
+        $physician_user_id = $_SESSION['authUserID'];
+
+		$phy_cred_query = "select * from erx_physician where user_id = '".$physician_user_id."'";
+		$phy_cred_res = sqlStatement($phy_cred_query);
+
+		while($phy_cred_row = sqlFetchArray($phy_cred_res))
+		{
+			$phy_cred_arr['physician_username']      = $phy_cred_row['physician_username'];
+			$phy_cred_arr['physician_password']        = $phy_cred_row['physician_password'];    
+		}
+		  
+		$phyuname         = $phy_cred_arr['physician_username'];
+		$phypwd            = $phy_cred_arr['physician_password'];	
+
+		
+		/***************************Data variable created by practiceid,venodrid,vendorpwd********/
+		
+		 /******************************CONTACT H2H at drxcustomersupport@h2hsolutions.com *****************/					 
+		//$data = $GLOBALS['TOKEN_URL']."?function=getToken&vendorId=".$vendor_id."&vendorPwd=".$vendor_password."&practiceId=".$vendor_practiceid."";	
+		$cURL = new cURL();
+		$ch = $cURL->get($data);
+		$code = $ch['code'];
+		$token = substr($ch['cr'],strpos($ch['cr'],'=')+1,strlen($ch['cr'])-1);
+
+		/*****************************************************************************************/
+
+		/*******************************WSDL file TO access API***********************************/
+
+		$wsdl = $GLOBALS['WSDL_URL'];
+
+		/*****************************************************************************************/
+
+		/*********************Creating object by nusoap class*************************************/
+		$client=new nusoap_client($wsdl,'wsdl');
+		$err = $client->getError();
+		if ($err) {
+			// Display the error
+			echo '<p><b>Constructor error: ' . $err . '</b></p>';
+			exit;
+			// At this point, you know the call that follows will fail
+		}
+		/*****************************************************************************************/
+
+		# Note: The following values are hard coded. Please manipulate as necessary.
+
+	
+
+		/********************Parameters being transfered  in WSDL API ****************************/
+
+        $patientretrieve_data_query = "select id,lname,mname,fname,city,street,address2,postal_code,suffix,state,country_code,DATE_FORMAT(DOB,'%m/%d/%Y') as DOB,if(sex = 'Male','M','F') as sex,phone_home from patient_data where pid =".$_SESSION['pid']."";
+		$patientretrieve_data_result = sqlStatement($patientretrieve_data_query);
+		$patientretrieve_data_fetch = sqlFetchArray($patientretrieve_data_result);
+
+
+        $vendor_param1=array('vendorId' => $vendor_id,
+		'vendorUniqueIdentifierExt' => "1",
+		'vendorPassword' => $vendor_password,
+		'vendorDescription' => "1",
+		'practiceId' => $vendor_practiceid,
+		'practiceUniqueIdentifierExt' => "1",
+		'practiceDescription' => "Practice Desc",
+		'drxProviderId' =>  $phyuname ,
+		'drxProviderPwd' =>  $phypwd 
+		);
+
+		$vendor_param2=array('code' => "1",
+		'digitalRxCode'	=> 200,
+		'digitalRxCodeDesc' => "",
+		'digitalRxMessage' => "",
+		'pbmCode' => "",
+		'pbmCodeDesc' => "",
+		'pbmMessage' => "",
+		'pbmDetailsCode' => "",
+		'pbmDetailsCodeDesc' => "");
+
+					$vendor_param3= $patientretrieve_data_fetch['phone_home'];
+					//MIDADTTT002  x0XD53qvbByTMyQyU30zdkp0pI0=
+                    if($patientretrieve_data_fetch['sex'] == 'M')
+					{
+					  $prefix = 'Mr.';
+					}
+					if($patientretrieve_data_fetch['sex'] == 'F')
+					{
+					  $prefix = 'Mrs.';
+					} 
+
+		$suffixarr = array("0"=>"Select a suffix","1"=>"ANP","2"=>"APN","3"=>"APRN","4"=>"ARNP","5"=>"CNF-RxN","6"=>"CNM","7"=>"CNMW","8"=>"CNP","9"=>"CNS","10"=>"CRNA","11"=>"CRNP","12"=>"DDS","13"=>"DMD","14"=>"DO","15"=>"DPM","16"=>"FNP","17"=>"FNP-C","18"=>"MD","19"=>"MD,FACC","20"=>"MD,FACC,PhD","21"=>"MD,FACOG","22"=>"MD,FACP","23"=>"MD,PhD","24"=>"MD,JD","25"=>"NA","26"=>"NM","27"=>"NP","28"=>"NP-C","29"=>"OD","30"=>"PA","31"=>"PA-C","32"=>"PD","33"=>"PharmD","34"=>"RMA","35"=>"RN","36"=>"RN,FNP-BC","37"=>"RN,FNP-C","38"=>"RNA","39"=>"RNP","40"=>"RPA-C","41"=>"RPH","42"=>"Other","43"=>"None");
+
+
+		$patient_param=array('lastName' => $patientretrieve_data_fetch['lname'],
+					'middleName' => $patientretrieve_data_fetch['mname'],
+					'firstName' => $patientretrieve_data_fetch['fname'],
+					'suffix' => $suffixarr[$patientretrieve_data_fetch['suffix']],
+					'prefix' =>$prefix,
+					'addressLine1' => $patientretrieve_data_fetch['street'],
+					'addressLine2' => $patientretrieve_data_fetch['address2'],
+					'city' => $patientretrieve_data_fetch['city'],
+					'zip' => $patientretrieve_data_fetch['postal_code'],
+					'state' => $patientretrieve_data_fetch['state'],
+					'country' => 'USA',
+					'dob' =>$patientretrieve_data_fetch['DOB'],//unparsabledate date will be in this format //02/18/1980
+					'gender' => $patientretrieve_data_fetch['sex'],//Gender should be alphabetic with max length of 1.
+					'telephone' => $patientretrieve_data_fetch['phone_home'],//the phone number will be simply in number format not in dash format.
+					'patientUniqueIdentifier' =>$_SESSION['pid'] 	
+				);	
+       
+		/*********************************************************************************************/
+		/*****************registerPatient api for registering patient to digital RX*******************/
+
+		 /******************************CONTACT H2H at drxcustomersupport@h2hsolutions.com *****************/
+		/***************************************Getting UserID Password****************************/
+		//$result_patient=$client->call('registerPatient',array('SenderInformation' => $vendor_param1,'PatientInformation' => $patient_param,'DigitalRxStatus' => $vendor_param2,'moreInformation' => $vendor_param3));
+		/******************************************************************************************/
+		
+		$patient_res_id = $result_patient['return'];
+
+		if($result_patient['DigitalRxStatus']['digitalRxCodeDesc'] =='NA')
+		{
+				  
+				$row_count_qry = "select vendor_patient_id  from erx_patient where vendor_patient_id = '".$patient_res_id."'";
+				$row_count_res = sqlStatement($row_count_qry);
+				$row_count_fetch = sqlNumRows($row_count_res);
+
+
+			   
+				if($row_count_fetch < '1')
+			   {
+				   
+						$patient_insert_query= "insert into erx_patient(vendor_patient_id,create_date) values('".$patient_res_id."',now())";
+						$patient_insert_result=mysql_query($patient_insert_query);
+				   
+			   }
+	
+
+	  }	
+		if($result_patient['DigitalRxStatus']['digitalRxCodeDesc'] =='Invalid Input')
+		{
+	
+			 echo '<tr valign="top" align="center" style="margin-left:40px;"><td valign="top" colspan="2"><span style="color:red;text-align:left;font-family:Arial;font-size:10px;">'.$result_patient['DigitalRxStatus']['digitalRxMessage'].'</span></td></tr>';
+			 exit;		    
+	    }
+	////////////////////////////////////////////////////////////////
+
+	$medication_data_query = "select id,drug_id,size,unit,quantity,drug,active,route,dosage,date_added,form from prescriptions where patient_id = '".$_SESSION['pid']."' and active = '1'  and erx_active='0' ";
+
+	$medication_data_result = sqlStatement($medication_data_query);
+
+$i = 0;
+while($medication_data_fetchs = sqlFetchArray($medication_data_result))
+		{
+	      $medication_data_fetch[$i]['drug_id'] = $medication_data_fetchs['drug_id'];
+	      $medication_data_fetch[$i]['size'] = $medication_data_fetchs['size'];
+		  $medication_data_fetch[$i]['unit'] = $medication_data_fetchs['unit'];
+  	      $medication_data_fetch[$i]['dosage'] = $medication_data_fetchs['dosage'];
+  	      $medication_data_fetch[$i]['form'] = $medication_data_fetchs['form'];
+	      $medication_data_fetch[$i]['quantity'] = $medication_data_fetchs['quantity'];
+		  $medication_data_fetch[$i]['drug'] = $medication_data_fetchs['drug'];
+  	      $medication_data_fetch[$i]['route'] = $medication_data_fetchs['route'];
+   	      $medication_data_fetch[$i]['quantity'] = $medication_data_fetchs['quantity'];   	     
+   	      $medication_data_fetch[$i]['date_update'] = $medication_data_fetchs['date_added'];   	     
+		  $i++;
+		}
+
+
+
+for($num =0;$num<count($medication_data_fetch);$num++)
+	{
+          $medication_details[$num]=array('drugId' => $medication_data_fetch[$num]['drug_id'],
+           'drugType'  => "DDID",
+           'strength'  =>$medication_data_fetch[$num]['size'],
+           'strengthUnit' => $medication_data_fetch[$num]['unit'],
+           'sig'  => $medication_data_fetch[$num]['dosage'].'   '.$medication_data_fetch[$num]['form'],
+           'quantity' => $medication_data_fetch[$num]['quantity'],
+           'drugName'  => $medication_data_fetch[$num]['drug'],	
+           'createdDate' =>$medication_data_fetch[$num]['date_update'],
+           'activeFlag'  => 'true',
+           'route'  => $medication_data_fetch[$num]['route'],
+           'dosageForm'  => $medication_data_fetch[$num]['quantity'], 
+           'digitalRxPatientId'  => $patient_res_id,
+           'digitalRxPhysicianUserId' => $phyuname);
+
+	
+	/*****************send medical details to digital RX*****************************************/
+          
+     $result_medical_history[$num]=$client->call('sendMedicationHistoryToDigitalRx',array('SenderInformation' => $vendor_param1, 'digitalRxMedicationHistory' => $medication_details[$num],  'DigitalRxStatus' => $vendor_param2, 'moreInformation' => $vendor_param3));
+	 $update_flag_query[$num] = "Update prescriptions set erx_active = '1' where drug_id = '".$medication_data_fetch[$num]['drug_id']."' and provider_id= '".$_SESSION['authUserID']."' and date_added  = '".$medication_data_fetch[$num]['date_update']."'";
+     $update_flag_result = sqlStatement($update_flag_query[$num]);
+
+}
+////////////////////////////////////////////////////////////////
+ /******************************CONTACT H2H at drxcustomersupport@h2hsolutions.com *****************/
+//header("location:".$GLOBALS['SEND_ERX_URL']."?function=drxWebIntegration&userId=".$phyuname."&password=".urlencode($phypwd)."&prescriptionMode=newrx&vendorId=".$vendor_id."&vendorPwd=".$vendor_password."&practiceId=".$vendor_practiceid."&hostSystemPatientIdentifier=".$_SESSION['pid']."&patientid=".$patient_res_id."&token=".$token."");
+
+					//patientidentifier:- Id created in mmf system selected 
+	}
 
 	function send_action($id) {
 		$_POST['process'] = "true";
@@ -209,7 +493,7 @@ class C_Prescription extends Controller {
 			$this->template_mod . "_send.html");
 	}
 
-	function multiprintfax_header(& $pdf, $p) {
+      function multiprintfax_header(& $pdf, $p) {
 		return $this->multiprint_header( $pdf, $p );
 	}
 
@@ -218,7 +502,7 @@ class C_Prescription extends Controller {
 		//print header
 		$pdf->ezImage($GLOBALS['oer_config']['prescriptions']['logo'],'','50','','center','');
 		$pdf->ezColumnsStart(array('num'=>2, 'gap'=>10));
-		$res = sqlQuery("SELECT concat('<b>',f.name,'</b>\n',f.street,'\n',f.city,', ',f.state,' ',f.postal_code,'\nTel:',f.phone,if(f.fax != '',concat('\nFax: ',f.fax),'')) addr FROM users JOIN facility AS f ON f.name = users.facility where users.id ='" .
+		$res = sqlStatement("SELECT concat('<b>',f.name,'</b>\n',f.street,'\n',f.city,', ',f.state,' ',f.postal_code,'\nTel:',f.phone,if(f.fax != '',concat('\nFax: ',f.fax),'')) addr,dea FROM users JOIN facility AS f ON f.name = users.facility where users.id ='" .
 			mysql_real_escape_string($p->provider->id) . "'");
 		$pdf->ezText($res['addr'],12);
 		$my_y = $pdf->y;
@@ -233,7 +517,8 @@ class C_Prescription extends Controller {
     if ($this->is_faxing || $GLOBALS['oer_config']['prescriptions']['show_DEA'])
       $pdf->ezText('<b>' . xl('DEA') . ':</b>' . $p->provider->federal_drug_id, 12);
     else
-      $pdf->ezText('<b>' . xl('DEA') . ':</b> ________________________', 12);
+        $pdf->ezText('<b>' . xl('DEA') . ':</b> ________________________', 12);
+    //  $pdf->ezText('<b>DEA:</b>'.$arr['dea'], 12);
 		$pdf->ezColumnsStop();
 		if ($my_y < $pdf->y){
 			$pdf->ezSetY($my_y);
@@ -277,7 +562,7 @@ class C_Prescription extends Controller {
 	        echo ("</tr>\n");
 	        echo ("<tr>\n");
 	        echo ("<td>\n");
-	        $res = sqlQuery("SELECT concat('<b>',f.name,'</b>\n',f.street,'\n',f.city,', ',f.state,' ',f.postal_code,'\nTel:',f.phone,if(f.fax != '',concat('\nFax: ',f.fax),'')) addr FROM users JOIN facility AS f ON f.name = users.facility where users.id ='" . mysql_real_escape_string($p->provider->id) . "'");
+	        $res = sqlQuery("SELECT concat('<b>',f.name,'</b>\n',f.street,'\n',f.city,', ',f.state,' ',f.postal_code,'\nTel:',f.phone,if(f.fax != '',concat('\nFax: ',f.fax),'')) addr,dea FROM users JOIN facility AS f ON f.name = users.facility where users.id ='" . mysql_real_escape_string($p->provider->id) . "'");
 	        $patterns = array ('/\n/','/Tel:/','/Fax:/');
 	        $replace = array ('<br>', xl('Tel').':', xl('Fax').':');
 	        $res = preg_replace($patterns, $replace, $res);
@@ -421,11 +706,26 @@ class C_Prescription extends Controller {
 	function get_prescription_body_text($p) {
 		$body = '<b>' . xl('Rx') . ': ' . $p->get_drug() . ' ' . $p->get_size() . ' ' . $p->get_unit_display();
 		if ($p->get_form()) $body .= ' [' . $p->form_array[$p->get_form()] . "]";
-		$body .= "</b>     <i>" .
-			$p->substitute_array[$p->get_substitute()] . "</i>\n" .
-			'<b>' . xl('Disp #') . ':</b> <u>' . $p->get_quantity() . "</u>\n" .
-			'<b>' . xl('Sig') . ':</b> ' . $p->get_dosage() . ' ' . $p->form_array[$p->get_form()] . ' ' .
-			$p->route_array[$p->get_route()] . ' ' . $p->interval_array[$p->get_interval()] . "\n";
+ 		 $obj  =  new CheckPrescribe();
+		 $countPracticeID = $obj->checkCount();
+		 
+		if($countPracticeID == '1') 
+		{			  
+			 
+			$body .= "</b>     <i>" .
+				$p->substitute_array[$p->get_substitute()] . "</i>\n" .
+				'<b>' . xl('Disp #').':</b> <u>' . $p->get_quantity() . "</u>\n" .
+				'<b>' . xl('Sig').':</b> ' . $p->get_sig()."\n";
+			}
+			if($countPracticeID == '0')
+			{
+			$body .= "</b>     <i>" .
+				$p->substitute_array[$p->get_substitute()] . "</i>\n" .
+				'<b>' . xl('Disp #').':</b> <u>' . $p->get_quantity() . "</u>\n" .
+				'<b>' . xl('Sig').':</b> ' . $p->get_dosage() . ' ' . $p->form_array[$p->get_form()] . ' ' .
+	//			$p->route_array[$p->get_route()] . ' ' . $p->interval_array[$p->get_interval()] . "\n";
+				$p->get_route() . ' ' . $p->interval_array[$p->get_interval()] . "\n";
+			}
 		if ($p->get_refills() > 0) {
 			$body .= "\n<b>" . xl('Refills') . ":</b> <u>" .  $p->get_refills();
 			if ($p->get_per_refill()) {
@@ -726,32 +1026,53 @@ class C_Prescription extends Controller {
 	}
 
 	function do_lookup() {
+		$drugGetLookup = $_GET['drug'];
+		$drugPostLookup = $_POST['drug'];	
+		
 		if ($_POST['process'] != "true") {
                     // don't do a lookup
-		    $this->assign("drug", $_GET['drug']);
+		    $this->assign("drug", $drugLookup);
                     return;
                 }
 
                 // process the lookup
-		$this->assign("drug", $_POST['drug']);
+		$this->assign("drug", $drugPostLookup);
 		$list = array();
 		if (!empty($_POST['drug'])) {
-			$list = @RxList::get_list($_POST['drug']);
+			$list = @RxList::get_list($drugPostLookup);
+			
 		}
+  $druglist =	$list['drug'];
+		$drugpost = $drugPostLookup;
+	if (is_array($list) && !empty($list)) { 	
+		$strengthvalue =	$list['strengthvalue'];
+		$druidlistids = $list['drugid'];
+		if(is_array($druglist)) {
+			$druglist = array_flip($druglist);
+			$this->assign("drug_values",array_keys($druglist));
+			$strengthvalue = array_flip($strengthvalue);
+			//$this->assign("drug_values",$druglist);
+			$this->assign("concatvalue",$strengthvalue);
+			$this->assign("drug_options",array_keys($druglist));
+	    }
+		$this->assign("drug_ids",$druglistids);
+	}
+	else {
 
-		if (is_array($list)) {
-			$list = array_flip($list);
-			$this->assign("drug_options",$list);
-			$this->assign("drug_values",array_keys($list));
-		}
-		else {
-			$this->assign("NO_RESULTS","No results found for: " .$_POST['drug'] . "<br />");
-		}
+			if(empty($drugpost))
+			{
+			$this->assign("NO_RESULTS","Please type at least a single character"."<br />");
+			}
+			else
+			{
+			 $this->assign("NO_RESULTS","No results found for: " .$_POST['drug'] . "<br />");
+			}
+	}
 		//print_r($_POST);
 		//$this->assign("PROCESS","");
 
 		$_POST['process'] = "";
-	}
+}
 
 	function _fax_prescription($p,$faxNum)
 	{

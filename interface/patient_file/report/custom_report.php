@@ -244,7 +244,28 @@ foreach ($ar as $key => $val) {
 
     ****/
 
-        } elseif ($val == "immunizations") {
+        }
+	  /*============================Eprescription report processing========*/ 
+          else if($val ==  'prescriptions')
+			{
+		     
+			
+            echo "<hr />";
+			   echo "<div >";
+                    print "<h1>".xl('Prescription(s)').":</h1>";
+          
+
+							require_once("../../../library/classes/Controller.class.php");
+							$c = new Controller();
+							echo $c->act(array("prescription" => "", "display_pres_rep" => "", "patient_id" => $pid));
+
+
+						
+				  echo "</div>\n"; 
+		
+			}
+			/*===================End eprescription============================*/
+        elseif ($val == "immunizations") {
 
             if (acl_check('patients', 'med')) {
                 echo "<hr />";

@@ -130,7 +130,7 @@
 	</td>
 </tr>
 <tr>
-	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Drug'}</td>
+	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Drug <font  size="2" color=red>*</font>'}</td>
 	<td COLSPAN="2" ALIGN="LEFT" VALIGN="MIDDLE" >
             <input type="input" size="20" name="drug" id="drug" value="{$prescription->drug}"/>
             <a href="javascript:;" id="druglookup" class="small" name="B4" onclick="$('#hiddendiv').show(); document.getElementById('hiddendiv').innerHTML='&lt;iframe src=&quot;controller.php?prescription&amp;lookup&amp;drug=&quot; width=&quot;100%&quot;height=&quot;52&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot;&gt;&lt;/iframe&gt;'">
@@ -149,7 +149,7 @@
 </tr>
 {/if}
 <tr>
-	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Quantity'}</td>
+	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Quantity <font  size="2" color=red>*</font>'}</td>
 	<td COLSPAN="2" ALIGN="LEFT" VALIGN="MIDDLE" >
 		<input TYPE="TEXT" NAME="quantity" id="quantity" SIZE="10" MAXLENGTH="31"
 		 VALUE="{$prescription->quantity}"
@@ -161,26 +161,32 @@
 {else}
 <tr>
 {/if}
-	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Medicine Units'}</td>
+	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Medicine Units <font  size="2" color=red>*</font>'}</td>
 	<td COLSPAN="2" ALIGN="LEFT" VALIGN="MIDDLE" >
-		<input TYPE="TEXT" NAME="size" id="size" SIZE="11" MAXLENGTH="10" VALUE="{$prescription->size}"/>
-		<select name="unit" id="unit">{html_options options=$prescription->unit_array selected=$prescription->unit}</select>
+		<input TYPE="TEXT" NAME="size" id="size" SIZE="11" MAXLENGTH="10" VALUE="{$prescription->size}"/>		
+		<input TYPE="TEXT" NAME="unit" id="unit" SIZE="11" MAXLENGTH="10" VALUE="{$prescription->unit}"zzz  readonly="true"/>
 	</td>
 </tr>
 <tr>
-	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Take'}</td>
+	<td COLSPAN="1" class="text" ALIGN="right" VALIGN="MIDDLE" >{xl t='Take <font  size="2" color=red>*</font>'}</td>
 	<td COLSPAN="2" class="text" ALIGN="LEFT" VALIGN="MIDDLE" >
 {if $SIMPLIFIED_PRESCRIPTIONS && !$prescription->form && !$prescription->route && !$prescription->interval}
-		<input TYPE="text" NAME="dosage" id="dosage" SIZE="30" MAXLENGTH="100" VALUE="{$prescription->dosage}" />
+	 	<input TYPE="text" NAME="dosage" id="dosage" SIZE="30" MAXLENGTH="100" VALUE="{$prescription->dosage}" />
 		<input type="hidden" name="form" id="form" value="0" />
 		<input type="hidden" name="route" id="route" value="0" />
 		<input type="hidden" name="interval" id="interval" value="0" />
 {else}
 		<input TYPE="TEXT" NAME="dosage" id="dosage" SIZE="2" MAXLENGTH="10" VALUE="{$prescription->dosage}"/> {xl t='in'}
-		<select name="form" id="form">{html_options options=$prescription->form_array selected=$prescription->form}</select>
-		<select name="route" id="route">{html_options options=$prescription->route_array selected=$prescription->route}</select>
-		<select name="interval" id="interval">{html_options options=$prescription->interval_array selected=$prescription->interval}</select>
+		<input  type="text" name="route" id="route" size="20" VALUE="{$prescription->route}"  readonly="true">
+		<input  type="text" name="form" id="form" size="25" VALUE="{$prescription->form}"  readonly="true" >
+		<input  type="hidden" name="drug_id" id="drug_id" size="30" VALUE="{$prescription->drug_id}" >
+		{if $prescription->sig eq ''}
+         <input  type="hidden" name="sig" id="sig" size="30" VALUE="{$prescription->get_dosage_display()}" >
+		 {else}
+		<input  type="hidden" name="sig" id="sig" size="30" VALUE="{$prescription->sig}" >
+		{/if}
 {/if}
+		<select name="interval" id="interval">{html_options options=$prescription->interval_array selected=$prescription->interval}</select>
 	</td>
 </tr>
 <tr>
@@ -216,6 +222,12 @@
   </td>
 {/if}
 </tr>
+<tr>
+	<td COLSPAN="1" class="text" ALIGN="LEFT" VALIGN="MIDDLE">{xl t=' <font size="2" color=red>*</font> Mandatory Fields '}</td>
+	<td COLSPAN="2" ALIGN="LEFT" VALIGN="MIDDLE"></td>
+	</td>
+</tr>
+
 </table>
 <input type="hidden" name="id" value="{$prescription->id}" />
 <input type="hidden" name="process" value="{$PROCESS}" />
@@ -278,10 +290,10 @@ function DoDrugLookup(eObj) {
 var CheckForErrors = function(eObj) {
     // REQUIRED FIELDS
     if (CheckRequired('drug') == false) { return false; }
-    //if (CheckRequired('quantity') == false) { return false; }
-    //if (CheckRequired('unit') == false) { return false; }
+    if (CheckRequired('quantity') == false) { return false; }
+    if (CheckRequired('unit') == false) { return false; }
     //if (CheckRequired('size') == false) { return false; }
-    //if (CheckRequired('dosage') == false) { return false; }
+    if (CheckRequired('dosage') == false) { return false; }
     //if (CheckRequired('form') == false) { return false; }
     //if (CheckRequired('route') == false) { return false; }
     //if (CheckRequired('interval') == false) { return false; }

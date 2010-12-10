@@ -1,0 +1,167 @@
+{literal}
+<style type="text/css" title="mystyles" media="all">
+<!--
+td {
+       font-family: sans-serif;
+       text-decoration: none;
+       color: #000000;
+       font-size: 70%;
+}
+
+.spanheading
+{
+	 color:#656565;
+
+	 font-weight:bold;
+}
+
+.spanclass
+{
+	 color:#656565;
+	 font-family:courier;
+	 font-weight:bold;
+}
+
+.td label
+{
+
+width:15px;
+}
+
+
+-->
+
+</style>
+
+
+{/literal}
+
+
+
+<body>
+
+<table cellpadding="0" cellspacing="0" border=0 >
+
+
+{if  is_array($prescriptions)}
+  
+<tr ><td>&nbsp;</td></tr>
+
+ <tr><td><span  style="font-weight:bold;font-size:14px;color:blue;">Active Prescriptions</span></td></tr>
+ <tr ><td>&nbsp;</td></tr>
+
+  	{foreach from=$prescriptions item=prescription}
+  {if $prescription->get_active() > 0}
+
+  {literal}
+
+
+<style type="text/css">
+<!--
+{/literal}#download_now{$prescription->drug_id}{literal} {
+	display:block;
+	height:44px;
+	margin-top:0px;
+	width:159px;
+	cursor:pointer;
+}
+-->
+</style>
+{/literal}
+
+
+
+
+	<!--<div id="sliderssview{$prescription->drug_id}" class="sliderssview" style="display:none;">
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		 
+	</div>-->
+{if $prescription->drug neq ''}
+<tr>
+		<td width="30%">
+		<div ><span class="bold">{$prescription->drug}</span></div>	
+
+		</td>
+		<td valign="top"  class="text data">{$prescription->sig}
+		</td>
+
+	</tr>
+
+
+{else}
+
+    <tr><td>No record(s) found.</td></tr>
+{/if}
+
+          <!--	<div style="position: absolute; top: 17px; left: 174.5px; opacity: 0; display: none;" class="tooltip">-->
+		
+	
+   {/if}
+
+	{/foreach}
+
+<tr ><td>&nbsp;</td></tr>
+
+ <tr><td><span  style="font-weight:bold;font-size:14px;color:blue;">Inactive Prescriptions</span></td></tr>
+ <tr ><td>&nbsp;</td></tr>
+ {foreach from=$prescriptions item=prescription}
+  {if $prescription->get_active() lte 0}
+
+
+{literal}
+
+
+<style type="text/css">
+<!--
+{/literal}#download_now{$prescription->drug_id}{literal} {
+	display:block;
+	height:44px;
+	margin-top:0px;
+	width:159px;
+	cursor:pointer;
+}
+-->
+</style>
+{/literal}
+
+
+	<!--<div id="sliderssview{$prescription->drug_id}" class="sliderssview" style="display:none;">
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+    </div>-->
+
+
+{if $prescription->drug neq ''}
+     <tr>
+		<td width="30%">
+		<div ><span class="bold">{$prescription->drug}</span></div>	
+
+		</td>
+		<td valign="top"  class="text data">{$prescription->sig}
+		</td>
+
+	</tr>
+{else}
+
+    <tr><td>No record(s) found.</td></tr>
+
+{/if}
+          <!--	<div style="position: absolute; top: 17px; left: 174.5px; opacity: 0; display: none;" class="tooltip">-->
+  {/if}
+  {/foreach}
+
+  {else}
+
+   {$prescriptions}
+
+  {/if}
+
+
+
+</table>
+
+</body>
+</html>
+
+
+
+
