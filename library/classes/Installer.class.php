@@ -1,32 +1,53 @@
 <?php
-/* Copyright © 2010 by Andrew Moore */
-/* Licensing information appears at the end of this file. */
+/**
+ * OpenEMR Installer Class
+ *
+ * @copyright   Copyright © 2010 by Andrew Moore
+ * @license     Licensing information appears at the end of this file.
+ */
 
 class Installer
 {
 
   public function __construct( $cgi_variables )
   {
-    // Installation variables
-    // For a good explanation of these variables, see documentation in
-    //   the contrib/util/installScripts/InstallerAuto.php file.
-    $this->iuser                = $cgi_variables['iuser'];
-    $this->iuserpass            = $cgi_variables['iuserpass'];
-    $this->iuname               = $cgi_variables['iuname'];
-    $this->igroup               = $cgi_variables['igroup'];
-    $this->server               = $cgi_variables['server']; // mysql server (usually localhost)
-    $this->loginhost            = $cgi_variables['loginhost']; // php/apache server (usually localhost)
-    $this->port                 = $cgi_variables['port'];
-    $this->root                 = $cgi_variables['root'];
-    $this->rootpass             = $cgi_variables['rootpass'];
-    $this->login                = $cgi_variables['login'];
-    $this->pass                 = $cgi_variables['pass'];
-    $this->dbname               = $cgi_variables['dbname'];
-    $this->collate              = $cgi_variables['collate'];
-    $this->site                 = $cgi_variables['site'];
-    $this->source_site_id       = $cgi_variables['source_site_id'];
-    $this->clone_database       = $cgi_variables['clone_database'];
-    $this->development_translations = $cgi_variables['development_translations'];
+    /** Installation variables **/
+    /** For a good explanation of these variables, see documentation in **/
+    /** the contrib/util/installScripts/InstallerAuto.php file. **/
+    if ( isset($cgi_variables['iuser']) )
+        $this->iuser = $cgi_variables['iuser'];
+    if ( isset($cgi_variables['iuserpass']) )
+        $this->iuserpass = $cgi_variables['iuserpass'];
+    if ( isset($cgi_variables['iuname']) )
+        $this->iuname = $cgi_variables['iuname'];
+    if ( isset($cgi_variables['igroup']) )
+        $this->igroup = $cgi_variables['igroup'];
+    if ( isset($cgi_variables['server']) )
+        $this->server = $cgi_variables['server']; // mysql server (usually localhost)
+    if ( isset($cgi_variables['loginhost']) )
+        $this->loginhost = $cgi_variables['loginhost']; // php/apache server (usually localhost)
+    if ( isset($cgi_variables['port']) )
+        $this->port = $cgi_variables['port'];
+    if ( isset($cgi_variables['root']) )
+        $this->root = $cgi_variables['root'];
+    if ( isset($cgi_variables['rootpass']) )
+        $this->rootpass = $cgi_variables['rootpass'];
+    if ( isset($cgi_variables['login']) )
+        $this->login = $cgi_variables['login'];
+    if ( isset($cgi_variables['pass']) )
+        $this->pass = $cgi_variables['pass'];
+    if ( isset($cgi_variables['dbname']) )
+        $this->dbname = $cgi_variables['dbname'];
+    if ( isset($cgi_variables['collate']) )
+        $this->collate = $cgi_variables['collate'];
+    if ( isset($cgi_variables['site']) )
+        $this->site = $cgi_variables['site'];
+    if ( isset($cgi_variables['source_site_id']) )
+        $this->source_site_id = $cgi_variables['source_site_id'];
+    if ( isset($cgi_variables['clone_database']) )
+        $this->clone_database = $cgi_variables['clone_database'];
+    if ( isset($cgi_variables['development_translations']) )
+        $this->development_translations = $cgi_variables['development_translations'];
 
     // Make this true for IPPF.
     $this->ippf_specific = false;
@@ -291,16 +312,27 @@ $config = 1; /////////////
   public function insert_globals() {
     function xl($s) { return $s; }
     require(dirname(__FILE__) . '/../globals.inc.php');
+
     foreach ($GLOBALS_METADATA as $grpname => $grparr) {
       foreach ($grparr as $fldid => $fldarr) {
         list($fldname, $fldtype, $flddef, $flddesc) = $fldarr;
-        if (substr($fldtype, 0, 2) !== 'm_') {
-          $res = $this->execute_sql("SELECT count(*) AS count FROM globals WHERE gl_name = '$fldid'");
-          $row = @mysql_fetch_array($res, MYSQL_ASSOC);
-          if (empty($row['count'])) {
-            $this->execute_sql("INSERT INTO globals ( gl_name, gl_index, gl_value ) " .
-                           "VALUES ( '$fldid', '0', '$flddef' )");
-          }
+        if ( is_string($fldtype) ) {
+            if (substr($fldtype, 0, 2) !== 'm_') {
+                $res = $this->execute_sql("SELECT count(*) AS count FROM globals WHERE gl_name = '$fldid'");
+                $row = @mysql_fetch_array($res, MYSQL_ASSOC);
+                if (empty($row['count'])) {
+                    $this->execute_sql("INSERT INTO globals ( gl_name, gl_index, gl_value ) VALUES ( '$fldid', '0', '$flddef' )");
+                }
+            }
+        } elseif ( is_array($fldtype) ) {
+            $keys = array_keys($fldtype);
+            if ( substr($fldtype[$keys[0]], 0, 2) !== 'm_') {
+                $res = $this->execute_sql("SELECT count(*) AS count FROM globals WHERE gl_name = '$fldid'");
+                $row = @mysql_fetch_array($res, MYSQL_ASSOC);
+                if (empty($row['count'])) {
+                    $this->execute_sql("INSERT INTO globals ( gl_name, gl_index, gl_value ) VALUES ( '$fldid', '0', '$flddef' )");
+                }
+            }
         }
       }
     }
@@ -441,7 +473,7 @@ $config = 1; /////////////
    * @return array
    */
   private function initialize_dumpfile_list() {
-    if ( $this->clone_database ) {
+    if ( !empty($this->clone_database) && $this->clone_database ) {
       $this->dumpfiles = array( $this->get_backup_filename() => 'clone database' );
     } else {
       $dumpfiles = array( $this->main_sql => 'Main' );

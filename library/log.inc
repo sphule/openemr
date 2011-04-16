@@ -480,7 +480,9 @@ function send_atna_audit_msg($user, $group, $event, $patient_id, $outcome, $comm
  */
 function auditSQLEvent($statement, $outcome)
 {
-    $user =  $_SESSION['authUser'];
+    if ( isset($_SESSION['authUser']) )
+        $user =  $_SESSION['authUser'];
+    
 	/* Don't log anything if the audit logging is not enabled. Exception for "emergency" users */
    if (!($GLOBALS['enable_auditlog']))
    {
