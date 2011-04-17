@@ -362,7 +362,7 @@
                     break;
                 }
 
-                echo '<b>Step $state</b><br /><br />';
+                echo '<b>Step '.$state.'</b><br /><br />';
                 echo 'Configuring OpenEMR...<br /><br />';
 
                 // Skip below if database shell has already been created.
