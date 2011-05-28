@@ -1190,6 +1190,9 @@ if (!empty($reg)) {
           <?php if ( (!$GLOBALS['disable_phpmyadmin_link']) && (acl_check('admin', 'database')) ) genMiscLink('RTop','adm','0',xl('Database'),'../phpmyadmin/index.php'); ?>
           <?php if (acl_check('admin', 'users'   )) genMiscLink('RTop','adm','0',xl('Certificates'),'usergroup/ssl_certificates_admin.php'); ?>
         </ul>
+        <ul>
+          <?php if (acl_check('admin', 'database'   )) genMiscLink('RTop','adm','0',xl('RxNorm'),'../interface/code_systems/rx_norms.php'); ?>
+        </ul>
       </li>
     </ul>
   </li>
