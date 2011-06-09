@@ -32,6 +32,17 @@ require_once("$srcdir/options.inc.php");
  // Collect parameter(s)
  $category = empty($_REQUEST['category']) ? '' : $_REQUEST['category'];
 
+ // mdsupport : Set the enddate to today if quickstop button is used for an issue
+ if ($_POST["endissue"]) {
+	sqlQuery( "UPDATE lists ".
+				"SET enddate=NOW() ".
+				"WHERE id=".$_POST["endissue"]
+	);
+ }
+ // mdsupport : end change
+ // get issues
+ $pres = sqlStatement("SELECT * FROM lists WHERE pid = $pid " .
+  "ORDER BY type, begdate");
 ?>
 <html>
 
@@ -80,6 +91,11 @@ function newEncounter() {
 <?php } ?>
 }
 
+// Process click on status end.
+function statclick(id) {
+	var f = document.getElementById("endissue");
+    f.value = id;
+}
 </script>
 
 </head>
@@ -96,6 +112,7 @@ function newEncounter() {
 <div id='patient_stats'>
 
 <form method='post' action='stats_full.php' onsubmit='return top.restoreSession()'>
+<input type="hidden" name="endissue" id="endissue" />
 
 <table>
 
@@ -208,6 +225,10 @@ foreach ($ISSUE_TYPES as $focustype => $focustitles) {
     // both codetext and statusCompute have already been escaped above with htmlspecialchars)
     echo "  <td>" . $codetext . "</td>\n";
     echo "  <td>" . $statusCompute . "&nbsp;</td>\n";
+    if (($thisauth == 'write') && ($row['enddate'] == NULL)) {
+    	echo "<input class='switchStat' type='image' src='../../../images/deleteBtn.png' id='$rowid'>";
+    }
+    echo "</td>\n";
     echo "  <td class='nowrap'>";
     echo generate_display_field(array('data_type'=>'1','list_id'=>'occurrence'), $row['occurrence']);
     echo "</td>\n";
@@ -243,8 +264,10 @@ echo "</table>";
 $(document).ready(function(){
     $(".statrow").mouseover(function() { $(this).toggleClass("highlight"); });
     $(".statrow").mouseout(function() { $(this).toggleClass("highlight"); });
-
     $(".statrow").click(function() { dopclick(this.id,0); });
+    <?php if ($thisauth == 'write') { ?>
+    $(".switchStat").click(function(event) { statclick(this.id); event.stopPropagation(); });
+    <?php } ?>
     $(".editenc").click(function(event) { doeclick(this.id); event.stopPropagation(); });
     $("#newencounter").click(function() { newEncounter(); });
     $("#history").click(function() { GotoHistory(); });
@@ -265,7 +288,7 @@ var GotoHistory = function() {
 <?php else: ?>
     location.href='../history/history_full.php';
 <?php endif; ?>
-}
+};
 
 var GoBack = function () {
     top.restoreSession();
@@ -275,7 +298,7 @@ var GoBack = function () {
 <?php else: ?>
     location.href="patient_summary.php";
 <?php endif; ?>
-}
+};
 
 </script>
 
