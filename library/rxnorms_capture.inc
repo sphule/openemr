@@ -26,7 +26,7 @@ $rx_info['rxnsty'] = array('title' => "Semantic Types ", 'dir' => "$dir", 'origi
 // get ndc table list
 $list_tables_rx = array();
 $result = sqlStatement("SHOW TABLES LIKE 'rx%'");
-while($row=mysql_fetch_row($result)) {
+while($row=sqlFetchArray($result)) {
     //echo "Table: {$row[0]}<br>\n";
     $list_tables_rx[] = $row[0];
 }

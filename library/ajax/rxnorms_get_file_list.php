@@ -10,10 +10,19 @@
 // This will refresh the ndc file list
 /*******************************************************************/
 
+//SANITIZE ALL ESCAPES
+$sanitize_all_escapes=true;
+//
+
+//STOP FAKE REGISTER GLOBALS
+$fake_register_globals=false;
+//
+
 include_once("../../interface/globals.php");
 include_once("{$GLOBALS['srcdir']}/rxnorms_capture.inc");
+
 //echo $GLOBALS['srcdir'];
-if(!$rx) return;
+if(!$_REQUEST['rx']) return;
 //print_r($rx_info);
 $display_files = array();
 //echo $dir;
@@ -25,7 +34,7 @@ if( is_dir($dir) && $handle = opendir($dir)) {
            $file = $dir."/".$filename;
            $check = explode(".",$lfilename);
            if( in_array($check[0],array_keys($rx_info)) )
-               $display_files[] = "<tr><td>&nbsp;</td><td>".$rx_info[$check[0]]['filename']."</td><td>".filesize($file)."</td><td>".@date("Y-m-d H:i:s",filemtime($file))."</td></tr>\n";
+               $display_files[] = "<tr><td>&nbsp;</td><td>".htmlspecialchars( $rx_info[$check[0]]['filename'], ENT_NOQUOTES)."</td><td>".htmlspecialchars( filesize($file), ENT_NOQUOTES)."</td><td>".htmlspecialchars( @date("Y-m-d H:i:s",filemtime($file)), ENT_NOQUOTES)."</td></tr>\n";
         }
     }
     closedir($handle);
@@ -34,15 +43,15 @@ if( is_dir($dir) && $handle = opendir($dir)) {
         <table cellspacing='0' align='center'>
           <tr class='ndc_head'>
 		  <th>&nbsp;</th>
-            <th>File data</th>
-            <th>Size</th>
-            <th>Last Updated</th>
+            <th><?php echo htmlspecialchars( xl('File data'), ENT_NOQUOTES); ?></th>
+            <th><?php echo htmlspecialchars( xl('Size'), ENT_NOQUOTES); ?></th>
+            <th><?php echo htmlspecialchars( xl('Last Updated'), ENT_NOQUOTES); ?></th>
           </tr>
 <?php
 $button='';
 if(count($display_files)==9)
 {
-	$button='<tr><td colspan="4" height="25" align="center"><div id="loader_span"  ></div></td></tr><tr><td colspan="4" align="center"><input type="button" name="load_script" id="load_script" value="Load" ></td></tr>';
+	$button='<tr><td colspan="4" height="25" align="center"><div id="loader_span"  ></div></td></tr><tr><td colspan="4" align="center"><input type="button" name="load_script" id="load_script" value="'.htmlspecialchars( xl('Load'), ENT_QUOTES).'" ></td></tr>';
 }
 if (!empty($display_files)) {
    foreach( $display_files as $row ) {

@@ -10,12 +10,21 @@
 // This will refresh the ndc file list
 /*******************************************************************/
 //ini_set('display_errors',1);
+
+//SANITIZE ALL ESCAPES
+$sanitize_all_escapes=true;
+//
+
+//STOP FAKE REGISTER GLOBALS
+$fake_register_globals=false;
+//
+
 include_once("../../interface/globals.php");
 include_once("{$GLOBALS['srcdir']}/sql.inc");
 include_once("{$GLOBALS['srcdir']}/rxnorms_capture.inc");
 //echo $GLOBALS['srcdir'];
-if(!$rx) return;
 
+if(!$_REQUEST['rxnorms']) return;
 
 $display_files = array();
 //echo $dir;

@@ -4,6 +4,15 @@ This file allows the user to manage the NDC directory
 Download archive, create tables, load data
 View filesize, table cont and the date/time of the last updates
 ********************************************************/
+
+//SANITIZE ALL ESCAPES
+$sanitize_all_escapes=true;
+//
+
+//STOP FAKE REGISTER GLOBALS
+$fake_register_globals=false;
+//
+
 require_once("../../interface/globals.php");
 require_once("$srcdir/sql.inc");
 require_once("$srcdir/rxnorms_capture.inc");
@@ -12,7 +21,7 @@ require_once("$srcdir/rxnorms_capture.inc");
 <html>
 <head>
 <?php html_header_show();?>
-<title><?php ($file_submit) ? "NDC Directory : ".$file_select." Results" : "NDC Directory"; ?></title>
+<title><?php echo htmlspecialchars( xl('RxNorm'), ENT_NOQUOTES); ?></title>
 <link rel="stylesheet" href='<?php echo $css_header ?>' type='text/css'>
 
 <style>
@@ -232,9 +241,6 @@ div.update_results {
 
 -->
 </style>
-<!--
-<script type="text/javascript" src="../../library/js/jquery-1.2.2.min.js"></script>
--->
 <script type="text/javascript" src="../../library/js/jquery-1.4.3.min.js"></script>
 <script language="JavaScript">
 <?php require($GLOBALS['srcdir'] . "/restoreSession.php"); ?>
@@ -250,12 +256,12 @@ div.update_results {
 <table>
   <tr>
     <td colspan='2'>
-      <div class='header'>Rx Norms</div>
+      <div class='header'><?php echo htmlspecialchars( xl('RxNorm'), ENT_NOQUOTES); ?></div>
     </td>
   </tr>
     <tr>
         <td rowspan='2'>
-        <div id='list_heading' style="cursor:pointer;"><img src='../../images/downbtn.gif' id='file_update' border='0' align='left' valign='text' hspace='2' title='It may take several minutes to download the files, create the tables and load the data. ' style='display:' /><img src='../../images/ajax-loader.gif' id='file_load' border='0' align='left' valign='text' hspace='2' style='display:none' />Download Latest Rx Norms Files<div id='list_result' style='display:inline'></div></div>
+        <div id='list_heading' style="cursor:pointer;"><img src='../../images/downbtn.gif' id='file_update' border='0' align='left' valign='text' hspace='2' title='<?php echo htmlspecialchars( xl('It may take several minutes to download the files, create the tables and load the data.'), ENT_QUOTES); ?>' style='display:' /><img src='../../images/ajax-loader.gif' id='file_load' border='0' align='left' valign='text' hspace='2' style='display:none' /><?php echo htmlspecialchars( xl('Download Latest RxNorm Files'), ENT_NOQUOTES); ?><div id='list_result' style='display:inline'></div></div>
         <div class='file_list'></div>
 		
     </td>
@@ -271,10 +277,10 @@ div.update_results {
 </div>
 
 <script type="text/javascript">
-   var success = " : Completed Successfully";
-   var data_loading = "<img src='../../images/ajax-loader.gif' id='required_load' border='0' align='left' valign='text' hspace='1' style='display:none' /> Loading required data... this may take several minutes.";
-   var data_exists = "Required data has been loaded.";
-   var data_error = "Error loading required data... ";
+   var success = " : <?php echo htmlspecialchars( xl('Completed Successfully'), ENT_QUOTES); ?>";
+   var data_loading = "<img src='../../images/ajax-loader.gif' id='required_load' border='0' align='left' valign='text' hspace='1' style='display:none' /><?php echo htmlspecialchars( xl('Loading required data... this may take several minutes.'), ENT_QUOTES); ?>";
+   var data_exists = "<?php echo htmlspecialchars( xl('Required data has been loaded.'), ENT_QUOTES); ?>";
+   var data_error = "<?php echo htmlspecialchars( xl('Error loading required data...'), ENT_QUOTES); ?>";
    var error_response = "";
 $(document).ready(function(){
   loadFileList();
@@ -285,7 +291,7 @@ $(document).ready(function(){
     $("#file_load").show();
     $("#list_result").empty();
     htmlobj=$.ajax({
-		url:"../../library/ajax/rxnorms_get_directory.php?rxnorms=true&time1=<?php echo time();?>",
+		url:"../../library/ajax/rxnorms_get_directory.php?rxnorms=true&time1=<?php echo htmlspecialchars(time(),ENT_QUOTES);?>",
 		success:function(data){
 			
 		
@@ -311,7 +317,7 @@ $("#load_script").live("click",function(){
 
 var name=new Array();
 
-var confirm=window.confirm('Are you sure to Import the scripts in database \nThis process may take several minutes..')
+var confirm=window.confirm('<?php echo addslashes( xl('This process may take several minutes.. Please confirm.') ); ?>')
 if(confirm)
 	{
 		loadscript();
@@ -324,7 +330,7 @@ function loadscript(){
 				url:url,
 				beforeSend:function(){
 				$("#loader_span").show();
-							$("#loader_span").html("<img src='../../images/ajax-loader.gif' id='required_load' border='0' align='left' valign='text' hspace='1' style='display:block' /> Loading required data... this may take several minutes.");	
+							$("#loader_span").html("<img src='../../images/ajax-loader.gif' id='required_load' border='0' align='left' valign='text' hspace='1' style='display:block' /><?php echo htmlspecialchars( xl('Loading required data... this may take several minutes.'), ENT_QUOTES); ?>");	
 							$("#load_script").attr("disabled", true);
 							$("#load_script").val('Loading....');
 

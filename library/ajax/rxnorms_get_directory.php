@@ -11,12 +11,19 @@
 //  The archive is uncompressed, and the db tables are created if they don't already exist
 /*******************************************************************/
 
+//SANITIZE ALL ESCAPES
+$sanitize_all_escapes=true;
+//
+
+//STOP FAKE REGISTER GLOBALS
+$fake_register_globals=false;
+//
+
 include_once("../../interface/globals.php");
 include_once("{$GLOBALS['srcdir']}/sql.inc");
 include_once("{$GLOBALS['srcdir']}/rxnorms_capture.inc");
-include_once("{$GLOBALS['srcdir']}/formdata.inc.php");
 
-if(!$rxnorms) return;
+if(!$_REQUEST['rxnorms']) return;
 //if(!$GLOBALS['ndc_zip_url']) return;
 
 
@@ -31,10 +38,10 @@ if( !is_dir($dir) )
 
 if(!file_exists($dest))
 {
-   $error = 'Archieve Not found';
+   $error = htmlspecialchars( xl('Archive Not Found'), ENT_NOQUOTES);
 } else {
     if( !file_exists($dest))
-      $error = " : File does not exist";
+      $error = " : " . htmlspecialchars( xl('File does not exist'), ENT_NOQUOTES);
     else
      // if( !chmod($dest,0777)) {
       //  $error = " : Not able to move to Destination (not writable)";
@@ -48,7 +55,7 @@ if(!file_exists($dest))
 					$zip->close();
 					//echo 'ok'; // content extracted.
 				} else {
-					 $error = "Not able to open Archive";
+					 $error = htmlspecialchars( xl('Not able to open Archive'), ENT_NOQUOTES);
 				}
 				
 				$pathtoscan=$dir."/scripts/mysql/";
@@ -65,7 +72,7 @@ if(!file_exists($dest))
 				}	
 				if($flag==false)
 				{
-					 $success = "Completed Successfully";
+					 $success = htmlspecialchars( xl('Completed Successfully'), ENT_NOQUOTES);
 				}
 			
 	   
