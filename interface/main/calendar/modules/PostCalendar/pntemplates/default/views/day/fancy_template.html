@@ -371,29 +371,8 @@ function compareEvents($a,$b) {
         [-assign var=pid value=$provider.id-]
         [-assign var=column value=$events.$pid-]
         [-foreach from=$column item=event-]                      [-* START Events  *-]
-        [-if $event.data.catid eq 2 || $event.data.catid eq 3 || $event.data.catid eq 4 || $event.data.catid eq 8 || $event.data.catid eq 11-]
-            <div class='cal_event_na' style='top:    [-$event.top-]px;
-                                             left:   [-$event.left-]px;
-                                             width:  [-$event.width-]px;
-                                             height: [-$event.height-]px;'>
-            <a href='javascript:oldEvt([-$date|date_format:"%Y%m%d"-], [-$event.data.eid-])'>
-            [-if $event.data.catid eq 2-]
-            [-php-] xl('IN','e'); [-/php-]
-            [-elseif $event.data.catid eq 3-]
-            [-php-] xl('OUT','e'); [-/php-]
-            [-elseif $event.data.catid eq 4-]
-            [-php-] xl('VACATION','e'); [-/php-]
-            [-elseif $event.data.catid eq 8-]
-            [-php-] xl('LUNCH','e'); [-/php-]
-            [-elseif $event.data.catid eq 11-]
-            [-php-] xl('RESERVED','e'); [-/php-]
-            [-else-]
-            [-php-] xl('Not Available','e'); [-/php-]
-            [-/if-]
-            </a>
-            </div>
-        [-else-]
-            <div class='cal_event' style='top:    [-$event.top-]px;
+        [-if $event.data.catid eq 9 || $event.data.catid eq 10 || $event.data.catid eq 5-]
+          <div class='cal_event' style='top:    [-$event.top-]px;
                                           left:   [-$event.left-]px;
                                           width:  [-$event.width-]px;
                                           height: [-$event.height-]px;
@@ -404,12 +383,7 @@ function compareEvents($a,$b) {
                [-$event.data.startTime|date_format:"%I:%M %p"-]
               </a>
            </p>
-
-           <p><font color="[-$event.data.facility.color-]">
-            [-$event.data.facility.name-]
-               </font></p>
-
-            <p>[-$event.data.duration-][-php-] xl('min','e'); [-/php-]</p>
+           <p>[-$event.data.duration-][-php-] xl('min','e'); [-/php-]</p>
 
             [-if $event.data.pid gt 0-]
               <p><a href='javascript:goPid([-$event.data.pid-])'>[-$event.data.patient_name|default:'No name'-]</a></p>
@@ -419,6 +393,30 @@ function compareEvents($a,$b) {
             [-if $event.data.hometext ne ''-]<p>([-$event.data.hometext|escape-])</p>[-/if-]
 
             </div>
+        [-else-]
+          <div class='cal_event_na' style='top:    [-$event.top-]px;
+                                             left:   [-$event.left-]px;
+                                             width:  [-$event.width-]px;
+                                             height: [-$event.height-]px;
+                                             background-color: [-$event.category.color-];'>                                             
+            <a href='javascript:oldEvt([-$event.data.eventDate|date_format:"%Y%m%d"-], [-$event.data.eid-])'>
+           [-$event.data.catname-]
+           <!--  [-if $event.data.catid eq 2-]
+            IN
+            [-elseif $event.data.catid eq 3-]
+            OUT
+            [-elseif $event.data.catid eq 4-]
+            VACATION
+            [-elseif $event.data.catid eq 8-]
+            LUNCH
+            [-elseif $event.data.catid eq 11-]
+            RESERVED
+            [-else-]
+            Not Available
+            [-/if-]-->
+            </a>
+            </div>
+            
         [-/if-]
         [-/foreach-]                                             [-* END Events *-]
     [-/foreach-]                                                [-* END Columns (Providers) *-]
