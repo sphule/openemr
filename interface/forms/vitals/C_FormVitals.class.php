@@ -41,6 +41,18 @@ class C_FormVitals extends Controller {
     	}
 
     	$dbconn = $GLOBALS['adodb']['db'];
+    	// Code for getting the "deleted forms" from "forms: table in the database.
+    	$sql = "SELECT form_id FROM `forms` WHERE id != $form_id and pid = ".$GLOBALS['pid']." AND deleted = 1 AND form_name = 'Vitals' ORDER BY date DESC";
+    	$res = $dbconn->Execute( $sql );
+    	
+    	// Array that will store the deleted vitals forms in the project.
+    	$del_forms	= array();  
+    	
+    	while( $res && !$res->EOF ){
+    		$del_forms[]	=	$res->fields['form_id'];
+    		$res->MoveNext();
+    	}
+    	
     	$sql = "SELECT * from form_vitals where id != $form_id and pid = ".$GLOBALS['pid'];
         $sql .= " ORDER BY date DESC";
     	$result = $dbconn->Execute($sql);
@@ -53,6 +65,11 @@ class C_FormVitals extends Controller {
     	$i = 1;
     	while($result && !$result->EOF)
     	{
+    		    		if ( in_array( $result->fields['id'] , $del_forms) ){
+    			$result->MoveNext();
+    			continue;
+    		}
+    		
     		$results[$i]['id'] = $result->fields['id'];
     		$results[$i]['date'] = $result->fields['date'];
     		$results[$i]['activity'] = $result->fields['activity'];
