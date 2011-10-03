@@ -41,20 +41,10 @@ class C_FormVitals extends Controller {
     	}
 
     	$dbconn = $GLOBALS['adodb']['db'];
-    	// Code for getting the "deleted forms" from "forms: table in the database.
-    	$sql = "SELECT form_id FROM `forms` WHERE id != $form_id and pid = ".$GLOBALS['pid']." AND deleted = 1 AND form_name = 'Vitals' ORDER BY date DESC";
-    	$res = $dbconn->Execute( $sql );
-    	
-    	// Array that will store the deleted vitals forms in the project.
-    	$del_forms	= array();  
-    	
-    	while( $res && !$res->EOF ){
-    		$del_forms[]	=	$res->fields['form_id'];
-    		$res->MoveNext();
-    	}
-    	
-    	$sql = "SELECT * from form_vitals where id != $form_id and pid = ".$GLOBALS['pid'];
-        $sql .= " ORDER BY date DESC";
+    	//Combined query for retrieval of vital information which is not deleted
+    	$sql = "SELECT form_vitals.* from form_vitals,forms where form_vitals.id != $form_id and form_vitals.pid =". $GLOBALS['pid'];
+    	$sql .=" and forms.deleted!=1 and forms.form_name='Vitals' and form_vitals.id=forms.form_id";
+        $sql .= " ORDER BY form_vitals.date DESC";
     	$result = $dbconn->Execute($sql);
 
         // get the patient's current age
@@ -65,10 +55,6 @@ class C_FormVitals extends Controller {
     	$i = 1;
     	while($result && !$result->EOF)
     	{
-    		    		if ( in_array( $result->fields['id'] , $del_forms) ){
-    			$result->MoveNext();
-    			continue;
-    		}
     		
     		$results[$i]['id'] = $result->fields['id'];
     		$results[$i]['date'] = $result->fields['date'];
