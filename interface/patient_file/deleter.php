@@ -40,7 +40,7 @@
   }
   if ($count) {
    $query = "DELETE FROM $table WHERE $where";
-   echo $query . "<br>\n";
+   //echo $query . "<br>\n";
    sqlStatement($query);
   }
  }
@@ -318,7 +318,25 @@ document.deletefrm.submit();
   //
   echo "<script language='JavaScript'>\n";
   if ($info_msg) echo " alert('$info_msg');\n";
-  if ($encounterid) //this code need to be same as 'parent.imdeleted($encounterid)' when the popup is div like
+  echo "if(parent.$==undefined) {";
+  	echo "window.close()";
+  echo "}else {";
+  	echo "parent.$.fn.fancybox.close();"; 
+  echo"}";
+  echo "parent.location.href='../main/main_info.php';";
+  if ( $encounterid ||  $issue ){
+  	echo "window.parent.opener.parent.opener.location.reload();\n";	
+  }  
+  echo " window.close();\n";
+  echo " if (opener.imdeleted) opener.imdeleted();\n";
+  
+  //redirect parent window
+  
+  echo "parent.opener.location.href='../main/main_info.php';";
+  echo " if ( opener ) { opener.location.reload(); } else { parent.location.reload(); } \n";
+  echo "</script></body></html>\n";
+  echo " if(opener) {if (opener.imdeleted) opener.imdeleted();}} \n";
+  /*if ($encounterid) //this code need to be same as 'parent.imdeleted($encounterid)' when the popup is div like
    {
     echo "window.opener.imdeleted($encounterid);\n";
    }
@@ -327,6 +345,7 @@ document.deletefrm.submit();
     echo "parent.imdeleted();\n";
    }
   echo "</script></body></html>\n";
+  */
   exit();
  }
 ?>
