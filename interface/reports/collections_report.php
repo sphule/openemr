@@ -283,6 +283,23 @@ function checkAll(checked) {
    f.elements[i].checked = checked;
  }
 }
+function checkValid() {
+	 var f = document.forms[0];
+	 var checkFlag=0;;
+	 for (var i = 0; i < f.elements.length; ++i) {
+	  var ename = f.elements[i].name;
+	  if (ename.indexOf('form_cb[') == 0 && f.elements[i].checked==true) {
+	  	checkFlag++;
+	  }
+	 }
+	 if(checkFlag == 0) {
+		alert("Please select atleast one checkbox for exporting the report");
+		return false;
+	 }
+	 else {
+		 $("#theform").submit();
+	 }
+	}
 
 </script>
 
@@ -457,7 +474,7 @@ function checkAll(checked) {
 		<tr>
 			<td>
 				<div style='margin-left:15px'>
-					<a href='#' class='css_button' onclick='$("#form_refresh").attr("value","true"); $("#theform").submit();'>
+					<a href='#' class='css_button' onclick='$("#form_refresh").attr("value","true"); $("#form_csvexport").attr("value","");$("#theform").submit();'>
 					<span>
 						<?php xl('Submit','e'); ?>
 					</span>
@@ -490,6 +507,7 @@ if ($_POST['form_refresh'] || $_POST['form_export'] || $_POST['form_csvexport'])
 
   if ($INTEGRATED_AR) {
     if ($_POST['form_export'] || $_POST['form_csvexport']) {
+      
       $where = "( 1 = 2";
       foreach ($_POST['form_cb'] as $key => $value) $where .= " OR f.pid = $key";
       $where .= ' )';
@@ -1182,6 +1200,7 @@ if ($_POST['form_refresh'] || $_POST['form_export'] || $_POST['form_csvexport'])
     } else {
       $alertmsg .= "AND flagged as in collections.";
     }
+    
   }
   else if ($_POST['form_csvexport']) {
     // echo "</textarea>\n";
@@ -1226,6 +1245,7 @@ if ($_POST['form_refresh'] || $_POST['form_export'] || $_POST['form_csvexport'])
 
 if (!$INTEGRATED_AR) SLClose();
 
+
 if (!$_POST['form_csvexport']) {
   if (!$_POST['form_export']) {
 ?>
@@ -1234,10 +1254,10 @@ if (!$_POST['form_csvexport']) {
 
 <a href='javascript:;' class='css_button'  onclick='checkAll(true)'><span><?php xl('Select All','e'); ?></span></a>
 <a href='javascript:;' class='css_button'  onclick='checkAll(false)'><span><?php xl('Clear All','e'); ?></span></a>
-<a href='javascript:;' class='css_button' onclick='$("#form_csvexport").attr("value","true"); $("#theform").submit();'>
+<a href='javascript:;' class='css_button' onclick='$("#form_csvexport").attr("value","true"); $("#form_refresh").attr("value","");$("#form_export").attr("value","");checkValid();'>
 	<span><?php xl('Export Selected as CSV','e'); ?></span>
 </a>
-<a href='javascript:;' class='css_button' onclick='$("#form_export").attr("value","true"); $("#theform").submit();'>
+<a href='javascript:;' class='css_button' onclick='$("#form_export").attr("value","true");$("#form_csvexport").attr("value",""); $("#form_refresh").attr("value","");checkValid(); '>
 	<span><?php xl('Export Selected to Collections','e'); ?></span>
 </a>
 </div>
