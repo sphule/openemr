@@ -303,9 +303,6 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 
 </div> <!-- end of parameters -->
 
-<?php
- if ($_POST['form_refresh'] || $_POST['form_csvexport']) {
-?>
 <div id="report_results">
 <table >
  <thead>
@@ -369,7 +366,7 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
           substr($row['date'], 0, 10), $row['units'], $row['fee'], $row['invoice_refno']);
       }
       //
-      $query = "SELECT s.sale_date, s.fee, s.quantity, s.pid, s.encounter, " .
+     $query = "SELECT s.sale_date, s.fee, s.quantity, s.pid, s.encounter, " .
         "d.name, fe.date, fe.facility_id, fe.invoice_refno " .
         "FROM drug_sales AS s " .
         "JOIN drugs AS d ON d.drug_id = s.drug_id " .
@@ -416,7 +413,8 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 
     if ($_POST['form_csvexport']) {
       if (! $_POST['form_details']) {
-        echo '"' . display_desc($product) . '",';
+        echo '"' . display_desc($category). '",';
+      	echo '"' . display_desc($product). '",';
         echo '"' . $productqty            . '",';
         echo '"'; bucks($producttotal); echo '"' . "\n";
       }
@@ -476,19 +474,11 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 ?>
 
 </table>
-</div> <!-- report results -->
-<?php } else { ?>
-<div class='text'>
- 	<?php echo xl('Please input search criteria above, and click Submit to view results.', 'e' ); ?>
-</div>
-<?php } ?>
-
 </form>
-
 </body>
-
 <!-- stuff for the popup calendar -->
 <link rel='stylesheet' href='<?php echo $css_header ?>' type='text/css'>
+
 <style type="text/css">@import url(../../library/dynarch_calendar.css);</style>
 <script type="text/javascript" src="../../library/dynarch_calendar.js"></script>
 <?php include_once("{$GLOBALS['srcdir']}/dynarch_calendar_en.inc.php"); ?>
@@ -499,8 +489,30 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
  Calendar.setup({inputField:"form_from_date", ifFormat:"%Y-%m-%d", button:"img_from_date"});
  Calendar.setup({inputField:"form_to_date", ifFormat:"%Y-%m-%d", button:"img_to_date"});
 </script>
+</div> <!-- report results -->
+ <?php 
+  if (! $_POST['form_csvexport']) {
+  	?>
+<table border='0' cellpadding='0' cellspacing='0' >
+<tr>
+	  <td height="2">
+	  </td>
+	 </tr>
+	</table>
+	
+	<?php 
+	$query = "SELECT licTable.license_content FROM mmfemr_license as licTable,mmfemr_license_type as licTypeTable " .
+	      "WHERE (licTable.license_type = licTypeTable.license_type_id) AND licTypeTable.license_type_status=1"  ;
+	    
+	$res = sqlStatement($query);
+	    while ($row = sqlFetchArray($res)) {
+	      
+	      $content = stripslashes($row['license_content']);
+	    }
+	  echo $content;
+  }
+	  ?>
+
 
 </html>
-<?php
-  } // End not csv export
-?>
+	  <?php } ?>
