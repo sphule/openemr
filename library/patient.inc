@@ -671,7 +671,14 @@ function newPatientData(    $db_id="",
                 $regdate = ""
             )
 {
-    $DOB = fixDate($DOB);
+
+		    	
+    if($fname == '') {
+    	echo "Sorry Text Area is empty";
+    	sleep(0.5);
+    }
+    else {    
+	$DOB = fixDate($DOB);
     $regdate = fixDate($regdate);
 
     $fitness = 0;
@@ -756,7 +763,7 @@ function newPatientData(    $db_id="",
 
     sync_patient($id,$fname,$lname,$street,$city,$postal_code,$state,$phone_home,
                 $phone_biz,$phone_cell,$email,$pid);
-
+    }
     return $foo['pid'];
 }
 
