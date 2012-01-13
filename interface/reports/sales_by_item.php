@@ -302,10 +302,6 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 </table>
 
 </div> <!-- end of parameters -->
-
-<?php
- if ($_POST['form_refresh'] || $_POST['form_csvexport']) {
-?>
 <div id="report_results">
 <table >
  <thead>
@@ -416,7 +412,8 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 
     if ($_POST['form_csvexport']) {
       if (! $_POST['form_details']) {
-        echo '"' . display_desc($product) . '",';
+        echo '"' . display_desc($category). '",';
+      	echo '"' . display_desc($product). '",';
         echo '"' . $productqty            . '",';
         echo '"'; bucks($producttotal); echo '"' . "\n";
       }
@@ -476,19 +473,11 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
 ?>
 
 </table>
-</div> <!-- report results -->
-<?php } else { ?>
-<div class='text'>
- 	<?php echo xl('Please input search criteria above, and click Submit to view results.', 'e' ); ?>
-</div>
-<?php } ?>
-
 </form>
-
 </body>
-
 <!-- stuff for the popup calendar -->
 <link rel='stylesheet' href='<?php echo $css_header ?>' type='text/css'>
+
 <style type="text/css">@import url(../../library/dynarch_calendar.css);</style>
 <script type="text/javascript" src="../../library/dynarch_calendar.js"></script>
 <?php include_once("{$GLOBALS['srcdir']}/dynarch_calendar_en.inc.php"); ?>
@@ -499,6 +488,7 @@ function thisLineItem($patient_id, $encounter_id, $rowcat, $description, $transd
  Calendar.setup({inputField:"form_from_date", ifFormat:"%Y-%m-%d", button:"img_from_date"});
  Calendar.setup({inputField:"form_to_date", ifFormat:"%Y-%m-%d", button:"img_to_date"});
 </script>
+</div> <!-- report results -->
 
 </html>
 <?php
