@@ -487,7 +487,8 @@ function auditSQLEvent($statement, $outcome)
    	    return;
    }
 
-
+    $lastid=mysql_insert_id($GLOBALS['dbh']);
+    $GLOBALS['lastidado']=$lastid;
    $statement = trim($statement);
 
     /* Don't audit SQL statements done to the audit log,
