@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Layout Patterns</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="featured" content="yes"><meta name="title" content="Samples" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../common/css/style.css" type="text/css" media="screen" />
+
+	</head>
+	<body onload="loadView('3L');">
+        <div class="header">
+            <a class="logo" href="http://www.dhtmlx.com" title="DHTMLX homepage"></a>
+            <div class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</div>
+            <div class="search-field">
+                <form action="http://docs.dhtmlx.com/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+            </div>
+            <div class="buttons">
+                <a class="doc_inact" href="../../../docsExplorer/index.html" title="DHTMLX Documentation homepage"></a>
+                <a class="sample"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="navigation-div">
+                <a href="../../../docsExplorer/samples.html" class="navigation"><img src="../common/icons/file.gif" alt="" >All components</a>
+                <div class="arrow"></div>
+                <a href="../index.html" class="navigation"><img height="22" src="../common/icons/layout.gif" alt="" >dhtmlxLayout</a>
+                <div class="arrow"></div>
+                <a href="./index.html" class="navigation"><img src="../common/icons/none.gif" alt="" >Configuration</a>
+            </div>
+            <div style="display:block;">
+                <h3>Layout Patterns</h3>
+            </div>
+            <div class="navigation-div">
+                <a href="#code" class="navigation view-source"><img src="../common/icons/source.gif" alt="" >View page source</a>
+            </div>
+            <link rel="stylesheet" type="text/css" href="../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxlayout_dhx_skyblue.css">
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxlayout.js"></script>
+	<!-- more patterns -->
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4e.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4w.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4a.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4j.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4l.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4f.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern4c.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern5u.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern5e.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern5w.js"></script>
+	<script src="../../codebase/patterns/dhtmlxlayout_pattern6c.js"></script>
+	
+	<script src="../../codebase/dhtmlxcontainer.js"></script>
+	
+
+
+	<div id="parentId" style="position: relative; top: 20px; left: 20px; width: 600px; height: 400px; aborder: #B5CDE4 1px solid;"></div>
+	<div id="srcDiv0" style="position: relative; top: 30px; left: 20px; height: 100px;"></div>
+	<div style="position: relative; height: 70px; top: 30px;"><font color='#009000'>*</font> New patterns, see documentation for details.<br>(additional js files should be included)</div>
+	<div id="srcDiv1" style="position: relative; top: 30px; left: 20px; height: 120px;"></div>
+
+<script>
+	var dhxLayout, layout, views, j=0;
+	var tds = {};
+	function addTable(from, to) {
+		var table = document.createElement("TABLE");
+		document.getElementById("srcDiv"+(j++)).appendChild(table);
+		var tbody = document.createElement("TBODY");
+		table.appendChild(tbody);
+		var tr1 = document.createElement("TR");
+		tbody.appendChild(tr1);
+		var tr2 = document.createElement("TR");
+		tbody.appendChild(tr2);
+		for (var q=from; q<to; q++) {
+			var td1 = document.createElement("TD");
+			var td2 = document.createElement("TD");
+			td1.innerHTML = views[q]+(q>=16?" <font color='#009000'>*</font>":"");
+			td2.innerHTML = "<img src='../common/imgs/"+String(views[q]).toLowerCase()+".bmp' style='height: 49px; width: 49px; cursor: pointer;' onclick='loadView(\""+views[q]+"\");'>";
+			tr1.appendChild(td1);
+			tr2.appendChild(td2);
+			tds[views[q]] = td1;
+		}
+	}
+	function loadView(view) {
+		if (dhxLayout != null) dhxLayout.unload();
+		dhxLayout = new dhtmlXLayoutObject("parentId", view);
+		if (views == null) {
+			views = dhxLayout.listViews();
+			addTable(0, 16);
+			addTable(16, views.length);
+		}
+		if (tds[layout]) tds[layout].style.background = "none";
+		layout = view;
+		if (tds[layout]) tds[layout].style.backgroundColor = "#BEE7FA";
+	}
+</script>
+			
+			
+         </div>
+    <div class="source">
+        <div class="teg">Source</div>
+        <div class="code" id="code">
+		<div class="hl-main"><pre><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">stylesheet</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxlayout.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">stylesheet</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/skins/dhtmlxlayout_dhx_skyblue.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcommon.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxlayout.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-comment">&lt;!--</span><span class="hl-comment"> more patterns </span><span class="hl-comment">--&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4e.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4w.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4a.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4j.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4l.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4f.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern4c.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern5u.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern5e.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern5w.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/patterns/dhtmlxlayout_pattern6c.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcontainer.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">parentId</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; top: 20px; left: 20px; width: 600px; height: 400px; aborder: #B5CDE4 1px solid;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">srcDiv0</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; top: 30px; left: 20px; height: 100px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; height: 70px; top: 30px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">font</span><span class="hl-code"> </span><span class="hl-var">color</span><span class="hl-code">='#</span><span class="hl-var">009000</span><span class="hl-code">'</span><span class="hl-brackets">&gt;</span><span class="hl-code">*</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">font</span><span class="hl-brackets">&gt;</span><span class="hl-code"> New patterns, see documentation for details.</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-code">(additional js files should be included)</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">srcDiv1</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; top: 30px; left: 20px; height: 120px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">,
+</span><span class="hl-identifier">layout</span><span class="hl-code">,
+</span><span class="hl-identifier">views</span><span class="hl-code">,
+</span><span class="hl-identifier">j</span><span class="hl-code"> = </span><span class="hl-number">0</span><span class="hl-code">;
+</span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">tds</span><span class="hl-code"> = </span><span class="hl-brackets">{</span><span class="hl-brackets">}</span><span class="hl-code">;
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">addTable</span><span class="hl-brackets">(</span><span class="hl-identifier">from</span><span class="hl-code">, </span><span class="hl-identifier">to</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">table</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TABLE</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">srcDiv</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-brackets">(</span><span class="hl-identifier">j</span><span class="hl-code">++</span><span class="hl-brackets">)</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">table</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">tbody</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TBODY</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">table</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">tbody</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">tr1</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TR</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">tbody</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">tr1</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">tr2</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TR</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">tbody</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">tr2</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">for</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">q</span><span class="hl-code"> = </span><span class="hl-identifier">from</span><span class="hl-code">; </span><span class="hl-identifier">q</span><span class="hl-code"> &lt; </span><span class="hl-identifier">to</span><span class="hl-code">; </span><span class="hl-identifier">q</span><span class="hl-code">++</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">td1</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TD</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">td2</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">TD</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">td1</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">views</span><span class="hl-brackets">[</span><span class="hl-identifier">q</span><span class="hl-brackets">]</span><span class="hl-code"> + </span><span class="hl-brackets">(</span><span class="hl-identifier">q</span><span class="hl-code"> &gt;= </span><span class="hl-number">16</span><span class="hl-code"> ? </span><span class="hl-quotes">&quot;</span><span class="hl-string"> &lt;font color='#009000'&gt;*&lt;/font&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">td2</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;img src='../common/imgs/</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-builtin">String</span><span class="hl-brackets">(</span><span class="hl-identifier">views</span><span class="hl-brackets">[</span><span class="hl-identifier">q</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">toLowerCase</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">.bmp' style='height: 49px; width: 49px; cursor: pointer;' onclick='loadView(</span><span class="hl-special">\&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">views</span><span class="hl-brackets">[</span><span class="hl-identifier">q</span><span class="hl-brackets">]</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-special">\&quot;</span><span class="hl-string">);'&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-identifier">tr1</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">td1</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tr2</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">td2</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tds</span><span class="hl-brackets">[</span><span class="hl-identifier">views</span><span class="hl-brackets">[</span><span class="hl-identifier">q</span><span class="hl-brackets">]</span><span class="hl-brackets">]</span><span class="hl-code"> = </span><span class="hl-identifier">td1</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">loadView</span><span class="hl-brackets">(</span><span class="hl-identifier">view</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> != </span><span class="hl-reserved">null</span><span class="hl-brackets">)</span><span class="hl-code">
+        </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">unload</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXLayoutObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">parentId</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-identifier">view</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">views</span><span class="hl-code"> == </span><span class="hl-reserved">null</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">views</span><span class="hl-code"> = </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">listViews</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">addTable</span><span class="hl-brackets">(</span><span class="hl-number">0</span><span class="hl-code">, </span><span class="hl-number">16</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">addTable</span><span class="hl-brackets">(</span><span class="hl-number">16</span><span class="hl-code">, </span><span class="hl-identifier">views</span><span class="hl-code">.</span><span class="hl-identifier">length</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    </span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">tds</span><span class="hl-brackets">[</span><span class="hl-identifier">layout</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">
+        </span><span class="hl-identifier">tds</span><span class="hl-brackets">[</span><span class="hl-identifier">layout</span><span class="hl-brackets">]</span><span class="hl-code">.</span><span class="hl-identifier">style</span><span class="hl-code">.</span><span class="hl-identifier">background</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">none</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+    </span><span class="hl-identifier">layout</span><span class="hl-code"> = </span><span class="hl-identifier">view</span><span class="hl-code">;
+    </span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">tds</span><span class="hl-brackets">[</span><span class="hl-identifier">layout</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">
+        </span><span class="hl-identifier">tds</span><span class="hl-brackets">[</span><span class="hl-identifier">layout</span><span class="hl-brackets">]</span><span class="hl-code">.</span><span class="hl-identifier">style</span><span class="hl-code">.</span><span class="hl-identifier">backgroundColor</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">#BEE7FA</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div>
+        </div>
+    <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright &copy; 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+    </div>
+	</body>
+</html>

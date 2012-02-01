@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:graphic_properties    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:graphic_properties</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:graphic_properties"  class="breadcrumbs" title="dhtmlxchart:graphic_properties">graphic_properties</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div><div class='arrow'></div><div class='backlink'><a href="dhtmlxchart___configuration_properties.html" class="wikilink1" title="dhtmlxchart:configuration_properties">Configuration properties</a></div></div>
+</p>
+
+
+
+<h1><a name="line_chart_properties" id="line_chart_properties">Line Chart properties</a></h1>
+<div class="level1">
+
+<p>
+
+Configuration properties are set in the chart constructor. Some of them are mandatory, others - optional.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> lineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+    view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+    container<span class="sy0">:</span><span class="st0">&quot;chart&quot;</span><span class="sy0">,</span>
+    value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+</div>
+
+<h4><a name="mandatory_properties" id="mandatory_properties">Mandatory properties</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_grcontainer.html" class="wikilink1" title="dhtmlxchart:property_grcontainer">container</a> - the id of <acronym title="HyperText Markup Language">HTML</acronym> container where you want display a chart</div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_grtype.html" class="wikilink1" title="dhtmlxchart:property_grtype">view</a> - a chart type, “line” for Line charts</div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_grvalue.html" class="wikilink1" title="dhtmlxchart:property_grvalue">value</a> - a property of dataset that chart represent</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="optional_properties" id="optional_properties">Optional properties</a></h4>
+<div class="level4">
+
+<p>
+
+<strong>look and fill</strong>
+ 
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_item.html" class="wikilink1" title="dhtmlxchart:property_item">item</a> - a Line chart point</div>
+<ul>
+<li class="level3"><div class="li"> borderColor - an outer color of a point</div>
+</li>
+<li class="level3"><div class="li"> borderWidth - a width of border line (2 is default)</div>
+</li>
+<li class="level3"><div class="li"> color - an inner color of a point</div>
+</li>
+<li class="level3"><div class="li"> radius - an item radius (4 by default)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_line.html" class="wikilink1" title="dhtmlxchart:property_line">line</a> - a chart line</div>
+<ul>
+<li class="level3"><div class="li"> color - a line color</div>
+</li>
+<li class="level3"><div class="li"> width - a line width</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___property_grpadding.html" class="wikilink1" title="dhtmlxchart:property_grpadding">padding</a> - an object that defines padding of chart content:</div>
+<ul>
+<li class="level3"><div class="li"> top - top padding</div>
+</li>
+<li class="level3"><div class="li"> bottom - bottom padding</div>
+</li>
+<li class="level3"><div class="li"> left - left padding</div>
+</li>
+<li class="level3"><div class="li"> right - right padding</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+<strong>chart details</strong>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxlabel.html" class="wikilink1" title="dhtmlxchart:dhxlabel">label</a> - a template for item labels</div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxtooltip.html" class="wikilink1" title="dhtmlxchart:dhxtooltip">tooltip</a> - a template for item tooltips</div>
+</li>
+</ul>
+
+<p>
+
+<strong>scales</strong>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxscale.html" class="wikilink1" title="dhtmlxchart:dhxscale">xAxis</a> - the horizontal scale</div>
+<ul>
+<li class="level3"><div class="li"> title - a scale title</div>
+</li>
+<li class="level3"><div class="li"> color - a scale color</div>
+</li>
+<li class="level3"><div class="li"> template - a template of scale labels</div>
+</li>
+<li class="level3"><div class="li"> lines - enables/disables vertical lines for scale units</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxscale.html" class="wikilink1" title="dhtmlxchart:dhxscale">yAxis</a> - the vertical scale:</div>
+<ul>
+<li class="level3"><div class="li"> title - a scale title</div>
+</li>
+<li class="level3"><div class="li"> color - a scale color</div>
+</li>
+<li class="level3"><div class="li"> start - the mininum value</div>
+</li>
+<li class="level3"><div class="li"> end - the maximum value</div>
+</li>
+<li class="level3"><div class="li"> step - a scale step</div>
+</li>
+<li class="level3"><div class="li"> template - a template of scale labels</div>
+</li>
+<li class="level3"><div class="li"> lines - enables/disables horizontal lines for scale units</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+<strong>data manipulation</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxgroup.html" class="wikilink1" title="dhtmlxchart:dhxgroup">group</a> - groups data by a certain property</div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxchart___dhxsorting.html" class="wikilink1" title="dhtmlxchart:dhxsorting">sort</a> - sorts dataset</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="105-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Edit" class="button" title="Line Chart properties" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/graphic_properties.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Agraphic_properties&amp;1279804791" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:graphic_properties" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

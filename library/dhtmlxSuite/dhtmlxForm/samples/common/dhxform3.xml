@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<items>
+	<item type="radio" name="select" focus="1" _disabled="1" class="classname" style="" value="online" label="Will enjoy the online demo"/>
+	<item type="radio" name="select" value="disk" label="Please send me disk" checked="true">
+		<item type="checkbox" name="bootleg" value="yes" label="Insert bootleg" checked="true">
+			<item type="checkbox" name="return_false_1" label="Checkbox will not unchecked" value="1" checked="true"/>
+			<item type="checkbox" name="return_false_2" label="This one will not checked" value="2" />
+		</item>
+		<item type="checkbox" name="lyrics" value="please" label="Lyrics if possible" checked="true"/>
+		<item type="label" label="Payment"/>
+		<item type="radio" name="paymenttype" value="creditcard" label="Credit Card">
+			<item type="input" name="cardnumber" value="XXXX-XXXX-XXXX-XXXX" label="Card Number"/>
+			<item type="input" name="cardkey" value="XXXX" label="Key"/>
+		</item>
+		<item type="radio" name="paymenttype" value="cash" label="Cash" checked="1"/>
+		<item type="label" name="label_a" label="Currency"/>
+		<item type="radio" name="currencytype" value="dollar" label="U. S. Dollars" checked="1"/>
+		<item type="radio" name="currencytype" value="euro" label="Euro"/>
+		<item type="radio" name="currencytype" value="rub" label="Russian Rubel"/>
+		<item type="select" name="mediatype" label="Select Media Type">
+			<option value="1" text="CD 700Mb"/>
+			<option value="2" text="DVD5 4.4Gb"/>
+			<option value="3" text="DVD9 8.6Gb" selected="1"/>
+			<option value="4" text="Blue-Ray 24Gb"/>
+		</item>
+		<item type="select" name="audioquality" label="Select Audio Quality">
+			<option value="1">2.0 16bit/128kbps</option>
+			<option value="2">2.1 16bit/334kbps</option>
+			<option value="3" selected="1">5.1 32bit/448kbps</option>
+		</item>
+		<item type="select" name="videoquality" label="Select Video Quality">
+			<option value="1" text="DVD MPEG-2" selected="1"/>
+			<option value="2" text="DivX"/>
+			<option value="3" text="XviD"/>
+		</item>
+		<item type="input" label="Comments" name="comments" value="Some Comments" rows="3"/>
+		<item type="input" label="More Info" name="moreinfo" value="Demo" rows="3"/>
+	</item>
+</items>

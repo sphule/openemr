@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxwindows:initializing_dhtmlxwindows    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxwindows:initializing_dhtmlxwindows</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxwindows:initializing_dhtmlxwindows"  class="breadcrumbs" title="dhtmlxwindows:initializing_dhtmlxwindows">initializing_dhtmlxwindows</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#initializing_dhtmlxwindows" class="toc">Initializing dhtmlxWindows</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#minimal_initialization" class="toc">Minimal Initialization</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#extended_initialization" class="toc">Extended Initialization</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#attach_object" class="toc">Attach Object</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#append_object" class="toc">Append Object</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#attach_url" class="toc">Attach URL</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___windows.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxwindows:toc">dhtmlxwindows</a></div></div>
+</p>
+
+
+
+<h2><a name="initializing_dhtmlxwindows" id="initializing_dhtmlxwindows">Initializing dhtmlxWindows</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="57-97" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Initializing dhtmlxWindows" /></div></form></div>
+<h3><a name="minimal_initialization" id="minimal_initialization">Minimal Initialization</a></h3>
+<div class="level3">
+
+<p>
+
+The first things that need to be done for any type of dhtmlxWindows&#039; initialization are the following: 
+</p>
+<ul>
+<li class="level1"><div class="li"> Download the dhtmlxWindows package from the server and place it in a folder; </div>
+</li>
+<li class="level1"><div class="li"> Create an index.html file; </div>
+</li>
+<li class="level1"><div class="li"> Place the full paths to dhtmlxWindows&#039; <acronym title="Cascading Style Sheets">CSS</acronym> and <acronym title="JavaScript">JS</acronym> files into the header of html file.</div>
+</li>
+</ul>
+<pre class="code html4strict">    <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows.css&quot;</span>&gt;</span>
+    <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows_dhx_skyblue.css&quot;</span>&gt;</span>
+    <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxcommon.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+    <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxcontainer.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+    <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span></pre>
+</div>
+
+<h4><a name="basic_object_for_a_set_of_new_windows" id="basic_object_for_a_set_of_new_windows">Basic Object for a Set of New Windows</a></h4>
+<div class="level4">
+
+<p>
+
+A base for a set of new windows can be created in the following way:
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> dhxWins<span class="sy0">=</span> <span class="kw2">new</span> dhtmlXWindows<span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="new_window_creation" id="new_window_creation">New Window Creation</a></h4>
+<div class="level4">
+
+<p>
+
+While creating a new window with minimal initialization, the user should use createWindow() method and pass the following parameters: 
+</p>
+<ul>
+<li class="level1"><div class="li">  Window Id; </div>
+</li>
+<li class="level1"><div class="li">  Window&#039;s position (x &amp;amp; y); </div>
+</li>
+<li class="level1"><div class="li">  Window&#039;s width &amp; height.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="kw2">var</span> win <span class="sy0">=</span> dhxWins.<span class="me1">createWindow</span><span class="br0">&#40;</span>String id<span class="sy0">,</span> int x<span class="sy0">,</span> int y<span class="sy0">,</span> int width<span class="sy0">,</span> int height<span class="br0">&#41;</span>;</pre>
+<p>
+The user can set the header text to the newly created window using the command setText(): 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setText</span><span class="br0">&#40;</span>String text<span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="default_values" id="default_values">Default Values</a></h4>
+<div class="level4">
+
+<p>
+
+Default values in dhtmlxWindows are:
+</p>
+<ul>
+<li class="level1"><div class="li">  Window control buttons (buttons “Park”, “Maximize” and “Close” are enabled and visible by default); </div>
+</li>
+<li class="level1"><div class="li">  Window icon (default icon is defined by the skin); </div>
+</li>
+<li class="level1"><div class="li">  Window maxDimension (default value is “auto”) and minDimension parameters (default value is “200x140px”); </div>
+</li>
+<li class="level1"><div class="li">  The possibility to resize a window (default value is “true”); </div>
+</li>
+<li class="level1"><div class="li">  The possibility to move a window (default value is “true”); </div>
+</li>
+<li class="level1"><div class="li">  Window&#039;s default skin (default value is “dhx_blue”).</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="98-2116" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Minimal Initialization" /></div></form></div>
+<h3><a name="extended_initialization" id="extended_initialization">Extended Initialization</a></h3>
+<div class="level3">
+
+<p>
+
+When creating a new window with extended initialization, the user should call the same commands described in Minimal initialization. 
+Additional parameters, which can be defined, are: 
+</p>
+<ul>
+<li class="level1"><div class="li">  Header Icon; </div>
+</li>
+<li class="level1"><div class="li">  Allow/Deny Resizing; </div>
+</li>
+<li class="level1"><div class="li">  Allow/Deny Moving;</div>
+</li>
+<li class="level1"><div class="li">  Allow/Deny Parking;</div>
+</li>
+<li class="level1"><div class="li">  Hide/Disable Buttons.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="header_icon" id="header_icon">Header Icon</a></h4>
+<div class="level4">
+
+<p>
+
+There is also the opportunity to specify any header icon if the default one is not suitable for the user. This can be done in the following way: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setIcon</span><span class="br0">&#40;</span>String iconEnabled<span class="sy0">,</span> String iconDisabled<span class="br0">&#41;</span>;</pre>
+<p>
+Along with setting a header icon, the user can choose to clear/remove it. In this case there will be just an empty space instead of any header icon. The user should do the following:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">clearIcon</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+It is also possible to restore the default window icon according to the loaded skin:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">restoreIcon</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="allow_deny_resizing" id="allow_deny_resizing">Allow/Deny Resizing</a></h4>
+<div class="level4">
+
+<p>
+
+By default window resizing is allowed. 
+Extended initialization allows the user to deny window resizing by calling the method denyResize():
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">denyResize</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Resizing of a window can be allowed again with the help of the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">allowResize</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="allow_deny_moving" id="allow_deny_moving">Allow/Deny Moving</a></h4>
+<div class="level4">
+
+<p>
+
+By default window moving is allowed.
+The user can deny window moving by calling the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">denyMove</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Window moving can be allowed again if the user calls method allowMove(): 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">allowMove</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="allow_deny_parking" id="allow_deny_parking">Allow/Deny Parking</a></h4>
+<div class="level4">
+
+<p>
+
+By default window parking is allowed. 
+The user can choose to deny window parking using the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">denyPark</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Window parking can be allowed again with the help of the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">allowPark</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="hide_disable_buttons" id="hide_disable_buttons">Hide/Disable Buttons</a></h4>
+<div class="level4">
+
+<p>
+
+All default buttons are enabled. The user can hide some of/all these buttons or disable them. 
+In order to hide/disable these buttons the user should call the following methods: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">button</span><span class="br0">&#40;</span><span class="st0">&quot;close&quot;</span><span class="br0">&#41;</span>.<span class="me1">hide</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">button</span><span class="br0">&#40;</span><span class="st0">&quot;park&quot;</span><span class="br0">&#41;</span>.<span class="me1">disable</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2117-4520" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Extended Initialization" /></div></form></div>
+<h3><a name="attach_object" id="attach_object">Attach Object</a></h3>
+<div class="level3">
+
+<p>
+
+dhtmlxWindows allows users to attach objects to any window by method attachObject():
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachObject</span><span class="br0">&#40;</span>objId<span class="br0">&#41;</span>;</pre>
+<p>
+If the user wants to adjust window&#039;s dimension to that of the container attached to the window, one more parameter should be added to attachOnject() method:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachObject</span><span class="br0">&#40;</span>objId<span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span>;</pre>
+<p>
+Note: The container (which dimensions the user wants the window to be adjusted to) should have certain constant sizes.
+</p>
+
+</div>
+
+<h4><a name="object_size_handling" id="object_size_handling">Object Size Handling</a></h4>
+<div class="level4">
+
+<p>
+
+By default, windows have overflow:hidden style.
+In case the window is not able to display the whole object, the following style should be specified for the object:
+</p>
+<pre class="code html4strict">    <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;objId&quot;</span> <span class="kw3">style</span><span class="sy0">=</span><span class="st0">&quot;width:100%;height:100%;overflow:auto;...&gt;</span></span></pre>
+<p>
+Now the window will display the scroll bar in case the object does not fit window &#039;s size.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4521-5444" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Attach Object" /></div></form></div>
+<h3><a name="append_object" id="append_object">Append Object</a></h3>
+<div class="level3">
+
+<p>
+
+The user can append an object from the page to any dhtmlx window. The essence of appending an object is the following: when the user appends more than one object to a window, every next added object doesn&#039;t replace the previous one, but is added right after it.
+To append an object to a window, the user needs to indicate id of the window and id of the appended object:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">appendObject</span><span class="br0">&#40;</span>firstId<span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">appendObject</span><span class="br0">&#40;</span>secondId<span class="br0">&#41;</span>;</pre>
+<p>
+It should be noted that the first object can be added to a window through attachObject() method, while for appending the second object, the user should apply appendObject() method:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachObject</span><span class="br0">&#40;</span>objId<span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">appendObject</span><span class="br0">&#40;</span>secondId<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5445-6262" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Append Object" /></div></form></div>
+<h3><a name="attach_url" id="attach_url">Attach URL</a></h3>
+<div class="level3">
+
+<p>
+
+There is the possibility to attach any external page to a window or any content stored locally (using <acronym title="Asynchronous JavaScript and XML">AJAX</acronym>) with the help of method attachURL():
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span>url<span class="sy0">,</span> AJAX<span class="br0">&#41;</span>;</pre>
+<p>
+The second parameter here indicates whether the content stored locally will be loaded through <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> (the second parameter should be set to true) or not (the second parameter should be omitted). When the content is loaded into the window, <a href="dhtmlxwindows___event_oncontentloaded.html" class="wikilink1" title="dhtmlxwindows:event_oncontentloaded">onContentLoaded</a> event can be called.
+</p>
+
+</div>
+
+<h4><a name="accessing_inner_window_content" id="accessing_inner_window_content">Accessing Inner Window Content</a></h4>
+<div class="level4">
+
+<p>
+
+Any object on the external page attached with attachURL() method can be accessed like this:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  Page inner.html </div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot;A&quot;</span><span class="sy0">&gt;</span>...<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">function</span> myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            ...
+        <span class="br0">&#125;</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre><ul>
+<li class="level1"><div class="li">  Page index.html </div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="kw2">var</span> dhxWins <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXWindows<span class="br0">&#40;</span>...<span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">createWindow</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="sy0">,</span>...<span class="br0">&#41;</span>;
+    w1.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="br0">&#41;</span>; 
+    <span class="co1">// accessing &lt;div id=&quot;A&quot;&gt; </span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>_isIE<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        dhxWins.<span class="me1">window</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentWindow</span>.<span class="me1">document</span>.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">&quot;A&quot;</span><span class="br0">&#41;</span>...
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        dhxWins.<span class="me1">window</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentDocument</span>.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">&quot;A&quot;</span><span class="br0">&#41;</span>...
+    <span class="br0">&#125;</span>
+    <span class="co1">// calling function from inner.html</span>
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentWindow</span>.<span class="me1">myFunc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="window_accessing_from_attached_url" id="window_accessing_from_attached_url">Window Accessing from Attached URL</a></h4>
+<div class="level4">
+
+<p>
+
+If the user needs to do some action with a window from the attached <acronym title="Uniform Resource Locator">URL</acronym> (for example, close it by clicking some button on page), he should write the following code lines in the attached external page:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;close window&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;closeWindow();&quot;</span><span class="sy0">&gt;</span> <span class="co1">// create a button</span>
+    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">function</span> closeWindow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            parent.<span class="me1">dhxWins</span>.<span class="me1">window</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="br0">&#41;</span>.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="co1">// close a window</span>
+            <span class="co1">// or</span>
+            parent.<span class="me1">win</span>.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="co1">// close a window</span>
+        <span class="br0">&#125;</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+It should be noted that variables dhxWins and win should be created as global ones (in our main dhtmlxWindows script) in order to be seen by the script in the attached external page.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="6263-" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit" class="button" title="Attach URL" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxwindows/initializing_dhtmlxwindows.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxwindows%3Ainitializing_dhtmlxwindows&amp;1279804953" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:initializing_dhtmlxwindows" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxlayout:dhtmlxlayout_actions    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxlayout:dhtmlxlayout_actions</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxlayout:dhtmlxlayout_actions"  class="breadcrumbs" title="dhtmlxlayout:dhtmlxlayout_actions">dhtmlxlayout_actions</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#actions" class="toc">Actions</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#item_s_expanding_collapsing" class="toc">Item&#039;s Expanding/Collapsing</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#window_s_docking_item_s_undocking" class="toc">Window&#039;s Docking/Item&#039;s Undocking</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___layout.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxlayout:toc">dhtmlxlayout</a></div></div>
+
+</p>
+
+<h1><a name="actions" id="actions">Actions</a></h1>
+<div class="level1">
+
+<p>
+
+The following kinds of actions are available for dhtmlxLayout users:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Expanding/Collapsing</div>
+</li>
+<li class="level2"><div class="li"> Window&#039;s Docking/Item&#039;s Undocking</div>
+</li>
+</ul>
+
+<p>
+
+Firstly, let&#039;s look at some general behavior of items in the layout:<br/>
+
+<strong>1.</strong> If the last visible item in a row/column becomes collapsed, the nearest collapsed item will be expanded instead. The component expands either the nearest left item or the nearest right item (if there is no nearest left one). In other words, if there are two or more items in a row/column, at least one of them will be always expanded.<br/>
+
+<strong>2.</strong> If the last visible item in a row/column becomes collapsed, and there is at least one undocked item in the layout, one of the undocked items will be docked and expanded.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="55-808" /><input type="hidden" name="rev" value="1277830736" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit" class="button" title="Actions" /></div></form></div>
+<h2><a name="item_s_expanding_collapsing" id="item_s_expanding_collapsing">Item&#039;s Expanding/Collapsing</a></h2>
+<div class="level2">
+
+<p>
+
+To expand an item  - use the  <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_expand.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_expand">expand()</a> method:
+</p>
+<pre class="code javascript">dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">expand</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+To collapse an item - use the <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_collapse.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_collapse">collapse()</a> method:
+</p>
+<pre class="code javascript">dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">collapse</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="809-1148" /><input type="hidden" name="rev" value="1277830736" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit" class="button" title="Item's Expanding/Collapsing" /></div></form></div>
+<h2><a name="window_s_docking_item_s_undocking" id="window_s_docking_item_s_undocking">Window&#039;s Docking/Item&#039;s Undocking</a></h2>
+<div class="level2">
+
+<p>
+
+Any item in dhtmlxLayout can be easily undocked to a window - extracted from the single layout in order to be displayed separately in a window. In v.1.0 there is no possibility to dock item content to another item - just dock back.<br/>
+
+To undock an item  - use the <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_undock.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_undock">undock()</a> method:
+</p>
+<pre class="code javascript">dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">undock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+An undocked window can be docked back. To make this - use the <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_dock.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_dock">dock()</a> method:
+</p>
+<pre class="code javascript">dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">dock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1149-" /><input type="hidden" name="rev" value="1277830736" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit" class="button" title="Window's Docking/Item's Undocking" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxlayout/dhtmlxlayout_actions.txt &middot; Last modified: 2010/06/29 19:58 by 192.168.1.110      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxlayout%3Adhtmlxlayout_actions&amp;1279804889" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:dhtmlxlayout_actions" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxdataview:dhtmlxpropertysheet    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxdataview:dhtmlxpropertysheet</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:dhtmlxpropertysheet"  class="breadcrumbs" title="dhtmlxdataview:dhtmlxpropertysheet">dhtmlxpropertysheet</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:toc" class="media" title="dhtmlxdataview:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxdataview:toc">dhtmlxdataview</a></div></div>
+
+</p>
+
+<h2><a name="propertysheet" id="propertysheet">PropertySheet</a></h2>
+<div class="level2">
+
+<p>
+
+dhtmlXPropertySheet is a component which displays or provides ability to edit values of object properties. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="57-194" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Edit" class="button" title="PropertySheet" /></div></form></div>
+<h3><a name="initialization" id="initialization">Initialization</a></h3>
+<div class="level3">
+
+<p>
+
+To initialize propertysheet, you need to 
+</p>
+<ol>
+<li class="level1"><div class="li"> include related js and css files</div>
+</li>
+<li class="level1"><div class="li"> place container for the propertysheet on a page</div>
+</li>
+<li class="level1"><div class="li"> run propertysheet initialiation</div>
+</li>
+</ol>
+
+<p>
+
+There are two files that need to be included
+</p>
+<pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlx.js&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;STYLESHEET&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlx.css&quot;</span>&gt;</span></pre>
+<p>
+PropertySheet is initialized in <acronym title="HyperText Markup Language">HTML</acronym> container:
+
+</p>
+<pre class="code html4strict">    <span class="sc2">&lt;&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;property_container&quot;</span> <span class="kw3">style</span><span class="sy0">=</span><span class="st0">&quot;width:600px;height:400px&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span></pre>
+<p>
+To initialize PropertySheet you need to set only two “container” and “name_width” property:
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> psheet <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXPropertySheet<span class="br0">&#40;</span><span class="br0">&#123;</span>
+	container<span class="sy0">:</span><span class="st0">&quot;property_container&quot;</span><span class="sy0">,</span>
+	name_width<span class="sy0">:</span><span class="nu0">150</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Elements of the dhtmlXPropertySheet constructor:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> container - the id of <acronym title="HyperText Markup Language">HTML</acronym> container for the component;</div>
+</li>
+<li class="level2"><div class="li"> name_width - width of the first column, the column with names</div>
+</li>
+</ul>
+
+<p>
+
+DataMap supports the same methods for <a href="dhtmlxdataview___data_loading.html" class="wikilink1" title="dhtmlxdataview:data_loading">data loading</a> as DataView:
+</p>
+<pre class="code javascript">   map.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;properties.json&quot;</span><span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Each property consits of 4 elements:
+</p>
+<ul>
+<li class="level1"><div class="li"> id - property id;</div>
+</li>
+<li class="level1"><div class="li"> type - property type: label,text,select or checkbox;</div>
+</li>
+<li class="level1"><div class="li"> name - property name (properties with “label” type don&#039;t need it);</div>
+</li>
+<li class="level1"><div class="li"> value - property value</div>
+</li>
+</ul>
+
+<p>
+
+The example of JSON data:
+
+</p>
+<pre class="code javascript"><span class="br0">&#91;</span><span class="br0">&#123;</span><span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;type&quot;</span><span class="sy0">:</span><span class="st0">&quot;label&quot;</span><span class="sy0">,</span> <span class="st0">&quot;value&quot;</span><span class="sy0">:</span><span class="st0">&quot;Audi A6&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+<span class="br0">&#123;</span><span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;Color&quot;</span><span class="sy0">,</span> <span class="st0">&quot;type&quot;</span><span class="sy0">:</span><span class="st0">&quot;text&quot;</span><span class="sy0">,</span> <span class="st0">&quot;value&quot;</span><span class="sy0">:</span><span class="st0">&quot;Grey metallic&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+<span class="br0">&#123;</span><span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;Fuel type&quot;</span><span class="sy0">,</span> <span class="st0">&quot;type&quot;</span><span class="sy0">:</span><span class="st0">&quot;select&quot;</span><span class="sy0">,</span> <span class="st0">&quot;value&quot;</span><span class="sy0">:</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;options&quot;</span><span class="sy0">:</span><span class="br0">&#123;</span><span class="st0">&quot;1&quot;</span><span class="sy0">:</span><span class="st0">&quot;Diesel&quot;</span><span class="sy0">,</span><span class="st0">&quot;2&quot;</span><span class="sy0">:</span><span class="st0">&quot;Gas&quot;</span><span class="sy0">,</span><span class="st0">&quot;3&quot;</span><span class="sy0">:</span><span class="st0">&quot;Pertol&quot;</span><span class="br0">&#125;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+<span class="br0">&#123;</span><span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;4&quot;</span><span class="sy0">,</span> <span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;Automatic gearbox&quot;</span><span class="sy0">,</span> <span class="st0">&quot;type&quot;</span><span class="sy0">:</span><span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="st0">&quot;value&quot;</span><span class="sy0">:</span><span class="st0">&quot;1&quot;</span><span class="br0">&#125;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+<span class="br0">&#123;</span><span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;5&quot;</span><span class="sy0">,</span> <span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;Price&quot;</span><span class="sy0">,</span> <span class="st0">&quot;type&quot;</span><span class="sy0">:</span><span class="st0">&quot;text&quot;</span><span class="sy0">,</span> <span class="st0">&quot;value&quot;</span><span class="sy0">:</span><span class="st0">&quot;29000 EUR&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span></pre>
+<p>
+Here is the result:
+</p>
+
+<p>
+<img src="dhtmlxdataview___property.png"  class="media" alt="" />
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="195-" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Edit" class="button" title="Initialization" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxdataview/dhtmlxpropertysheet.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxdataview%3Adhtmlxpropertysheet&amp;1279804821" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:dhtmlxpropertysheet" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

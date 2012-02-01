@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<title>Header/Footer</title>
+	<link rel="stylesheet" type="text/css" href="../../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../../codebase/skins/dhtmlxlayout_dhx_skyblue.css">
+	<script src="../../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../../codebase/dhtmlxlayout.js"></script>
+	
+	<script src="../../../codebase/dhtmlxcontainer.js"></script>
+	
+	
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+		}
+	</style>
+	<script>
+		
+		
+		var dhxLayout;
+		function doOnLoad() {
+			dhxLayout = new dhtmlXLayoutObject(document.body, "3L");
+			dhxLayout.attachHeader("my_logo");
+			dhxLayout.attachFooter("my_copy");
+			
+			
+		}
+	</script>
+</head>
+<body onload="doOnLoad();">
+	<div id="my_logo" style="height: 74px;">Hi! I'm header!</div>
+	<div id="my_copy" style="height: 74px;">Hi! I'm copyright &copy;!</div>
+</body>
+</html>

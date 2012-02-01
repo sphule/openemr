@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Date Formating</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="featured" content="yes"><meta name="title" content="Samples" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../common/css/style.css" type="text/css" media="screen" />
+
+	</head>
+	<body>
+        <div class="header">
+            <a class="logo" href="http://www.dhtmlx.com" title="DHTMLX homepage"></a>
+            <div class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</div>
+            <div class="search-field">
+                <form action="http://docs.dhtmlx.com/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+            </div>
+            <div class="buttons">
+                <a class="doc_inact" href="../../../docsExplorer/index.html" title="DHTMLX Documentation homepage"></a>
+                <a class="sample"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="navigation-div">
+                <a href="../../../docsExplorer/samples.html" class="navigation"><img src="../common/icons/file.gif" alt="" >All components</a>
+                <div class="arrow"></div>
+                <a href="../index.html" class="navigation"><img height="22" src="../common/icons/calendar.gif" alt="" >dhtmlxCalendar</a>
+                <div class="arrow"></div>
+                <a href="./index.html" class="navigation"><img src="../common/icons/none.gif" alt="" >Formating Date</a>
+            </div>
+            <div style="display:block;">
+                <h3>Date Formating</h3>
+            </div>
+            <div class="navigation-div">
+                <a href="#code" class="navigation view-source"><img src="../common/icons/source.gif" alt="" >View page source</a>
+            </div>
+            <link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxcalendar.css">
+<script>
+      window.dhx_globalImgPath="../../codebase/imgs/";
+</script>
+<script  src="../../codebase/dhtmlxcommon.js"></script>
+<script  src="../../codebase/dhtmlxcalendar.js"></script>
+
+	<script>
+	var mCal;
+	window.onload = function () {
+		mCal = new dhtmlxCalendarObject('dhtmlxCalendar', false, {isYearEditable: true});
+		mCal.setYearsRange(2000, 2500);
+		mCal.setOnClickHandler(mSelectDate);
+		mCal.draw();
+	}
+	
+	function mSelectDate() {
+		var dateformat = document.getElementById('dateformat').value;
+   		mCal.setDateFormat(dateformat)
+		document.getElementById('mCalInput').innerHTML = mCal.getFormatedDate();
+		return true;
+	}
+
+	function setNewDate() {
+		var newdateVal = document.getElementById('newdate').value;
+   	 	var dateformat = document.getElementById('dateformat').value;
+		mCal.setDateFormat(dateformat);
+   		mCal.setDate(newdateVal);
+		document.getElementById('mCalInput').innerHTML = mCal.getFormatedDate();
+	}
+	
+
+	</script>
+
+
+<p>Calendar has flexible date format. You can set date format yourselves</p>
+<form action="">
+<table border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td valign="top"><div id="dhtmlxCalendar"></div></td>
+    <td valign="top">
+		
+		<strong>Date Format:</strong><br>
+			<input type="text" id="dateformat" style="width: 200px; font-size:14px" value="%d.%m.%Y" />
+			<input type="button" value="set" onClick="mSelectDate(mCal.selDate)" /><br>
+		<strong>Date from String (use format set above)</strong><br>
+			<input type="text" id="newdate" style="width: 200px; font-size:14px" value="24.12.2010" />
+			<input type="button" value="set" onClick="setNewDate()" /><br><br>
+		<span>Result:</span>
+		<div id="mCalInput" style="color: navy; font-size:18px; font-family: Verdana; text-align:center; border: 1px solid navy">&nbsp;</div>
+		</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<xmp style="color:#999999; font-size: 12px">Date Format Info:
+%e [g-] Day of the month without leading zeros (01..31)
+%d [gs] Day of the month, 2 digits with leading zeros (01..31)
+%j [g-] Day of the year, 3 digits with leading zeros (001..366)
+%a [g-] A textual representation of a day, three letters
+%W [g-] A full textual representation of the day of the week
+%c [g-] Numeric representation of a month, without leading zeros (1..12)
+%m [gs] Numeric representation of a month, with leading zeros (01..12)
+%b [gs] A short textual representation of a month, three letters (Jan..Dec)
+%M [gs] A full textual representation of a month, such as January or March (January..December)
+%y [g-] A two digit representation of a year (93..03)
+%Y [gs] A full numeric representation of a year, 4 digits (1993..2003)
+%% [gs] Char "%"</xmp>
+	</td>
+  </tr>
+ 
+</table>
+
+</form>
+			
+			
+         </div>
+    <div class="source">
+        <div class="teg">Source</div>
+        <div class="code" id="code">
+		<div class="hl-main"><pre><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">STYLESHEET</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcalendar.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-builtin">window</span><span class="hl-code">.</span><span class="hl-identifier">dhx_globalImgPath</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/imgs/</span><span class="hl-quotes">&quot;</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code">  </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcommon.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code">  </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcalendar.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">mCal</span><span class="hl-code">;
+</span><span class="hl-builtin">window</span><span class="hl-code">.</span><span class="hl-identifier">onload</span><span class="hl-code"> = </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-identifier">mCal</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlxCalendarObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">dhtmlxCalendar</span><span class="hl-quotes">'</span><span class="hl-code">, </span><span class="hl-reserved">false</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">isYearEditable</span><span class="hl-code">: </span><span class="hl-reserved">true</span><span class="hl-code">
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">setYearsRange</span><span class="hl-brackets">(</span><span class="hl-number">2000</span><span class="hl-code">, </span><span class="hl-number">2500</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">setOnClickHandler</span><span class="hl-brackets">(</span><span class="hl-identifier">mSelectDate</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">draw</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">mSelectDate</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dateformat</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">dateformat</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">value</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">setDateFormat</span><span class="hl-brackets">(</span><span class="hl-identifier">dateformat</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">mCalInput</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">getFormatedDate</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">true</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">setNewDate</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">newdateVal</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">newdate</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">value</span><span class="hl-code">;
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dateformat</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">dateformat</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">value</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">setDateFormat</span><span class="hl-brackets">(</span><span class="hl-identifier">dateformat</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">setDate</span><span class="hl-brackets">(</span><span class="hl-identifier">newdateVal</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">mCalInput</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">mCal</span><span class="hl-code">.</span><span class="hl-identifier">getFormatedDate</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">form</span><span class="hl-code"> </span><span class="hl-var">action</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">table</span><span class="hl-code"> </span><span class="hl-var">border</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">0</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">cellpadding</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">5</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">cellspacing</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">0</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+  </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">td</span><span class="hl-code"> </span><span class="hl-var">valign</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">top</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">dhtmlxCalendar</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">td</span><span class="hl-code"> </span><span class="hl-var">valign</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">top</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">strong</span><span class="hl-brackets">&gt;</span><span class="hl-code">Date Format:</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">strong</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+        </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">dateformat</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width: 200px; font-size:14px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">%d.%m.%Y</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-brackets">/&gt;</span><span class="hl-code">
+        </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">button</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">set</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">onClick</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">mSelectDate(mCal.selDate)</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-brackets">/&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">strong</span><span class="hl-brackets">&gt;</span><span class="hl-code">Date from String (use format set above)</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">strong</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+        </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">newdate</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width: 200px; font-size:14px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">24.12.2010</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-brackets">/&gt;</span><span class="hl-code">
+        </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">button</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">set</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">onClick</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">setNewDate()</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-brackets">/&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">br</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">span</span><span class="hl-brackets">&gt;</span><span class="hl-code">Result:</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">span</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">mCalInput</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">color: navy; font-size:18px; font-family: Verdana; text-align:center; border: 1px solid navy</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-special">&amp;nbsp;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+  </span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+  </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">td</span><span class="hl-code"> </span><span class="hl-var">colspan</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">2</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">xmp</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">color:#999999; font-size: 12px</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">Date Format Info:
+%e [g-] Day of the month without leading zeros (01..31)
+%d [gs] Day of the month, 2 digits with leading zeros (01..31)
+%j [g-] Day of the year, 3 digits with leading zeros (001..366)
+%a [g-] A textual representation of a day, three letters
+%W [g-] A full textual representation of the day of the week
+%c [g-] Numeric representation of a month, without leading zeros (1..12)
+%m [gs] Numeric representation of a month, with leading zeros (01..12)
+%b [gs] A short textual representation of a month, three letters (Jan..Dec)
+%M [gs] A full textual representation of a month, such as January or March (January..December)
+%y [g-] A two digit representation of a year (93..03)
+%Y [gs] A full numeric representation of a year, 4 digits (1993..2003)
+%% [gs] Char &quot;%&quot;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">xmp</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+  </span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">table</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">form</span><span class="hl-brackets">&gt;</span></pre></div>
+        </div>
+    <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright &copy; 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+    </div>
+	</body>
+</html>

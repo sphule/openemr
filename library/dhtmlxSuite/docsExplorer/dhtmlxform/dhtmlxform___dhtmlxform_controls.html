@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxform:dhtmlxform_controls    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxform:dhtmlxform_controls</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:dhtmlxform_controls"  class="breadcrumbs" title="dhtmlxform:dhtmlxform_controls">dhtmlxform_controls</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:toc" class="media" title="dhtmlxform:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxform:toc">dhtmlxForm</a></div></div>
+</p>
+
+
+
+<h1><a name="control_types_attributes" id="control_types_attributes">Control Types &amp; Attributes</a></h1>
+<div class="level1">
+
+<p>
+
+The library supports different controls which you can create in a new form initialized from a config file. 
+A variety of controls:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>checkbox</em> - for multiply checkbox selections (there is the possibility <a href="dhtmlxform___nestedelements.html" class="wikilink1" title="dhtmlxform:nestedelements">to nest elements</a>)</div>
+</li>
+<li class="level1"><div class="li"> <em>radio</em> - represents radio-button (there is the possibility <a href="dhtmlxform___nestedelements.html" class="wikilink1" title="dhtmlxform:nestedelements">to nest elements</a>)</div>
+</li>
+<li class="level1"><div class="li"> <em>input</em> - for text input field and text area</div>
+</li>
+<li class="level1"><div class="li"> <em>select</em> - for dropdown lists  (there is the possibility <a href="dhtmlxform___nestedelements.html" class="wikilink1" title="dhtmlxform:nestedelements">to nest elements</a>)</div>
+</li>
+<li class="level1"><div class="li"> <em>label</em> - represents text label</div>
+</li>
+<li class="level1"><div class="li"> <em>file</em> - for file upload control</div>
+</li>
+<li class="level1"><div class="li"> <em><a href="dhtmlxform___button.html" class="wikilink1" title="dhtmlxform:button">button</a></em> - represents normal button</div>
+</li>
+<li class="level1"><div class="li"> <em>hidden</em> - represents a hidden field. The field is invisible for users and its value is specified by the &#039;value&#039; attribute.</div>
+</li>
+</ul>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> checkbox      </th><th class="col1 leftalign"> radio      </th><th class="col2 leftalign"> input         </th><th class="col3 leftalign">select         </th><th class="col4 leftalign">label        </th><th class="col5 leftalign">file        </th><th class="col6 leftalign">button        </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <img src="dhtmlxform___checkbox.png"  class="media" alt="" />   </td><td class="col1 leftalign"> <img src="dhtmlxform___radiobutton.png"  class="media" alt="" />    </td><td class="col2 leftalign"> <img src="dhtmlxform___textbox.png"  class="media" alt="" />        </td><td class="col3"><img src="dhtmlxform___select.png"  class="media" alt="" /></td><td class="col4"><img src="dhtmlxform___label.png"  class="media" alt="" /></td><td class="col5"><img src="dhtmlxform___file.png"  class="media" alt="" /></td><td class="col6"><img src="dhtmlxform___button.png"  class="media" alt="" /></td>
+	</tr>
+</table>
+
+<p>
+<br/>
+
+The listed controls have the following attributes:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>name</em> - the name of an element </div>
+</li>
+<li class="level1"><div class="li"> <em>type</em> - the type of an element (&#039;ftype&#039; in case of an <acronym title="HyperText Markup Language">HTML</acronym> initialization)</div>
+</li>
+<li class="level1"><div class="li"> <em>label</em> - the text label for an element. In case of an <acronym title="HyperText Markup Language">HTML</acronym> initialization a tag value is used</div>
+</li>
+<li class="level1"><div class="li"> <em>value</em> - the value of an element (input, checkbox, radio, hidden, button)</div>
+</li>
+<li class="level1"><div class="li"> <em>checked</em> - the state of a checkbox or a radio element (true/false)</div>
+</li>
+<li class="level1"><div class="li"> <em>style</em> - the style for an element label (like “text-weight:bold;color:green;”)</div>
+</li>
+<li class="level1"><div class="li"> <em>class</em> - css class to apply to an element (a form element and its label)</div>
+</li>
+<li class="level1"><div class="li"> <em>command</em> - the default action for a button</div>
+</li>
+<li class="level1"><div class="li"> <em>align</em> - the align of the text in input (left/right)</div>
+</li>
+<li class="level1"><div class="li"> <em>rows</em> - the number of rows for input (behaves like textarea)</div>
+</li>
+<li class="level1"><div class="li"> <em>width</em> - the width of an element (input, select, button, file)</div>
+</li>
+<li class="level1"><div class="li"> <em>connector</em> - url of the server-side script which provides &#039;select&#039; control options dynamically (for select type only).</div>
+</li>
+<li class="level1"><div class="li"> <em>bind</em> - the name of a database field an element should be bound to. Work for <acronym title="HyperText Markup Language">HTML</acronym> form tags also.</div>
+</li>
+<li class="level1"><div class="li"> <em>validate</em> - a validation rule (see list of possible <a href="dhtmlxform___it_valid.html" class="wikilink1" title="dhtmlxform:it_valid">validation rules</a>).Work for <acronym title="HyperText Markup Language">HTML</acronym> form tags also.</div>
+</li>
+</ul>
+
+<p>
+
+In case of JSON initialization there are also:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>list</em> - the array of nested elements</div>
+</li>
+<li class="level1"><div class="li"> <em>options</em> - the array of select list options objects, which have &#039;value&#039;, &#039;text&#039; and &#039;selected&#039; properties</div>
+</li>
+</ul>
+
+<p>
+
+<br/>
+
+By if you need combine several sense-connected controls, you can use <em>&#039;fieldset&#039;</em> dhtmlxForm property. <br/>
+
+</p>
+
+<p>
+<img src="dhtmlxform___fieldset.png"  class="media" alt="" /> 
+</p>
+
+<p>
+The code of the shown above form is:
+</p>
+<pre class="code javascript"><span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;fieldset&quot;</span><span class="sy0">,</span>  <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;mydata&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Advanced Settings&quot;</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+		    <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;vsync&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;VSync&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="st0">&quot;1&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		    <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;mouse_invert&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Swap Mouse Buttons&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		    <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;custom_cursor&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Custom Mouse Cursor&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="st0">&quot;0&quot;</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cursor_value&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;dot&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Dot&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="st0">&quot;1&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cursor_value&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;cross&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Cross&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cursor_value&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;circle&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Circle&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cursor_value&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;triangle&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Triangle&quot;</span><span class="br0">&#125;</span>
+		     <span class="br0">&#93;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span><span class="br0">&#125;</span></pre>
+<p>
+And the full example that contains the mentioned form you can find <a href="dhtmlxform___fieldsetexample.html" class="wikilink1" title="dhtmlxform:fieldsetexample">here</a>.
+</p>
+
+<p>
+See also the configuration details:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxform___jsonconfiguration.html" class="wikilink1" title="dhtmlxform:jsonconfiguration">JSON</a> </div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxform___xmlconfiguration.html" class="wikilink1" title="dhtmlxform:xmlconfiguration">XML</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxform___htmlconfiguration.html" class="wikilink1" title="dhtmlxform:htmlconfiguration">HTML</a></div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-" /><input type="hidden" name="rev" value="1279803985" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Edit" class="button" title="Control Types &amp; Attributes" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxform/dhtmlxform_controls.txt &middot; Last modified: 2010/07/22 16:06 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxform%3Adhtmlxform_controls&amp;1279804836" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_controls" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

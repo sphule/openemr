@@ -1,0 +1,1020 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxtoolbar:items_settings_manipulations    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxtoolbar:items_settings_manipulations</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxtoolbar:items_settings_manipulations"  class="breadcrumbs" title="dhtmlxtoolbar:items_settings_manipulations">items_settings_manipulations</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#items_settings_manipulations" class="toc">Items Settings Manipulations</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#iterator" class="toc">Iterator</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#applied_to_any_item" class="toc">Applied to Any Item</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#button" class="toc">Button</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#select_button" class="toc">Select Button</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#two-state_button" class="toc">Two-State Button</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#text_item" class="toc">Text Item</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#separator" class="toc">Separator</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#slider" class="toc">Slider</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#input_item" class="toc">Input Item</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___toolbar.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxtoolbar:toc">dhtmlxtoolbar</a></div></div>
+
+</p>
+
+<h2><a name="items_settings_manipulations" id="items_settings_manipulations">Items Settings Manipulations</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="56-99" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Items Settings Manipulations" /></div></form></div>
+<h3><a name="iterator" id="iterator">Iterator</a></h3>
+<div class="level3">
+
+<p>
+
+Method forEachItem() calls a user-defined function for every existing item in the toolbar passing item&#039;s id into it. Using iterator can be very useful in case the user wants all the items to be subjects for the same changes.
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">forEachItem</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>itemId<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#41;</span>; 
+        <span class="co1">// or</span>
+        <span class="kw2">function</span> doWithItem<span class="br0">&#40;</span>itemId<span class="br0">&#41;</span><span class="br0">&#123;</span>
+            <span class="co1">// code here</span>
+        <span class="br0">&#125;</span>
+        toolbar.<span class="me1">forEachItem</span><span class="br0">&#40;</span>doWithItem<span class="br0">&#41;</span>; 
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+For example, let&#039;s write the code that will be responsible for disabling all toolbar items:
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+           toolbar.<span class="me1">forEachItem</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span><span class="br0">&#123;</span>
+                toolbar.<span class="me1">disableItem</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+           <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+&nbsp;</pre>
+<p>
+Method forEachListOption() calls a user-defined function for every listed option of a certain Select Button in the toolbar passing listed option&#039;s id into it.
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>    
+          toolbar.<span class="me1">forEachListOption</span><span class="br0">&#40;</span>itemId<span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>listOptionId<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#41;</span>;
+          <span class="co1">// or</span>
+          <span class="kw2">function</span> doWithListOption<span class="br0">&#40;</span>listOptionId<span class="br0">&#41;</span><span class="br0">&#123;</span>
+              <span class="co1">// code here</span>
+          <span class="br0">&#125;</span>
+          toolbar.<span class="me1">forEachListOption</span><span class="br0">&#40;</span>itemId<span class="sy0">,</span> doWithListOption<span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="100-1295" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Iterator" /></div></form></div>
+<h3><a name="applied_to_any_item" id="applied_to_any_item">Applied to Any Item</a></h3>
+<div class="level3">
+
+<p>
+The following methods can be applied to any item in the toolbar:
+</p>
+<ul>
+<li class="level1"><div class="li">  setPosition() - sets item&#039;s new position;</div>
+</li>
+<li class="level1"><div class="li">  getPosition() - gets current item&#039;s position;</div>
+</li>
+<li class="level1"><div class="li">  getType() - gets item&#039;s type by item&#039;s id.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setPosition</span><span class="br0">&#40;</span>itemId<span class="sy0">,</span> pos<span class="br0">&#41;</span>;
+        <span class="kw2">var</span> position <span class="sy0">=</span> toolbar.<span class="me1">getPosition</span><span class="br0">&#40;</span>itemId<span class="br0">&#41;</span>; <span class="co1">// returns current item's position</span>
+        <span class="kw2">var</span> itemType <span class="sy0">=</span> toolbar.<span class="me1">getType</span><span class="br0">&#40;</span>itemId<span class="br0">&#41;</span>; <span class="co1">// returns item's type</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1296-1795" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Applied to Any Item" /></div></form></div>
+<h3><a name="button" id="button">Button</a></h3>
+<div class="level3">
+
+</div>
+
+<h4><a name="showing_hiding_button" id="showing_hiding_button">Showing/Hiding Button</a></h4>
+<div class="level4">
+
+<p>
+
+To hide/show any button the user should pass button&#039;s id to the following methods:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">showItem</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">hideItem</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user has the possibility to check whether any button is visible. The method returns true if the button is visible:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> isVisible <span class="sy0">=</span> toolbar.<span class="me1">isVisible</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns true|false</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="enabling_disabling_button" id="enabling_disabling_button">Enabling/Disabling Button</a></h4>
+<div class="level4">
+
+<p>
+
+Any button in the toolbar can be enabled/disabled by user:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">enableItem</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">disableItem</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Also the user has the possibility to check whether any button is enabled. This can be done by calling the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> isEnabled <span class="sy0">=</span> toolbar.<span class="me1">isEnabled</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns true|false</span>
+    <span class="sy0">&lt;/</span>scrip<span class="sy0">&gt;</span></pre>
+<p>
+The user should pass id of the button that will be checked. The method returns true if the button is enabled, and false if it&#039;s disabled.
+</p>
+
+</div>
+
+<h4><a name="setting_button_s_text" id="setting_button_s_text">Setting Button&#039;s Text</a></h4>
+<div class="level4">
+
+<p>
+
+The user can set any button&#039;s text/label. This button&#039;s id and text of button&#039;s label are passed as parameters to the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setItemText</span><span class="br0">&#40;</span>id<span class="sy0">,</span> text<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user can get button&#039;s text using getItemText() method. The method returns the current title text of the button:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> text <span class="sy0">=</span> toolbar.<span class="me1">getItemText</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns current item's text</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_button_s_image" id="setting_button_s_image">Setting Button&#039;s Image</a></h4>
+<div class="level4">
+
+<p>
+
+Any button in the toolbar can have its own image displayed in the button display area. setItemImage() and setItemImageDis() methods allow user to set image to a button by passing the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the button;</div>
+</li>
+<li class="level1"><div class="li">  url - path to the image for the enabled/disabled state of the button.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setItemImage</span><span class="br0">&#40;</span>id<span class="sy0">,</span> url<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">setItemImageDis</span><span class="br0">&#40;</span>id<span class="sy0">,</span> url<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>scrip<span class="sy0">&gt;</span></pre>
+<p>
+Button&#039;s image whether for the enabled or the disabled state can be easily removed/cleared by means of clearItemImage() and clearItemImageDis() methods to which the user should pass button&#039;s id:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">clearItemImage</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">clearItemImageDis</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_buttons_s_tooltip" id="setting_buttons_s_tooltip">Setting Buttons&#039;s Tooltip</a></h4>
+<div class="level4">
+
+<p>
+
+The user can specify the supplementary information regarding any button in the toolbar. setItemToolTip() method takes the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - button id;</div>
+</li>
+<li class="level1"><div class="li">  tip - this parameter sets the title that appears when user hovers the mouse over the button.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setItemToolTip</span><span class="br0">&#40;</span>id<span class="sy0">,</span> tip<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The following method can return the current button&#039;s tooltip text:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> tip <span class="sy0">=</span> toolbar.<span class="me1">getItemToolTip</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns current button's tooltip text</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1796-4805" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Button" /></div></form></div>
+<h3><a name="select_button" id="select_button">Select Button</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Select Button item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id); </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.enableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.disableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isEnabled(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemText(id, text);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemText(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemImage(id, url);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.setItemImageDis(id, url);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.clearItemImage(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.clearItemImageDis(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemToolTip(id, tip);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemToolTip(id);</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in Button Settings Manipulations section.
+</p>
+
+</div>
+
+<h4><a name="setting_select_button_width" id="setting_select_button_width">Setting Select Button Width</a></h4>
+<div class="level4">
+
+<p>
+
+A simple method is used to set this item&#039;s width:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setWidth</span><span class="br0">&#40;</span>id<span class="sy0">,</span> width<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The parameters are:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - item&#039;s id;</div>
+</li>
+<li class="level1"><div class="li">  width - the value of item&#039;s new width.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="adding_removing_listed_option" id="adding_removing_listed_option">Adding/Removing Listed Option</a></h4>
+<div class="level4">
+
+<p>
+
+A new Listed Option can be added using addListOption() method that accepts the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  parentId - id of the parent item;</div>
+</li>
+<li class="level1"><div class="li">  id - id of the new item that will be added;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the new item;</div>
+</li>
+<li class="level1"><div class="li">  type - item&#039;s type can be “button” or “separator”;</div>
+</li>
+<li class="level1"><div class="li">  text - item&#039;s label;</div>
+</li>
+<li class="level1"><div class="li">  img - path to item&#039;s image.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">addListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="sy0">,</span> pos<span class="sy0">,</span> type<span class="sy0">,</span> text<span class="sy0">,</span> img<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Any Listed Option can be easily removed by calling the following method:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">removeListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span>id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="showing_hiding_listed_option" id="showing_hiding_listed_option">Showing/Hiding Listed Option</a></h4>
+<div class="level4">
+
+<p>
+
+Any of the Listed Options can be shown/hidden if one of the following methods is applied to it:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">showListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">hideListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user has the possibility to check whether any Listed Option is visible. The method returns true if the item is visible:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> isVisible <span class="sy0">=</span> toolbar.<span class="me1">isListOptionVisible</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>; <span class="co1">// returns true|false</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="enabling_disabling_listed_option" id="enabling_disabling_listed_option">Enabling/Disabling Listed Option</a></h4>
+<div class="level4">
+
+<p>
+
+Any Listed Option in the toolbar can be enabled/disabled by user:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">enableListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+        toolbar.<span class="me1">disableListOption</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Also the user has the possibility to check whether any Listed Option is enabled. This can be done by calling the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> isEnabled <span class="sy0">=</span> toolbar.<span class="me1">isListOptionEnabled</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>; <span class="co1">// returns true|false</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user should pass parentId and id of the Listed Option that will be checked. The method returns true if the Listed Option is enabled.
+</p>
+
+</div>
+
+<h4><a name="setting_listed_option_s_position_moving" id="setting_listed_option_s_position_moving">Setting Listed Option&#039;s Position (moving)</a></h4>
+<div class="level4">
+
+<p>
+
+The following methods can be used to set new position for a Listed Option and to get the current position of it:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setListOptionPosition</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="sy0">,</span> pos<span class="br0">&#41;</span>;
+        <span class="kw2">var</span> pos <span class="sy0">=</span> toolbar.<span class="me1">getListOptionPosition</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_listed_option_s_text" id="setting_listed_option_s_text">Setting Listed Option&#039;s Text</a></h4>
+<div class="level4">
+
+<p>
+
+The user can set any Listed Option&#039;s title. This item&#039;s parentId, id and title&#039;s text are passed as parameters to the following method:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setListOptionText</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="sy0">,</span> text<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user can get Listed Option&#039;s title using getListOptionText() method. The method returns the current title text of the item:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> text <span class="sy0">=</span> toolbar.<span class="me1">getListOptionText</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>; <span class="co1">// returns current listed option's title text</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_listed_option_s_image" id="setting_listed_option_s_image">Setting Listed Option&#039;s Image</a></h4>
+<div class="level4">
+
+<p>
+
+A Listed Option in the toolbar can have its own image displayed in the left part of item&#039;s display area. setListOptionImage() method allows the user to set image to a Listed Option by passing the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  parentId - id of the parent item;</div>
+</li>
+<li class="level1"><div class="li">  id - id of the listed option;</div>
+</li>
+<li class="level1"><div class="li">  url - path to the image for the listed option.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setListOptionImage</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="sy0">,</span> img<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Path to current listed option image can be got like this:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> listOptionImage <span class="sy0">=</span> toolbar.<span class="me1">getListOptionImage</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>; <span class="co1">// returns path to the current listed option image</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Listed Option&#039;s image can be easily removed/cleared by means of clearListOptionImage() method to which the user should pass item&#039;s parentId and id as parameters:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">clearListOptionImage</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_listed_option_s_tooltip" id="setting_listed_option_s_tooltip">Setting Listed Option&#039;s Tooltip</a></h4>
+<div class="level4">
+
+<p>
+The user can specify the supplementary information regarding any Listed Option in the toolbar. setListOptionToolTip() method takes the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  parentId - listed option&#039;s parent id;</div>
+</li>
+<li class="level1"><div class="li">  id - id of the listed option;</div>
+</li>
+<li class="level1"><div class="li">  tip - this parameter sets the title that appears when the user hovers the mouse over the listed option.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setListOptionToolTip</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="sy0">,</span> tip<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>scri<span class="sy0">&gt;</span></pre>
+<p>
+The following method can return the current Listed Option&#039;s tooltip text:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> tip <span class="sy0">=</span> toolbar.<span class="me1">getListOptionToolTip</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>; <span class="co1">// returns current listed option's tooltip text</span>
+    <span class="sy0">&lt;/</span>scri<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="selecting_listed_option" id="selecting_listed_option">Selecting Listed Option</a></h4>
+<div class="level4">
+
+<p>
+
+The user can make any listed option selected by default from script. On startup, when the user first opens the list of options, this chosen listed option will be highlighted (selected). The method setListOptionSelected() takes the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  parentId - listed option&#039;s parent id;</div>
+</li>
+<li class="level1"><div class="li">  id - id of the listed option.</div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setListOptionSelected</span><span class="br0">&#40;</span>parentId<span class="sy0">,</span> id<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method doesn&#039;t make the listed option selected forever. Another listed option can be easily selected by user from page.
+</p>
+
+<p>
+There is also the possibility to get the id of the current selected listed option by method getListOptionSelected():
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> listOptionId <span class="sy0">=</span> toolbar.<span class="me1">getListOptionSelected</span><span class="br0">&#40;</span>parentId<span class="br0">&#41;</span>; <span class="co1">//returns id of the selected listed option</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+
+The parameter the user should pass to this method is id of the Select Button, which listed option&#039;s id the user wants to get.
+</p>
+
+</div>
+
+<h4><a name="get_all_listed_options" id="get_all_listed_options">Get All Listed Options</a></h4>
+<div class="level4">
+
+<p>
+
+Method getAllListOptions() allows the user to get all listed options ids of a certain Select Button. The only one parameter that the user should pass is the id of the chosen Select Button:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> allListOptions <span class="sy0">=</span> toolbar.<span class="me1">getAllListOptions</span><span class="br0">&#40;</span>parentId<span class="br0">&#41;</span>; <span class="co1">// returns array of all listed options ids</span>
+    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4806-11734" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Select Button" /></div></form></div>
+<h3><a name="two-state_button" id="two-state_button">Two-State Button</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Two-State Button item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id);  </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.enableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.disableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isEnabled(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemText(id, text);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemText(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemImage(id, url);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.setItemImageDis(id, url);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.clearItemImage(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.clearItemImageDis(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setTooltip(id,tip);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemToolTip(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in <span class="curid"><a href="dhtmlxtoolbar___items_settings_manipulations.html" class="wikilink1" title="dhtmlxtoolbar:items_settings_manipulations">Button Settings Manipulations</a></span> section.
+</p>
+
+</div>
+
+<h4><a name="setting_two-state_button_state" id="setting_two-state_button_state">Setting Two-State Button State</a></h4>
+<div class="level4">
+
+<p>
+
+The user can set one of two states for the Two-State Button with the help of the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setItemState</span><span class="br0">&#40;</span>id<span class="sy0">,</span> state<span class="sy0">,</span> callEvent<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The parameters for this method are the following:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the two-state button;</div>
+</li>
+<li class="level1"><div class="li">  state - true|false, true stands for the Pressed state of the button, false stadns for the Released state of the button;</div>
+</li>
+<li class="level1"><div class="li">  callEvent - if set to true, calls user defined handler for onStateChange event (if there is any).</div>
+</li>
+</ul>
+
+<p>
+
+There is also the possibility to get current item&#039;s state by calling getItemState() method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> isPressed <span class="sy0">=</span> toolbar.<span class="me1">getItemState</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns true|false</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The method returns true in case the button is pressed, and false in case the button is released.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="11735-13393" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Two-State Button" /></div></form></div>
+<h3><a name="text_item" id="text_item">Text Item</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Text Item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemText(id, text);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemText(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in <span class="curid"><a href="dhtmlxtoolbar___items_settings_manipulations.html" class="wikilink1" title="dhtmlxtoolbar:items_settings_manipulations">Button Settings Manipulations</a></span> section.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="13394-13849" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Text Item" /></div></form></div>
+<h3><a name="separator" id="separator">Separator</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Separator as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in <span class="curid"><a href="dhtmlxtoolbar___items_settings_manipulations.html" class="wikilink1" title="dhtmlxtoolbar:items_settings_manipulations">Button Settings Manipulations</a></span> section.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="13850-14238" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Separator" /></div></form></div>
+<h3><a name="slider" id="slider">Slider</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Slider as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.enableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.disableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isEnabled(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in <span class="curid"><a href="dhtmlxtoolbar___items_settings_manipulations.html" class="wikilink1" title="dhtmlxtoolbar:items_settings_manipulations">Button Settings Manipulations</a></span> section.
+</p>
+
+</div>
+
+<h4><a name="setting_slider_s_tooltip_template" id="setting_slider_s_tooltip_template">Setting Slider&#039;s Tooltip Template</a></h4>
+<div class="level4">
+
+<p>
+
+Toltip template is applied only to Slider. The tooltip template can be represented in three ways:
+</p>
+<ul>
+<li class="level1"><div class="li">  Like a static text, for example, “Hello”;</div>
+</li>
+<li class="level1"><div class="li">  Like a changeable text when the user moves the slider thumb. ”%v” part should be added to the tooltip template to make the template changeable;</div>
+</li>
+<li class="level1"><div class="li">  Like both the above mentioned ways.</div>
+</li>
+</ul>
+
+<p>
+
+setItemToolTipTemplate() method is used to set the tooltip template:
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          toolbar.<span class="me1">setItemToolTipTemplate</span><span class="br0">&#40;</span>id<span class="sy0">,</span> template<span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method takes the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - item id;</div>
+</li>
+<li class="level1"><div class="li">  template - tooltip template text itself.</div>
+</li>
+</ul>
+
+<p>
+
+For example, if the user wants his tooltip to show the text like this: “Current Value is:” plus the changeable text showing slider&#039;s values when the thumb is moved, the code must be the following:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setItemToolTipTemplate</span><span class="br0">&#40;</span><span class="st0">&quot;slider&quot;</span><span class="sy0">,</span><span class="st0">&quot;Current Value is:+%v&quot;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The following method can return current slider&#039;s tooltip template:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> template <span class="sy0">=</span> toolbar.<span class="me1">getItemToolTipTemplate</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns current slider's tooltip text</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_slider_s_value" id="setting_slider_s_value">Setting Slider&#039;s Value</a></h4>
+<div class="level4">
+
+<p>
+
+The user can set the Slider to a certain value within the range of available values with the help of the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setValue</span><span class="br0">&#40;</span>id<span class="sy0">,</span>value<span class="sy0">,</span>callEvent<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The parameters are as follows:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the item;</div>
+</li>
+<li class="level1"><div class="li">  value - the new value;</div>
+</li>
+<li class="level1"><div class="li">  callEvent - true|false, if set to true, calls onValueChange event.</div>
+</li>
+</ul>
+
+<p>
+
+Note: If the user has indicated the value that is not within the range of available values, the slider&#039;s thumb will be set either to the minimum or to the maximum value.
+</p>
+
+<p>
+Slider&#039;s current value can be easily got by the following method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> value <span class="sy0">=</span> toolbar.<span class="me1">getValue</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns slider's current value</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="setting_slider_s_minimum_value" id="setting_slider_s_minimum_value">Setting Slider&#039;s Minimum Value</a></h4>
+<div class="level4">
+
+<p>
+
+There is a method to set slider&#039;s minimum value:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setMinValue</span><span class="br0">&#40;</span>id<span class="sy0">,</span> value<span class="sy0">,</span> label<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The following parameters should be passed to this method:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - item id;</div>
+</li>
+<li class="level1"><div class="li">  value - minimum value;</div>
+</li>
+<li class="level1"><div class="li">  label - text displayed to the left of the slider (in case of horizontal slider display) or below the slider (in case of vertical slider display).</div>
+</li>
+</ul>
+
+<p>
+
+Note: if the user wants the slider&#039;s minimum value to be created text-free, it&#039;s necessary to write an empty string as label parameter. For example:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setMinValue</span><span class="br0">&#40;</span><span class="st0">&quot;slider&quot;</span><span class="sy0">,</span> <span class="nu0">25</span><span class="sy0">,</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Slider&#039;s current minimum value can be got using getMinValue() method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> data <span class="sy0">=</span> toolbar.<span class="me1">getMinValue</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns slider's current minimum value </span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method returns the following Array(value, label).
+</p>
+
+</div>
+
+<h4><a name="setting_slider_s_maximum_value" id="setting_slider_s_maximum_value">Setting Slider&#039;s Maximum Value</a></h4>
+<div class="level4">
+
+<p>
+
+There is a method to set slider&#039;s maximum value:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setMaxValue</span><span class="br0">&#40;</span>id<span class="sy0">,</span>value<span class="sy0">,</span>label<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The following parameters should be passed to this method:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - item id;</div>
+</li>
+<li class="level1"><div class="li">  value - maximum value;;</div>
+</li>
+<li class="level1"><div class="li">  label - text displayed to the right of the slider (in case of horizontal slider display) or above the slider (in case of vertical slider display).</div>
+</li>
+</ul>
+
+<p>
+
+Note: if the user wants the slider&#039;s maximum value to be created text-free, it&#039;s necessary to write an empty string as label parameter. For example:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">setMaxValue</span><span class="br0">&#40;</span><span class="st0">&quot;slider&quot;</span><span class="sy0">,</span> <span class="nu0">25</span><span class="sy0">,</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Slider&#039;s current maximum value can be got using getMaxValue() method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> data <span class="sy0">=</span> toolbar.<span class="me1">getMaxValue</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns current maximum value </span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method returns the following Array(value, label).
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="14239-18643" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Slider" /></div></form></div>
+<h3><a name="input_item" id="input_item">Input Item</a></h3>
+<div class="level3">
+
+<p>
+
+The following methods that are available for the Button item, can be applied to the Input Item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.showItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.hideItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isVisible(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.enableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.disableItem(id);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.isEnabled(id);</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  toolbar.setItemToolTip(id, tip);</div>
+</li>
+<li class="level1"><div class="li">  toolbar.getItemToolTip(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in <span class="curid"><a href="dhtmlxtoolbar___items_settings_manipulations.html" class="wikilink1" title="dhtmlxtoolbar:items_settings_manipulations">Button Settings Manipulations</a></span> section.
+</p>
+
+<p>
+The following methods that are available for the Slider item, can be applied to the Input Item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.setValue(id, value); the value parameter is the default text displayed in the Input item </div>
+</li>
+<li class="level1"><div class="li">  toolbar.getValue(id).</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned methods are the same to those described in Slider Settings Manipulations section.
+There&#039;s one more method applied to Select Button that can be applied to the Input Item as well:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  toolbar.setWidth(id, width);</div>
+</li>
+</ul>
+
+<p>
+
+All the parameters of the above mentioned method are the same to those described in Setting Select Button Width section.
+</p>
+
+</div>
+
+<h4><a name="getting_input_s_width" id="getting_input_s_width">Getting Input&#039;s Width</a></h4>
+<div class="level4">
+
+<p>
+
+The current input&#039;s width can be got with the help of getWidth() method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> width <span class="sy0">=</span> toolbar.<span class="me1">getWidth</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// returns current input's width</span>
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="18644-" /><input type="hidden" name="rev" value="1279031293" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Input Item" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxtoolbar/items_settings_manipulations.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxtoolbar%3Aitems_settings_manipulations&amp;1279804918" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:items_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:dhxpie3    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:dhxpie3</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:dhxpie3"  class="breadcrumbs" title="dhtmlxchart:dhxpie3">dhxpie3</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="d_pie_chart" id="d_pie_chart">3D Pie Chart</a></h2>
+<div class="level2">
+
+<p>
+
+3D Pie Chart is a classic Pie Chart but in 3D presentation. So in addition to its specific features, all Pie Chart formating is available for it.
+</p>
+
+<p>
+It needs to be reminded that a Pie Chart is a a circular chart divided into sectors, illustrating  relative magnitudes or frequencies.
+</p>
+
+<p>
+<img src="dhtmlxchart___pie3dchart.png"  class="media" alt="" />
+</p>
+
+<p>
+
+Let’s start to create a 3D Pie Chart yourself step by step. You will have possibillity to improve it by adding additional functions and propeties.  
+</p>
+
+<p>
+In the beginning, make some preparatory steps.
+</p>
+
+<p>
+ 1. Select data of any <a href="dhtmlxchart___dhxdata.html" class="wikilink1" title="dhtmlxchart:dhxdata">avaliable format</a> to present in your chart.
+In our examples we use Sales Information of one little company in json format.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">&#91;</span>
+    <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;8.3&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2005&quot;</span><span class="sy0">,</span>color<span class="sy0">:</span><span class="st0">&quot;#6CABF0&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;8.7&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2006&quot;</span><span class="sy0">,</span>color<span class="sy0">:</span><span class="st0">&quot;#85B9F3&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;9.3&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2007&quot;</span><span class="sy0">,</span>color<span class="sy0">:</span><span class="st0">&quot;#9BC6F4&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;7.3&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2008&quot;</span><span class="sy0">,</span>color<span class="sy0">:</span><span class="st0">&quot;#BFDAFB&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;5.8&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span><span class="sy0">,</span>color<span class="sy0">:</span><span class="st0">&quot;#D0E4FB&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+<p>
+ 2. Insert an <acronym title="HyperText Markup Language">HTML</acronym> container to your page for your future chart. For example use the name “chart_container”.
+</p>
+<pre class="code javascript">   <span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot; chart_container&quot;</span> style<span class="sy0">=</span><span class="st0">&quot;width:280px;height:250px;&quot;</span><span class="sy0">&gt;&lt;/</span>div<span class="sy0">&gt;</span></pre>
+<p>
+
+Now, we need to fill in an object constructor. Let&#039;s go to know the details.
+</p>
+
+<p>
+
+ 3. Specify value ‘pie3D’ in the ‘view’ property of an object constructor to set a chart type.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;pie3D&quot;</span>
+		....
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+
+ 4. Define &#039;chart_container&#039; in the ‘container’ property  to set a chart container.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+                view<span class="sy0">:</span><span class="st0">&quot;pie3D&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+ 5. Assign &#039;#sales#&#039; to the ‘value’ property to set data that 3D Pie Chart will present.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span> <span class="st0">&quot;pie3D&quot;</span><span class="sy0">,</span>
+                container<span class="sy0">:</span> <span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+                value<span class="sy0">:</span> <span class="st0">&quot;#sales#&quot;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+Other parameters are optional, choose them according to your needs.
+</div>
+</p>
+
+<p>
+ 6.  Set a pie color. In our example the colors of sectors are specified in data structure by “color” field.  Know more about chart color <a href="dhtmlxchart___dhxcolor.html" class="wikilink1" title="dhtmlxchart:dhxcolor">here</a>.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span> <span class="st0">&quot;pie3D&quot;</span><span class="sy0">,</span>
+                container<span class="sy0">:</span> <span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+                value<span class="sy0">:</span> <span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+                color<span class="sy0">:</span> <span class="st0">&quot;#color#&quot;</span>
+&nbsp;
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+ 7. Add legend block definition (parameter &#039;legend&#039;) to your constructor with the following parameters: &#039;width&#039;,&#039;align&#039;, &#039;valign&#039;, &#039;marker&#039;, &#039;template&#039;.
+</p>
+<ul>
+<li class="level1"><div class="li"> Set legend block width. e.g. value &#039;65&#039;.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Choose horizontal alignment for the legend block: “left” or “right”. We will apply right horizontal alignment. </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Choose vertical alignment: “top” or “bottom”. We selected value &#039;top&#039;.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Define how coloured markers in legend block will look. In the example we will use the  values:&#039;#round#&#039; as marker type and &#039;15&#039; as marker width. </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Specify a template for legend text e.g. value &#039;#year#&#039;.</div>
+</li>
+</ul>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;pie3D&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+                color<span class="sy0">:</span> <span class="st0">&quot;#color#&quot;</span><span class="sy0">,</span>
+                legend<span class="sy0">:</span><span class="br0">&#123;</span>
+	             width<span class="sy0">:</span> <span class="nu0">65</span><span class="sy0">,</span>
+	             align<span class="sy0">:</span> <span class="st0">&quot;right&quot;</span><span class="sy0">,</span>
+	             valign<span class="sy0">:</span> <span class="st0">&quot;top&quot;</span><span class="sy0">,</span>
+	             marker<span class="sy0">:</span><span class="br0">&#123;</span>
+      	                 type<span class="sy0">:</span> <span class="st0">&quot;round&quot;</span><span class="sy0">,</span>
+	                 width<span class="sy0">:</span> <span class="nu0">15</span>
+                     <span class="br0">&#125;</span><span class="sy0">,</span>
+                     template<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span>
+                <span class="br0">&#125;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+
+8. Set inner pie labels (parameter &#039;pieInnerText&#039;) e.g. value &#039;&lt;b&gt;#sales#&lt;/b&gt;&#039;. 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> pieChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;pie3D&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+                color<span class="sy0">:</span> <span class="st0">&quot;#color#&quot;</span><span class="sy0">,</span>
+                legend<span class="sy0">:</span><span class="br0">&#123;</span>
+	             width<span class="sy0">:</span> <span class="nu0">65</span><span class="sy0">,</span>
+	             align<span class="sy0">:</span> <span class="st0">&quot;right&quot;</span><span class="sy0">,</span>
+	             valign<span class="sy0">:</span> <span class="st0">&quot;top&quot;</span><span class="sy0">,</span>
+	             marker<span class="sy0">:</span><span class="br0">&#123;</span>
+      	                 type<span class="sy0">:</span> <span class="st0">&quot;round&quot;</span><span class="sy0">,</span>
+	                 width<span class="sy0">:</span> <span class="nu0">15</span>
+	             <span class="br0">&#125;</span><span class="sy0">,</span>
+                     template<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span>
+                <span class="br0">&#125;</span><span class="sy0">,</span>
+		pieInnerText<span class="sy0">:</span><span class="st0">&quot;&lt;b&gt;#sales#&lt;/b&gt;&quot;</span>
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+9. Use method <a href="dhtmlxchart___api_method_dhtmlxchart_parse.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_parse">parse()</a> to process data. 
+</p>
+<pre class="code javascript">	pieChart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+We&#039;ve finished. Just run the application to see your creation.
+</p>
+
+<p>
+Full code you can see <a href="dhtmlxchart___fullpie3dcodelink.html" class="wikilink1" title="dhtmlxchart:fullpie3dcodelink">here</a>.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-" /><input type="hidden" name="rev" value="1279634787" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Edit" class="button" title="3D Pie Chart" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/dhxpie3.txt &middot; Last modified: 2010/07/20 17:06 by 192.168.1.110      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Adhxpie3&amp;1279804796" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxpie3" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

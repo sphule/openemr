@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxform:dhtmlxform_initialization    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxform:dhtmlxform_initialization</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:dhtmlxform_initialization"  class="breadcrumbs" title="dhtmlxform:dhtmlxform_initialization">dhtmlxform_initialization</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#dhtmlxform_initialization" class="toc">DhtmlxForm Initialization</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#initialization_from_an_existing_form" class="toc">Initialization from an existing form</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#initialization_from_a_config_file" class="toc">Initialization from a config file</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:toc" class="media" title="dhtmlxform:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxform:toc">dhtmlxForm</a></div></div>
+</p>
+
+
+
+<h1><a name="dhtmlxform_initialization" id="dhtmlxform_initialization">DhtmlxForm Initialization</a></h1>
+<div class="level1">
+
+<p>
+
+There are 2 ways to initialize a dhtmlxForm object: 
+</p>
+<ul>
+<li class="level1"><div class="li"> From an existing form</div>
+</li>
+<li class="level1"><div class="li"> From a config file</div>
+</li>
+</ul>
+
+<p>
+
+Firstly, before init you should include related js and css files:
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>link rel<span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> href<span class="sy0">=</span><span class="st0">&quot;codebase/skins/dhtmlxform_dhx_skyblue.css&quot;</span><span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>script src<span class="sy0">=</span><span class="st0">&quot;codebase/dhtmlxcommon.js&quot;</span><span class="sy0">&gt;&lt;/</span>script<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>script src<span class="sy0">=</span><span class="st0">&quot;codebase/dhtmlxform.js&quot;</span><span class="sy0">&gt;&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-477" /><input type="hidden" name="rev" value="1279803985" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit" class="button" title="DhtmlxForm Initialization" /></div></form></div>
+<h2><a name="initialization_from_an_existing_form" id="initialization_from_an_existing_form">Initialization from an existing form</a></h2>
+<div class="level2">
+
+<p>
+
+If you have a ready form on the page and just need to add validation, saving/loading data abilities - use the following code: 
+</p>
+<pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/form.html"><span class="kw2">form</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;my_form&quot;</span>&gt;</span>
+    ...
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/form.html"><span class="kw2">form</span></a>&gt;</span></pre><pre class="code javascript"><span class="kw2">var</span> dhxForm <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXForm<span class="br0">&#40;</span><span class="st0">&quot;my_form&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+To have the really useful form you need to define bindings and provide server-side connector
+</div>
+</p>
+
+<p>
+<br/>
+
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="478-892" /><input type="hidden" name="rev" value="1279803985" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit" class="button" title="Initialization from an existing form" /></div></form></div>
+<h2><a name="initialization_from_a_config_file" id="initialization_from_a_config_file">Initialization from a config file</a></h2>
+<div class="level2">
+
+<p>
+Your config file may have one of the following formats:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="dhtmlxform___dhtmlxform_format.html" class="wikilink1" title="dhtmlxform:dhtmlxform_format">XML</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxform___dhtmlxform_format.html" class="wikilink1" title="dhtmlxform:dhtmlxform_format">HTML</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="dhtmlxform___dhtmlxform_format.html" class="wikilink1" title="dhtmlxform:dhtmlxform_format">JSON</a></div>
+</li>
+</ul>
+
+<p>
+
+In this section we will stint just in &#039;JSON&#039; variant consideration.
+</p>
+
+<p>
+
+In the beginning, specify an <acronym title="HyperText Markup Language">HTML</acronym> container for your future form.
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot; form_container&quot;</span> style<span class="sy0">=</span><span class="st0">&quot;width:280px;height:250px;&quot;</span><span class="sy0">&gt;&lt;/</span>div<span class="sy0">&gt;</span></pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+In case of dhtmlxLayout 2.6 and older, you can use the attachObject() method of dhtmlxLayout to attach this HTML element with the form to a layout cell.
+</div>
+<br/>
+
+Then, set configuration:
+</p>
+<pre class="code javascript"><span class="kw2">var</span> formData <span class="sy0">=</span> <span class="br0">&#91;</span>
+           <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;paymenttype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span><span class="st0">&quot;cash&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Cash&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+           <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;currencytype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;dollar&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;U. S. Dollars&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	   <span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;currencytype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;euro&quot;</span><span class="sy0">,</span> label <span class="sy0">:</span><span class="st0">&quot;Euro&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+<span class="br0">&#93;</span>;</pre>
+<p>
+And after that, create a dhtmlxForm object:
+</p>
+<pre class="code javascript"><span class="kw2">var</span> newDhxForm <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXForm<span class="br0">&#40;</span><span class="st0">&quot;dhxFormObj&quot;</span><span class="sy0">,</span> formData<span class="br0">&#41;</span>;</pre>
+<p>
+For details - see the <a href="dhtmlxform___init_example.html" class="wikilink1" title="dhtmlxform:init_example">example</a>.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="893-" /><input type="hidden" name="rev" value="1279803985" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit" class="button" title="Initialization from a config file" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxform/dhtmlxform_initialization.txt &middot; Last modified: 2010/07/22 16:06 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxform%3Adhtmlxform_initialization&amp;1279804838" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_initialization" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

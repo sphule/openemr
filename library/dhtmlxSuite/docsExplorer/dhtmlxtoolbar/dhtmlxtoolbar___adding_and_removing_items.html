@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxtoolbar:adding_and_removing_items    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxtoolbar:adding_and_removing_items</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxtoolbar:adding_and_removing_items"  class="breadcrumbs" title="dhtmlxtoolbar:adding_and_removing_items">adding_and_removing_items</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#adding_and_removing_items" class="toc">Adding and Removing Items</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#button_adding" class="toc">Button Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#text_item_adding" class="toc">Text Item Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#select_button_adding" class="toc">Select Button Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#two-state_button_adding" class="toc">Two-State Button Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#separator_adding" class="toc">Separator Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#slider_adding" class="toc">Slider Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#input_item_adding" class="toc">Input Item Adding</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#item_s_removal" class="toc">Item&#039;s Removal</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___toolbar.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxtoolbar:toc">dhtmlxtoolbar</a></div></div>
+
+</p>
+
+<h2><a name="adding_and_removing_items" id="adding_and_removing_items">Adding and Removing Items</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="56-97" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Adding and Removing Items" /></div></form></div>
+<h3><a name="button_adding" id="button_adding">Button Adding</a></h3>
+<div class="level3">
+
+<p>
+A Button item can be easily added to the toolbar with the help of the following method:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">addButton</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> text<span class="sy0">,</span> imgEnabled<span class="sy0">,</span> imgDisabled<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+Parameters that should be passed are:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of a new button;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the button;</div>
+</li>
+<li class="level1"><div class="li">  text - button&#039;s label;</div>
+</li>
+<li class="level1"><div class="li">  imgEnabled - path to image for the enabled state of the button;</div>
+</li>
+<li class="level1"><div class="li">  imgDisabled - path to image for the disabled state of the button.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="98-610" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Button Adding" /></div></form></div>
+<h3><a name="text_item_adding" id="text_item_adding">Text Item Adding</a></h3>
+<div class="level3">
+
+<p>
+
+A Text Item can be added to the toolbar by calling addText() method:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">addText</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> text<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>scrip<span class="sy0">&gt;</span></pre>
+<p>
+The following parameters should be passed to this method:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the new item;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the text item;</div>
+</li>
+<li class="level1"><div class="li">  text - label of the text item.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="611-967" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Text Item Adding" /></div></form></div>
+<h3><a name="select_button_adding" id="select_button_adding">Select Button Adding</a></h3>
+<div class="level3">
+
+<p>
+
+There is one simple method that adds a Select Button to the toolbar:
+
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          toolbar.<span class="me1">addButtonSelect</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> text<span class="sy0">,</span> opts<span class="sy0">,</span> imgEnabled<span class="sy0">,</span> imgDisabled<span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The following parameters should be passed to this method:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the new select button;</div>
+</li>
+<li class="level1"><div class="li">  pos - item&#039;s position;</div>
+</li>
+<li class="level1"><div class="li">  text - label of the item;</div>
+</li>
+<li class="level1"><div class="li">  opts - options that will be listed;</div>
+</li>
+<li class="level1"><div class="li">  imgEnabled - path to image for the enabled state of the select button;</div>
+</li>
+<li class="level1"><div class="li">  imgDisabled - path to image for the disabled state of the select button.</div>
+</li>
+</ul>
+
+<p>
+
+The opts parameter requires more detailed description as the user should specify the following for each listed option:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the option;</div>
+</li>
+<li class="level1"><div class="li">  type -  obj|sep, whether this option is an object or a separator;</div>
+</li>
+<li class="level1"><div class="li">  text - label of the option (only for objects);</div>
+</li>
+<li class="level1"><div class="li">  img - path to the option image (only for objects).</div>
+</li>
+</ul>
+
+<p>
+
+Several options can be set at once as opts variable:
+
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span> 
+          <span class="kw2">var</span> opts <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#91;</span><span class="st0">'id1'</span><span class="sy0">,</span> <span class="st0">'obj'</span><span class="sy0">,</span> <span class="st0">'option1'</span><span class="sy0">,</span> <span class="st0">'img1'</span><span class="br0">&#93;</span><span class="sy0">,</span>
+                      <span class="br0">&#91;</span><span class="st0">'sep01'</span><span class="sy0">,</span> <span class="st0">'sep'</span><span class="sy0">,</span> <span class="st0">''</span><span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#93;</span><span class="sy0">,</span>
+                      <span class="br0">&#91;</span><span class="st0">'id2'</span><span class="sy0">,</span> <span class="st0">'obj'</span><span class="sy0">,</span> <span class="st0">'option2'</span><span class="sy0">,</span> <span class="st0">'img2'</span><span class="br0">&#93;</span>
+                      ...
+                     <span class="br0">&#93;</span>; 
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This line of code should be written before we invoke addButtonSelect() method. This code is very useful, as instead of writing all the arrays for the opts parameter in addButtonSelect() method, we can use opts variable, declared before. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="968-2451" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Select Button Adding" /></div></form></div>
+<h3><a name="two-state_button_adding" id="two-state_button_adding">Two-State Button Adding</a></h3>
+<div class="level3">
+
+<p>
+
+The following method should be used to add a new Two-State Button:
+
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          toolbar.<span class="me1">addButtonTwoState</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> text<span class="sy0">,</span> imgEnabled<span class="sy0">,</span> imgDisabled<span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The user should pass a number of parameters to this method:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the new button;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the new button;</div>
+</li>
+<li class="level1"><div class="li">  text - button&#039;s label;</div>
+</li>
+<li class="level1"><div class="li">  imgEnabled - path to image for the enabled state of a new button;</div>
+</li>
+<li class="level1"><div class="li">  imgDisabled - path to image for the disabled state of a new button.</div>
+</li>
+</ul>
+
+<p>
+
+Note: if the user wants the Two-State Button to be created text-free, it&#039;s necessary to write an empty string as text parameter.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2452-3125" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Two-State Button Adding" /></div></form></div>
+<h3><a name="separator_adding" id="separator_adding">Separator Adding</a></h3>
+<div class="level3">
+
+<p>
+
+A new Separator can be created by calling the following method:
+
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          toolbar.<span class="me1">addSeparator</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method has two input parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the item;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the new separator.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3126-3425" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Separator Adding" /></div></form></div>
+<h3><a name="slider_adding" id="slider_adding">Slider Adding</a></h3>
+<div class="level3">
+
+<p>
+
+addSlider() method should be used to create a new Slider:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">addSlider</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> len<span class="sy0">,</span> valueMin<span class="sy0">,</span> valueMax<span class="sy0">,</span> valueNow<span class="sy0">,</span> textMin<span class="sy0">,</span> textMax<span class="sy0">,</span> tip<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+As for input parameters the user should set, they are as follows:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the new slider item;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the new slider;</div>
+</li>
+<li class="level1"><div class="li">  len - slider&#039;s length (or width/height, it is set in pixels);</div>
+</li>
+<li class="level1"><div class="li">  valueMin - minimum possible value;</div>
+</li>
+<li class="level1"><div class="li">  valueMax - maximum possible value;</div>
+</li>
+<li class="level1"><div class="li">  valueNow - the value slider is set to for the moment it is created;</div>
+</li>
+<li class="level1"><div class="li">  textMin - the text displayed to the left of the slider (in case of horizontal slider display) or below the slider (in case of vertical slider display);</div>
+</li>
+<li class="level1"><div class="li">  textMax - the text displayed to the right of the slider (in case of horizontal slider display) or above the slider (in case of vertical slider display);</div>
+</li>
+<li class="level1"><div class="li">  tip - this parameter sets the tooltip text.</div>
+</li>
+</ul>
+
+<p>
+Note: if the user wants the Slider to be created tooltip text-free, it&#039;s necessary to write an empty string as tip parameter. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3426-4513" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Slider Adding" /></div></form></div>
+<h3><a name="input_item_adding" id="input_item_adding">Input Item Adding</a></h3>
+<div class="level3">
+
+<p>
+
+The following syntax shows the user how an Input item can be easily added:
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">addInput</span><span class="br0">&#40;</span>id<span class="sy0">,</span> pos<span class="sy0">,</span> value<span class="sy0">,</span> width<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+This method has the following input parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  id - id of the new item;</div>
+</li>
+<li class="level1"><div class="li">  pos - position of the new item;</div>
+</li>
+<li class="level1"><div class="li">  value - the text that will be displayed in the input item when it is created;</div>
+</li>
+<li class="level1"><div class="li">  width - width of the new item.</div>
+</li>
+</ul>
+
+<p>
+
+Note: if the user wants the Input item to be created text-free, it&#039;s necessary to write an empty string as value parameter. For example:
+
+</p>
+<pre class="code javascript">      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          toolbar.<span class="me1">addInput</span><span class="br0">&#40;</span><span class="st0">&quot;input_new&quot;</span><span class="sy0">,</span><span class="nu0">3</span><span class="sy0">,</span><span class="st0">&quot;&quot;</span><span class="sy0">,</span><span class="nu0">100</span><span class="br0">&#41;</span>;
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+&nbsp;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4514-5204" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Input Item Adding" /></div></form></div>
+<h3><a name="item_s_removal" id="item_s_removal">Item&#039;s Removal</a></h3>
+<div class="level3">
+
+<p>
+
+A simple tool for item&#039;s removal from the toolbar is removeItem() method:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        toolbar.<span class="me1">removeItem</span><span class="br0">&#40;</span>itemId<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5205-" /><input type="hidden" name="rev" value="1279031292" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit" class="button" title="Item's Removal" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxtoolbar/adding_and_removing_items.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxtoolbar%3Aadding_and_removing_items&amp;1279804918" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxtoolbar:adding_and_removing_items" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

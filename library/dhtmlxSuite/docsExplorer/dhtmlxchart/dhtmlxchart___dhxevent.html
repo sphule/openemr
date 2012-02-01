@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:dhxevent    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:dhxevent</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:dhxevent"  class="breadcrumbs" title="dhtmlxchart:dhxevent">dhxevent</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#events" class="toc">Events</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#adding_event" class="toc">Adding event</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#deleting_event" class="toc">Deleting Event</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="events" id="events">Events</a></h2>
+<div class="level2">
+
+<p>
+
+DhtmlxChart allows to handle different kinds of events in your application. It can be mouse click or click on item. The field of actions is rather wide.  
+</p>
+
+<p>
+You can attach several handlers to the same event, and all of them will be executed.
+</p>
+
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+  Event names are case-insensitive.
+</div>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-367" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit" class="button" title="Events" /></div></form></div>
+<h3><a name="adding_event" id="adding_event">Adding event</a></h3>
+<div class="level3">
+
+<p>
+
+If you need to attach event to an application, use <a href="dhtmlxchart___api_method_dhtmlxchart_attachevent.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_attachevent">attachEvent()</a> method.
+ 
+
+</p>
+<pre class="code javascript">                BarChart.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onItemClick&quot;</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span><span class="br0">&#123;</span>
+		         BarChart.<span class="me1">remove</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+		         <span class="kw1">return</span> <span class="kw2">true</span>;
+	        <span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+In the code snippet showed above, event handler allows you to delete from the Bar Chart the bar you click on by using the <a href="dhtmlxchart___api_method_dhtmlxchart_remove.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_remove">remove()</a> method. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="368-840" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit" class="button" title="Adding event" /></div></form></div>
+<h3><a name="deleting_event" id="deleting_event">Deleting Event</a></h3>
+<div class="level3">
+
+<p>
+
+You can also delete event if you need. The <a href="dhtmlxchart___api_method_dhtmlxchart_detachevent.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_detachevent">detachEvent()</a> method helps you here.
+</p>
+<pre class="code javascript">              <span class="kw2">var</span> myEvent <span class="sy0">=</span> BarChart.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onItemClick&quot;</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span><span class="br0">&#123;</span>
+                BarChart.<span class="me1">remove</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;
+		<span class="kw1">return</span> <span class="kw2">true</span>;
+              <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+              BarChart.<span class="me1">detachEvent</span><span class="br0">&#40;</span>myEvent<span class="br0">&#41;</span>;</pre>
+<p>
+The following events are available in dhtmlxChart:
+</p>
+<ul>
+<li class="level1"><div class="li">  Before Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onbeforeadd.html" class="wikilink1" title="dhtmlxchart:event_onbeforeadd">onBeforeAdd</a> -  occurs before an item is adding to datastore;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onbeforedelete.html" class="wikilink1" title="dhtmlxchart:event_onbeforedelete">onBeforeDelete</a> - fired before an item is deleted;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onbeforerender.html" class="wikilink1" title="dhtmlxchart:event_onbeforerender">onBeforeRender</a> - called before a chart is re-painted;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onbeforesort.html" class="wikilink1" title="dhtmlxchart:event_onbeforesort">onBeforeSort</a> - invoked before a dataset is sorted;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">  After Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onafteradd.html" class="wikilink1" title="dhtmlxchart:event_onafteradd">onAfterAdd</a> - occurs after an item is added to datastore;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onafterdelete.html" class="wikilink1" title="dhtmlxchart:event_onafterdelete">onAfterDelete</a> -  called after an item is deleted;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onaftersort.html" class="wikilink1" title="dhtmlxchart:event_onaftersort">onAfterSort</a> - occurs after a dataset is sorted;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">  Item Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onitemclick.html" class="wikilink1" title="dhtmlxchart:event_onitemclick">onItemClick</a> - occurs when an item is clicked</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onitemdblclick.html" class="wikilink1" title="dhtmlxchart:event_onitemdblclick">onItemDblClick</a> - called when an item is double-clicked</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">  Mouse Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onmousemove.html" class="wikilink1" title="dhtmlxchart:event_onmousemove">onMouseMove</a> - occurs when mouse pointer is pointed over an item;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onmousemoving.html" class="wikilink1" title="dhtmlxchart:event_onmousemoving">onMouseMoving</a> - fired when mouse pointer is moved over a chart;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onmouseout.html" class="wikilink1" title="dhtmlxchart:event_onmouseout">onMouseOut</a> - called when the mouse pointer is moved out of item area;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">  <acronym title="Extensible Markup Language">XML</acronym> Events</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onxle.html" class="wikilink1" title="dhtmlxchart:event_onxle">onXLE</a> - invoked when <acronym title="Extensible Markup Language">XML</acronym> parsing is over, data are already available;</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxchart___event_onxls.html" class="wikilink1" title="dhtmlxchart:event_onxls">onXLS</a> - occurs when <acronym title="Extensible Markup Language">XML</acronym> parsing starts;</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+An example that uses mentioned above methods you can see <a href="dhtmlxchart___eventexample.html" class="wikilink1" title="dhtmlxchart:eventexample">here</a>. 
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="841-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit" class="button" title="Deleting Event" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/dhxevent.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Adhxevent&amp;1279804793" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxevent" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

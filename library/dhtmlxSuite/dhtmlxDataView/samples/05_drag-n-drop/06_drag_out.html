@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Drag data from DataView to HTML container</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="title" content="Samples" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../common/css/style.css" type="text/css" media="screen" />
+
+	</head>
+	<body>
+        <div class="header">
+            <a class="logo" href="http://www.dhtmlx.com" title="DHTMLX homepage"></a>
+            <div class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</div>
+            <div class="search-field">
+                <form action="http://docs.dhtmlx.com/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+            </div>
+            <div class="buttons">
+                <a class="doc_inact" href="../../../docsExplorer/index.html" title="DHTMLX Documentation homepage"></a>
+                <a class="sample"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="navigation-div">
+                <a href="../../../docsExplorer/samples.html" class="navigation"><img src="../common/icons/file.gif" alt="" >All components</a>
+                <div class="arrow"></div>
+                <a href="../index.html" class="navigation"><img height="22" src="../common/icons/dataview.gif" alt="" >dhtmlxDataView</a>
+                <div class="arrow"></div>
+                <a href="./index.html" class="navigation"><img src="../common/icons/none.gif" alt="" >Drag-n-drop</a>
+            </div>
+            <div style="display:block;">
+                <h3>Drag data from DataView to HTML container</h3>
+            </div>
+            <div class="navigation-div">
+                <a href="#code" class="navigation view-source"><img src="../common/icons/source.gif" alt="" >View page source</a>
+            </div>
+            <script src="../../codebase/dhtmlxdataview.js" type="text/javascript"></script>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxdataview.css">  
+
+	
+	<div id="data_container1" style="border:1px solid #A4BED4; background-color:white;width:400px;height:396px; float:left;"></div>				
+	<div style="width:50px; float:left">&nbsp;</div>
+	<div id="data_container2" style="background-color:white;width:400px;height:396px;border:1px solid red;overflow:auto; float:left;">
+		Drop some item here
+	</div>				
+	<div style="clear:both"></div>	
+	
+	<script>
+		data = new dhtmlXDataView({
+			container:"data_container1",
+			type:{
+				template:"#Package# : #Version#<br/>#Maintainer#",
+				padding:5,
+				height:40
+			},
+			drag:true
+		});
+		data.load("../common/data.xml");
+		
+		dhtmlx.DragControl.addDrop("data_container2",{
+			onDrop:function(source, target, d, e){
+				var context = dhtmlx.DragControl.getContext();
+				var item = context.from.get(context.source[0]);
+				
+				var d = document.createElement("DIV");
+				d.innerHTML = item.Package+" - "+item.Version;
+				target.appendChild(d);
+			}
+		});
+	</script>
+			
+			
+         </div>
+    <div class="source">
+        <div class="teg">Source</div>
+        <div class="code" id="code">
+		<div class="hl-main"><pre><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxdataview.js</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/javascript</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">STYLESHEET</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxdataview.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">  
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container1</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">border:1px solid #A4BED4; background-color:white;width:400px;height:396px; float:left;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">                
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width:50px; float:left</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-special">&amp;nbsp;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container2</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">background-color:white;width:400px;height:396px;border:1px solid red;overflow:auto; float:left;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    Drop some item here
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">                
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">clear:both</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">    
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-identifier">data</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXDataView</span><span class="hl-brackets">(</span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-identifier">container</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-identifier">type</span><span class="hl-code">: </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">template</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">#Package# : #Version#&lt;br/&gt;#Maintainer#</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+        </span><span class="hl-identifier">padding</span><span class="hl-code">: </span><span class="hl-number">5</span><span class="hl-code">,
+        </span><span class="hl-identifier">height</span><span class="hl-code">: </span><span class="hl-number">40</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">,
+    </span><span class="hl-identifier">drag</span><span class="hl-code">: </span><span class="hl-reserved">true</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">data</span><span class="hl-code">.</span><span class="hl-identifier">load</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">../common/data.xml</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">dhtmlx</span><span class="hl-code">.</span><span class="hl-identifier">DragControl</span><span class="hl-code">.</span><span class="hl-identifier">addDrop</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container2</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-identifier">onDrop</span><span class="hl-code">: </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">source</span><span class="hl-code">, </span><span class="hl-identifier">target</span><span class="hl-code">, </span><span class="hl-identifier">d</span><span class="hl-code">, </span><span class="hl-identifier">e</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">context</span><span class="hl-code"> = </span><span class="hl-identifier">dhtmlx</span><span class="hl-code">.</span><span class="hl-identifier">DragControl</span><span class="hl-code">.</span><span class="hl-identifier">getContext</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">item</span><span class="hl-code"> = </span><span class="hl-identifier">context</span><span class="hl-code">.</span><span class="hl-identifier">from</span><span class="hl-code">.</span><span class="hl-identifier">get</span><span class="hl-brackets">(</span><span class="hl-identifier">context</span><span class="hl-code">.</span><span class="hl-identifier">source</span><span class="hl-brackets">[</span><span class="hl-number">0</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">d</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">createElement</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">DIV</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">d</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">item</span><span class="hl-code">.</span><span class="hl-identifier">Package</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string"> - </span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">item</span><span class="hl-code">.</span><span class="hl-identifier">Version</span><span class="hl-code">;
+        </span><span class="hl-identifier">target</span><span class="hl-code">.</span><span class="hl-identifier">appendChild</span><span class="hl-brackets">(</span><span class="hl-identifier">d</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div>
+        </div>
+    <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright &copy; 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxdataview:data_loading    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxdataview:data_loading</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:data_loading"  class="breadcrumbs" title="dhtmlxdataview:data_loading">data_loading</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#data_loading" class="toc">Data loading</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#loading" class="toc">Loading</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#parsing" class="toc">Parsing</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#custom_data_types" class="toc">Custom data types</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:toc" class="media" title="dhtmlxdataview:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxdataview:toc"> dhtmlxDataView</a></div></div>
+</p>
+
+
+
+<h2><a name="data_loading" id="data_loading">Data loading</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="59-84" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit" class="button" title="Data loading" /></div></form></div>
+<h3><a name="loading" id="loading">Loading</a></h3>
+<div class="level3">
+
+<p>
+
+To load data from some external file you can use load command
+</p>
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span>url<span class="sy0">,</span> datatype<span class="br0">&#41;</span>;</pre>
+<p>
+Where datatype can be: “json”,”xml”,”jsarray”,”csv”,”html”
+</p>
+
+<p>
+JSON and <acronym title="Extensible Markup Language">XML</acronym> are faster for loading and only ones which supporting dynamic loading. 
+</p>
+
+<p>
+Loading is async, which means you need to catch loading-end before executing any commands against the data. 
+</p>
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span>url<span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+          <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;data is really loaded&quot;</span><span class="br0">&#41;</span>; 
+          <span class="co1">//any operations with data can be placed here</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span>datatype<span class="br0">&#41;</span>;</pre>
+<p>
+if datatype parameter skipped, operation will try to process incoming data as <acronym title="Extensible Markup Language">XML</acronym>
+</p>
+
+</div>
+
+<h4><a name="json" id="json">JSON</a></h4>
+<div class="level4">
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.json&quot;</span><span class="sy0">,</span> <span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+where some.json contains value similar to the next
+
+</p>
+<pre class="code javascript"><span class="br0">&#91;</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;1&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;acx100-source&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;20080210-1.1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Stefano Canepa&quot;</span>
+<span class="br0">&#125;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;2&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;alien-arena-browser&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Debian Games Team&quot;</span>
+<span class="br0">&#125;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;alien-arena-server&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Debian Games Team&quot;</span>
+<span class="br0">&#125;</span><span class="br0">&#93;</span></pre>
+<p>
+Object can contain any number of properties, all of them will be available in templates.
+</p>
+
+<p>
+“id” property will be used as ID of object. If there is no such property then component will create random IDs for each object. 
+</p>
+
+</div>
+
+<h4><a name="xml" id="xml">XML</a></h4>
+<div class="level4">
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.xml&quot;</span><span class="sy0">,</span> <span class="st0">&quot;xml&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+There is no any requirement for incoming <acronym title="Extensible Markup Language">XML</acronym> (it can be in any format), all top level tags will be converted to objects. 
+</p>
+<pre class="code xml"><span class="sc3"><span class="re1">&lt;data<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;item</span> <span class="re0">id</span>=<span class="st0">&quot;1&quot;</span><span class="re2">&gt;</span></span>
+		<span class="sc3"><span class="re1">&lt;Package<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[acx100-source]]&gt;</span><span class="sc3"><span class="re1">&lt;/Package<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;Version<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[20080210-1.1]]&gt;</span><span class="sc3"><span class="re1">&lt;/Version<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;Maintainer<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[Stefano Canepa]]&gt;</span><span class="sc3"><span class="re1">&lt;/Maintainer<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;/item<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;item</span> <span class="re0">id</span>=<span class="st0">&quot;2&quot;</span><span class="re2">&gt;</span></span>
+		<span class="sc3"><span class="re1">&lt;Package<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[alien-arena-browser]]&gt;</span><span class="sc3"><span class="re1">&lt;/Package<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;Version<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[7.0-1]]&gt;</span><span class="sc3"><span class="re1">&lt;/Version<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;Maintainer<span class="re2">&gt;</span></span></span><span class="sc2">&lt;![CDATA[Debian Games Team]]&gt;</span><span class="sc3"><span class="re1">&lt;/Maintainer<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;/item<span class="re2">&gt;</span></span></span>
+<span class="sc3"><span class="re1">&lt;/data<span class="re2">&gt;</span></span></span></pre>
+<p>
+The names of top level and second level tags <strong>doesn&#039;t matter</strong>
+</p>
+
+<p>
+Attributes of top level tags (item in above snippet) and values of nested tags will be available as properties in template and for scripting. 
+</p>
+
+<p>
+If you want to process only tags with specific names, you can change xpath used for data collecting
+</p>
+<pre class="code javascript">   dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">xml</span>.<span class="me1">records</span> <span class="sy0">=</span> <span class="st0">&quot;/data/item&quot;</span>; <span class="co1">//select only item tags</span></pre>
+</div>
+
+<h4><a name="html" id="html">HTML</a></h4>
+<div class="level4">
+
+<p>
+
+Processing works similar to the <acronym title="Extensible Markup Language">XML</acronym>, but will react only on LI tags inside the data ( it has not practical sense for loading from url , exists just for consistence ) 
+</p>
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.html&quot;</span><span class="sy0">,</span> <span class="st0">&quot;html&quot;</span><span class="br0">&#41;</span>;</pre><pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/ul.html"><span class="kw2">ul</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;1&quot;</span>   <span class="kw3">version</span><span class="sy0">=</span><span class="st0">&quot;20080210-1.1&quot;</span> maintainer<span class="sy0">=</span><span class="st0">&quot;Stefano Canepa&quot;</span>&gt;</span>acx100-source<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;2&quot;</span>   <span class="kw3">version</span><span class="sy0">=</span><span class="st0">&quot;7.0-1&quot;</span> maintainer<span class="sy0">=</span><span class="st0">&quot;Debian Games Team&quot;</span>&gt;</span>alien-arena-browser<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;3&quot;</span>   <span class="kw3">version</span><span class="sy0">=</span><span class="st0">&quot;7.0-1&quot;</span> maintainer<span class="sy0">=</span><span class="st0">&quot;Debian Games Team&quot;</span>&gt;</span>alien-arena-server<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/li.html"><span class="kw2">li</span></a>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/ul.html"><span class="kw2">ul</span></a>&gt;</span></pre>
+<p>
+The key-tag can be changed by using
+
+</p>
+<pre class="code javascript">    dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">html</span>.<span class="me1">tag</span> <span class="sy0">=</span> <span class="st0">&quot;DIV&quot;</span>;</pre>
+</div>
+
+<h4><a name="csv" id="csv">CSV</a></h4>
+<div class="level4">
+
+<p>
+
+Data in CSV has not names for columns, so they are autonamed , first column will be accessible as “data0”, second as “data1” and etc. IDs are auto-generated.
+</p>
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.csv&quot;</span><span class="sy0">,</span> <span class="st0">&quot;csv&quot;</span><span class="br0">&#41;</span>;</pre><pre class="code csv">&quot;1&quot;, &quot;acx100-source&quot;, &quot;20080210-1.1&quot;, &quot;Stefano Canepa&quot;
+&quot;2&quot;, &quot;alien-arena-browser&quot;, &quot;7.0-1&quot;, &quot;Debian Games Team&quot;
+&quot;3&quot;, &quot;alien-arena-server&quot;, &quot;7.0-1&quot;, &quot;Debian Games Team&quot;</pre>
+<p>
+You can configure row and line separators as
+
+</p>
+<pre class="code javascript">    dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">csv</span>.<span class="me1">row</span> <span class="sy0">=</span> <span class="st0">&quot;<span class="es0">\n</span>&quot;</span>;
+    dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">csv</span>.<span class="me1">cell</span><span class="sy0">=</span> <span class="st0">&quot;,&quot;</span>;</pre>
+</div>
+
+<h4><a name="jsarray" id="jsarray">JSARRAY</a></h4>
+<div class="level4">
+
+<p>
+
+Data in <acronym title="JavaScript">JS</acronym> array has not names for columns, so they are autonamed , first column will be accessible as “data0”, second as “data1” and etc. IDs are auto-generated.
+</p>
+<pre class="code javascript">    view.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.js&quot;</span><span class="sy0">,</span> <span class="st0">&quot;jsarray&quot;</span><span class="br0">&#41;</span>;</pre><pre class="code javascript"><span class="br0">&#91;</span><span class="br0">&#91;</span><span class="st0">&quot;1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;acx100-source&quot;</span><span class="sy0">,</span> <span class="st0">&quot;20080210-1.1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Stefano Canepa&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+<span class="br0">&#91;</span><span class="st0">&quot;2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;alien-arena-browser&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Debian Games Team&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+<span class="br0">&#91;</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;alien-arena-server&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Debian Games Team&quot;</span><span class="br0">&#93;</span><span class="br0">&#93;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="85-4073" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit" class="button" title="Loading" /></div></form></div>
+<h3><a name="parsing" id="parsing">Parsing</a></h3>
+<div class="level3">
+
+<p>
+
+When data already available on client side , you can use 
+
+</p>
+<pre class="code javascript">     grid.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span> datatype<span class="br0">&#41;</span>;</pre>
+<p>
+
+Parsing executed in sync. way, so new items are ready for operations after command execution.
+</p>
+
+<p>
+Parsing can be used with all above mentioned data types. 
+</p>
+
+</div>
+
+<h5><a name="xml_string" id="xml_string">XML string</a></h5>
+<div class="level5">
+<pre class="code javascript">    view.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;&lt;data&gt;&lt;item id=&quot;</span><span class="nu0">1</span><span class="st0">&quot;&gt;&lt;Package&gt;&lt;![CDATA[acx100-source]]&gt;&lt;/Package&gt;&lt;Version&gt;&lt;![CDATA[20080210-1.1]]&gt;&lt;/Version&gt;&lt;Maintainer&gt;&lt;![CDATA[Stefano Canepa]]&gt;&lt;/Maintainer&gt;&lt;/item&gt;&lt;/data&gt;&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h5><a name="json_ojbect" id="json_ojbect">JSON ojbect</a></h5>
+<div class="level5">
+<pre class="code javascript">    view.<span class="me1">parse</span><span class="br0">&#40;</span><span class="br0">&#91;</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;1&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;acx100-source&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;20080210-1.1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Stefano Canepa&quot;</span>
+<span class="br0">&#125;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;2&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;alien-arena-browser&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Debian Games Team&quot;</span>
+<span class="br0">&#125;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+ <span class="st0">&quot;id&quot;</span><span class="sy0">:</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Package&quot;</span><span class="sy0">:</span><span class="st0">&quot;alien-arena-server&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;Version&quot;</span><span class="sy0">:</span><span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span>
+    <span class="st0">&quot;Maintainer&quot;</span><span class="sy0">:</span><span class="st0">&quot;Debian Games Team&quot;</span>
+<span class="br0">&#125;</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h5><a name="html1" id="html1">HTML</a></h5>
+<div class="level5">
+<pre class="code javascript">    view.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;id_of_html_element&quot;</span><span class="sy0">,</span><span class="st0">&quot;html&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h5><a name="csv_string" id="csv_string">CSV string</a></h5>
+<div class="level5">
+<pre class="code javascript">    view.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">'&quot;1&quot;, &quot;acx100-source&quot;, &quot;20080210-1.1&quot;, &quot;Stefano Canepa&quot;<span class="es0">\n</span>&quot;2&quot;, &quot;alien-arena-browser&quot;, &quot;7.0-1&quot;, &quot;Debian Games Team&quot;<span class="es0">\n</span>&quot;3&quot;, &quot;alien-arena-server&quot;, &quot;7.0-1&quot;, &quot;Debian Games Team&quot;'</span><span class="sy0">,</span><span class="st0">&quot;csv&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h5><a name="javascript_array" id="javascript_array">JavaScript array</a></h5>
+<div class="level5">
+<pre class="code javascript">    view.<span class="me1">parse</span><span class="br0">&#40;</span><span class="br0">&#91;</span><span class="br0">&#91;</span><span class="st0">&quot;1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;acx100-source&quot;</span><span class="sy0">,</span> <span class="st0">&quot;20080210-1.1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Stefano Canepa&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+<span class="br0">&#91;</span><span class="st0">&quot;2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;alien-arena-browser&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Debian Games Team&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+<span class="br0">&#91;</span><span class="st0">&quot;3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;alien-arena-server&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.0-1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Debian Games Team&quot;</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st0">&quot;jsarray&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4074-5559" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit" class="button" title="Parsing" /></div></form></div>
+<h3><a name="custom_data_types" id="custom_data_types">Custom data types</a></h3>
+<div class="level3">
+
+<p>
+If above loading types is not enough - you can create a custom ones.
+</p>
+<pre class="code javascript">dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">mytype</span><span class="sy0">=</span>dhtmlx.<span class="me1">extend</span><span class="br0">&#40;</span><span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy0">,</span>dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">jsarray</span><span class="sy0">,</span><span class="br0">&#123;</span>
+            getDetails<span class="sy0">:</span><span class="kw2">function</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="br0">&#123;</span>
+               <span class="kw2">var</span> result <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>;
+               result.<span class="me1">id</span> <span class="sy0">=</span> data<span class="br0">&#91;</span>0<span class="br0">&#93;</span>;
+               result.<span class="kw2">Package</span>       <span class="sy0">=</span> data<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>;
+               result.<span class="me1">Version</span>       <span class="sy0">=</span> data<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span>;
+               result.<span class="me1">Maintainer</span>    <span class="sy0">=</span> data<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span>;   
+               <span class="kw1">return</span> result;
+            <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>
+&nbsp;
+view.<span class="me1">load</span><span class="br0">&#40;</span>url<span class="sy0">,</span> <span class="st0">&quot;mytype&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5560-" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit" class="button" title="Custom data types" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxdataview/data_loading.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxdataview%3Adata_loading&amp;1279804825" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:data_loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:dhxinit    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:dhxinit</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:dhxinit"  class="breadcrumbs" title="dhtmlxchart:dhxinit">dhxinit</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="initialization" id="initialization">Initialization</a></h2>
+<div class="level2">
+
+<p>
+<img src="dhtmlxchart___init.png"  class="media" alt="" />
+</p>
+
+<p>
+To initialize a chart object in an application you need to make the following steps:
+</p>
+<ol>
+<li class="level1"><div class="li"> Include  related js and css files</div>
+</li>
+<li class="level1"><div class="li"> Place a chart container on a page</div>
+</li>
+<li class="level1"><div class="li"> Define data for a chart</div>
+</li>
+<li class="level1"><div class="li"> Call an initialization script</div>
+</li>
+</ol>
+
+<p>
+
+1. First, add dhtmlxcharts.js and dhtmlxcharts.css files to use the methods of the DhtmlxChart library in an application. 
+</p>
+<pre class="code html4strict">   <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlxchart.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+   <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;STYLESHEET&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlxchart.css&quot;</span>&gt;</span></pre>
+<p>
+2. Specify an <acronym title="HyperText Markup Language">HTML</acronym> container for your future chart.
+</p>
+<pre class="code html4strict">   <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot; chart_container&quot;</span> <span class="kw3">style</span><span class="sy0">=</span><span class="st0">&quot;width:280px;height:250px;&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span></pre>
+<p>
+3. Specify data that will be present in a chart. They can have <a href="dhtmlxchart___loading.html" class="wikilink1" title="dhtmlxchart:loading">json</a>, <a href="dhtmlxchart___loading.html" class="wikilink1" title="dhtmlxchart:loading">xml</a>, <a href="dhtmlxchart___loading.html" class="wikilink1" title="dhtmlxchart:loading">csv</a> or <a href="dhtmlxchart___loading.html" class="wikilink1" title="dhtmlxchart:loading">js array</a> format.
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">&#91;</span>
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">2.9</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2000&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">3.5</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2001&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+         …
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">7.6</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span> <span class="br0">&#125;</span>
+    <span class="br0">&#93;</span>;
+    chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+4. Create an object constructor. It can have various parameters, but 3 parameters are mandatory in order for a chart to be rendered: 
+</p>
+<ul>
+<li class="level1"><div class="li"> view – a chart view (“bar”, “pie”, “ pie3D” or “line”)</div>
+</li>
+<li class="level1"><div class="li"> container – the id of an html container where chart will be initialized</div>
+</li>
+<li class="level1"><div class="li"> value – a data value that a chart presents (“value” by default)</div>
+</li>
+</ul>
+
+<p>
+ All other parameters are <a href="dhtmlxchart___configuration_properties.html" class="wikilink1" title="dhtmlxchart:configuration_properties">optional</a>. 
+
+</p>
+<pre class="code javascript">  <span class="kw2">var</span> chart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+	view<span class="sy0">:</span> <span class="st0">&quot;pie&quot;</span><span class="sy0">,</span>
+	container<span class="sy0">:</span> <span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	value<span class="sy0">:</span> <span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+        label<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+It is highly recommended to call chart constructor from onload event of page, in other case, there may be problems with correct rendering. 
+</div>
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-" /><input type="hidden" name="rev" value="1279214415" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Edit" class="button" title="Initialization" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/dhxinit.txt &middot; Last modified: 2010/07/15 20:20 by 192.168.1.16      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Adhxinit&amp;1279804797" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxinit" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

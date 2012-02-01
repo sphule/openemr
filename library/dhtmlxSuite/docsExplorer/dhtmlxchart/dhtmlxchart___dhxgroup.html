@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:dhxgroup    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:dhxgroup</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:dhxgroup"  class="breadcrumbs" title="dhtmlxchart:dhxgroup">dhxgroup</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="grouping" id="grouping">Grouping</a></h2>
+<div class="level2">
+
+<p>
+
+Sometimes incoming data are not what we want to display and need being processed before represented in a chart. For example, we&#039;ve got the sales information over the last years in several companies, and we want to show total sales per companies in a chart. So, we need to get objects of the same companies and sum up their sales. Grouping helps to resolve this problem.
+</p>
+
+<p>
+It allows to gather objects with the same value of defined property and to create one object with new properties. 
+</p>
+
+<p>
+To group the data objects you need to define the &#039;group&#039; property in a chart constructor or to call the <a href="dhtmlxchart___api_method_dhtmlxchart_group.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_group">group()</a> method with an object as a parameter. A group object has two properties:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> by – defines the property that need being used to group data objects,</div>
+</li>
+<li class="level1"><div class="li"> map – an object that defines the properties of the grouped objects.</div>
+</li>
+</ul>
+
+<p>
+
+Here is the code for the example described above:
+</p>
+<pre class="code javascript"><span class="kw2">var</span> chart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+     view<span class="sy0">:</span><span class="st0">&quot;bar&quot;</span><span class="sy0">,</span>
+     container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+     value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+     label<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;
+chart.<span class="me1">group</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+      by<span class="sy0">:</span><span class="st0">&quot;#company#&quot;</span><span class="sy0">,</span>
+      map<span class="sy0">:</span><span class="br0">&#123;</span>
+	sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;sum&quot;</span><span class="br0">&#93;</span>
+      <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+or
+</p>
+<pre class="code javascript"><span class="kw2">var</span> chart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+     view<span class="sy0">:</span><span class="st0">&quot;bar&quot;</span><span class="sy0">,</span>
+     container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+     value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+     label<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span><span class="sy0">,</span>
+     group<span class="sy0">:</span><span class="br0">&#123;</span>
+	by<span class="sy0">:</span><span class="st0">&quot;#company#&quot;</span><span class="sy0">,</span>
+	map<span class="sy0">:</span><span class="br0">&#123;</span>
+	   sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;sum&quot;</span><span class="br0">&#93;</span>				
+	<span class="br0">&#125;</span>
+     <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>
+chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+where the incoming data object contains the sales per year of different companies:
+
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;8.0&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2007&quot;</span><span class="sy0">,</span> company<span class="sy0">:</span> <span class="st0">&quot;company 1&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;7.3&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2008&quot;</span><span class="sy0">,</span> company<span class="sy0">:</span> <span class="st0">&quot;company 1&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;4.8&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span><span class="sy0">,</span> company<span class="sy0">:</span> <span class="st0">&quot;company 1&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	...
+	<span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="st0">&quot;5.3&quot;</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span><span class="sy0">,</span> company<span class="sy0">:</span> <span class="st0">&quot;company 4&quot;</span><span class="br0">&#125;</span>
+    <span class="br0">&#93;</span>;</pre>
+<p>
+Here the data are grouped by &#039;company&#039; property. In the result we&#039;ve got new objects. The number of objects is equal to the number of companies. Each new data object has two propeties: id (company) and sales (the total sales of a certain company):
+</p>
+
+<p>
+<img src="dhtmlxchart___groups1.png"  class="media" alt="" />
+</p>
+
+<p>
+Properties of the grouped objects are set by the &#039;map&#039; and defined by an array. The first element of this array is a template with a property from original data, the second one – the functor that needs being applied to all values of this property in a group. 
+Grouping provides the following functors:
+</p>
+<ul>
+<li class="level1"><div class="li"> “sum” – all the values are summed up,</div>
+</li>
+<li class="level1"><div class="li"> “max” – the maximum value in a group,</div>
+</li>
+<li class="level1"><div class="li"> “min” - the minimum value in a group.</div>
+</li>
+</ul>
+
+<p>
+It’s possible to define <a href="dhtmlxchart___functor.html" class="wikilink1" title="dhtmlxchart:functor">custom functor</a>.
+</p>
+
+<p>
+An example that uses mentioned above methods you can see <a href="dhtmlxchart___groopingexample.html" class="wikilink1" title="dhtmlxchart:groopingexample">here</a>.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Edit" class="button" title="Grouping" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/dhxgroup.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Adhxgroup&amp;1279804795" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgroup" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Event onActive</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="featured" content="yes"><meta name="title" content="Samples" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../common/css/style.css" type="text/css" media="screen" />
+
+	</head>
+	<body onload="doOnLoad();">
+        <div class="header">
+            <a class="logo" href="http://www.dhtmlx.com" title="DHTMLX homepage"></a>
+            <div class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</div>
+            <div class="search-field">
+                <form action="http://docs.dhtmlx.com/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+            </div>
+            <div class="buttons">
+                <a class="doc_inact" href="../../../docsExplorer/index.html" title="DHTMLX Documentation homepage"></a>
+                <a class="sample"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="navigation-div">
+                <a href="../../../docsExplorer/samples.html" class="navigation"><img src="../common/icons/file.gif" alt="" >All components</a>
+                <div class="arrow"></div>
+                <a href="../index.html" class="navigation"><img height="22" src="../common/icons/accordion.gif" alt="" >dhtmlxAccordion</a>
+                <div class="arrow"></div>
+                <a href="./index.html" class="navigation"><img src="../common/icons/none.gif" alt="" >Events</a>
+            </div>
+            <div style="display:block;">
+                <h3>Event onActive</h3>
+            </div>
+            <div class="navigation-div">
+                <a href="#code" class="navigation view-source"><img src="../common/icons/source.gif" alt="" >View page source</a>
+            </div>
+            <script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxaccordion.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxaccordion_dhx_skyblue.css">
+	
+	<script src="../../codebase/dhtmlxcontainer.js"></script>
+	
+
+
+<table>
+	<tr>
+		<td style="padding-right: 10px;"><div id="accordObj" style="position: relative; width: 320px; height: 400px;"></div></td>
+		<td><div id="accordObj2" style="position: relative; width: 320px; height: 400px;"></div></td>
+	</tr>
+</table>
+<div id="ta" style="position: relative; width: 320px; margin-top: 20px; height: 100px; overflow: auto;"></div>
+<script>
+	var ta, dhxAccord, dhxAccord2;
+	function doOnLoad() {
+		ta = document.getElementById("ta");
+		dhxAccord = new dhtmlXAccordion("accordObj");
+		dhxAccord.attachEvent("onActive", function(itemId){
+			ta.innerHTML = "Item <b>"+dhxAccord.cells(itemId).getText()+"</b> was activated<br>"+ta.innerHTML;
+		});
+		dhxAccord.addItem("a1", "a");
+		dhxAccord.addItem("a2", "b");
+		dhxAccord.addItem("a3", "c");
+		dhxAccord.openItem("a1");
+		dhxAccord.setEffect(true);
+		
+		dhxAccord2 = new dhtmlXAccordion("accordObj2");
+		dhxAccord2.enableMultiMode(true);
+		dhxAccord2.attachEvent("onActive", function(itemId,state){
+			ta.innerHTML = "Item <b>"+dhxAccord2.cells(itemId).getText()+"</b> was "+(state?"":"de")+"activated<br>"+ta.innerHTML;
+		});
+		dhxAccord2.addItem("a1", "d");
+		dhxAccord2.addItem("a2", "e");
+		dhxAccord2.addItem("a3", "f");
+		dhxAccord2.forEachItem(function(item){item.setHeight(item.getId()=="a1"?134:133);});
+		dhxAccord2.setEffect(true);
+	}
+</script>
+			
+			
+         </div>
+    <div class="source">
+        <div class="teg">Source</div>
+        <div class="code" id="code">
+		<div class="hl-main"><pre><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcommon.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxaccordion.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">stylesheet</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/skins/dhtmlxaccordion_dhx_skyblue.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxcontainer.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">table</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">td</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">padding-right: 10px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">accordObj</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; width: 320px; height: 400px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">accordObj2</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; width: 320px; height: 400px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">td</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">tr</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">table</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">ta</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">position: relative; width: 320px; margin-top: 20px; height: 100px; overflow: auto;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">ta</span><span class="hl-code">,
+</span><span class="hl-identifier">dhxAccord</span><span class="hl-code">,
+</span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">;
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">doOnLoad</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-identifier">ta</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">ta</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXAccordion</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">accordObj</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onActive</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">ta</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">Item &lt;b&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">cells</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">getText</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;/b&gt; was activated&lt;br&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">ta</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a1</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">a</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a2</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">b</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a3</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">c</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">openItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a1</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">setEffect</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXAccordion</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">accordObj2</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">enableMultiMode</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onActive</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">state</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">ta</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-quotes">&quot;</span><span class="hl-string">Item &lt;b&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">cells</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">getText</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;/b&gt; was </span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-brackets">(</span><span class="hl-identifier">state</span><span class="hl-code"> ? </span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">de</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">activated&lt;br&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">ta</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a1</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">d</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a2</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">e</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a3</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">f</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">forEachItem</span><span class="hl-brackets">(</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">item</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">item</span><span class="hl-code">.</span><span class="hl-identifier">setHeight</span><span class="hl-brackets">(</span><span class="hl-identifier">item</span><span class="hl-code">.</span><span class="hl-identifier">getId</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> == </span><span class="hl-quotes">&quot;</span><span class="hl-string">a1</span><span class="hl-quotes">&quot;</span><span class="hl-code"> ? </span><span class="hl-number">134</span><span class="hl-code">: </span><span class="hl-number">133</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord2</span><span class="hl-code">.</span><span class="hl-identifier">setEffect</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div>
+        </div>
+    <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright &copy; 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxwindows:event_handling    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxwindows:event_handling</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxwindows:event_handling"  class="breadcrumbs" title="dhtmlxwindows:event_handling">event_handling</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#event_handling" class="toc">Event Handling</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#default_events" class="toc">Default Events</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#redefine_default_button_event" class="toc">Redefine Default Button Event</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#adding_window_events_handlers" class="toc">Adding Window Events Handlers</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#adding_global_event_handlers_for_windows" class="toc">Adding Global Event Handlers for Windows</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#adding_personal_window_event_handler" class="toc">Adding Personal Window Event Handler</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#restore_global_event_handler" class="toc">Restore Global Event Handler</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#remove_global_handler" class="toc">Remove Global Handler</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#understanding_event_handlers_priority" class="toc">Understanding Event Handlers Priority</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___windows.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxwindows:toc">dhtmlxwindows</a></div></div>
+</p>
+
+
+
+<h2><a name="event_handling" id="event_handling">Event Handling</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="57-86" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Event Handling" /></div></form></div>
+<h3><a name="default_events" id="default_events">Default Events</a></h3>
+<div class="level3">
+
+<p>
+
+Default events signal various actions, such as the user clicking a button to Park a window, or a window is being closed. Default events are usually button events. 
+</p>
+
+<p>
+Button events can be as follows: 
+
+</p>
+<ul>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_button_onclick.html" class="wikilink1" title="dhtmlxwindows:event_button_onclick">onClick Event</a> executes the specified <acronym title="JavaScript">JS</acronym> code or function, when the user clicks the left mouse button on the object. </div>
+</li>
+</ul>
+
+<p>
+Default events can be redefined by user, who can choose to assign other user-defined events instead. In this case, default events will be ignored until they are restored by user.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="87-641" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Default Events" /></div></form></div>
+<h3><a name="redefine_default_button_event" id="redefine_default_button_event">Redefine Default Button Event</a></h3>
+<div class="level3">
+
+<p>
+
+The user can choose to redefine a default button event by adding any user-defined event instead. 
+To redefine a button default event the user can use attachEvent() method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">button</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachEvent</span><span class="br0">&#40;</span>eventName<span class="sy0">,</span> handler<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="642-952" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Redefine Default Button Event" /></div></form></div>
+<h3><a name="adding_window_events_handlers" id="adding_window_events_handlers">Adding Window Events Handlers</a></h3>
+<div class="level3">
+
+<p>
+
+The entire point of an event is to inform a handler that something has happened to a component in the <acronym title="Graphical User Interface">GUI</acronym>. A handler can figure out what exactly happened and respond in a meaningful way. 
+</p>
+
+<p>
+The list of events to which user-defined handlers can be attached is given below: 
+</p>
+<ul>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onmovefinish.html" class="wikilink1" title="dhtmlxwindows:event_onmovefinish">onMoveFinish</a> – occurs when the window movement was finished; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onresizefinish.html" class="wikilink1" title="dhtmlxwindows:event_onresizefinish">onResizeFinish</a> – occurs when the window resizing was finished; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onfocus.html" class="wikilink1" title="dhtmlxwindows:event_onfocus">onFocus</a> – occurs when the window was focused; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onparkdown_onparkup.html" class="wikilink1" title="dhtmlxwindows:event_onparkdown_onparkup">onParkDown/onParkUp</a> – occur when the window was parked down/up; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onmaximize_onminimize.html" class="wikilink1" title="dhtmlxwindows:event_onmaximize_onminimize">onMaximize/onMinimize</a> – occur when the window was maximized/minimized; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onshow_onhide.html" class="wikilink1" title="dhtmlxwindows:event_onshow_onhide">onShow/onHide</a> – occur when the window was shown/hidden; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onclose.html" class="wikilink1" title="dhtmlxwindows:event_onclose">onClose</a> – occurs before the window is closed; </div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_onhelp.html" class="wikilink1" title="dhtmlxwindows:event_onhelp">onHelp</a> – occurs when the user clicks the “help” button;</div>
+</li>
+<li class="level1"><div class="li">  <a href="dhtmlxwindows___event_oncontentloaded.html" class="wikilink1" title="dhtmlxwindows:event_oncontentloaded">onContentLoaded</a> - occurs when the external page content is loaded into the window (attachURL() and attachURLAJAX() methods).</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="953-2137" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Adding Window Events Handlers" /></div></form></div>
+<h3><a name="adding_global_event_handlers_for_windows" id="adding_global_event_handlers_for_windows">Adding Global Event Handlers for Windows</a></h3>
+<div class="level3">
+
+<p>
+
+The user can add global event handlers for windows. This can be done in the following way: 
+
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">attachEvent</span><span class="br0">&#40;</span>eventName<span class="sy0">,</span> handler<span class="br0">&#41;</span>;</pre>
+<p>
+Note: the names of the events are case-insensitive.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2138-2408" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Adding Global Event Handlers for Windows" /></div></form></div>
+<h3><a name="adding_personal_window_event_handler" id="adding_personal_window_event_handler">Adding Personal Window Event Handler</a></h3>
+<div class="level3">
+
+<p>
+
+If there is a window to which the user wants to assign a special handler, this can be done by adding the handler to the window directly. 
+While other windows will be calling global handlers, this window with personal handler will call this personal handler: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachEvent</span><span class="br0">&#40;</span>eventName<span class="sy0">,</span> handler<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2409-2800" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Adding Personal Window Event Handler" /></div></form></div>
+<h3><a name="restore_global_event_handler" id="restore_global_event_handler">Restore Global Event Handler</a></h3>
+<div class="level3">
+
+<p>
+
+The user can detach a personal event from a window. In this case a global event handler will be restored for this window, i.e. when personal handler is removed from the window, the window will call global handler.
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">detachEvent</span><span class="br0">&#40;</span>eventId<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2801-3129" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Restore Global Event Handler" /></div></form></div>
+<h3><a name="remove_global_handler" id="remove_global_handler">Remove Global Handler</a></h3>
+<div class="level3">
+
+<p>
+
+Global handlers can be easily removed with the help of the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">detachEvent</span><span class="br0">&#40;</span>eventId<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3130-3304" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Remove Global Handler" /></div></form></div>
+<h3><a name="understanding_event_handlers_priority" id="understanding_event_handlers_priority">Understanding Event Handlers Priority</a></h3>
+<div class="level3">
+
+<p>
+
+<img src="dhtmlxwindows___dgr5rjkf_12c6wmchdw.gif"  class="media" alt="" />
+</p>
+
+<p>
+In the situation described above windows w2 and w3 will call “globalHandler” when they are focused. 
+</p>
+
+<p>
+The window w1 will call personal “w1Handler” when focused.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3305-" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit" class="button" title="Understanding Event Handlers Priority" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxwindows/event_handling.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxwindows%3Aevent_handling&amp;1279804951" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:event_handling" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

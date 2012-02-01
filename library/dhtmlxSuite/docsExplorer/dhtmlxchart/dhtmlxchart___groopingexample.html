@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:groopingexample    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:groopingexample</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:groopingexample"  class="breadcrumbs" title="dhtmlxchart:groopingexample">groopingexample</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div><div class='arrow'></div><div class='backlink'><a href="dhtmlxchart___dhxgroup.html" class="wikilink1" title="dhtmlxchart:dhxgroup"> Grouping</a></div></div>
+
+</p>
+
+<h2><a name="example_grouping" id="example_grouping">Example (Grouping)</a></h2>
+<div class="level2">
+<pre class="code javascript"><span class="sy0">&lt;!</span>DOCTYPE html <span class="kw2">PUBLIC</span> <span class="st0">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> <span class="st0">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>html<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>title<span class="sy0">&gt;</span>Chart<span class="sy0">&lt;/</span>title<span class="sy0">&gt;</span>
+&nbsp;
+	<span class="sy0">&lt;</span>script src<span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlxchart.js&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span><span class="sy0">&gt;&lt;/</span>script<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>link rel<span class="sy0">=</span><span class="st0">&quot;STYLESHEET&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> href<span class="sy0">=</span><span class="st0">&quot;../../codebase/dhtmlxchart.css&quot;</span><span class="sy0">&gt;</span>
+&nbsp;
+	<span class="sy0">&lt;</span>style<span class="sy0">&gt;</span>
+		.<span class="me1">dhx_chart_title</span><span class="br0">&#123;</span>
+			padding<span class="sy0">-</span>left<span class="sy0">:</span>3px
+		<span class="br0">&#125;</span>
+	<span class="sy0">&lt;/</span>style<span class="sy0">&gt;</span>
+<span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>body<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>h1<span class="sy0">&gt;</span>Chart<span class="sy0">&lt;/</span>h1<span class="sy0">&gt;</span>
+&nbsp;
+	<span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot;chart_container&quot;</span> style<span class="sy0">=</span><span class="st0">&quot;width:500px;height:300px;border:1px solid #A4BED4;&quot;</span><span class="sy0">&gt;&lt;/</span>div<span class="sy0">&gt;</span>
+&nbsp;
+	<span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+	<span class="kw2">var</span> barChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;bar&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	    value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		label<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span><span class="sy0">,</span>
+		sort<span class="sy0">:</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span><span class="sy0">,</span>
+			<span class="kw1">as</span><span class="sy0">:</span><span class="st0">&quot;string&quot;</span><span class="sy0">,</span>
+			dir<span class="sy0">:</span><span class="st0">&quot;asc&quot;</span>
+		<span class="br0">&#125;</span><span class="sy0">,</span>
+		group<span class="sy0">:</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+			map<span class="sy0">:</span><span class="br0">&#123;</span>
+				sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;sum&quot;</span><span class="br0">&#93;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span><span class="br0">&#41;</span>
+	barChart.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;../common/stat.xml&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+&nbsp;
+	<span class="kw2">function</span>  groupA<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		barChart.<span class="me1">group</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#company#&quot;</span><span class="sy0">,</span>
+			map<span class="sy0">:</span><span class="br0">&#123;</span>
+				sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;sum&quot;</span><span class="br0">&#93;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+	<span class="br0">&#125;</span>	
+&nbsp;
+	<span class="kw2">function</span>  groupB<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		barChart.<span class="me1">group</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+			map<span class="sy0">:</span><span class="br0">&#123;</span>
+				sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;sum&quot;</span><span class="br0">&#93;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+	<span class="br0">&#125;</span>	
+&nbsp;
+	<span class="kw2">function</span>  groupC<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		barChart.<span class="me1">group</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+			map<span class="sy0">:</span><span class="br0">&#123;</span>
+				sales<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span><span class="st0">&quot;max&quot;</span><span class="br0">&#93;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+	<span class="br0">&#125;</span>
+	<span class="kw2">function</span> sort_asc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		barChart.<span class="me1">define</span><span class="br0">&#40;</span><span class="st0">&quot;sort&quot;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span><span class="sy0">,</span>
+			dir<span class="sy0">:</span><span class="st0">&quot;asc&quot;</span>
+		<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+		barChart.<span class="me1">render</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+	<span class="br0">&#125;</span>
+	<span class="kw2">function</span> sort_dsc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		barChart.<span class="me1">define</span><span class="br0">&#40;</span><span class="st0">&quot;sort&quot;</span><span class="sy0">,</span><span class="br0">&#123;</span>
+			by<span class="sy0">:</span><span class="st0">&quot;#id#&quot;</span><span class="sy0">,</span>
+			dir<span class="sy0">:</span><span class="st0">&quot;dsc&quot;</span>
+		<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+		barChart.<span class="me1">render</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+	<span class="br0">&#125;</span>
+	<span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;some_name&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;group by Company&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;groupA();&quot;</span><span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;some_name&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;group by Year (total sales)&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;groupB();&quot;</span><span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;some_name&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;group by Year (max sales)&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;groupC();&quot;</span><span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>br<span class="sy0">/&gt;</span>
+	<span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;some_name&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;sort Asc&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;sort_asc();&quot;</span><span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;some_name&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;sort Desc&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;sort_dsc();&quot;</span><span class="sy0">&gt;</span>
+&nbsp;
+<span class="sy0">&lt;/</span>body<span class="sy0">&gt;</span>
+<span class="sy0">&lt;/</span>html<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="73-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Edit" class="button" title="Example (Grouping)" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/groopingexample.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Agroopingexample&amp;1279804795" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:groopingexample" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxwindows:integration_with_other_components    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxwindows:integration_with_other_components</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxwindows:integration_with_other_components"  class="breadcrumbs" title="dhtmlxwindows:integration_with_other_components">integration_with_other_components</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#integration_with_other_components" class="toc">Integration with Other Components</a></span></div>
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#status_bar" class="toc">Status Bar</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxmenu" class="toc">dhtmlxMenu</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxtoolbar" class="toc">dhtmlxToolbar</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxtree" class="toc">dhtmlxTree</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxgrid" class="toc">dhtmlxGrid</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxtreegrid" class="toc">dhtmlxTreeGrid</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxfolders" class="toc">dhtmlxFolders</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxtabbar" class="toc">dhtmlxTabbar</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxlayout" class="toc">dhtmlxLayout</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxaccordion" class="toc">dhtmlxAccordion</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dhtmlxeditor" class="toc">dhtmlxEditor</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___windows.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxwindows:toc">dhtmlxwindows</a></div></div>
+</p>
+
+
+
+<h1><a name="integration_with_other_components" id="integration_with_other_components">Integration with Other Components</a></h1>
+<div class="level1">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="57-107" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="Integration with Other Components" /></div></form></div>
+<h3><a name="status_bar" id="status_bar">Status Bar</a></h3>
+<div class="level3">
+
+<p>
+
+The user can add a status bar to any window in dhtmlxWindows with the help of attachStatusBar() method:
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> sb <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachStatusBar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+When the status bar is added to a window, the user can write any custom text into it using the following methods:
+</p>
+<pre class="code javascript">    sb.<span class="me1">setText</span><span class="br0">&#40;</span><span class="st0">&quot;Some custom text&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+There is also the possibility to get the current Status Bar text in the following way:
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> text <span class="sy0">=</span> sb.<span class="me1">getText</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+getText() method returns the current Status Bar text.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="108-689" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="Status Bar" /></div></form></div>
+<h3><a name="dhtmlxmenu" id="dhtmlxmenu">dhtmlxMenu</a></h3>
+<div class="level3">
+
+<p>
+
+A dxtmlxMenu 2.0 can be easily added to any window in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachMenu</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxMenu 2.0 object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="690-948" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxMenu" /></div></form></div>
+<h3><a name="dhtmlxtoolbar" id="dhtmlxtoolbar">dhtmlxToolbar</a></h3>
+<div class="level3">
+
+<p>
+
+A toolbar can be added to any window in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachToolbar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxToolbar 2.0 object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="949-1202" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxToolbar" /></div></form></div>
+<h3><a name="dhtmlxtree" id="dhtmlxtree">dhtmlxTree</a></h3>
+<div class="level3">
+
+<p>
+
+The user can add a Tree to any window in dhtmlxWindows with the help of attachTree() method:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachTree</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+There is only one input parameter for this method. The parameter is the id of a virtual super item that is a parent to all the top level tree nodes of the added dhtmlxTree (see dhtmlxTree constructor description for details). If super root element id is 0, this parameter can be omitted. This method returns dhtmlxTree object, which the user can customize.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1203-1740" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxTree" /></div></form></div>
+<h3><a name="dhtmlxgrid" id="dhtmlxgrid">dhtmlxGrid</a></h3>
+<div class="level3">
+
+<p>
+
+The user can add a Grid to any window in dhtmlxWindows with the help of attachGrid() method:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachGrid</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxGrid object, which the user should customize according to his needs.
+</p>
+
+<p>
+Please note if you want to attach dhtmlxGrid with <a href="../dhtmlxgrid/dhtmlxgrid___paging.html" class="wikilink1" title="dhtmlxgrid:paging">paging</a> to the dhtmlxWindows you should use attachObject() method to attach container with grid and paging area:
+</p>
+<pre class="code javascript">   dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachObject</span><span class="br0">&#40;</span><span class="st0">&quot;paging_container&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1741-2330" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxGrid" /></div></form></div>
+<h3><a name="dhtmlxtreegrid" id="dhtmlxtreegrid">dhtmlxTreeGrid</a></h3>
+<div class="level3">
+
+<p>
+
+A TreeGrid can be added to any window in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachTreeGrid</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxTreeGrid object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2331-2584" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxTreeGrid" /></div></form></div>
+<h3><a name="dhtmlxfolders" id="dhtmlxfolders">dhtmlxFolders</a></h3>
+<div class="level3">
+
+<p>
+
+There is an easy way to add a Folders to any window in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachFolders</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxFolders object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2585-2849" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxFolders" /></div></form></div>
+<h3><a name="dhtmlxtabbar" id="dhtmlxtabbar">dhtmlxTabbar</a></h3>
+<div class="level3">
+
+<p>
+
+There is an easy way to add a Tabbar to any window in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachTabbar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxTabbar object, which the user should customize according to his needs.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2850-3109" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxTabbar" /></div></form></div>
+<h3><a name="dhtmlxlayout" id="dhtmlxlayout">dhtmlxLayout</a></h3>
+<div class="level3">
+
+<p>
+
+A Layout can be added to any window this way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachLayout</span><span class="br0">&#40;</span>pattern<span class="sy0">,</span> skin<span class="br0">&#41;</span>;</pre>
+<p>
+The parameters of this method are the following:
+</p>
+<ul>
+<li class="level1"><div class="li">  pattern - the code of the Layout&#039;s pattern;</div>
+</li>
+<li class="level1"><div class="li">  skin - the name of the chosen skin (optional). If this parameter is not indicated, the Layout will be attached with the default skin (dhx_blue).</div>
+</li>
+</ul>
+
+<p>
+The method returns dhtmlxLayout object, which the user should customize according to his needs.
+</p>
+
+</div>
+
+<h4><a name="opening_popup_windows_from_dhtmlxlayout" id="opening_popup_windows_from_dhtmlxlayout">Opening popup windows from dhtmlxLayout</a></h4>
+<div class="level4">
+
+<p>
+
+dhtmlxLayout already contain dhxWins object, so in case you already use dhtmlxlayout you can create new windows using this object. See details <a href="../dhtmlxlayout/dhtmlxlayout___attaching_dhtmlx_components.html" class="wikilink1" title="dhtmlxlayout:attaching_dhtmlx_components">here</a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3110-3894" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxLayout" /></div></form></div>
+<h3><a name="dhtmlxaccordion" id="dhtmlxaccordion">dhtmlxAccordion</a></h3>
+<div class="level3">
+
+<p>
+
+A dhtmlxAccordion can be attached to a window like this:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachAccordion</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxAccordion object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3895-4158" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxAccordion" /></div></form></div>
+<h3><a name="dhtmlxeditor" id="dhtmlxeditor">dhtmlxEditor</a></h3>
+<div class="level3">
+
+<p>
+
+A dhtmlxEditor can be attached to a window this way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachEditor</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method returns dhtmlxEditor object, which the user should customize according to his needs.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4159-" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit" class="button" title="dhtmlxEditor" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxwindows/integration_with_other_components.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxwindows%3Aintegration_with_other_components&amp;1279804951" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:integration_with_other_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+icons___file.gif
+icons___colorpicker.gif
+common___any_ed.gif
+dhtmlxcolorpicker___dgr5rjkf_207f5zspmcs_b.png
+dhtmlxcolorpicker___dgr5rjkf_205dxdnz2g6_b.png
+dhtmlxcolorpicker___dgr5rjkf_206d93dnqw4_b.png

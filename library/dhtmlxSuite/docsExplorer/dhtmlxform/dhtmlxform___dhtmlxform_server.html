@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxform:dhtmlxform_server    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxform:dhtmlxform_server</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:dhtmlxform_server"  class="breadcrumbs" title="dhtmlxform:dhtmlxform_server">dhtmlxform_server</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#server_integration" class="toc">Server Integration</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#custom_data_feed" class="toc">Custom data feed</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#data_saving_by_custom_code" class="toc">Data saving by custom code</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#data_saving_by_dataprocessor" class="toc">Data saving by dataProcessor</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#difference_between_save_and_send_methods" class="toc">Difference between &#039;save&#039; and &#039;send&#039; methods</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:toc" class="media" title="dhtmlxform:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxform:toc">dhtmlxForm</a></div></div>
+</p>
+
+
+
+<h1><a name="server_integration" id="server_integration">Server Integration</a></h1>
+<div class="level1">
+
+<p>
+
+DhtmlxForm can be filled with data through <a href="../dhtmlxconnector/index.html" class="wikilink1" title="dhtmlxconnector:toc">dhtmlxConnector</a>.<br/>
+ 
+All you need is to create data feed file (see sample below) and <a href="dhtmlxform___binding.html" class="wikilink1" title="dhtmlxform:binding">bind form fields to database fields</a>. 
+</p>
+<pre class="code php"><span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st_h">'form_connector.php'</span><span class="br0">&#41;</span>;
+  <span class="co1">//$conn - database connection, result of mysql_connect</span>
+<span class="re0">$form</span> <span class="sy0">=</span> <span class="kw2">new</span> FormConnector<span class="br0">&#40;</span><span class="re0">$conn</span><span class="br0">&#41;</span>;
+<span class="re0">$form</span><span class="sy0">-&gt;</span><span class="me1">render_table</span><span class="br0">&#40;</span><span class="st0">&quot;packages_plain&quot;</span><span class="sy0">,</span><span class="st0">&quot;Id&quot;</span><span class="sy0">,</span><span class="st0">&quot;Package,Version,Size,Maintainer&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Corresponding form elements on client-side should have &#039;bind&#039; attributes with the same names as parameters returned by connector:
+</p>
+<pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/form.html"><span class="kw2">form</span></a> <span class="kw3">action</span><span class="sy0">=</span><span class="st0">&quot;&quot;</span> <span class="kw3">method</span><span class="sy0">=</span><span class="st0">&quot;post&quot;</span> <span class="kw3">accept-charset</span><span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;my_form&quot;</span>&gt;</span>
+  <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+     Package: <span class="sc2">&lt;<a href="http://december.com/html/4/element/input.html"><span class="kw2">input</span></a> bind<span class="sy0">=</span><span class="st0">&quot;Package&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;package&quot;</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;&quot;</span>&gt;</span>	
+  <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+  <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+     Version: <span class="sc2">&lt;<a href="http://december.com/html/4/element/input.html"><span class="kw2">input</span></a> bind<span class="sy0">=</span><span class="st0">&quot;Version&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;version&quot;</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;&quot;</span>&gt;</span>	
+  <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+  <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+     Package size: <span class="sc2">&lt;<a href="http://december.com/html/4/element/input.html"><span class="kw2">input</span></a> bind<span class="sy0">=</span><span class="st0">&quot;Size&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;size&quot;</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;&quot;</span>&gt;</span>	
+  <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+  <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+     Maintainer: <span class="sc2">&lt;<a href="http://december.com/html/4/element/input.html"><span class="kw2">input</span></a> bind<span class="sy0">=</span><span class="st0">&quot;Maintainer&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;maint&quot;</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;&quot;</span>&gt;</span>	
+  <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/form.html"><span class="kw2">form</span></a>&gt;</span></pre>
+<p>
+
+Initilization of the form should involve the second parameter of the constructor  - <em>url</em> of the data feed file. Data is loaded passing record <em>&#039;ID&#039;</em> through the <a href="dhtmlxform___api_method_dhtmlxform_load.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_load">load()</a> method:
+</p>
+<pre class="code javascript"><span class="kw2">var</span> myForm <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXForm<span class="br0">&#40;</span><span class="st0">&quot;my_form&quot;</span><span class="br0">&#41;</span>;
+myForm.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;data.php?id=1631&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+To save or delete data - use the <a href="dhtmlxform___api_method_dhtmlxform_save.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_save">save()</a> and <a href="dhtmlxform___api_method_dhtmlxform_remove.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_remove">remove()</a> methods. No any extra code on server-side is necessary. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-1601" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit" class="button" title="Server Integration" /></div></form></div>
+<h2><a name="custom_data_feed" id="custom_data_feed">Custom data feed</a></h2>
+<div class="level2">
+
+<p>
+
+Instead of connector, you can load data from any custom feed: 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> myForm <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXForm<span class="br0">&#40;</span><span class="st0">&quot;my_form&quot;</span><span class="br0">&#41;</span>;
+myForm.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;custom.xml&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+<em>custom.xml</em> file:
+
+</p>
+<pre class="code xml"><span class="sc3"><span class="re1">&lt;data<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;Package<span class="re2">&gt;</span></span></span>acx100-source<span class="sc3"><span class="re1">&lt;/Package<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;Version<span class="re2">&gt;</span></span></span>20080210-1.1<span class="sc3"><span class="re1">&lt;/Version<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;Size<span class="re2">&gt;</span></span></span>229468<span class="sc3"><span class="re1">&lt;/Size<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;Maintainer<span class="re2">&gt;</span></span></span>Stefano Canepa<span class="sc3"><span class="re1">&lt;/Maintainer<span class="re2">&gt;</span></span></span>
+<span class="sc3"><span class="re1">&lt;/data<span class="re2">&gt;</span></span></span></pre>
+<p>
+The name of the top tag is mandatory, child tags must have the same names as names of data-binds.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1602-2077" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit" class="button" title="Custom data feed" /></div></form></div>
+<h2><a name="data_saving_by_custom_code" id="data_saving_by_custom_code">Data saving by custom code</a></h2>
+<div class="level2">
+
+<p>
+
+Value of dhtmlXForm can be sent to a server-side by post request, the same as for normal form.
+You can use one of the next approaches for this purpose:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Including dhtmlxForm in a normal form tag. Submitted form will include all data from inside dhtmlxForm.</div>
+</li>
+<li class="level1"><div class="li"> Trigger data sending using the <a href="dhtmlxform___api_method_dhtmlxform_send.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_send">send(url)</a> method. All data of form fields will be sent to the target url by <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> request. </div>
+</li>
+</ol>
+<pre class="code javascript">myform.<span class="me1">send</span><span class="br0">&#40;</span><span class="st0">&quot;custom.php&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2078-2594" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit" class="button" title="Data saving by custom code" /></div></form></div>
+<h2><a name="data_saving_by_dataprocessor" id="data_saving_by_dataprocessor">Data saving by dataProcessor</a></h2>
+<div class="level2">
+
+<p>
+
+As for other dhtmlx components, you can use DataProcessor for dhtmlxForm. 
+</p>
+
+<p>
+Assuming that you have <em>&#039;data.php&#039;</em> file as described above,  you can use the next <em>js</em> code to attach form to the dataProcessor. 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> dp <span class="sy0">=</span> <span class="kw2">new</span> dataProcessor<span class="br0">&#40;</span><span class="st0">&quot;data.php&quot;</span><span class="br0">&#41;</span>;
+dp.<span class="me1">init</span><span class="br0">&#40;</span>myForm<span class="br0">&#41;</span>;</pre>
+<p>
+Now, to save form you can use: 
+</p>
+<pre class="code javascript">myForm.<span class="me1">save</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Form data will be sent to data feed , where it will be automatically saved ( updated, if it was previously loaded from the same feed, or inserted if it was a new data ) 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2595-3177" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit" class="button" title="Data saving by dataProcessor" /></div></form></div>
+<h2><a name="difference_between_save_and_send_methods" id="difference_between_save_and_send_methods">Difference between &#039;save&#039; and &#039;send&#039; methods</a></h2>
+<div class="level2">
+
+<p>
+
+Both methods sends form data to the server-side , but 
+
+</p>
+<ul>
+<li class="level1"><div class="li"> “send”  - sends data in a default &#039;http&#039; format</div>
+</li>
+<li class="level1"><div class="li"> “send”  - doesn&#039;t expect any special response</div>
+</li>
+<li class="level1"><div class="li"> “save”  - sends data in format of dataProcessor</div>
+</li>
+<li class="level1"><div class="li"> “save”  - expects valid <acronym title="Extensible Markup Language">XML</acronym> response </div>
+</li>
+<li class="level1"><div class="li"> “save”  - will work only if you have dataProccesor attached to the form</div>
+</li>
+</ul>
+
+<p>
+
+In case of dhtmlxConnector, to save or delete data you can use the <a href="dhtmlxform___api_method_dhtmlxform_save.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_save">save()</a> and <a href="dhtmlxform___api_method_dhtmlxform_remove.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_remove">remove()</a> methods. <br/>
+
+In usual cases no extra code on server-side is required in addition to what was shown above. For more details about dhtmlxConnector see <a href="../dhtmlxconnector/index.html" class="wikilink1" title="dhtmlxconnector:toc">respective part of the documentation</a>.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3178-" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit" class="button" title="Difference between 'save' and 'send' methods" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxform/dhtmlxform_server.txt &middot; Last modified: 2010/07/22 16:06 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxform%3Adhtmlxform_server&amp;1279804835" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:dhtmlxform_server" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+icons___file.gif
+icons___accordion.gif
+common___any_ed.gif
+dhtmlxaccordion___dhxacc_dhx_skyblue.png
+dhtmlxaccordion___dhxacc_multimode2.png
+dhtmlxaccordion___dhxacc_dhx_blue.png
+dhtmlxaccordion___dhxacc_dhx_black.png

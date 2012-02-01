@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:loading    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:loading</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:loading"  class="breadcrumbs" title="dhtmlxchart:loading">loading</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#data_loading" class="toc">Data loading</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#json" class="toc">JSON</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#xml" class="toc">XML</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#csv" class="toc">CSV</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#js_array" class="toc">JS Array</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="data_loading" id="data_loading">Data loading</a></h2>
+<div class="level2">
+
+<p>
+
+Data can be loaded from external files or  resources available on client-side. Charts support following data types:
+</p>
+<ul>
+<li class="level1"><div class="li"> “json”</div>
+</li>
+<li class="level1"><div class="li"> “xml”</div>
+</li>
+<li class="level1"><div class="li"> “jsarray”</div>
+</li>
+<li class="level1"><div class="li"> “csv”</div>
+</li>
+</ul>
+
+<p>
+
+Data from an external file are loaded by load() method. 
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+Loading is asynchronous. Therefore, you should catch loading end before executing any commands against the data
+</div>
+</p>
+<pre class="code javascript">    chart.<span class="me1">load</span><span class="br0">&#40;</span>url<span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+          <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;data is really loaded&quot;</span><span class="br0">&#41;</span>; 
+          <span class="co1">//any operations with data can be placed here</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span>datatype<span class="br0">&#41;</span>;</pre>
+<p>
+
+When data is already available on client side , you can use parse() method:
+
+</p>
+<pre class="code javascript">     grid.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span> datatype<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-736" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit" class="button" title="Data loading" /></div></form></div>
+<h3><a name="json" id="json">JSON</a></h3>
+<div class="level3">
+
+<p>
+
+Here is the example of loading from JSON file:
+</p>
+<pre class="code javascript">    chart.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.json&quot;</span><span class="sy0">,</span> <span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+and json object:
+
+</p>
+<pre class="code javascript">    chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span>”json”<span class="br0">&#41;</span>;</pre>
+<p>
+where some.json or data object is:
+
+</p>
+<pre class="code javascript"><span class="br0">&#91;</span>
+   <span class="br0">&#123;</span> id<span class="sy0">:</span>”<span class="nu0">1</span>”<span class="sy0">,</span> sales<span class="sy0">:</span><span class="nu0">7.4</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2006&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+   <span class="br0">&#123;</span> id<span class="sy0">:</span>”<span class="nu0">2</span>”<span class="sy0">,</span> sales<span class="sy0">:</span><span class="nu0">9.0</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2007&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+   <span class="br0">&#123;</span> id<span class="sy0">:</span>”<span class="nu0">3</span>”<span class="sy0">,</span> sales<span class="sy0">:</span><span class="nu0">7.3</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2008&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+   <span class="br0">&#123;</span> id<span class="sy0">:</span>”<span class="nu0">4</span>”<span class="sy0">,</span> sales<span class="sy0">:</span><span class="nu0">7.6</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="737-1179" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit" class="button" title="JSON" /></div></form></div>
+<h3><a name="xml" id="xml">XML</a></h3>
+<div class="level3">
+<pre class="code javascript">    chart.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.xml&quot;</span><span class="sy0">,</span> <span class="st0">&quot;xml&quot;</span><span class="br0">&#41;</span>;
+    <span class="co1">//or</span>
+    chart.<span class="me1">parse</span><span class="br0">&#40;</span>someXMLString<span class="sy0">,</span><span class="st0">&quot;xml&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+There isn&#039;t a requirement for incoming <acronym title="Extensible Markup Language">XML</acronym> (it can be in any format), all top-level tags will be converted to objects.
+
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>data<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>item id<span class="sy0">=</span><span class="st0">&quot;1&quot;</span><span class="sy0">&gt;</span>
+            <span class="sy0">&lt;</span>sales<span class="sy0">&gt;</span><span class="nu0">7.3</span><span class="sy0">&lt;/</span>sales<span class="sy0">&gt;</span>
+            <span class="sy0">&lt;</span>year<span class="sy0">&gt;</span><span class="nu0">2008</span><span class="sy0">&lt;/</span>year<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;/</span>item<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>item id<span class="sy0">=</span><span class="st0">&quot;2&quot;</span><span class="sy0">&gt;</span>
+	    <span class="sy0">&lt;</span>sales<span class="sy0">&gt;</span><span class="nu0">7.6</span><span class="sy0">&lt;/</span>sales<span class="sy0">&gt;</span>
+            <span class="sy0">&lt;</span>year<span class="sy0">&gt;</span><span class="nu0">2009</span><span class="sy0">&lt;/</span>year<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;/</span>item<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;/</span>data<span class="sy0">&gt;</span></pre>
+<p>
+
+The name of top-level tags doesn&#039;t matter.
+The attributes of top-level tag (&lt;item&gt; in above snippet) and values of nested tags will be available as properties in a template and for scripting. 
+If you want to process only tags with specific names, you can change xpath used for data collecting:
+
+</p>
+<pre class="code javascript">   dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">xml</span>.<span class="me1">records</span> <span class="sy0">=</span> <span class="st0">&quot;/data/item&quot;</span>; <span class="co1">//select only item tags</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1180-2028" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit" class="button" title="XML" /></div></form></div>
+<h3><a name="csv" id="csv">CSV</a></h3>
+<div class="level3">
+
+<p>
+Data in CSV haven’t names for values, so they are autonamed , the first value will be accessible as “data0”, the second as “data1” and etc. IDs are auto-generated.
+
+</p>
+<pre class="code javascript">    chart.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.csv&quot;</span><span class="sy0">,</span> <span class="st0">&quot;csv&quot;</span><span class="br0">&#41;</span>;
+    <span class="co1">//or</span>
+    chart.<span class="me1">parse</span><span class="br0">&#40;</span>someCSVString<span class="sy0">,</span> <span class="st0">&quot;csv&quot;</span><span class="br0">&#41;</span>;</pre><pre class="code javascript">    <span class="st0">&quot;1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;9.0&quot;</span><span class="sy0">,</span> <span class="st0">&quot;2007&quot;</span>
+    <span class="st0">&quot;2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;2008&quot;</span>
+    <span class="st0">&quot;3&quot;</span><span class="sy0">,</span> <span class="st0">&quot;7.6&quot;</span><span class="sy0">,</span> <span class="st0">&quot;2009&quot;</span></pre>
+<p>
+You can configure row and line separators as follows
+
+</p>
+<pre class="code javascript">    dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">csv</span>.<span class="me1">row</span> <span class="sy0">=</span> <span class="st0">&quot;<span class="es0">\n</span>&quot;</span>;
+    dhtmlx.<span class="me1">dataDriver</span>.<span class="me1">csv</span>.<span class="me1">cell</span><span class="sy0">=</span> <span class="st0">&quot;,&quot;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2029-2582" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit" class="button" title="CSV" /></div></form></div>
+<h3><a name="js_array" id="js_array">JS Array</a></h3>
+<div class="level3">
+
+<p>
+Data in <acronym title="JavaScript">JS</acronym> array as well as  in CSV hasn’t names for values. And values are accessible the same way (“data0”, “data1”, …):
+
+</p>
+<pre class="code javascript">    chart.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;some.js&quot;</span><span class="sy0">,</span> <span class="st0">&quot;jsarray&quot;</span><span class="br0">&#41;</span>;
+    <span class="co1">//or</span>
+    chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span> <span class="st0">&quot;jsarray&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+Where “some.js” or data array is 
+
+</p>
+<pre class="code javascript">    <span class="br0">&#91;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">7.4</span><span class="sy0">,</span> <span class="st0">&quot;2006&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+    <span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">9.0</span><span class="sy0">,</span> <span class="st0">&quot;2007&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+    <span class="br0">&#91;</span><span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">7.3</span><span class="sy0">,</span> <span class="st0">&quot;2008&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+    <span class="br0">&#91;</span><span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">7.6</span><span class="sy0">,</span> <span class="st0">&quot;2009&quot;</span><span class="br0">&#93;</span><span class="br0">&#93;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2583-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit" class="button" title="JS Array" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/loading.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Aloading&amp;1279804797" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:loading" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

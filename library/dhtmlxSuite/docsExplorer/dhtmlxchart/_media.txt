@@ -1,0 +1,16 @@
+dhtmlxchart___charts.png
+icons___file.gif
+common___any_ed.gif
+dhtmlxchart___sorting1.png
+dhtmlxchart___sorting2.png
+dhtmlxchart___groups1.png
+dhtmlxchart___labels.png
+dhtmlxchart___templates1.png
+dhtmlxchart___scales.png
+dhtmlxchart___pie3dchart.png
+dhtmlxchart___init.png
+dhtmlxchart___barchart1.png
+dhtmlxchart___colors2.png
+dhtmlxchart___colors3.png
+dhtmlxchart___graphic.png
+dhtmlxchart___10.06.png

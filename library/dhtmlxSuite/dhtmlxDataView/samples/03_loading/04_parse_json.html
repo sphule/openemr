@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Parse data from JSON object</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="title" content="Samples" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../common/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../common/css/style.css" type="text/css" media="screen" />
+
+	</head>
+	<body>
+        <div class="header">
+            <a class="logo" href="http://www.dhtmlx.com" title="DHTMLX homepage"></a>
+            <div class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</div>
+            <div class="search-field">
+                <form action="http://docs.dhtmlx.com/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+            </div>
+            <div class="buttons">
+                <a class="doc_inact" href="../../../docsExplorer/index.html" title="DHTMLX Documentation homepage"></a>
+                <a class="sample"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="navigation-div">
+                <a href="../../../docsExplorer/samples.html" class="navigation"><img src="../common/icons/file.gif" alt="" >All components</a>
+                <div class="arrow"></div>
+                <a href="../index.html" class="navigation"><img height="22" src="../common/icons/dataview.gif" alt="" >dhtmlxDataView</a>
+                <div class="arrow"></div>
+                <a href="./index.html" class="navigation"><img src="../common/icons/none.gif" alt="" >Loading Data</a>
+            </div>
+            <div style="display:block;">
+                <h3>Parse data from JSON object</h3>
+            </div>
+            <div class="navigation-div">
+                <a href="#code" class="navigation view-source"><img src="../common/icons/source.gif" alt="" >View page source</a>
+            </div>
+            <script src="../../codebase/dhtmlxdataview.js" type="text/javascript"></script>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxdataview.css">  
+
+	
+	
+	<div id="data_container" style="border:1px solid #A4BED4; background-color:white;width:596px;height:396px;"></div>
+	<script>
+		data = new dhtmlXDataView({
+			container:"data_container",
+			type:{
+				template:"#Package# : #Version#<br/>#Maintainer#",
+				height:40
+			}
+		});
+		data.parse([{
+ "id":"1", "Package":"acx100-source", "Version":"20080210-1.1", "Maintainer":"Stefano Canepa <sc@linux.it>"
+},{
+ "id":"2", "Package":"alien-arena-browser", "Version":"7.0-1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"3", "Package":"alien-arena-server", "Version":"7.0-1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"4", "Package":"alien-arena", "Version":"7.0-1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"5", "Package":"alsa-firmware-loaders", "Version":"1.0.21-1", "Maintainer":"Debian ALSA Maintainers <pkg-alsa-devel@lists.alioth.debian.org>"
+},{
+ "id":"6", "Package":"amoeba", "Version":"1.1-20", "Maintainer":"Steinar H. Gunderson <sesse@debian.org>"
+},{
+ "id":"7", "Package":"atari800", "Version":"2.1.0-1", "Maintainer":"Antonin Kral <A.Kral@sh.cvut.cz>"
+},{
+ "id":"8", "Package":"avifile-divx-plugin", "Version":"1:0.7.48~20090503.ds-1", "Maintainer":"Debian QA Group <packages@qa.debian.org>"
+},{
+ "id":"9", "Package":"avifile-win32-plugin", "Version":"1:0.7.48~20090503.ds-1", "Maintainer":"Debian QA Group <packages@qa.debian.org>"
+},{
+ "id":"10", "Package":"avifile-xvid-plugin", "Version":"1:0.7.48~20090503.ds-1", "Maintainer":"Debian QA Group <packages@qa.debian.org>"
+},{
+ "id":"11", "Package":"b43-fwcutter", "Version":"1:012-1", "Maintainer":"Rene Engelhard <rene@debian.org>"
+},{
+ "id":"12", "Package":"bgoffice-dict-downloader", "Version":"0.03", "Maintainer":"Debian Add-ons Bulgaria Project <debian-addons-bg-maintainers@openfmi.net>"
+},{
+ "id":"13", "Package":"cbedic", "Version":"4.0-2+b3", "Maintainer":"Anton Zinoviev <zinoviev@debian.org>"
+},{
+ "id":"14", "Package":"chocolate-doom", "Version":"1.2.1-1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"15", "Package":"cl-sql-oracle", "Version":"4.1.1-1", "Maintainer":"Kevin M. Rosenberg <kmr@debian.org>"
+},{
+ "id":"16", "Package":"cl-umlisp-orf", "Version":"3.3.2-2", "Maintainer":"Kevin M. Rosenberg <kmr@debian.org>"
+},{
+ "id":"17", "Package":"cl-umlisp", "Version":"1:2007ac.2-5", "Maintainer":"Kevin M. Rosenberg <kmr@debian.org>"
+},{
+ "id":"18", "Package":"cltl", "Version":"1.0.26", "Maintainer":"Debian Common Lisp Team <pkg-common-lisp-devel@lists.alioth.debian.org>"
+},{
+ "id":"19", "Package":"crafty-books-medium", "Version":"1.0.debian1-1", "Maintainer":"Oliver Korff <ok@xynyx.de>"
+},{
+ "id":"20", "Package":"crafty-books-medtosmall", "Version":"1.0.debian1-1", "Maintainer":"Oliver Korff <ok@xynyx.de>"
+},{
+ "id":"21", "Package":"crafty-books-small", "Version":"1.0.debian1-1", "Maintainer":"Oliver Korff <ok@xynyx.de>"
+},{
+ "id":"22", "Package":"dosemu", "Version":"1.4.0+svn.1828-3", "Maintainer":"Bart Martens <bartm@debian.org>"
+},{
+ "id":"23", "Package":"dynagen", "Version":"0.11.0-4", "Maintainer":"Erik Wenzel <erik@debian.org>"
+},{
+ "id":"24", "Package":"dynare-matlab", "Version":"4.0.4-3", "Maintainer":"Debian Octave Group <pkg-octave-devel@lists.alioth.debian.org>"
+},{
+ "id":"25", "Package":"e-uae-dbg", "Version":"0.8.29-WIP4-7", "Maintainer":"Stephan SГјrken <absurd@debian.org>"
+},{
+ "id":"26", "Package":"e-uae", "Version":"0.8.29-WIP4-7", "Maintainer":"Stephan SГјrken <absurd@debian.org>"
+},{
+ "id":"27", "Package":"easyspice", "Version":"0.6.8-2", "Maintainer":"Gudjon I. Gudjonsson <gudjon@gudjon.org>"
+},{
+ "id":"28", "Package":"esix", "Version":"1-2", "Maintainer":"Vince Mulhollon <vlm@debian.org>"
+},{
+ "id":"29", "Package":"exult-studio", "Version":"1.2-13", "Maintainer":"JordГ  Polo <jorda@ettin.org>"
+},{
+ "id":"30", "Package":"exult", "Version":"1.2-13", "Maintainer":"JordГ  Polo <jorda@ettin.org>"
+},{
+ "id":"31", "Package":"festvox-don", "Version":"1.4.0-4", "Maintainer":"Matthias Urlichs <smurf@debian.org>"
+},{
+ "id":"32", "Package":"festvox-rablpc16k", "Version":"1.4.0-2", "Maintainer":"Matthias Urlichs <smurf@smurf.noris.de>"
+},{
+ "id":"33", "Package":"festvox-rablpc8k", "Version":"1.4.0-2", "Maintainer":"Matthias Urlichs <smurf@smurf.noris.de>"
+},{
+ "id":"34", "Package":"flashplugin-nonfree-extrasound", "Version":"0.0.svn2431-3", "Maintainer":"Petter Reinholdtsen <pere@debian.org>"
+},{
+ "id":"35", "Package":"flashplugin-nonfree", "Version":"1:2.8", "Maintainer":"Bart Martens <bartm@debian.org>"
+},{
+ "id":"36", "Package":"freemind", "Version":"0.7.1-6", "Maintainer":"Eric Lavarde <deb@zorglub.s.bawue.de>"
+},{
+ "id":"37", "Package":"funguloids", "Version":"1.06-8+b1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"38", "Package":"game-data-packager", "Version":"22", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"39", "Package":"cpp-doc", "Version":"5:2", "Maintainer":"Debian GCC Maintainers <debian-gcc@lists.debian.org>"
+},{
+ "id":"40", "Package":"gcc-doc", "Version":"5:2", "Maintainer":"Debian GCC Maintainers <debian-gcc@lists.debian.org>"
+},{
+ "id":"41", "Package":"gcj-doc", "Version":"5:2", "Maintainer":"Debian GCC Maintainers <debian-gcc@lists.debian.org>"
+},{
+ "id":"42", "Package":"gfortran-doc", "Version":"5:2", "Maintainer":"Debian GCC Maintainers <debian-gcc@lists.debian.org>"
+},{
+ "id":"43", "Package":"gnat-doc", "Version":"5:2", "Maintainer":"Debian GCC Maintainers <debian-gcc@lists.debian.org>"
+},{
+ "id":"44", "Package":"glest", "Version":"3.2.2-1", "Maintainer":"Debian Games Team <pkg-games-devel@lists.alioth.debian.org>"
+},{
+ "id":"45", "Package":"gnome-speech-dectalk", "Version":"1:0.4.25-1", "Maintainer":"Mario Lang <mlang@debian.org>"
+},{
+ "id":"46", "Package":"gnome-speech-ibmtts", "Version":"1:0.4.25-1", "Maintainer":"Mario Lang <mlang@debian.org>"
+},{
+ "id":"47", "Package":"gnome-speech-swift", "Version":"1:0.4.25-1", "Maintainer":"Mario Lang <mlang@debian.org>"
+},{
+ "id":"48", "Package":"gnuboy-sdl", "Version":"1.0.3-5", "Maintainer":"Davide Puricelli (evo) <evo@debian.org>"
+},{
+ "id":"49", "Package":"gnuboy-svga", "Version":"1.0.3-5", "Maintainer":"Davide Puricelli (evo) <evo@debian.org>"
+},{
+ "id":"50", "Package":"gnuboy-x", "Version":"1.0.3-5", "Maintainer":"Davide Puricelli (evo) <evo@debian.org>"
+}],"json");
+	</script>
+			
+			
+         </div>
+    <div class="source">
+        <div class="teg">Source</div>
+        <div class="code" id="code">
+		<div class="hl-main"><pre><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code"> </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxdataview.js</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/javascript</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">link</span><span class="hl-code"> </span><span class="hl-var">rel</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">STYLESHEET</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">text/css</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">href</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/dhtmlxdataview.css</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-code">  
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">border:1px solid #A4BED4; background-color:white;width:596px;height:396px;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-identifier">data</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXDataView</span><span class="hl-brackets">(</span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-identifier">container</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">data_container</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-identifier">type</span><span class="hl-code">: </span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">template</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">#Package# : #Version#&lt;br/&gt;#Maintainer#</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+        </span><span class="hl-identifier">height</span><span class="hl-code">: </span><span class="hl-number">40</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">data</span><span class="hl-code">.</span><span class="hl-identifier">parse</span><span class="hl-brackets">(</span><span class="hl-brackets">[</span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">acx100-source</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">20080210-1.1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Stefano Canepa &lt;sc@linux.it&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">alien-arena-browser</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">7.0-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">alien-arena-server</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">7.0-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">4</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">alien-arena</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">7.0-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">alsa-firmware-loaders</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.21-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian ALSA Maintainers &lt;pkg-alsa-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">6</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">amoeba</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.1-20</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Steinar H. Gunderson &lt;sesse@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">7</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">atari800</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">2.1.0-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Antonin Kral &lt;A.Kral@sh.cvut.cz&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">8</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">avifile-divx-plugin</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.7.48~20090503.ds-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian QA Group &lt;packages@qa.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">9</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">avifile-win32-plugin</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.7.48~20090503.ds-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian QA Group &lt;packages@qa.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">10</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">avifile-xvid-plugin</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.7.48~20090503.ds-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian QA Group &lt;packages@qa.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">11</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">b43-fwcutter</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:012-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Rene Engelhard &lt;rene@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">12</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">bgoffice-dict-downloader</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.03</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Add-ons Bulgaria Project &lt;debian-addons-bg-maintainers@openfmi.net&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">13</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cbedic</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">4.0-2+b3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Anton Zinoviev &lt;zinoviev@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">14</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">chocolate-doom</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.2.1-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">15</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cl-sql-oracle</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">4.1.1-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Kevin M. Rosenberg &lt;kmr@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">16</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cl-umlisp-orf</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">3.3.2-2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Kevin M. Rosenberg &lt;kmr@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">17</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cl-umlisp</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:2007ac.2-5</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Kevin M. Rosenberg &lt;kmr@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">18</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cltl</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.26</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Common Lisp Team &lt;pkg-common-lisp-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">19</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">crafty-books-medium</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.debian1-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Oliver Korff &lt;ok@xynyx.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">20</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">crafty-books-medtosmall</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.debian1-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Oliver Korff &lt;ok@xynyx.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">21</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">crafty-books-small</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.debian1-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Oliver Korff &lt;ok@xynyx.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">22</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">dosemu</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.4.0+svn.1828-3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Bart Martens &lt;bartm@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">23</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">dynagen</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.11.0-4</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Erik Wenzel &lt;erik@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">24</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">dynare-matlab</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">4.0.4-3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Octave Group &lt;pkg-octave-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">25</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">e-uae-dbg</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.8.29-WIP4-7</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Stephan SГјrken &lt;absurd@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">26</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">e-uae</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.8.29-WIP4-7</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Stephan SГјrken &lt;absurd@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">27</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">easyspice</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.6.8-2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Gudjon I. Gudjonsson &lt;gudjon@gudjon.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">28</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">esix</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1-2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Vince Mulhollon &lt;vlm@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">29</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">exult-studio</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.2-13</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">JordГ  Polo &lt;jorda@ettin.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">30</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">exult</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.2-13</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">JordГ  Polo &lt;jorda@ettin.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">31</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">festvox-don</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.4.0-4</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Matthias Urlichs &lt;smurf@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">32</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">festvox-rablpc16k</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.4.0-2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Matthias Urlichs &lt;smurf@smurf.noris.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">33</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">festvox-rablpc8k</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.4.0-2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Matthias Urlichs &lt;smurf@smurf.noris.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">34</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">flashplugin-nonfree-extrasound</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.0.svn2431-3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Petter Reinholdtsen &lt;pere@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">35</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">flashplugin-nonfree</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:2.8</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Bart Martens &lt;bartm@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">36</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">freemind</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">0.7.1-6</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Eric Lavarde &lt;deb@zorglub.s.bawue.de&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">37</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">funguloids</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.06-8+b1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">38</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">game-data-packager</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">22</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">39</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">cpp-doc</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5:2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian GCC Maintainers &lt;debian-gcc@lists.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">40</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gcc-doc</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5:2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian GCC Maintainers &lt;debian-gcc@lists.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">41</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gcj-doc</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5:2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian GCC Maintainers &lt;debian-gcc@lists.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">42</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gfortran-doc</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5:2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian GCC Maintainers &lt;debian-gcc@lists.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">43</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnat-doc</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">5:2</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian GCC Maintainers &lt;debian-gcc@lists.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">44</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">glest</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">3.2.2-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Debian Games Team &lt;pkg-games-devel@lists.alioth.debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">45</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnome-speech-dectalk</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.4.25-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Mario Lang &lt;mlang@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">46</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnome-speech-ibmtts</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.4.25-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Mario Lang &lt;mlang@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">47</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnome-speech-swift</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1:0.4.25-1</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Mario Lang &lt;mlang@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">48</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnuboy-sdl</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.3-5</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Davide Puricelli (evo) &lt;evo@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">49</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnuboy-svga</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.3-5</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Davide Puricelli (evo) &lt;evo@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">, </span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">id</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">50</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Package</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">gnuboy-x</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Version</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0.3-5</span><span class="hl-quotes">&quot;</span><span class="hl-code">,
+    </span><span class="hl-quotes">&quot;</span><span class="hl-string">Maintainer</span><span class="hl-quotes">&quot;</span><span class="hl-code">: </span><span class="hl-quotes">&quot;</span><span class="hl-string">Davide Puricelli (evo) &lt;evo@debian.org&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-brackets">]</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">json</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div>
+        </div>
+    <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright &copy; 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxdataview:events    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxdataview:events</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:events"  class="breadcrumbs" title="dhtmlxdataview:events">events</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#events_handling" class="toc">Events Handling</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#attaching_removing_event_handler" class="toc">Attaching/Removing Event Handler</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#naming_tips" class="toc">Naming tips</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#list_of_supported_events" class="toc">List of supported events</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxdataview:toc" class="media" title="dhtmlxdataview:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxdataview:toc"> dhtmlxDataView</a></div></div>
+</p>
+
+
+
+<h2><a name="events_handling" id="events_handling">Events Handling</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="59-90" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit" class="button" title="Events Handling" /></div></form></div>
+<h3><a name="attaching_removing_event_handler" id="attaching_removing_event_handler">Attaching/Removing Event Handler</a></h3>
+<div class="level3">
+
+<p>
+attachEvent method can be used to add an event handler to any of the available events. To do so, the method need to be called with the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li">  evName - name of the event;</div>
+</li>
+<li class="level1"><div class="li">  evHandler - user-defined event handler.</div>
+</li>
+</ul>
+<pre class="code javascript">        <span class="kw2">function</span> my_handler<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> do_something<span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="br0">&#125;</span>;
+        view.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onSomeEvent&quot;</span><span class="sy0">,</span>my_handler<span class="br0">&#41;</span>;</pre>
+<p>
+
+Several handlers can be attached to one and the same event, and all of them will be executed. The names of the events are case-insensitive.
+</p>
+
+<p>
+There is a simple way of removing an event-handler:
+
+</p>
+<pre class="code javascript">        <span class="kw2">var</span> id <span class="sy0">=</span> view.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onSomeEvent&quot;</span><span class="sy0">,</span>my_handler<span class="br0">&#41;</span>;
+        ...
+        <span class="me1">view</span>.<span class="me1">detachEvent</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>; <span class="co1">// unique id of the event handler</span></pre>
+<p>
+All events which name contains “before” - can be blocked, returning true from such event handler will confirm operation , returning false or not returning anything will block default event processing. 
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="91-1063" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit" class="button" title="Attaching/Removing Event Handler" /></div></form></div>
+<h3><a name="naming_tips" id="naming_tips">Naming tips</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> events which starts from “before” - can be blocked</div>
+</li>
+<li class="level1"><div class="li"> events which starts from “after” - can&#039;t be blocked, but have sibling event, whit name starts from “before”</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1064-1253" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit" class="button" title="Naming tips" /></div></form></div>
+<h3><a name="list_of_supported_events" id="list_of_supported_events">List of supported events</a></h3>
+<div class="level3">
+
+<p>
+The following events are available in dhtmlxGrid:
+</p>
+<ul>
+<li class="level1"><div class="li">  Drag-and-Drop Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforedrag.html" class="wikilink1" title="dhtmlxdataview:event_onbeforedrag">onBeforeDrag Event</a> - drag operation is started</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforedragin.html" class="wikilink1" title="dhtmlxdataview:event_onbeforedragin">onBeforeDragIn Events</a> - an item is dragged to another potential target</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforedragin.html" class="wikilink1" title="dhtmlxdataview:event_onbeforedragin">onDragOut Events</a> - an item is dragged out of potential target</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforedrop.html" class="wikilink1" title="dhtmlxdataview:event_onbeforedrop">onBeforeDrop Event</a> - an item is dragged to another target and the mouse is released</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onafterdrop.html" class="wikilink1" title="dhtmlxdataview:event_onafterdrop">onAfterDrop Event</a> - drad-n-drop operation is finished</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Editing Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforeeditstart.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeeditstart">onBeforeEditStart Event</a> - edit process is initiated</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onaftereditstart.html" class="wikilink1" title="dhtmlxdataview:event_onaftereditstart">onAfterEditStart Event</a> - editor is ready for data input</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforeeditstop.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeeditstop">onBeforeEditStop Event</a> - editor closing is initiated</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onaftereditstop.html" class="wikilink1" title="dhtmlxdataview:event_onaftereditstop">onAfterEditStop Event</a> - editor is closed</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_oneditkeypress.html" class="wikilink1" title="dhtmlxdataview:event_oneditkeypress">onEditKeyPress Event</a> - key pressed while editor is active</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Selection Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onitemclick.html" class="wikilink1" title="dhtmlxdataview:event_onitemclick">onItemClick Event</a> - an item is clicked</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onitemdblclick.html" class="wikilink1" title="dhtmlxdataview:event_onitemdblclick">onItemDblClick Event</a> - an item is doubleclicked</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onbeforeselect.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeselect">onBeforeSelect Event</a> - selection of an item is started</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onafterselect.html" class="wikilink1" title="dhtmlxdataview:event_onafterselect">onAfterSelect Event</a> - selection of an item is finished</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onselectchange.html" class="wikilink1" title="dhtmlxdataview:event_onselectchange">onSelectChange Event</a> - selection is changed</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onmousemove.html" class="wikilink1" title="dhtmlxdataview:event_onmousemove">onMouseMove Event</a> - mouse moved over item</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onmouseout.html" class="wikilink1" title="dhtmlxdataview:event_onmouseout">onMouseOut Event</a> - mouse moved out of item</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Loading Events:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onxls.html" class="wikilink1" title="dhtmlxdataview:event_onxls">onXLS Event</a> - occurs before sending data request to server</div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxdataview___event_onxle.html" class="wikilink1" title="dhtmlxdataview:event_onxle">onXLE Event</a> - occurs after sending data request to server</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Data manipulation</div>
+<ul>
+<li class="level2"><div class="li"> <a href="dhtmlxdataview___event_onbeforeadd.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeadd">onBeforeAdd Event</a> - item adding is initiated</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxdataview___event_onbeforeadd.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeadd">onAfterAdd Event</a> - item adding is finished</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxdataview___event_onbeforeadd.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeadd">onBeforeDelete Event</a> - item deleting is initiated</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxdataview___event_onbeforeadd.html" class="wikilink1" title="dhtmlxdataview:event_onbeforeadd">onAfterDelete Event</a> - after deleting is finished</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1254-" /><input type="hidden" name="rev" value="1279031281" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit" class="button" title="List of supported events" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxdataview/events.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxdataview%3Aevents&amp;1279804822" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxdataview:events" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

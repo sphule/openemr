@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxaccordion:initializing_dhtmlxaccordion    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxaccordion:initializing_dhtmlxaccordion</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxaccordion:initializing_dhtmlxaccordion"  class="breadcrumbs" title="dhtmlxaccordion:initializing_dhtmlxaccordion">initializing_dhtmlxaccordion</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#initializing_dhtmlxaccordion" class="toc">Initializing dhtmlxAccordion</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#section" class="toc"></a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#new_accordion_object_creation" class="toc">New Accordion Object Creation</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#attaching_dhtmlxaccordion_object_to_window" class="toc">Attaching dhtmlxAccordion (Object) to Window</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#attaching_dhtmlxaccordion_object_to_layout" class="toc">Attaching dhtmlxAccordion (Object) to Layout</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#recommended_initialization_way" class="toc">Recommended Initialization Way</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#available_skins" class="toc">Available Skins</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___accordion.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxaccordion:toc">dhtmlxaccordion</a></div></div>
+
+</p>
+
+<h2><a name="initializing_dhtmlxaccordion" id="initializing_dhtmlxaccordion">Initializing dhtmlxAccordion</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="58-100" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Initializing dhtmlxAccordion" /></div></form></div><div class="level3">
+
+<p>
+
+The first steps that need to be taken for dhtmlxAccordion&#039;s initialization are the following:
+</p>
+<ul>
+<li class="level1"><div class="li">  Download dhtmlxAccordion package from the server and place it in a folder;</div>
+</li>
+<li class="level1"><div class="li">  Create an html file;</div>
+</li>
+<li class="level1"><div class="li">  Place the full paths to dhtmlxAccordion&#039;s <acronym title="Cascading Style Sheets">CSS</acronym> and <acronym title="JavaScript">JS</acronym> files into the header of the html file;</div>
+</li>
+</ul>
+<pre class="code html4strict">  <span class="sc2">&lt;<a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span>
+      <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxcommon.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+      <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxaccordion.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span>
+      <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxaccordion_dhx_blue.css&quot;</span>&gt;</span>
+  <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span></pre>
+<p>
+Note: dhx_skyblue is the default skin. If the user chooses to apply some other skin, he should indicate path to the appropriate dhtmlxaccordion_[name_of_the_skin].css file from dhtmlxAccordion package.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="101-905" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Edit" /></div></form></div>
+<h3><a name="new_accordion_object_creation" id="new_accordion_object_creation">New Accordion Object Creation</a></h3>
+<div class="level3">
+
+<p>
+
+The user needs to create an object where dhtmlxAccordion will be placed later. In this example the object is a &lt;div&gt; element on page, which is placed in the &lt;body&gt; tag:
+</p>
+<pre class="code html4strict">    <span class="sc2">&lt;<a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;accordObj&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/div.html"><span class="kw2">div</span></a>&gt;</span></pre>
+<p>
+A new Accordion object can be created in the following way:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> dhxAccord <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXAccordion<span class="br0">&#40;</span>parentId<span class="sy0">,</span> skin<span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+parentId defines an <acronym title="HyperText Markup Language">HTML</acronym> object on page to which the accordion is attached (the main accordion container in the code mentioned above).
+The second argument is optional, and it indicates the name of the skin chosen for the Accordion. If this argument is not indicated, the component will be created with the default skin (dhx_skyblue).
+</p>
+
+<p>
+
+So, in our case the code will look like this:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> dhxAccord <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXAccordion<span class="br0">&#40;</span><span class="st0">&quot;accordObj&quot;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="906-1840" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="New Accordion Object Creation" /></div></form></div>
+<h3><a name="attaching_dhtmlxaccordion_object_to_window" id="attaching_dhtmlxaccordion_object_to_window">Attaching dhtmlxAccordion (Object) to Window</a></h3>
+<div class="level3">
+
+<p>
+
+First, the user should download dhtmlxWindows package from the server into the same folder where previously downloaded packages were put. Then, the full path to the following files is to be indicated in the &lt;head&gt; tag of html file:
+</p>
+<ul>
+<li class="level1"><div class="li">  dhtmlxwindows.js;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxwindows.css;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxwindows_[corresponding_skin_name].css.</div>
+</li>
+</ul>
+<pre class="code html4strict">    <span class="sc2">&lt;<a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span>
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span> 
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows.css&quot;</span>&gt;</span>
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxwindows_[corresponding_skin_name].css&quot;</span>&gt;</span> 
+    <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span></pre>
+<p>
+An Accordion object can be attached to any created window on page. First, the user needs to create a new base for a set of new windows, a new dhtmlxWindow object for it, and set paths for window&#039;s image files.
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> dhxWins <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXWindows<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        dhxWins.<span class="me1">setImagePath</span><span class="br0">&#40;</span><span class="st0">&quot;[full path to this directory]/codebase/imgs/&quot;</span><span class="br0">&#41;</span>;
+        <span class="kw2">var</span> w1 <span class="sy0">=</span> dhxWins.<span class="me1">createWindow</span><span class="br0">&#40;</span><span class="st0">&quot;w1&quot;</span><span class="sy0">,</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">320</span><span class="sy0">,</span> <span class="nu0">360</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The parameters of the createWindow() method are as follows:
+</p>
+<ul>
+<li class="level1"><div class="li">  w1 - Window Id; </div>
+</li>
+<li class="level1"><div class="li">  10,10 - Window position (x &amp; y); </div>
+</li>
+<li class="level1"><div class="li">  320,360 - Window&#039;s width &amp; height.</div>
+</li>
+</ul>
+
+<p>
+
+Then the window will invoke the base for dhtmlxAccordion and will return the handler for the Accordion object itself. The user should write only the following line of code:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> dhxAccord <span class="sy0">=</span> w1.<span class="me1">attachAccordion</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1841-3454" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Attaching dhtmlxAccordion (Object) to Window" /></div></form></div>
+<h3><a name="attaching_dhtmlxaccordion_object_to_layout" id="attaching_dhtmlxaccordion_object_to_layout">Attaching dhtmlxAccordion (Object) to Layout</a></h3>
+<div class="level3">
+
+<p>
+
+First, the user should download dhtmlxLayout package from the server into the same folder where previously downloaded packages were put. Then, the full path to the following files is to be indicated in the &lt;head&gt; tag of html file:
+</p>
+<ul>
+<li class="level1"><div class="li">  dhtmlxlayout.js;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxlayout.css;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxlayout_[corre].css.</div>
+</li>
+</ul>
+<pre class="code html4strict">    <span class="sc2">&lt;<a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span>
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxlayout.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span> 
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxlayout.css&quot;</span>&gt;</span>
+        <span class="sc2">&lt;<a href="http://december.com/html/4/element/link.html"><span class="kw2">link</span></a> <span class="kw3">rel</span><span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">&quot;[full path to this file]/dhtmlxlayout_[corresponding_skin_name].css&quot;</span>&gt;</span> 
+    <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span></pre>
+<p>
+We need to create an object where dhtmlxLayout will be placed later. In this example the object is a &lt;div&gt; element on page which is placed in the 
+&lt;body&gt; tag:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot;parentId&quot;</span> style<span class="sy0">=</span><span class="st0">&quot;position:absolute; width:600px; height:400px;&quot;</span><span class="sy0">&gt;&lt;/</span>div<span class="sy0">&gt;</span></pre>
+<p>
+The next step is to create a new dhtmlXLayoutObject and place it after the &lt;div&gt; element (object) that we&#039;ve just created:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>     
+        <span class="kw2">var</span> dhxLayout <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXLayoutObject<span class="br0">&#40;</span><span class="st0">&quot;parentId&quot;</span><span class="sy0">,</span> <span class="st0">&quot;3L&quot;</span><span class="sy0">,</span> <span class="st0">&quot;dhx_black&quot;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The second argument in dhtmlXLayoutObject() is the code of the Layout&#039;s pattern.
+</p>
+
+<p>
+The third argument is optional, and it indicates the name of the skin chosen for the Layout. If this argument is not indicated, the component will be created with the default skin (dhx_skyblue).
+</p>
+
+<p>
+And only then the user should write the following line of code in order to attach an Accordion to the chosen layout&#039;s cell (let it be the first cell “a”):
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> dhxAccord <span class="sy0">=</span> dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachAccordion</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3455-5248" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Attaching dhtmlxAccordion (Object) to Layout" /></div></form></div>
+<h3><a name="recommended_initialization_way" id="recommended_initialization_way">Recommended Initialization Way</a></h3>
+<div class="level3">
+<pre class="code javascript">    <span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+        <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+            <span class="kw2">var</span> dhxAccord;
+            <span class="kw2">function</span> doOnLoad<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                dhxAccord <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXAccordion<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+            <span class="br0">&#125;</span>
+        <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;</span>body <span class="kw3">onload</span><span class="sy0">=</span><span class="st0">&quot;doOnLoad();&quot;</span><span class="sy0">&gt;</span>
+        ...
+    <span class="sy0">&lt;/</span>body<span class="sy0">&gt;</span></pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5249-5559" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Recommended Initialization Way" /></div></form></div>
+<h3><a name="available_skins" id="available_skins">Available Skins</a></h3>
+<div class="level3">
+
+<p>
+
+The following predefined skins are available for dhtmlxAccordion users:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  dhx_skyblue  </td><td class="col1 centeralign">  dhx_blue  </td><td class="col2 centeralign">  dhx_black  </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  <img src="dhtmlxaccordion___dhxacc_dhx_skyblue.png"  class="media" alt="" />  </td><td class="col1 centeralign">  <img src="dhtmlxaccordion___dhxacc_dhx_blue.png"  class="media" alt="" />  </td><td class="col2 centeralign">  <img src="dhtmlxaccordion___dhxacc_dhx_black.png"  class="media" alt="" />  </td>
+	</tr>
+</table>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5560-" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit" class="button" title="Available Skins" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxaccordion/initializing_dhtmlxaccordion.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxaccordion%3Ainitializing_dhtmlxaccordion&amp;1279804782" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:initializing_dhtmlxaccordion" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

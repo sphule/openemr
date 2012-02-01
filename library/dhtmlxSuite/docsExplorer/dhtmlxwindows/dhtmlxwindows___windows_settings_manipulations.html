@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxwindows:windows_settings_manipulations    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxwindows:windows_settings_manipulations</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxwindows:windows_settings_manipulations"  class="breadcrumbs" title="dhtmlxwindows:windows_settings_manipulations">windows_settings_manipulations</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#windows_settings_manipulations" class="toc">Windows Settings Manipulations</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#window_accessing" class="toc">Window Accessing</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_iterator" class="toc">Window Iterator</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#changing_dimension" class="toc">Changing Dimension</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#changing_position" class="toc">Changing Position</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_parking" class="toc">Window Parking</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_minimizing_maximizing" class="toc">Window Minimizing/Maximizing</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#bringing_window_to_top_bottom" class="toc">Bringing Window to Top/Bottom</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_sticking_unsticking" class="toc">Window Sticking/Unsticking</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#making_window_modal_modeless" class="toc">Making Window Modal/Modeless</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#get_topmost_bottommost_window" class="toc">Get Topmost/Bottommost Window</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#making_window_centered" class="toc">Making Window Centered</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_progress_indicator" class="toc">Window Progress Indicator</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#window_header_control" class="toc">Window Header Control</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___windows.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxwindows:toc">dhtmlxwindows</a></div></div>
+</p>
+
+
+
+<h2><a name="windows_settings_manipulations" id="windows_settings_manipulations">Windows Settings Manipulations</a></h2>
+<div class="level2">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="57-101" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Windows Settings Manipulations" /></div></form></div>
+<h3><a name="window_accessing" id="window_accessing">Window Accessing</a></h3>
+<div class="level3">
+
+<p>
+
+The user can access a window in two following ways: 
+
+</p>
+<ul>
+<li class="level1"><div class="li">  Using a direct link to the object that will be returned by createWindow() method: </div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="kw2">var</span> dhxWins <span class="sy0">=</span> <span class="kw2">new</span> dhtmlxWindows<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="kw2">var</span> win <span class="sy0">=</span> dhxWins.<span class="me1">createWindow</span><span class="br0">&#40;</span>id<span class="sy0">,</span>…<span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li">  Through the global scope by calling window() function: </div>
+</li>
+</ul>
+<pre class="code javascript">    <span class="kw2">var</span> dhxWins <span class="sy0">=</span> <span class="kw2">new</span> dhtmlxWindows<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;</pre>
+<p>
+Thus, the user can access this window using win variable or by calling window() function. 
+</p>
+
+<p>
+Regardless of the way the window is accessed, the content of win variable and windows.window(id) will be equal.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="102-741" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Accessing" /></div></form></div>
+<h3><a name="window_iterator" id="window_iterator">Window Iterator</a></h3>
+<div class="level3">
+
+<p>
+
+Method forEachWindow() calls a user-defined function for every existing window passing a window handler into it. 
+</p>
+<pre class="code javascript">    forEachWindow<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>win<span class="br0">&#41;</span><span class="br0">&#123;</span>
+        <span class="co1">// code here</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+    <span class="co1">// or</span>
+    <span class="kw2">function</span> doWithWindow<span class="br0">&#40;</span>win<span class="br0">&#41;</span><span class="br0">&#123;</span>
+        <span class="co1">// code here</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+    forEachWindow<span class="br0">&#40;</span>doWithWindow<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="742-1077" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Iterator" /></div></form></div>
+<h3><a name="changing_dimension" id="changing_dimension">Changing Dimension</a></h3>
+<div class="level3">
+
+<p>
+
+If the user wants to change window&#039;s dimension, he should use method setDimension() and pass width and height values: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setDimension</span><span class="br0">&#40;</span>int width<span class="sy0">,</span> int height<span class="br0">&#41;</span>;</pre>
+<p>
+To set only window&#039;s width, or only its height, the user should apply the following variants of syntax:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setDimension</span><span class="br0">&#40;</span>int width<span class="br0">&#41;</span>; <span class="co1">// only width is set</span>
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setDimension</span><span class="br0">&#40;</span><span class="kw2">null</span><span class="sy0">,</span> int height<span class="br0">&#41;</span>; <span class="co1">// only height is set</span></pre>
+<p>
+The same syntax variants are available for methods that are responsible for setting minimum and maximum dimensions.
+Default minimum and maximum Dimensions are set in dhtmlxWindows. The user has the possibility to set his own minimum and maximum Dimension parameters to a window by calling methods setMaxDimension() and setMinDimension():
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setMaxDimension</span><span class="br0">&#40;</span>int maxWidth<span class="sy0">,</span> int maxHeight<span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setMinDimension</span><span class="br0">&#40;</span>int minWidth<span class="sy0">,</span> int minHeight<span class="br0">&#41;</span>;</pre>
+<p>
+There is also a method to get window&#039;s dimension (will return array (width, height)): 
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> dimension <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getDimension</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The following methods can also be used to get minimum and maximum Dimensions: 
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> maxDimension <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getMaxDimension</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="kw2">var</span> minDimension <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getMinDimension</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Note: a window will be able to occupy the whole viewport after minimizing if the user sets maxDimension to auto: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setMaxDimension</span><span class="br0">&#40;</span><span class="st0">&quot;auto&quot;</span><span class="sy0">,</span> <span class="st0">&quot;auto&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+In this case the window becomes unresizable (only in the maximized state). 
+Note: if the user changes window&#039;s dimension in such a way that it can not display the whole title text, the text will be cut.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1078-2912" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Changing Dimension" /></div></form></div>
+<h3><a name="changing_position" id="changing_position">Changing Position</a></h3>
+<div class="level3">
+
+<p>
+
+As with window&#039;s dimension, the user is allowed to change window&#039;s position. In order to do this, method setPosition() should be called with values x and y: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setPosition</span><span class="br0">&#40;</span>int x<span class="sy0">,</span> int y<span class="br0">&#41;</span>;</pre>
+<p>
+There is also a command to get window&#039;s position (will return Array(x, y)): 
+</p>
+<pre class="code javascript">    <span class="kw2">var</span> position <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getPosition</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2913-3336" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Changing Position" /></div></form></div>
+<h3><a name="window_parking" id="window_parking">Window Parking</a></h3>
+<div class="level3">
+
+<p>
+
+If the user wants to park a window, he should use the command park(). 
+If the window was parked up, this command makes it park down, and vice versa: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">park</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3337-3573" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Parking" /></div></form></div>
+<h3><a name="window_minimizing_maximizing" id="window_minimizing_maximizing">Window Minimizing/Maximizing</a></h3>
+<div class="level3">
+
+<p>
+
+To minimize/maximize a window from script, the user should call the following methods: 
+</p>
+<ul>
+<li class="level1"><div class="li">  maximize(); </div>
+</li>
+<li class="level1"><div class="li">  minimize(); </div>
+</li>
+</ul>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">maximize</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">minimize</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3574-3836" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Minimizing/Maximizing" /></div></form></div>
+<h3><a name="bringing_window_to_top_bottom" id="bringing_window_to_top_bottom">Bringing Window to Top/Bottom</a></h3>
+<div class="level3">
+
+<p>
+
+The user can bring any window to the top with the help of method bringToTop():
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">bringToTop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+In this case the window will be automatically focused.
+</p>
+
+<p>
+Method bringToBottom() brings any window to bottom: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">bringToBottom</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+In the situation when this method was applied to the top window, the window that lies right after the top one, occupies its position and becomes the top window. 
+Some peculiarities of these two methods are revealed dealing with sticked/unsticked windows.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="3837-4455" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Bringing Window to Top/Bottom" /></div></form></div>
+<h3><a name="window_sticking_unsticking" id="window_sticking_unsticking">Window Sticking/Unsticking</a></h3>
+<div class="level3">
+
+<p>
+
+The user has the opportunity to stick/unstick a window - to place it always on the top. To do this the user should use methods stick() or unstick().
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">stick</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">unstick</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+If there is any window that was made sticked in the system, global windows behavior will be the following: 
+</p>
+<ul>
+<li class="level1"><div class="li">  All windows will be divided into 2 groups: sticked and unsticked; </div>
+</li>
+<li class="level1"><div class="li">  Sticked windows (even unfocused ones) will always be positioned over the unsticked ones; </div>
+</li>
+<li class="level1"><div class="li">  Method bringToTop() will place a sticked window on the top among the other sticked ones. As for an unsticked window (in case, there is at least one sticked window), it will be placed on the top of all unsticked windows, but below the sticked ones; </div>
+</li>
+<li class="level1"><div class="li">  Method bringToBottom() will work in the following way with a sticked window: it will be brought to the bottom, but will be placed over any unsticked window; </div>
+</li>
+<li class="level1"><div class="li">  Any sticked/unsticked window will always be placed under any modal window.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="4456-5510" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Sticking/Unsticking" /></div></form></div>
+<h3><a name="making_window_modal_modeless" id="making_window_modal_modeless">Making Window Modal/Modeless</a></h3>
+<div class="level3">
+
+<p>
+
+There is the possibility to make a window modal calling method setModal(): 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">setModal</span><span class="br0">&#40;</span>Boolean state<span class="br0">&#41;</span>;</pre>
+<p>
+Any modal window has the following features: 
+</p>
+<ul>
+<li class="level1"><div class="li">  Only one modal window is allowed at a time; </div>
+</li>
+<li class="level1"><div class="li">  If the user wants to set modal option to any other window, this option should be removed from the current modal window. Or current modal window itself should be removed; </div>
+</li>
+<li class="level1"><div class="li">  Any modal window will always be placed over any other windows (even sticked ones); </div>
+</li>
+<li class="level1"><div class="li">  A modal window requires the user to interact with it, before he can return to operating any other windows (i.e. this window is always focused).</div>
+</li>
+<li class="level1"><div class="li">  By default, a newly created window is always modeless.</div>
+</li>
+</ul>
+
+<p>
+The value true in method setModal() makes a window modal, while the value false makes it modeless.
+A modal window blocks all other work-flow until it is closed. Thus, the user won&#039;t be able to do anything else while a modal window is open.
+Modal windows can be used in order to warn the user, or draw his attention to some important change, alert, or event that is going to happen.
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="5511-6657" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Making Window Modal/Modeless" /></div></form></div>
+<h3><a name="get_topmost_bottommost_window" id="get_topmost_bottommost_window">Get Topmost/Bottommost Window</a></h3>
+<div class="level3">
+
+<p>
+
+The user is able to get the handler of the topmost window with the help of the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getTopmostWindow</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+To get handler of the bottommost window, the user should call the following method: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">getBottommostWindow</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="6658-7027" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Get Topmost/Bottommost Window" /></div></form></div>
+<h3><a name="making_window_centered" id="making_window_centered">Making Window Centered</a></h3>
+<div class="level3">
+
+<p>
+
+There is also the possibility to make any window centered (place it in the center of the viewport) by calling method center(). This method is similar to setPosition() method in some way, but the position of a window is set automatically and does not require the user to specify it.
+</p>
+
+<p>
+Note: Position of a window will be defined relative to the viewport.
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">center</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+There is also a method which allows you to center window on the screen: 
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">centerOnScreen</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="7028-7618" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Making Window Centered" /></div></form></div>
+<h3><a name="window_progress_indicator" id="window_progress_indicator">Window Progress Indicator</a></h3>
+<div class="level3">
+
+<p>
+
+The user can show a progress indicator in any window. This indicator will visually inform the user about the fact that the information in a window is still loading. A progress indicator can be shown in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">progressOn</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+A progress indicator can be easily hidden in a window in such a way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">progressOff</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="7619-8078" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Progress Indicator" /></div></form></div>
+<h3><a name="window_header_control" id="window_header_control">Window Header Control</a></h3>
+<div class="level3">
+
+<p>
+
+A header of a certain window can be easily hidden by the following method:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">hideHeader</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The window header will be made visible again in the following way:
+</p>
+<pre class="code javascript">    dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">showHeader</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="8079-" /><input type="hidden" name="rev" value="1279031298" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit" class="button" title="Window Header Control" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxwindows/windows_settings_manipulations.txt &middot; Last modified: 2010/07/13 17:28 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxwindows%3Awindows_settings_manipulations&amp;1279804952" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxwindows:windows_settings_manipulations" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

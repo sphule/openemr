@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxform:api_events_form    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxform:api_events_form</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:api_events_form"  class="breadcrumbs" title="dhtmlxform:api_events_form">api_events_form</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#events" class="toc">Events</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#adding_event" class="toc">Adding event</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#deleting_event" class="toc">Deleting Event</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#the_list_of_events" class="toc">The list of events</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:toc" class="media" title="dhtmlxform:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxform:toc">dhtmlxForm</a></div></div>
+</p>
+
+
+
+<h1><a name="events" id="events">Events</a></h1>
+<div class="level1">
+
+<p>
+DhtmlxForm allows to handle different kinds of events in an application. 
+</p>
+
+<p>
+You can attach several handlers to the same event, and all of them will be executed.
+</p>
+
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+  Event names are case-insensitive.
+</div>
+<br/>
+
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-289" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit" class="button" title="Events" /></div></form></div>
+<h2><a name="adding_event" id="adding_event">Adding event</a></h2>
+<div class="level2">
+
+<p>
+
+If you need to attach event to an application, use <a href="dhtmlxform___api_method_dhtmlxform_attachevent.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_attachevent">attachEvent()</a> method.
+ 
+
+</p>
+<pre class="code javascript">myform.<span class="me1">attachEvent</span><span class="br0">&#40;</span>evName<span class="sy0">,</span> evHandler<span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li">  evName - the name of an event;</div>
+</li>
+<li class="level1"><div class="li">  evHandler - a user-defined event handler.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="290-577" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit" class="button" title="Adding event" /></div></form></div>
+<h2><a name="deleting_event" id="deleting_event">Deleting Event</a></h2>
+<div class="level2">
+
+<p>
+
+You can also delete event if you need. The <a href="dhtmlxform___api_method_dhtmlxform_detachevent.html" class="wikilink1" title="dhtmlxform:api_method_dhtmlxform_detachevent">detachEvent()</a> method helps you here.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> id <span class="sy0">=</span> myform.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onDirty&quot;</span><span class="sy0">,</span>some_code<span class="br0">&#41;</span>;
+   ...
+<span class="me1">myform</span>.<span class="me1">detachEvent</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="578-832" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit" class="button" title="Deleting Event" /></div></form></div>
+<h2><a name="the_list_of_events" id="the_list_of_events">The list of events</a></h2>
+<div class="level2">
+
+<p>
+The following events are available in dhtmlxForm: 
+
+</p>
+<ul>
+<li class="level1"><div class="li">  Loading related:</div>
+<ul>
+<li class="level2"><div class="li">  <a href="dhtmlxform___event_onxls.html" class="wikilink1" title="dhtmlxform:event_onxls">onXLS</a> - occurs before the request for a new <acronym title="Extensible Markup Language">XML</acronym> was sent to the server;  </div>
+</li>
+<li class="level2"><div class="li">  <a href="dhtmlxform___event_onxle.html" class="wikilink1" title="dhtmlxform:event_onxle">onXLE</a> - occurs simultaneously with ending <acronym title="Extensible Markup Language">XML</acronym> of parsing, new data is already processed by the form.</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Events of constructed form:</div>
+<ul>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onchange.html" class="wikilink1" title="dhtmlxform:event_onchange">onChange</a> - occurs when data in some input was changed;</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforechange.html" class="wikilink1" title="dhtmlxform:event_onbeforechange">onBeforeChange</a> - occurs before data in some input changed ( by user actions );</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbuttonclick.html" class="wikilink1" title="dhtmlxform:event_onbuttonclick">onButtonClick</a> - occurs when user clicks button;</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Binding related events:</div>
+<ul>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforedataload.html" class="wikilink1" title="dhtmlxform:event_onbeforedataload">onBeforeDataLoad</a> - occurs when data from server is loaded but before it set in form </div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforesave.html" class="wikilink1" title="dhtmlxform:event_onbeforesave">onBeforeSave</a> - occurs before sending data to the server</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onaftersave.html" class="wikilink1" title="dhtmlxform:event_onaftersave">onAfterSave</a> - occurs after saving data in DB</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforeremove.html" class="wikilink1" title="dhtmlxform:event_onbeforeremove">onBeforeRemove</a> - occurs when signal to delete current record is received</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onafterremove.html" class="wikilink1" title="dhtmlxform:event_onafterremove">onAfterRemove</a> - occurs when record was deleted from server</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforereset.html" class="wikilink1" title="dhtmlxform:event_onbeforereset">onBeforeReset</a> - occurs before resetting the form</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onafterreset.html" class="wikilink1" title="dhtmlxform:event_onafterreset">onAfterReset</a> - occurs after resetting the form</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_ondirty.html" class="wikilink1" title="dhtmlxform:event_ondirty">onDirty</a> - occurs before form reloading with different data, when data in existing form was changed but not saved</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Validation related events:</div>
+<ul>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onbeforevalidate.html" class="wikilink1" title="dhtmlxform:event_onbeforevalidate">onBeforeValidate</a> - occurs before validation </div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onvalidateerror.html" class="wikilink1" title="dhtmlxform:event_onvalidateerror">onValidateError</a> - occurs for each error during validation</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onvalidatesuccess.html" class="wikilink1" title="dhtmlxform:event_onvalidatesuccess">onValidateSuccess</a> - occurs for each success during validation</div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxform___event_onaftervalidate.html" class="wikilink1" title="dhtmlxform:event_onaftervalidate">onAfterValidate</a> - occurs after validation</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="833-" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit" class="button" title="The list of events" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxform/api_events_form.txt &middot; Last modified: 2010/07/22 16:06 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxform%3Aapi_events_form&amp;1279804833" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:api_events_form" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

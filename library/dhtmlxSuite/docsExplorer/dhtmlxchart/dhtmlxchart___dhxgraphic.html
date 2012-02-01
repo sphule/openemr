@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxchart:dhxgraphic    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxchart:dhxgraphic</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:dhxgraphic"  class="breadcrumbs" title="dhtmlxchart:dhxgraphic">dhxgraphic</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxchart:toc" class="media" title="dhtmlxchart:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxchart:toc">dhtmlxchart</a></div></div>
+
+</p>
+
+<h2><a name="line_chart" id="line_chart">Line Chart</a></h2>
+<div class="level2">
+
+<p>
+
+Line Chart  is the most popular chart type. It’s created by connecting a series of data points together with a line. This chart type is used to show data trends, how parameters are related to each other or how one variable changes effected by another.
+</p>
+
+<p>
+DhmlxChart gives full scope to Line chart creation as well. You can customize line and points color, points filling (outer or inner), labels, tooltips and scales.  
+</p>
+
+<p>
+Let’s  start to create a Line chart yourself step by step.
+</p>
+
+<p>
+It will be a simple Line chart and you can improve it at any time just adding additional functions and propeties.  
+</p>
+
+<p>
+
+First, we will make some preparatory steps.
+</p>
+
+<p>
+ 1. Specify data that will be represented in your chart. 
+In our examples we use Sales Information of one little company in json format.
+Know more about <a href="dhtmlxchart___dhxdata.html" class="wikilink1" title="dhtmlxchart:dhxdata">available data formats</a>.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">&#91;</span>
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">3.8</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2001&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">3.4</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2002&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+         …
+        <span class="br0">&#123;</span> sales<span class="sy0">:</span><span class="nu0">4.8</span><span class="sy0">,</span> year<span class="sy0">:</span><span class="st0">&quot;2009&quot;</span> <span class="br0">&#125;</span>
+    <span class="br0">&#93;</span>;
+    chart.<span class="me1">parse</span><span class="br0">&#40;</span>data<span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+ 2. Insert to your page an <acronym title="HyperText Markup Language">HTML</acronym> container for your future chart e.g. with the name “chart_container” .
+</p>
+<pre class="code javascript">   <span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot; chart_container&quot;</span> style<span class="sy0">=</span><span class="st0">&quot;width:280px;height:250px;&quot;</span><span class="sy0">&gt;&lt;/</span>div<span class="sy0">&gt;</span></pre>
+<p>
+
+Go on, fill in an object constructor. 
+</p>
+
+<p>
+
+ 3. Set value ‘line’ in the ‘view’ property of an object constructor to set a chart type.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LIneChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span>
+		....
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+
+ 4. Define value &#039;chart_container&#039; in the property ‘container’ of an object constructor. It sets chart container.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+                view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+ 5. Assign value &#039;#sales#&#039; to the ‘value’ property to set data that Line Chart will represent.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+Other parameters are optional, choose them according to your needs.
+</div>
+</p>
+
+<p>
+
+ 
+ 6. Set chart labels e.g. value &#039;#year#&#039; (property &#039;label&#039;).
+ Know more about chart labels <a href="dhtmlxchart___dhxlabel.html" class="wikilink1" title="dhtmlxchart:dhxlabel">here</a>.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		label<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+ 
+ 7. Specify points tooltip e.g. value &#039;#years#&#039; (property &#039;tooltip&#039;). 
+Know more about chart tooltip <a href="dhtmlxchart___dhxtooltip.html" class="wikilink1" title="dhtmlxchart:dhxtooltip">here</a>.
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		label<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+                tooltip<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+
+ 
+ 8. Select inner and outer color of points.  We will use values: &#039;#ffffff&#039; and &#039;#000000&#039; (propeties &#039;borderColor&#039;,&#039;color&#039;).
+Know more about colors <a href="dhtmlxchart___dhxcolor.html" class="wikilink1" title="dhtmlxchart:dhxcolor">here</a>. 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		label<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+                tooltip<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+                <span class="kw1">item</span><span class="sy0">:</span><span class="br0">&#123;</span>
+                    borderColor<span class="sy0">:</span><span class="st0">&quot;#ffffff&quot;</span><span class="sy0">,</span>
+                    color<span class="sy0">:</span><span class="st0">&quot;#000000&quot;</span>
+                <span class="br0">&#125;</span><span class="sy0">,</span>
+		...
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+ 9. Set color and width for a line. Our values are &#039;#ff9900&#039; and &#039;3&#039; (propeties &#039;color&#039; and &#039;width&#039;). 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> LineChart <span class="sy0">=</span>  <span class="kw2">new</span> dhtmlXChart<span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span><span class="st0">&quot;line&quot;</span><span class="sy0">,</span>
+		container<span class="sy0">:</span><span class="st0">&quot;chart_container&quot;</span><span class="sy0">,</span>
+	        value<span class="sy0">:</span><span class="st0">&quot;#sales#&quot;</span><span class="sy0">,</span>
+		label<span class="sy0">:</span><span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+                tooltip<span class="sy0">:</span> <span class="st0">&quot;#year#&quot;</span><span class="sy0">,</span>
+                <span class="kw1">item</span><span class="sy0">:</span><span class="br0">&#123;</span>
+                    borderColor<span class="sy0">:</span><span class="st0">&quot;#ffffff&quot;</span><span class="sy0">,</span>
+                    color<span class="sy0">:</span><span class="st0">&quot;#000000&quot;</span>
+                <span class="br0">&#125;</span><span class="sy0">,</span>
+                line<span class="sy0">:</span><span class="br0">&#123;</span>
+                     color<span class="sy0">:</span><span class="st0">&quot;#ff9900&quot;</span><span class="sy0">,</span>
+                     width<span class="sy0">:</span><span class="nu0">3</span>
+                <span class="br0">&#125;</span>
+	<span class="br0">&#125;</span><span class="br0">&#41;</span></pre>
+<p>
+10. Use method <a href="dhtmlxchart___api_method_dhtmlxchart_parse.html" class="wikilink1" title="dhtmlxchart:api_method_dhtmlxchart_parse">parse()</a> to process data. 
+</p>
+<pre class="code">
+	LineChart.parse(data,&quot;json&quot;);
+</pre>
+
+<p>
+We&#039;ve finished. Just run the application to see your creation.
+</p>
+
+<p>
+Full code you can see <a href="dhtmlxchart___fulgraphiclcodelink.html" class="wikilink1" title="dhtmlxchart:fulgraphiclcodelink">here</a>.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="54-" /><input type="hidden" name="rev" value="1279031276" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Edit" class="button" title="Line Chart" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxchart/dhxgraphic.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxchart%3Adhxgraphic&amp;1279804796" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxchart:dhxgraphic" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

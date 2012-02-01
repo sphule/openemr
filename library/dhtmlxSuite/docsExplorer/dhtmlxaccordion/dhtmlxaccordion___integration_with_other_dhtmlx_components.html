@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxaccordion:integration_with_other_dhtmlx_components    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxaccordion:integration_with_other_dhtmlx_components</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxaccordion:integration_with_other_dhtmlx_components"  class="breadcrumbs" title="dhtmlxaccordion:integration_with_other_dhtmlx_components">integration_with_other_dhtmlx_components</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___accordion.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxaccordion:toc">dhtmlxaccordion</a></div></div>
+
+</p>
+
+<h2><a name="integration_with_other_dhtmlx_components" id="integration_with_other_dhtmlx_components">Integration with Other dhtmlx Components</a></h2>
+<div class="level2">
+
+<p>
+
+dhtmlxAccordion is compatible with the following dhtmlx Components:
+</p>
+<ul>
+<li class="level1"><div class="li">  dhtmlxGrid/TreeGrid;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxTree;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxTabbar;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxFolders;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxLayout;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxMenu;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxToolbar;</div>
+</li>
+<li class="level1"><div class="li">  dhtmlxEditor.</div>
+</li>
+</ul>
+
+<p>
+
+Also a simple Status Bar can be attached to any Accordion&#039;s item.
+</p>
+
+<p>
+First of all, the user needs to download the necessary packages from the server and set paths to necessary files from them into the &lt;head&gt; tag of our html. The files to which the paths need to be specified should be checked in the documentation describing work with the corresponding component.
+Any of the above mentioned components can be easily attached to an Accordion item:
+</p>
+<pre class="code javascript">    <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+        <span class="kw2">var</span> grid <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachGrid</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> tree <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachTree</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> treeGrid <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachGrid</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> folders <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachFolders</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> tabbar <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachTabbar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> layout <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachLayout</span><span class="br0">&#40;</span><span class="st0">&quot;3L&quot;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> menu <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachMenu</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> tollbar <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachToolbar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;  
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> editor <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachEditor</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="co1">// or</span>
+        <span class="kw2">var</span> statusBar <span class="sy0">=</span> dhxAccord.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a1&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachStatusBar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;   
+    <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+attach[Component]() method doesn&#039;t take any input parameters for each accordion compatible component except for dhtmlxLayout and dhtmlxTree.
+</p>
+
+<p>
+Only one input parameter should be indicated for attachLayout() method, which is Layout&#039;s pattern type.
+</p>
+
+<p>
+There is only one input parameter for attachTree() method. The parameter is the id of a virtual super item that is a parent to all the top level tree nodes of the added dhtmlxTree (see dhtmlxTree constructor description for details). If super root element id is 0, this parameter can be omitted.
+</p>
+
+<p>
+Please note if you want to attach dhtmlxGrid with <a href="../dhtmlxgrid/dhtmlxgrid___paging.html" class="wikilink1" title="dhtmlxgrid:paging">paging</a> to the dhtmlxAccordion cell you should use attachObject() method to attach container with grid and paging area:
+</p>
+<pre class="code javascript">   dhxAccordion.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachObject</span><span class="br0">&#40;</span><span class="st0">&quot;paging_container&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="58-" /><input type="hidden" name="rev" value="1279031274" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Edit" class="button" title="Integration with Other dhtmlx Components" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxaccordion/integration_with_other_dhtmlx_components.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxaccordion%3Aintegration_with_other_dhtmlx_components&amp;1279804781" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxaccordion:integration_with_other_dhtmlx_components" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

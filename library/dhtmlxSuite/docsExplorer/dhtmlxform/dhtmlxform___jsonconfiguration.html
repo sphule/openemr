@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxform:jsonconfiguration    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxform:jsonconfiguration</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:jsonconfiguration"  class="breadcrumbs" title="dhtmlxform:jsonconfiguration">jsonconfiguration</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><a href="/dhtmlx/docs/doku.php?id=dhtmlxform:toc" class="media" title="dhtmlxform:toc"></a><a href="index.html" class="wikilink1" title="dhtmlxform:toc">dhtmlxForm</a></div><div class='arrow'></div><div class='backlink'><a href="dhtmlxform___dhtmlxform_controls.html" class="wikilink1" title="dhtmlxform:dhtmlxform_controls">Control Types &amp; Attributes</a></div></div>
+
+</p>
+
+<h1><a name="json_configuration" id="json_configuration">JSON configuration</a></h1>
+<div class="level1">
+<pre class="code javascript"><span class="kw2">var</span> formData <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;choose&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;online&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Will enjoy the online demo&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;choose&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;senddisk&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Please send me disk&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;bootleg&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;yes&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Insert bootleg&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;lirycs&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;jaja&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Lyrics if possible&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;label&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Payment&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;paymenttype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span><span class="st0">&quot;creditcard&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Credit Card&quot;</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+			<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;input&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cardnumber&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;XXXX-XXXX-XXXX-XXXX&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Card Number&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;input&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;cardkey&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;XXXX&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Key&quot;</span><span class="br0">&#125;</span>
+		<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;paymenttype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span><span class="st0">&quot;cash&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Cash&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;label&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Currency&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;currencytype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;dollar&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;U. S. Dollars&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;currencytype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;euro&quot;</span><span class="sy0">,</span> label <span class="sy0">:</span><span class="st0">&quot;Euro&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;currencytype&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;brb&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Belarusian Rubel&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;select&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;mediatype&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Select Media Type&quot;</span><span class="sy0">,</span> options<span class="sy0">:</span><span class="br0">&#91;</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;1&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;CD 700Mb&quot;</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;overburn&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;yes_1&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Overburn&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span>
+			<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;2&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;DVD5 4.4Gb&quot;</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;lightscribe&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;yes&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Light Scribe&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;checkbox&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;labelflash&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;yes&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Label Flash&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">false</span><span class="sy0">,</span> list<span class="sy0">:</span><span class="br0">&#91;</span>
+					<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;labelflash_radio&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;required&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Required&quot;</span><span class="sy0">,</span> checked<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+					<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;radio&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;labelflash_radio&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;not_mandatory&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Not bad option&quot;</span><span class="br0">&#125;</span>
+				<span class="br0">&#93;</span><span class="br0">&#125;</span>
+			<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;2&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;DVD5 4.4Gb&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;3&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;DVD9 8.6Gb&quot;</span><span class="sy0">,</span> selected<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;4&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;Blue-Ray 24Gb&quot;</span><span class="br0">&#125;</span>
+		<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;select&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;audioquality&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Select Audio Quality&quot;</span><span class="sy0">,</span> options<span class="sy0">:</span><span class="br0">&#91;</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;1&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;2.0 16bit/128kbps&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;2&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;2.1 16bit/334kbps&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;3&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;5.1 32bit/448kbps&quot;</span><span class="sy0">,</span> selected<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span>
+		<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;select&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;videoquality&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Select Video Quality&quot;</span><span class="sy0">,</span> options<span class="sy0">:</span><span class="br0">&#91;</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;1&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;DVD MPEG-2&quot;</span><span class="sy0">,</span> selected<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;2&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;DivX&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+			<span class="br0">&#123;</span>value<span class="sy0">:</span> <span class="st0">&quot;3&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span> <span class="st0">&quot;XviD&quot;</span><span class="br0">&#125;</span>
+		<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;input&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;comments&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Comments&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;Some Comments&quot;</span><span class="sy0">,</span> rows<span class="sy0">:</span> <span class="nu0">3</span><span class="br0">&#125;</span>
+	<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;hidden&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;hiden_data&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;some_value&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;file&quot;</span><span class="sy0">,</span> <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">&quot;my_file&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span> <span class="st0">&quot;Schoose file&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>type<span class="sy0">:</span> <span class="st0">&quot;button&quot;</span><span class="sy0">,</span> value<span class="sy0">:</span> <span class="st0">&quot;Submit&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+<p>
+Each item-object can have &#039;bind&#039; property to define <a href="dhtmlxform___binding.html" class="wikilink1" title="dhtmlxform:binding">binding</a> or &#039;validate&#039; property to define <a href="dhtmlxform___it_valid.html" class="wikilink1" title="dhtmlxform:it_valid">validation rules</a>. <br/>
+
+Items of &#039;select&#039; controls can have &#039;connector&#039; property to <a href="dhtmlxform___load_options.html" class="wikilink1" title="dhtmlxform:load_options">load options</a>.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="100-" /><input type="hidden" name="rev" value="1279803986" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Edit" class="button" title="JSON configuration" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxform/jsonconfiguration.txt &middot; Last modified: 2010/07/22 16:06 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxform%3Ajsonconfiguration&amp;1279804837" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxform:jsonconfiguration" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

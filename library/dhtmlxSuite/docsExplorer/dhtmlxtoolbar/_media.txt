@@ -1,0 +1,6 @@
+icons___file.gif
+icons___toolbar.gif
+common___any_ed.gif
+dhtmlxtoolbar___dhxtoolbar_dhx_skyblue.png
+dhtmlxtoolbar___dhxtoolbar_dhx_blue.png
+dhtmlxtoolbar___dhxtoolbar_dhx_black.png

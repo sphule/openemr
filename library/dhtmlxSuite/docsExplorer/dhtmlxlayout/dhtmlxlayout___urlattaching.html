@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxlayout:urlattaching    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxlayout:urlattaching</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxlayout:urlattaching"  class="breadcrumbs" title="dhtmlxlayout:urlattaching">urlattaching</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#url_attaching" class="toc">URL Attaching</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#inner_content_accessing" class="toc">Inner Content Accessing</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#panel_accessing_from_attached_url" class="toc">Panel Accessing from Attached URL</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#iframe_content_access" class="toc">IFRAME Content Access</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___layout.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxlayout:toc">dhtmlxlayout</a></div><div class='arrow'></div><div class='backlink'><a href="dhtmlxlayout___dhtmlxlayout_itemattaching.html" class="wikilink1" title="dhtmlxlayout:dhtmlxlayout_itemattaching"> Content Attaching</a></div></div>
+
+</p>
+
+<h1><a name="url_attaching" id="url_attaching">URL Attaching</a></h1>
+<div class="level1">
+
+<p>
+
+Sometimes it&#039;s needed to display a web page in a layout&#039;s item. The <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_attachurl.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_attachurl">attachURL()</a> method is used for this purpose:
+</p>
+<pre class="code javascript">dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;http://www.google.com/&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="101-373" /><input type="hidden" name="rev" value="1277829533" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit" class="button" title="URL Attaching" /></div></form></div>
+<h2><a name="inner_content_accessing" id="inner_content_accessing">Inner Content Accessing</a></h2>
+<div class="level2">
+
+<p>
+
+Assume, we have <acronym title="HyperText Markup Language">HTML</acronym> page - inner.html
+</p>
+<pre class="code javascript">...
+<span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot;A&quot;</span><span class="sy0">&gt;</span>...<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span>
+      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+          <span class="kw2">function</span> myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+               ...
+          <span class="br0">&#125;</span>
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+  ...</pre>
+<p>
+And with the <a href="dhtmlxlayout___api_method_dhtmlxlayoutpanel_attachurl.html" class="wikilink1" title="dhtmlxlayout:api_method_dhtmlxlayoutpanel_attachurl">attachURL()</a> method, we can access to the object “A” from the other page (index.html).
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+            <span class="kw2">var</span> dhxLayout <span class="sy0">=</span> <span class="kw2">new</span> dhtmlXLayoutObject<span class="br0">&#40;</span>...<span class="br0">&#41;</span>;
+            ...
+            <span class="me1">dhxLayout</span>.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span>;
+            <span class="co1">// accessing &lt;div id=&quot;A&quot;&gt;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>_isIE<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentWindow</span>.<span class="me1">document</span>.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">&quot;A&quot;</span><span class="br0">&#41;</span>...
+            <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+                dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentDocument</span>.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">&quot;A&quot;</span><span class="br0">&#41;</span>...
+            <span class="br0">&#125;</span>
+            <span class="co1">// calling function from inner.html</span>
+            dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>._frame.<span class="me1">contentWindow</span>.<span class="me1">myFunc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+The method has the following parameters:
+</p>
+<ul>
+<li class="level1"><div class="li"> “inner.html”  - url (string)</div>
+</li>
+<li class="level1"><div class="li"> true - specifies must be used ajax query or not(true/false).</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="374-1449" /><input type="hidden" name="rev" value="1277829533" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit" class="button" title="Inner Content Accessing" /></div></form></div>
+<h2><a name="panel_accessing_from_attached_url" id="panel_accessing_from_attached_url">Panel Accessing from Attached URL</a></h2>
+<div class="level2">
+
+<p>
+
+If you need to make some actions with a panel from the attached <acronym title="Uniform Resource Locator">URL</acronym> (for example, close it by clicking some button on a page) - add the following code to the external page:
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;button&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;collapse cell&quot;</span> onclick<span class="sy0">=</span><span class="st0">&quot;collapseCell();&quot;</span><span class="sy0">&gt;</span> <span class="co1">// create a button</span>
+&nbsp;
+      <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+           <span class="kw2">function</span> collapseCell<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+               parent.<span class="me1">dhxLayout</span>.<span class="me1">cells</span><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>.<span class="me1">collapse</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="co1">// collapse cell &quot;a&quot;</span>
+           <span class="br0">&#125;</span>
+      <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+DhxLayout variable should be created as a global one (in our main dhtmlxLayout script) in order to be seen by the script in the attached external page.
+</div>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1450-2111" /><input type="hidden" name="rev" value="1277829533" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit" class="button" title="Panel Accessing from Attached URL" /></div></form></div>
+<h2><a name="iframe_content_access" id="iframe_content_access">IFRAME Content Access</a></h2>
+<div class="level2">
+
+<p>
+
+IFRAME content is a result of attaching URLs to layout/windows.
+</p>
+
+<p>
+The follownig code is a code of the attached page inner.html:
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>html<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+        <span class="sy0">&lt;</span>script<span class="sy0">&gt;</span>
+            <span class="kw2">var</span> msg <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>;
+            <span class="kw2">function</span> myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw3">alert</span><span class="br0">&#40;</span>msg<span class="br0">&#41;</span>;
+            <span class="br0">&#125;</span>
+        <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;</span>body<span class="sy0">&gt;</span>
+        <span class="sy0">&lt;</span>div id<span class="sy0">=</span><span class="st0">&quot;myDiv&quot;</span><span class="sy0">&gt;</span> <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span>
+    <span class="sy0">&lt;/</span>body<span class="sy0">&gt;</span>
+<span class="sy0">&lt;/</span>html<span class="sy0">&gt;</span></pre>
+<p>
+And a page where page inner.html will attached to has the next code:
+</p>
+<pre class="code javascript"><span class="co1">// windows</span>
+<span class="kw2">var</span> w1 <span class="sy0">=</span> dhxWins.<span class="me1">createWindow</span><span class="br0">&#40;</span>id<span class="sy0">,</span> x <span class="sy0">,</span>y<span class="sy0">,</span> w<span class="sy0">,</span> h<span class="br0">&#41;</span>;
+w1.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="br0">&#41;</span>;
+<span class="co1">// layout</span>
+dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="br0">&#41;</span>;
+<span class="co1">// accordion</span>
+dhxAcc.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="br0">&#41;</span>;
+<span class="co1">// tabbar</span>
+dhxTabbar.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">attachURL</span><span class="br0">&#40;</span><span class="st0">&quot;inner.html&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+So to access IFRAME object  - use the code:
+</p>
+<pre class="code javascript"><span class="kw2">var</span> ifr;
+<span class="co1">// windows</span>
+ifr <span class="sy0">=</span> dhxWins.<span class="me1">window</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>._frame;
+<span class="co1">// layout</span>
+ifr <span class="sy0">=</span> dhxLayout.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>._frame;
+<span class="co1">// accordion</span>
+ifr <span class="sy0">=</span> dhxAcc.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>._frame;
+<span class="co1">// tabbar</span>
+ifr <span class="sy0">=</span> dhxTabbar.<span class="me1">cells</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>._frame;</pre>
+<p>
+And to access functions/variables/objects - use the code:
+</p>
+<pre class="code javascript">ifr.<span class="me1">contentWindow</span>.<span class="me1">msg</span> <span class="sy0">=</span> <span class="st0">&quot;Popup message&quot;</span>;
+ifr.<span class="me1">contentWindow</span>.<span class="me1">myFunc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+ifr.<span class="me1">contentWindow</span>.<span class="me1">document</span>.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">&quot;myDiv&quot;</span><span class="br0">&#41;</span>.<span class="me1">innerHTML</span> <span class="sy0">=</span> <span class="st0">&quot;Object on page&quot;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="2112-" /><input type="hidden" name="rev" value="1277829533" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit" class="button" title="IFRAME Content Access" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxlayout/urlattaching.txt &middot; Last modified: 2010/06/29 19:38 by 192.168.1.110      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxlayout%3Aurlattaching&amp;1279804890" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxlayout:urlattaching" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="../codebase/default.css" type="text/css" media="screen" title="no title" charset="utf-8"><title>
+    dhtmlxajax:sending_requests_with_dhtmlxajax    [DHX documentation]
+  </title></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+    <a class="logo" href="http://dhtmlx.com" title="DHTMLX Home Page"></a>
+    <span class="tittle-dhtmlx">DHTMLX Docs & Samples Explorer</span>
+
+    <div class="search-field">
+        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>    </div>
+        <div class="buttons">
+                <a class="doc"></a>
+                <a title="DHTMLX Samples homepage" href="../samples.html" class="sample"/></a>
+        </div>
+     <!-- <div class="pagename">
+        [[<a href="#"  title="Backlinks">dhtmlxajax:sending_requests_with_dhtmlxajax</a>]]
+      </div>
+      <div class="logo">
+        <a href="/dhtmlx/docs/doku.php"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">DHX documentation</a>      </div>
+
+      <div class="clearer"></div>-->
+        
+    </div>
+
+    
+<!--   <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>        <form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" /></div></form>        <form action="/dhtmlx/docs/doku.php" accept-charset="utf-8" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" title="Search" /><button type="submit"></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div> -->
+
+<!--        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/dhtmlx/docs/doku.php?id=dhtmlxajax:sending_requests_with_dhtmlxajax"  class="breadcrumbs" title="dhtmlxajax:sending_requests_with_dhtmlxajax">sending_requests_with_dhtmlxajax</a></span>    </div>
+    -->
+
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#sending_requests_with_dhtmlxajax" class="toc">Sending Requests with dhtmlxAjax</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#sending_get_ajax_request" class="toc">Sending GET AJAX Request</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#sending_post_ajax_request" class="toc">Sending POST AJAX Request</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<div class='backlinks'><div class='backlink last_backlink'><img src="icons___file.gif"  class="media" alt="" /><a href="../index.html" class="wikilink1" title="start">Index</a></div><div class='arrow'></div><div class='backlink last_backlink'><img src="icons___ajax.gif"  class="media" alt="" /><a href="index.html" class="wikilink1" title="dhtmlxajax:toc">dhtmlxajax</a></div></div>
+
+</p>
+
+<h2><a name="sending_requests_with_dhtmlxajax" id="sending_requests_with_dhtmlxajax">Sending Requests with dhtmlxAjax</a></h2>
+<div class="level2">
+
+<p>
+dhtmlxAjax is static object, which means you do not need to instantiate it each time you need to send <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> request to server. Also, if you use any dhtmlx component on your page, then you do not need to add any script file to use dhtmlxAjax - it is included in all dhtmlx components. Otherwise you need to add dhtmlxcommon.js file.
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="53-430" /><input type="hidden" name="rev" value="1279031275" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit" class="button" title="Sending Requests with dhtmlxAjax" /></div></form></div>
+<h3><a name="sending_get_ajax_request" id="sending_get_ajax_request">Sending GET AJAX Request</a></h3>
+<div class="level3">
+
+<p>
+To send asynchronous GET request and be able to process a response you need to do the following:
+
+</p>
+<pre class="code javascript">dhtmlxAjax.<span class="me1">get</span><span class="br0">&#40;</span>url<span class="sy0">,</span>callbackFunction<span class="br0">&#41;</span>;</pre>
+<p>
+
+where callbackFunction is a function object which will be called when response from server comes. It gets one argument called loader. This object contains all necessary information about response and some additional capabilities. In details:
+</p>
+<ul>
+<li class="level1"><div class="li"> loader.xmlDoc - <acronym title="Hyper Text Transfer Protocol">HTTP</acronym> Response object;</div>
+</li>
+<li class="level1"><div class="li"> loader.xmlDoc.responseXML - xml object which came with reponse;</div>
+</li>
+<li class="level1"><div class="li"> loader.xmlDoc.responseText - text which came with response;</div>
+</li>
+<li class="level1"><div class="li"> loader.doXPath(xpathExp, docObj, namespace, result_type) - XPath Processor (see details in related chapter);</div>
+</li>
+<li class="level1"><div class="li"> loader.doSerialization() - returns string representation of <acronym title="Extensible Markup Language">XML</acronym> object got with response;</div>
+</li>
+<li class="level1"><div class="li"> loader.doXSLTransToObject(xslDocument) - makes <acronym title="Extensible Stylesheet Language">XSL</acronym> transformation with object result (see details in related chapter);</div>
+</li>
+<li class="level1"><div class="li"> loader.doXSLTransToString(xslDocument) - makes <acronym title="Extensible Stylesheet Language">XSL</acronym> transformation with string result (see details in related chapter).</div>
+</li>
+</ul>
+
+<p>
+
+To send synchronous GET request you need to do the following:
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> loader <span class="sy0">=</span> dhtmlxAjax.<span class="me1">getSync</span><span class="br0">&#40;</span>url<span class="br0">&#41;</span>;</pre>
+<p>
+
+In case of synchronous request loader object will be returned as a result. It has all features described above. 
+</p>
+<pre class="code javascript"><span class="co1">//async mode</span>
+dhtmlxAjax.<span class="me1">get</span><span class="br0">&#40;</span>url<span class="sy0">,</span><span class="kw2">function</span><span class="br0">&#40;</span>loader<span class="br0">&#41;</span><span class="br0">&#123;</span>
+     <span class="kw3">alert</span><span class="br0">&#40;</span>loader.<span class="me1">xmlDoc</span>.<span class="me1">responseText</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre><pre class="code javascript"><span class="co1">//sync mode</span>
+<span class="kw2">var</span> loader <span class="sy0">=</span> dhtmlxAjax.<span class="me1">getSync</span><span class="br0">&#40;</span>url<span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>loader.<span class="me1">xmlDoc</span>.<span class="me1">responseText</span><span class="br0">&#41;</span>;</pre>
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="431-1973" /><input type="hidden" name="rev" value="1279031275" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit" class="button" title="Sending GET AJAX Request" /></div></form></div>
+<h3><a name="sending_post_ajax_request" id="sending_post_ajax_request">Sending POST AJAX Request</a></h3>
+<div class="level3">
+
+<p>
+The only difference in making POST request with dhtmlxAjax is additional argument next to <acronym title="Uniform Resource Locator">URL</acronym> - POST parameters:
+
+</p>
+<pre class="code javascript">dhtmlxAjax.<span class="me1">post</span><span class="br0">&#40;</span>url<span class="sy0">,</span>params<span class="sy0">,</span>callbackFunction<span class="br0">&#41;</span>;
+<span class="kw2">var</span> loader <span class="sy0">=</span> dhtmlxAjax.<span class="me1">postSync</span><span class="br0">&#40;</span>url<span class="sy0">,</span>params<span class="br0">&#41;</span>;</pre>
+<p>
+
+where params is a string of name=value pairs united with &amp; like 
+
+</p>
+<pre class="code">
+param1=somevalue&amp;param2=someothervalue
+</pre>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="lines" value="1974-" /><input type="hidden" name="rev" value="1279031275" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit" class="button" title="Sending POST AJAX Request" /></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     <!-- <div class="doc">
+        dhtmlxajax/sending_requests_with_dhtmlxajax.txt &middot; Last modified: 2010/07/13 17:27 (external edit)      </div>
+    </div>-->
+
+   
+    <!--<div class="bar" id="bar__bottom">-->
+      <!--<div class="bar-left" id="bar__bottomleft">-->
+        <!--<form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>-->
+        <!--<form class="button btn_revs" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" /></div></form>-->
+      <!--</div>-->
+      <!--<div class="bar-right" id="bar__bottomright">-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!--<form class="button btn_index" method="get" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="index" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>-->
+        <!--<a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" /></a>&nbsp;-->
+      <!--</div>-->
+      <!--<div class="clearer"></div>-->
+    <!--</div>-->
+
+  </div>
+
+  
+
+</div>
+
+<div class="footerinc">
+
+
+</div>
+
+<div class="no"><img src="/dhtmlx/docs/lib/exe/indexer.php?id=dhtmlxajax%3Asending_requests_with_dhtmlxajax&amp;1279804783" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2009 DHTMLX LTD.<br />All rights reserved.</div>
+        <form class="button btn_edit" method="post" action="/dhtmlx/docs/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="hidden" name="id" value="dhtmlxajax:sending_requests_with_dhtmlxajax" /><input type="submit" value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" /></div></form>    	    </div>
+</body>
+</html>
