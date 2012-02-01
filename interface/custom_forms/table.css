@@ -1,0 +1,38 @@
+body { font: 0.8em Arial; }
+
+/* Datagrid Table */
+table.tbl { width: 100%; border: 2px solid #c3daf9; font-size: 0.9em; clear: both; }
+td{vertical-align:top;font-family:arial;font-size:11px;}
+td.tbl-header { background: #CCE2FE; text-align: center; padding: 3px; font-weight: bold; border-bottom: 2px solid #c3daf9; }
+td.tbl-header a {color:#000;}
+tr.tbl-footer {}
+table.tbl-footer { font-size: 1em; }
+tr.tbl-row {}
+tr.tbl-row:hover { background: #EBFFFF; } /* Old color: #E9E9E9 */
+tr.tbl-row-even { background: #E3EFFF; }
+tr.tbl-row-odd { background: white; }
+tr.tbl-row-highlight:hover { background: #fffba6; cursor: pointer; }
+td.tbl-nav { background: url(/images/head_bg.gif); height: 20px; border-top: 2px solid #c3daf9; color: #4D4D4D; }
+td.tbl-pages { text-align: center; }
+td.tbl-row-num { text-align: right; }
+td.tbl-cell {}
+td.tbl-controls { text-align: center; }
+td.tbl-found {}
+td.tbl-checkall {}
+td.tbl-page { text-align: right; }
+td.tbl-noresults { font-weight: bold; color: #9F0000; height: 45px; text-align: center; }
+span.tbl-reset { margin: 5px 5px; }
+img.tbl-reset-image { margin-right: 5px; border: 0; }
+span.tbl-create { margin: 5px 0; }
+span.tbl-create a {color:#000;}
+img.tbl-create-image { margin-right: 5px; border: 0; }
+div.tbl-filter-box {}
+img.tbl-arrows { border: 0; }
+img.tbl-order-image { margin: 0 2px; border: 0; }
+img.tbl-filter-image { border: 0; }
+img.tbl-control-image { border: 0; }
+span.page-selected { color: black; font-weight: bold; }
+input.tbl-checkbox {}
+select {width:180px;}
+input {width:180px;}
+	
