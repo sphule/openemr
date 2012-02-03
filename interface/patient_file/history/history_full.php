@@ -169,7 +169,7 @@ $fres = sqlStatement("SELECT * FROM layout_options " .
   "ORDER BY group_name, seq");
 ?>
 
-<form action="history_save.php" name='history_form' method='post' onsubmit='return validate(this)'>
+<form action="history_save.php?flagvalue=<?php echo $_GET['flagvalue'];?>" name='history_form' method='post' onsubmit='return validate(this)'>
     <input type='hidden' name='mode' value='save'>
 
     <div>
@@ -182,7 +182,7 @@ $fres = sqlStatement("SELECT * FROM layout_options " .
         <a href="javascript:submit_history();" class='css_button'>
             <span><?php echo htmlspecialchars(xl('Save'),ENT_NOQUOTES); ?></span>
         </a>
-        <a href="history.php" <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?> class="css_button" onclick="top.restoreSession()">
+        <a href="history.php?flagvalue=<?php echo $_GET['flagvalue'];?>" <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?> class="css_button" onclick="top.restoreSession()">
             <span><?php echo htmlspecialchars(xl('Back To View'),ENT_NOQUOTES); ?></span>
         </a>
     </div>

@@ -1,3 +1,4 @@
+
 <?php
 // Copyright (C) 2005-2009 Rod Roark <rod@sunsetsystems.com>
 //
@@ -46,7 +47,9 @@ require_once("$srcdir/options.inc.php");
 <script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/jquery.js"></script>
 
 <script language="JavaScript">
-
+function restoreSession() {
+	// dummy function for when we pop this form up and it becomes "top"
+}
 // callback from add_edit_issue.php:
 function refreshIssue(issue, title) {
     top.restoreSession();
@@ -87,9 +90,11 @@ function newEncounter() {
 <body class="body_top">
 
 <br>
+<?php if($_GET['flagtype']!='progress_note') {?>
 <div style="text-align:center" class="buttons">
   <a href='javascript:;' class='css_button' id='back'><span><?php echo htmlspecialchars( xl('Back'), ENT_NOQUOTES); ?></span></a>
 </div>
+<?php } ?>
 <br>
 <br>
 

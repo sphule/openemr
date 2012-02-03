@@ -60,6 +60,9 @@ class Patient extends ORDataObject{
 	function get_pubpid() { return $this->pubpid; }
 	function get_lname() { return $this->lname; }
 	function get_name_display() { return $this->fname . " " . $this->lname; }
+	function get_name_full() {
+		return $this->fname ." ". $this->mname ." ". $this->lname;
+	}
 	function get_provider_id() { return $this->provider->id; }
 	function get_provider() { return $this->provider; }
 	function get_dob () { return $this->date_of_birth; }

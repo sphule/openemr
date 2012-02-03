@@ -61,14 +61,16 @@ $(document).ready(function(){
 <?php echo htmlspecialchars(xl('for'),ENT_NOQUOTES);?>&nbsp;<span class="title"><a href="../summary/demographics.php" onclick="top.restoreSession()"><?php echo htmlspecialchars(getPatientName($pid),ENT_NOQUOTES) ?></a></span>
 </div>
 <div>
-    <a href="history_full.php" <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?>
+    <a href='history_full.php?flagvalue=<?php echo $_GET[flagvalue];?>' <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?>
      class="css_button"
      onclick="top.restoreSession()">
     <span><?php echo htmlspecialchars(xl("Edit"),ENT_NOQUOTES);?></span>
     </a>
+    <?php if($_GET['flagvalue']=='') { ?>
     <a href="../summary/demographics.php" <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?> class="css_button" onclick="top.restoreSession()">
         <span><?php echo htmlspecialchars(xl('Back To Patient'),ENT_NOQUOTES);?></span>
     </a>
+    <?php } ?>
 </div>
 <br/>
 <?php } ?>

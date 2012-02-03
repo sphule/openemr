@@ -1,3 +1,4 @@
+
 <?php
 #require_once("{$GLOBALS['srcdir']}/sql.inc");
 require_once(dirname(__FILE__). "/sql.inc");
@@ -487,6 +488,8 @@ function auditSQLEvent($statement, $outcome)
    	    return;
    }
 
+    $lastid=mysql_insert_id($GLOBALS['dbh']);
+    $GLOBALS['lastidado']=$lastid;
 
    $statement = trim($statement);
 

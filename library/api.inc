@@ -1,3 +1,4 @@
+
 <?php
 //our api for 3rd party developers
 include_once("../../globals.php");
@@ -122,4 +123,14 @@ function formReappear ($tableName, $id)
         if (sqlStatement("update `$tableName` set activity = '1' where id='$id' and pid='$pid'")) return true;
 	return false;
 }
+
+function popupformJump ($address = "0")
+{
+	$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
+	if ($address == "0")
+		$address = "{$GLOBALS['rootdir']}/patient_file/encounter/$returnurl";
+	echo "\n<script language='Javascript'>window.location='$address';window.close();</script>\n";
+	exit;
+}
+
 ?>
